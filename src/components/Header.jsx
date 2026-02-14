@@ -127,7 +127,7 @@ const Header = () => {
             <img
               src={logo}
               alt="Morales Padia Law logo"
-              className="h-10 md:h-12 lg:h-26 w-auto mx-auto"
+              className="h-15 md:h-12 lg:h-26 w-auto mx-auto"
             />
           </Link>
 
