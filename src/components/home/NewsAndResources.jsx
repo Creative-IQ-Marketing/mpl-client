@@ -6,7 +6,7 @@ import {
   ArrowRight,
   Maximize2,
 } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 
 const NewsAndResources = () => {
   return (
@@ -14,7 +14,7 @@ const NewsAndResources = () => {
       <div className="max-w-[95rem] mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 min-h-[800px]">
           {/* Big News Feature - Takes 7 Cols */}
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -52,12 +52,12 @@ const NewsAndResources = () => {
             <div className="absolute -top-10 -right-10 text-[15rem] font-bold text-white/5 pointer-events-none select-none overflow-hidden">
               NEWS
             </div>
-          </motion.div>
+          </Motion.div>
 
           {/* Resources Stack - Takes 5 Cols */}
           <div className="lg:col-span-5 flex flex-col gap-6">
             <div className="mb-8 p-4">
-              <h2 className="text-5xl font-serif text-mpl-navy mb-4">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-mpl-navy mb-4 leading-tight">
                 Empower Yourself.
               </h2>
               <p className="text-gray-500 text-lg">
@@ -82,7 +82,7 @@ const NewsAndResources = () => {
                 color: "bg-mpl-blue/10 text-mpl-blue",
               },
             ].map((item, i) => (
-              <motion.div
+              <Motion.div
                 key={i}
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -109,7 +109,7 @@ const NewsAndResources = () => {
                 <div className="w-12 h-12 rounded-full border border-gray-100 flex items-center justify-center text-gray-400 group-hover:bg-mpl-navy group-hover:text-white group-hover:border-mpl-navy transition-all">
                   <Download className="w-5 h-5" />
                 </div>
-              </motion.div>
+              </Motion.div>
             ))}
           </div>
         </div>

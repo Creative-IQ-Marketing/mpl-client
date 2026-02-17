@@ -1,6 +1,6 @@
-import { useRef, useState } from "react";
-import { Quote, ArrowLeft, ArrowRight } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { Quote, ArrowLeft, ArrowRight, Star } from "lucide-react";
+import { motion as Motion, AnimatePresence } from "framer-motion";
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -55,80 +55,76 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-24 bg-mpl-navy text-white relative overflow-hidden">
-      {/* Subtle Background noise to break flat color */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")",
-        }}
-      ></div>
-
-      <div className="max-w-5xl mx-auto px-6 relative z-10">
-        <div className="flex flex-col items-center text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+    <section className="py-24  text-mpl-navy">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <Motion.div
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-16"
+            className="space-y-6"
           >
-            <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6 text-mpl-lightBlue">
-              <Quote className="w-5 h-5 fill-current" />
-            </div>
-            <h2 className="text-3xl md:text-5xl font-serif">Client Stories</h2>
-          </motion.div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-mpl-navy leading-tight">
+              Here&apos;s what our
+              <span className="block">clients have to say</span>
+              <span className="block">about us.</span>
+            </h2>
+            <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-md">
+              As the trusted choice for families across San Antonio, our
+              clients&apos; experiences and outcomes speak louder than any
+              promise we could make.
+            </p>
+          </Motion.div>
 
-          <div className="w-full relative min-h-[300px] flex items-center justify-center">
+          <div className="md:pl-12 md:border-l md:border-mpl-navy/10">
             <AnimatePresence mode="wait">
-              <motion.div
+              <Motion.div
                 key={currentIndex}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.4 }}
-                className="max-w-3xl"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.35 }}
+                className="space-y-6"
               >
-                <p className="text-2xl md:text-4xl font-serif font-thin leading-snug mb-10 text-white/90">
+                <Quote className="w-8 h-8 text-mpl-navy" />
+                <p className="text-base md:text-lg leading-relaxed text-gray-800">
                   "{testimonials[currentIndex].quote}"
                 </p>
-                <div className="flex flex-col items-center gap-2">
-                  <div className="h-px w-12 bg-mpl-lightBlue mb-2"></div>
-                  <p className="text-xl font-medium text-white">
+                <div>
+                  <p className="mt-4 text-sm tracking-[0.22em] uppercase text-mpl-navy">
                     {testimonials[currentIndex].name}
                   </p>
-                  <p className="text-mpl-lightBlue text-sm uppercase tracking-widest">
+                  <p className="text-xs tracking-[0.22em] uppercase text-gray-500 mt-1">
                     {testimonials[currentIndex].role}
                   </p>
                 </div>
-              </motion.div>
+
+                <div className="flex items-center justify-between pt-4">
+                  <div className="flex items-center gap-1 text-mpl-navy">
+                    {Array.from({ length: 5 }).map((_, index) => (
+                      <Star key={index} className="w-4 h-4 fill-current" />
+                    ))}
+                  </div>
+
+                  <div className="flex items-center gap-4">
+                    <button
+                      onClick={prevParams}
+                      className="w-10 h-10 rounded-full border border-mpl-navy flex items-center justify-center hover:bg-mpl-navy hover:text-white transition-all duration-300"
+                      aria-label="Previous testimonial"
+                    >
+                      <ArrowLeft className="w-4 h-4" />
+                    </button>
+                    <button
+                      onClick={nextParams}
+                      className="w-10 h-10 rounded-full border border-mpl-navy flex items-center justify-center hover:bg-mpl-navy hover:text-white transition-all duration-300"
+                      aria-label="Next testimonial"
+                    >
+                      <ArrowRight className="w-4 h-4" />
+                    </button>
+                  </div>
+                </div>
+              </Motion.div>
             </AnimatePresence>
-          </div>
-
-          <div className="flex items-center gap-8 mt-16">
-            <button
-              onClick={prevParams}
-              className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-mpl-navy transition-all duration-300 group"
-            >
-              <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-            </button>
-
-            <div className="flex items-center gap-3">
-              {testimonials.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrentIndex(idx)}
-                  className={`h-2 rounded-full transition-all duration-300 ${idx === currentIndex ? "w-8 bg-mpl-lightBlue" : "w-2 bg-white/20 hover:bg-white/40"}`}
-                />
-              ))}
-            </div>
-
-            <button
-              onClick={nextParams}
-              className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-mpl-navy transition-all duration-300 group"
-            >
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
           </div>
         </div>
       </div>

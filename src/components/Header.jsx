@@ -122,7 +122,7 @@ const Header = () => {
     <header
       className={`fixed w-full z-50 transition-colors duration-300 ${
         isScrolled
-          ? "bg-white shadow-md text-mpl-navy"
+          ? "text-mpl-navy bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60 shadow-md"
           : "bg-transparent text-white"
       }`}
     >
@@ -151,7 +151,9 @@ const Header = () => {
             <img
               src={logo}
               alt="Morales Padia Law logo"
-              className="h-20 md:h-12 lg:h-26 w-auto mx-auto"
+              className={`w-auto mx-auto transition-all duration-300 ${
+                isScrolled ? "h-12 md:h-10 lg:h-20" : "h-20 md:h-16 lg:h-24"
+              }`}
             />
           </Link>
 

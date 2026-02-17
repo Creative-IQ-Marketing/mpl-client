@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 
 const Consultation = () => {
   return (
@@ -8,20 +8,20 @@ const Consultation = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left Column: Text & Contact Info */}
           <div className="pt-4">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-4xl md:text-5xl font-serif text-mpl-navy mb-6">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-mpl-navy mb-6 leading-tight">
                 Let's start the conversation.
               </h2>
               <p className="text-lg text-gray-600 font-light mb-10 max-w-md leading-relaxed">
                 Reach out today for a confidential consultation. We are here to
                 listen and help you move forward.
               </p>
-            </motion.div>
+            </Motion.div>
 
             <div className="space-y-6">
               {[
@@ -51,7 +51,7 @@ const Consultation = () => {
           </div>
 
           {/* Right Column: Clean Form */}
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -121,7 +121,7 @@ const Consultation = () => {
                 <ArrowRight className="w-4 h-4" />
               </button>
             </form>
-          </motion.div>
+          </Motion.div>
         </div>
       </div>
     </section>

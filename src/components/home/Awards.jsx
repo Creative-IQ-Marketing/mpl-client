@@ -1,6 +1,5 @@
 import { Award, Star, Crown, Medal } from "lucide-react";
-import { motion } from "framer-motion";
-const MotionDiv = motion.div;
+import { motion as Motion } from "framer-motion";
 
 const Awards = () => {
   const awards = [
@@ -37,68 +36,55 @@ const Awards = () => {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16 md:mb-24">
+        <div className="text-center mb-10 md:mb-14">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-mpl-navy mb-6 leading-tight">
             Awards & Recognition
           </h2>
           <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
-            Recognized excellence in legal practice and client advocacy
+            Recognized by clients, peers, and independent organizations for
+            excellence in advocacy and service.
           </p>
         </div>
 
-        {/* Awards Grid - Premium Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {awards.map((award, index) => {
-            const IconComponent = award.icon;
-            return (
-              <MotionDiv
-                key={index}
-                className="group relative"
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{
-                  delay: index * 0.06,
-                  type: "spring",
-                  stiffness: 120,
-                  damping: 18,
-                }}
-              >
-                {/* Card Container */}
-                <div className="relative bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-mpl-blue/40 transition-all duration-500 hover:shadow-xl hover:-translate-y-2">
-                  {/* Background Gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-gray-50 z-0" />
-
-                  {/* Glassmorphism Layer */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-md z-0" />
-
-                  {/* Hover Glow Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-mpl-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
-
-                  {/* Content */}
-                  <div className="relative z-10 p-8 lg:p-10 h-full flex flex-col items-center text-center">
-                    {/* Icon Container - Premium Badge */}
-                    <div className="mb-6 p-4 bg-gradient-to-br from-mpl-navy/10 to-mpl-blue/5 rounded-full group-hover:from-mpl-navy/15 group-hover:to-mpl-blue/10 transition-all duration-300">
-                      <IconComponent className="w-8 h-8 text-mpl-navy group-hover:text-mpl-blue transition-colors duration-300 transform group-hover:scale-110 group-hover:rotate-6" />
+        {/* Sliding Awards Row */}
+        <div className="overflow-hidden">
+          <Motion.div
+            className="flex gap-7 md:gap-9"
+            initial={{ x: 0 }}
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          >
+            {[...awards, ...awards].map((award, index) => {
+              const IconComponent = award.icon;
+              return (
+                <div
+                  key={`${award.title}-${index}`}
+                  className="group min-w-[300px] md:min-w-[360px] bg-white/95 backdrop-blur-sm border border-gray-200 rounded-2xl shadow-md px-7 py-6 flex items-center gap-5 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-mpl-blue/40 hover:bg-white"
+                >
+                  <div className="flex-shrink-0">
+                    <div className="w-14 h-14 rounded-full bg-mpl-navy/5 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:bg-mpl-navy/10">
+                      <IconComponent className="w-7 h-7 text-mpl-navy group-hover:text-mpl-blue" />
                     </div>
-
-                    {/* Title */}
-                    <h3 className="font-serif font-bold text-mpl-navy text-lg lg:text-xl mb-2 group-hover:text-mpl-blue transition-colors duration-300">
+                  </div>
+                  <div>
+                    <p className="text-[11px] md:text-xs uppercase tracking-[0.18em] text-gray-500 mb-1">
+                      Recognition
+                    </p>
+                    <p className="font-serif text-mpl-navy text-sm md:text-lg leading-snug">
                       {award.title}
-                    </h3>
-
-                    {/* Year - Subtle */}
-                    <p className="text-gray-500 font-medium text-sm">
+                    </p>
+                    <p className="text-xs md:text-sm text-gray-500 mt-1">
                       {award.year}
                     </p>
-
-                    {/* Accent Line */}
-                    <div className="mt-4 w-12 h-1 bg-gradient-to-r from-transparent via-mpl-blue to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
                   </div>
                 </div>
-              </MotionDiv>
-            );
-          })}
+              );
+            })}
+          </Motion.div>
         </div>
       </div>
     </section>

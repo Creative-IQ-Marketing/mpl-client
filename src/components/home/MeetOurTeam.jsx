@@ -1,4 +1,11 @@
-import { Mail, Linkedin } from "lucide-react";
+import TrishaImg from "../../assets/team/UF9A2215-Edit-Edit.jpg";
+import AidenImg from "../../assets/team/Aiden1 UF9A2286-Edit-2.jpg";
+import DorothyImg from "../../assets/team/Dorothy1 UF9A2316-Edit-2.jpg";
+import AllysonImg from "../../assets/team/Allyson1 UF9A2325-Edit-2.jpg";
+import CameronImg from "../../assets/team/Cameron1 UF9A2310-Edit-2.jpg";
+import VeronicaImg from "../../assets/team/veronica.jpeg";
+import ElenaImg from "../../assets/team/Elena1 UF9A2289-Edit-2.jpg";
+import AlexandraImg from "../../assets/team/Alexandra1 UF9A2272-Edit-2.jpg";
 
 const MeetOurTeam = () => {
   const teamMembers = [
@@ -6,184 +13,145 @@ const MeetOurTeam = () => {
       name: "Trisha Morales Padia",
       role: "Founder & CEO",
       specialty: "Family Law & Estate Planning",
-      image:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60",
+      image: TrishaImg,
       size: "large",
     },
     {
       name: "Aiden Gamble",
       role: "Associate Attorney",
       specialty: "Criminal Defense & Family Law",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60",
+      image: AidenImg,
       size: "medium",
     },
     {
       name: "Dorothy Dominguez",
       role: "Family Law Paralegal",
-      image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60",
+      image: DorothyImg,
       size: "medium",
     },
     {
       name: "Allyson Gilmore",
       role: "Accounting Manager",
-      image:
-        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60",
+      image: AllysonImg,
       size: "small",
     },
     {
       name: "Veronica Ruvalcaba",
       role: "Outreach Coordinator",
-      image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60",
+      image: VeronicaImg,
       size: "small",
     },
     {
       name: "Elena Galaviz",
       role: "Family Law Paralegal",
-      image:
-        "https://images.unsplash.com/photo-1517841905240-472988babdf0?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60",
+      image: ElenaImg,
       size: "large",
     },
     {
       name: "Cameron Ozuna",
       role: "Paralegal/Marketing",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60",
+      image: CameronImg,
       size: "small",
     },
     {
       name: "Alexandra Johnson",
       role: "Client Services Director",
-      image:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60",
+      image: AlexandraImg,
       size: "medium",
     },
   ];
 
-  return (
-    <section className="relative py-24 md:py-32 bg-gradient-to-b from-white via-white to-gray-50 overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-40 left-10 w-96 h-96 bg-mpl-blue/5 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 right-10 w-96 h-96 bg-mpl-navy/3 rounded-full blur-3xl" />
-      </div>
+  const leadMembers = teamMembers.slice(0, 2);
+  const otherMembers = teamMembers.slice(2);
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-16 md:mb-24">
+  return (
+    <section className="py-24 md:py-32 ">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8">
+        <div className="text-center mb-16 md:mb-20">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-mpl-navy mb-4 leading-tight">
             Meet Our Team
           </h2>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            A diverse team of passionate professionals with drive, integrity,
-            and a unique skill driving innovation and excellence in every
-            project.
+          <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto">
+            A team of attorneys and professionals dedicated to protecting your
+            family, your future, and your peace of mind.
           </p>
         </div>
 
-        {/* Circular Grid Layout - Minimalist */}
-        <div className="hidden mb-20 md:mb-28">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 auto-rows-max place-items-center">
-            {teamMembers.map((member, index) => {
-              let sizeClass = "";
-              let gridSpan = "";
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
+          {leadMembers.map((member) => {
+            const bullets =
+              member.name === "Trisha Morales Padia"
+                ? [
+                    "Licensed in Texas",
+                    "Specialized in Family Law & Estate Planning",
+                    "Award-winning legal excellence",
+                  ]
+                : [
+                    "Licensed in Texas",
+                    "Specialized in Criminal Defense & Family Law",
+                    "Strategic advocacy in complex legal matters",
+                  ];
 
-              if (member.size === "large") {
-                sizeClass = "w-48 h-48 md:w-56 md:h-56";
-                gridSpan = "col-span-1 md:col-span-2 md:row-span-2";
-              } else if (member.size === "medium") {
-                sizeClass = "w-40 h-40 md:w-48 md:h-48";
-                gridSpan = "col-span-1 md:col-span-2";
-              } else {
-                sizeClass = "w-32 h-32 md:w-40 md:h-40";
-                gridSpan = "col-span-1";
-              }
-
-              return (
-                <div
-                  key={index}
-                  className={`group ${gridSpan} flex justify-center`}
-                >
-                  <div
-                    className={`${sizeClass} relative rounded-full overflow-hidden border-4 border-white shadow-lg hover:shadow-2xl transition-all duration-500`}
-                  >
-                    {/* Image Container */}
+            return (
+              <div
+                key={member.name}
+                className="bg-white rounded-3xl shadow-xl shadow-mpl-blue/10 border border-mpl-blue/10 p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start"
+              >
+                <div className="flex-shrink-0">
+                  <div className="w-28 h-32 md:w-32 md:h-40 rounded-2xl overflow-hidden border-4 border-mpl-blue/30">
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
-                    />
-
-                    {/* Overlay Gradient on Hover */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                    {/* Hover Info */}
-                    <div className="absolute inset-0 flex flex-col justify-end p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      <p className="font-serif font-bold text-sm md:text-base">
-                        {member.name}
-                      </p>
-                      <p className="text-xs md:text-sm text-gray-200">
-                        {member.role}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Bottom Section - Team Cards */}
-        <div>
-          {" "}
-          {/* Team Cards Grid - Minimalist */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member, index) => (
-              <div key={index} className="group text-center">
-                {/* Circular Image in Cards */}
-                <div className="mb-6 flex justify-center">
-                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-mpl-blue/20 group-hover:border-mpl-blue/60 transition-all duration-500 shadow-md group-hover:shadow-lg">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 </div>
 
-                {/* Info */}
-                <h4 className="font-serif font-bold text-mpl-navy text-lg mb-1 group-hover:text-mpl-blue transition-colors">
-                  {member.name}
-                </h4>
-                <p className="text-mpl-blue font-semibold text-sm mb-3">
-                  {member.role}
-                </p>
-                <p className="text-gray-600 text-sm leading-relaxed mb-5 min-h-12">
-                  {member.specialty}
-                </p>
-
-                {/* Social Links - Minimalist */}
-                <div className="flex items-center justify-center gap-3">
-                  <a
-                    href="#"
-                    className="w-8 h-8 rounded-full bg-mpl-blue/10 flex items-center justify-center text-mpl-navy hover:bg-mpl-blue hover:text-white transition-all duration-300"
-                    title="Email"
-                  >
-                    <Mail size={16} />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-8 h-8 rounded-full bg-mpl-blue/10 flex items-center justify-center text-mpl-navy hover:bg-mpl-blue hover:text-white transition-all duration-300"
-                    title="LinkedIn"
-                  >
-                    <Linkedin size={16} />
-                  </a>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-serif text-mpl-navy mb-1">
+                    {member.name}
+                  </h3>
+                  <p className="text-mpl-blue font-semibold text-sm md:text-base mb-4">
+                    {member.role}
+                  </p>
+                  <ul className="space-y-1.5 text-sm md:text-base text-gray-700">
+                    {bullets.map((item) => (
+                      <li key={item} className="flex gap-2">
+                        <span className="mt-[7px] h-[3px] w-[3px] rounded-full bg-mpl-blue" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-            ))}
-          </div>
+            );
+          })}
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
+          {otherMembers.map((member) => (
+            <div
+              key={member.name}
+              className="bg-white rounded-2xl border border-gray-100 shadow-md p-6 text-center flex flex-col items-center"
+            >
+              <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-mpl-blue/20 mb-4">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h4 className="font-serif font-semibold text-mpl-navy text-base md:text-lg mb-1">
+                {member.name}
+              </h4>
+              <p className="text-mpl-blue text-sm mb-1">{member.role}</p>
+              {member.specialty && (
+                <p className="text-gray-600 text-xs leading-relaxed">
+                  {member.specialty}
+                </p>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </section>
