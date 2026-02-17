@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Phone, Menu, X, ChevronDown } from "lucide-react";
 import {
@@ -17,7 +17,7 @@ function SocialIcon({ label, href, children }) {
       aria-label={label}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center justify-center w-8 h-8 rounded-full text-mpl-navy hover:text-white hover:bg-mpl-blue transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-mpl-lightBlue"
+      className="inline-flex items-center justify-center w-8 h-8 rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-mpl-lightBlue/60 hover:bg-white/10"
     >
       {children}
     </a>
@@ -27,6 +27,7 @@ function SocialIcon({ label, href, children }) {
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
   const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -38,6 +39,19 @@ const Header = () => {
   const toggleDropdown = (index) => {
     setActiveDropdown(activeDropdown === index ? null : index);
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY > 1;
+      setIsScrolled(scrolled);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -105,13 +119,23 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-white shadow-md fixed w-full z-50">
+    <header
+      className={`fixed w-full z-50 transition-colors duration-300 ${
+        isScrolled
+          ? "bg-white shadow-md text-mpl-navy"
+          : "bg-transparent text-white"
+      }`}
+    >
       <div className="container-custom py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <a
               href="tel:7262044044"
-              className="flex items-center text-sm md:text-base text-mpl-navy font-semibold hover:text-mpl-blue transition-colors"
+              className={`flex items-center text-sm md:text-base font-semibold transition-colors ${
+                isScrolled
+                  ? "text-mpl-navy hover:text-mpl-blue"
+                  : "text-white hover:text-white/80"
+              }`}
             >
               <Phone size={18} className="mr-2" />
               (726) 204-4044
@@ -127,11 +151,15 @@ const Header = () => {
             <img
               src={logo}
               alt="Morales Padia Law logo"
-              className="h-15 md:h-12 lg:h-26 w-auto mx-auto"
+              className="h-20 md:h-12 lg:h-26 w-auto mx-auto"
             />
           </Link>
 
-          <div className="hidden md:flex items-center space-x-3">
+          <div
+            className={`hidden md:flex items-center space-x-3 ${
+              isScrolled ? "text-mpl-navy" : "text-white"
+            }`}
+          >
             <SocialIcon label="Facebook" href="https://facebook.com">
               <FaFacebookF className="w-4 h-4" />
             </SocialIcon>
@@ -150,7 +178,9 @@ const Header = () => {
           </div>
 
           <button
-            className="md:hidden text-mpl-navy ml-4"
+            className={`md:hidden ml-4 ${
+              isScrolled ? "text-mpl-navy" : "text-white"
+            }`}
             onClick={toggleMenu}
             aria-label="Toggle navigation menu"
           >
@@ -159,7 +189,13 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="hidden xl:block border-t border-gray-100 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+      <div
+        className={`hidden xl:block ${
+          isScrolled
+            ? "backdrop-blur supports-[backdrop-filter]:bg-white/70"
+            : "border-t border-white/20 bg-transparent"
+        }`}
+      >
         <div className="container-custom">
           <nav
             className="flex items-center justify-center space-x-6"
@@ -171,14 +207,28 @@ const Header = () => {
                 <div className="flex items-center">
                   <Link
                     to={link.path}
-                    className={`text-sm md:text-base font-medium py-3 hover:text-mpl-blue transition-colors relative after:absolute after:left-0 after:bottom-0 after:h-0.5 after:bg-mpl-blue after:w-0 hover:after:w-full after:transition-all ${location.pathname === link.path && !link.children ? "text-mpl-navy font-bold" : "text-gray-700"}`}
+                    className={`text-sm md:text-base font-medium py-3 transition-colors relative after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 hover:after:w-full after:transition-all ${
+                      isScrolled
+                        ? "after:bg-mpl-blue text-gray-700 hover:text-mpl-blue"
+                        : "after:bg-white text-white/80 hover:text-white"
+                    } ${
+                      location.pathname === link.path && !link.children
+                        ? isScrolled
+                          ? "text-mpl-navy font-bold"
+                          : "text-white"
+                        : ""
+                    }`}
                   >
                     {link.name}
                   </Link>
                   {link.children && (
                     <ChevronDown
                       size={16}
-                      className="ml-1 text-gray-400 group-hover:text-mpl-blue transition-colors"
+                      className={`ml-1 transition-colors ${
+                        isScrolled
+                          ? "text-gray-400 group-hover:text-mpl-blue"
+                          : "text-white/60 group-hover:text-white"
+                      }`}
                     />
                   )}
                 </div>
@@ -205,14 +255,18 @@ const Header = () => {
       </div>
 
       {isMobileMenuOpen && (
-        <div className="xl:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg max-h-[80vh] overflow-y-auto">
+        <div className="xl:hidden absolute w-full shadow-lg max-h-[80vh] overflow-y-auto bg-white border-t border-gray-100">
           <div className="container-custom py-4 flex flex-col space-y-2">
             {navLinks.map((link, index) => (
               <div key={index}>
                 <div className="flex justify-between items-center border-b border-gray-50 pb-2">
                   <Link
                     to={link.path}
-                    className={`text-lg font-medium block w-full ${location.pathname === link.path ? "text-mpl-navy" : "text-gray-700"}`}
+                    className={`text-lg font-medium block w-full ${
+                      location.pathname === link.path
+                        ? "text-mpl-navy"
+                        : "text-gray-700"
+                    }`}
                     onClick={!link.children ? closeMenu : undefined}
                   >
                     {link.name}
@@ -223,13 +277,15 @@ const Header = () => {
                         e.preventDefault();
                         toggleDropdown(index);
                       }}
-                      className="p-2 text-gray-500 focus:outline-none"
+                      className="p-2 focus:outline-none text-gray-500"
                       aria-expanded={activeDropdown === index}
                       aria-controls={`submenu-${index}`}
                     >
                       <ChevronDown
                         size={20}
-                        className={`transform transition-transform ${activeDropdown === index ? "rotate-180" : ""}`}
+                        className={`transform transition-transform ${
+                          activeDropdown === index ? "rotate-180" : ""
+                        }`}
                       />
                     </button>
                   )}
@@ -244,7 +300,7 @@ const Header = () => {
                       <Link
                         key={childIndex}
                         to={child.path}
-                        className="block text-gray-600 hover:text-mpl-navy py-1"
+                        className="block py-1 text-gray-600 hover:text-mpl-navy"
                         onClick={closeMenu}
                       >
                         {child.name}
@@ -258,12 +314,12 @@ const Header = () => {
             <div className="border-t border-gray-200 pt-6 flex flex-col space-y-4 mt-4">
               <a
                 href="tel:7262044044"
-                className="flex items-center justify-center text-mpl-navy font-semibold text-lg"
+                className="flex items-center justify-center font-semibold text-lg text-mpl-navy"
               >
                 <Phone size={20} className="mr-2" />
                 (726) 204-4044
               </a>
-              <div className="flex items-center justify-center space-x-3">
+              <div className="flex items-center justify-center space-x-3 text-mpl-navy">
                 <SocialIcon label="Facebook" href="https://facebook.com">
                   <FaFacebookF className="w-4 h-4" />
                 </SocialIcon>

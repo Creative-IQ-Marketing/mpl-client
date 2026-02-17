@@ -1,117 +1,135 @@
-import { Quote, Star } from "lucide-react";
+import { useRef, useState } from "react";
+import { Quote, ArrowLeft, ArrowRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Testimonials = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   const testimonials = [
     {
       name: "Adolph O.",
       quote:
-        "The team was incredibly supportive and knowledgeable throughout my entire case. Highly recommended.",
-      rating: 5,
+        "The team was incredibly supportive and knowledgeable throughout my entire case.",
+      role: "Family Law",
     },
     {
       name: "Ned Boyd",
       quote:
         "Professional, compassionate, and effective. They fought for my rights and won.",
-      rating: 5,
+      role: "Criminal Defense",
     },
     {
       name: "Emily Espinoza",
       quote:
         "I felt heard and understood. They made a difficult process much easier to handle.",
-      rating: 5,
+      role: "Probate Law",
     },
     {
       name: "Kristi Krumbholz",
       quote:
         "Excellent communication and results. I am forever grateful for their help.",
-      rating: 5,
+      role: "Estate Planning",
+    },
+    {
+      name: "Sarah Jenkins",
+      quote:
+        "Morales Padia Law gave me my life back. Their dedication is unmatched in San Antonio.",
+      role: "Divorce Law",
+    },
+    {
+      name: "Michael R.",
+      quote:
+        "Navigating the legal system is scary, but they made it understandable and less intimidating.",
+      role: "DWI Defense",
     },
   ];
 
+  const nextParams = () => {
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevParams = () => {
+    setCurrentIndex(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length,
+    );
+  };
+
   return (
-    <section className="relative py-24 md:py-32 bg-gradient-to-br from-mpl-navy via-mpl-navy to-mpl-blue overflow-hidden">
-      {/* Modern Background Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-40 -left-40 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-mpl-lightBlue/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white/3 rounded-full blur-3xl" />
-      </div>
+    <section className="py-24 bg-mpl-navy text-white relative overflow-hidden">
+      {/* Subtle Background noise to break flat color */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")",
+        }}
+      ></div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-16 md:mb-24">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6 leading-tight">
-            What Clients Say
-          </h2>
-          <p className="text-blue-100 text-lg md:text-xl max-w-3xl mx-auto">
-            Real stories from clients who trusted us with their legal matters
-          </p>
-        </div>
-
-        {/* Testimonials Grid - Staggered Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 auto-rows-max">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className={`group relative ${
-                index === 1 || index === 2 ? "lg:mt-8" : ""
-              } ${index === 3 ? "lg:mt-16" : ""}`}
-            >
-              {/* Card Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent rounded-3xl" />
-
-              {/* Glassmorphic Border */}
-              <div className="absolute inset-0 bg-white/[0.05] rounded-3xl border border-white/20 backdrop-blur-lg group-hover:border-white/40 transition-all duration-500" />
-
-              {/* Hover Glow */}
-              <div className="absolute -inset-0.5 bg-gradient-to-br from-mpl-lightBlue/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl" />
-
-              {/* Content */}
-              <div className="relative p-8 lg:p-10 h-full flex flex-col">
-                {/* Rating Stars */}
-                <div className="flex gap-1 mb-6">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      size={18}
-                      className="text-mpl-lightBlue fill-current"
-                    />
-                  ))}
-                </div>
-
-                {/* Quote Icon */}
-                <Quote className="w-8 h-8 text-white/30 mb-4" />
-
-                {/* Quote Text */}
-                <p className="text-white/90 text-base lg:text-lg leading-relaxed flex-grow mb-6 font-light">
-                  "{testimonial.quote}"
-                </p>
-
-                {/* Divider Line */}
-                <div className="w-12 h-1 bg-gradient-to-r from-mpl-lightBlue to-transparent rounded-full mb-4 group-hover:w-16 transition-all duration-500" />
-
-                {/* Client Name */}
-                <p className="font-serif font-bold text-white text-lg">
-                  {testimonial.name}
-                </p>
-                <p className="text-blue-200 text-sm">Verified Client</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* CTA Section */}
-        <div className="mt-20 lg:mt-24 text-center">
-          <p className="text-blue-100 text-lg mb-6">
-            Ready to experience our legal excellence?
-          </p>
-          <a
-            href="#consultation"
-            className="inline-flex items-center px-8 py-4 bg-white text-mpl-navy font-serif font-bold rounded-full hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1"
+      <div className="max-w-5xl mx-auto px-6 relative z-10">
+        <div className="flex flex-col items-center text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16"
           >
-            Start Your Consultation
-            <span className="ml-2">→</span>
-          </a>
+            <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6 text-mpl-lightBlue">
+              <Quote className="w-5 h-5 fill-current" />
+            </div>
+            <h2 className="text-3xl md:text-5xl font-serif">Client Stories</h2>
+          </motion.div>
+
+          <div className="w-full relative min-h-[300px] flex items-center justify-center">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentIndex}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.4 }}
+                className="max-w-3xl"
+              >
+                <p className="text-2xl md:text-4xl font-serif font-thin leading-snug mb-10 text-white/90">
+                  "{testimonials[currentIndex].quote}"
+                </p>
+                <div className="flex flex-col items-center gap-2">
+                  <div className="h-px w-12 bg-mpl-lightBlue mb-2"></div>
+                  <p className="text-xl font-medium text-white">
+                    {testimonials[currentIndex].name}
+                  </p>
+                  <p className="text-mpl-lightBlue text-sm uppercase tracking-widest">
+                    {testimonials[currentIndex].role}
+                  </p>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          <div className="flex items-center gap-8 mt-16">
+            <button
+              onClick={prevParams}
+              className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-mpl-navy transition-all duration-300 group"
+            >
+              <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+            </button>
+
+            <div className="flex items-center gap-3">
+              {testimonials.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentIndex(idx)}
+                  className={`h-2 rounded-full transition-all duration-300 ${idx === currentIndex ? "w-8 bg-mpl-lightBlue" : "w-2 bg-white/20 hover:bg-white/40"}`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={nextParams}
+              className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-mpl-navy transition-all duration-300 group"
+            >
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
         </div>
       </div>
     </section>

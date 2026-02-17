@@ -4,138 +4,113 @@ import {
   FileText,
   Download,
   ArrowRight,
+  Maximize2,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const NewsAndResources = () => {
-  const resources = [
-    {
-      title: "Family Blindsided",
-      description:
-        "Navigate unexpected family challenges with practical guidance",
-      icon: BookOpen,
-    },
-    {
-      title: "Divorce Guide",
-      description:
-        "Comprehensive roadmap for divorce proceedings and settlements",
-      icon: FileText,
-    },
-    {
-      title: "Estate Planning Guide",
-      description:
-        "Secure your legacy with proper estate organization strategies",
-      icon: Download,
-    },
-  ];
-
   return (
-    <section className="relative py-24 md:py-32 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 right-10 w-96 h-96 bg-mpl-blue/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-mpl-navy/3 rounded-full blur-3xl" />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16">
-          {/* Featured News - Premium Card */}
-          <div>
-            <div className="mb-8">
-              <h2 className="text-4xl md:text-5xl font-serif font-bold text-mpl-navy mb-4 leading-tight">
-                Featured in the News
-              </h2>
-              <p className="text-gray-600 text-lg">
-                Stay informed with our latest legal insights and media features
-              </p>
+    <section className="relative py-32 bg-gray-50 overflow-hidden">
+      <div className="max-w-[95rem] mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 min-h-[800px]">
+          {/* Big News Feature - Takes 7 Cols */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="lg:col-span-7 relative h-[600px] lg:h-auto rounded-[3rem] overflow-hidden group shadow-2xl"
+          >
+            <div className="absolute inset-0 bg-mpl-navy z-0">
+              {/* Placeholder for video thumbnail image */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-mpl-navy/50 to-transparent z-10" />
             </div>
 
-            <div className="group relative rounded-3xl overflow-hidden h-full">
-              {/* Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-mpl-blue/8 to-mpl-lightBlue/5 z-0" />
+            <div className="relative z-20 h-full flex flex-col justify-end p-10 md:p-16">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white text-sm font-medium mb-6 w-fit border border-white/20">
+                <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                Live Updates
+              </div>
 
-              {/* Card Container */}
-              <div className="relative bg-white/80 backdrop-blur-sm rounded-3xl border border-mpl-blue/30 p-10 lg:p-12 hover:border-mpl-blue/60 hover:shadow-2xl transition-all duration-500 h-full flex flex-col items-center justify-center text-center">
-                {/* Icon Circle */}
-                <div className="mb-8 p-6 bg-gradient-to-br from-mpl-blue to-mpl-lightBlue rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
-                  <PlayCircle className="w-10 h-10 text-white" />
-                </div>
+              <h3 className="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-6 leading-[0.95]">
+                Leading the Conversation <br /> on{" "}
+                <span className="italic text-mpl-lightBlue">Family Law.</span>
+              </h3>
 
-                {/* Content */}
-                <h3 className="text-2xl lg:text-3xl font-serif font-bold text-mpl-navy mb-4">
-                  SA Living Interview
-                </h3>
-                <p className="text-gray-600 text-base lg:text-lg leading-relaxed mb-8 flex-grow">
-                  Watch our exclusive interview discussing family law trends and
-                  recent developments affecting San Antonio families.
-                </p>
-
-                {/* CTA Button */}
-                <button className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-mpl-blue to-mpl-lightBlue text-white font-semibold rounded-full hover:from-mpl-navy hover:to-mpl-blue transition-all duration-300 shadow-lg hover:shadow-xl group/btn">
-                  Watch Interview
-                  <ArrowRight className="w-5 h-5 ml-2 transform group-hover/btn:translate-x-1 transition-transform" />
+              <div className="flex flex-wrap gap-6 items-center">
+                <button className="h-20 w-20 rounded-full bg-white text-mpl-navy flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                  <PlayCircle className="w-8 h-8 fill-current" />
                 </button>
+                <p className="text-xl text-white/80 max-w-md border-l border-white/30 pl-6">
+                  Watch our exclusive interview on SA Living discussing recent
+                  legislative changes.
+                </p>
               </div>
             </div>
-          </div>
 
-          {/* Resources Section */}
-          <div>
-            <div className="mb-8">
-              <h2 className="text-4xl md:text-5xl font-serif font-bold text-mpl-navy mb-4 leading-tight">
-                Free Legal Resources
+            {/* Giant decorative text */}
+            <div className="absolute -top-10 -right-10 text-[15rem] font-bold text-white/5 pointer-events-none select-none overflow-hidden">
+              NEWS
+            </div>
+          </motion.div>
+
+          {/* Resources Stack - Takes 5 Cols */}
+          <div className="lg:col-span-5 flex flex-col gap-6">
+            <div className="mb-8 p-4">
+              <h2 className="text-5xl font-serif text-mpl-navy mb-4">
+                Empower Yourself.
               </h2>
-              <p className="text-gray-600 text-lg">
-                Download guides to understand your legal options better
+              <p className="text-gray-500 text-lg">
+                Knowledge is your first line of defense.
               </p>
             </div>
 
-            <div className="space-y-5">
-              {resources.map((resource, index) => {
-                const IconComponent = resource.icon;
-                return (
+            {[
+              {
+                title: "Divorce Guide",
+                icon: BookOpen,
+                color: "bg-mpl-lightBlue/10 text-mpl-blue",
+              },
+              {
+                title: "Estate Planning",
+                icon: FileText,
+                color: "bg-mpl-navy/10 text-mpl-navy",
+              },
+              {
+                title: "Probate Checklist",
+                icon: Download,
+                color: "bg-mpl-blue/10 text-mpl-blue",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.15 }}
+                whileHover={{ scale: 1.02, x: -10 }}
+                className="flex-1 bg-white rounded-[2.5rem] p-8 flex items-center justify-between shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group cursor-pointer"
+              >
+                <div className="flex items-center gap-6">
                   <div
-                    key={index}
-                    className="group relative rounded-2xl overflow-hidden"
+                    className={`w-16 h-16 rounded-2xl ${item.color} flex items-center justify-center text-xl`}
                   >
-                    {/* Background Animation */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-mpl-blue/5 to-mpl-navy/5 group-hover:from-mpl-blue/10 group-hover:to-mpl-navy/10 transition-all duration-500 z-0" />
-
-                    {/* Card */}
-                    <div className="relative bg-white rounded-2xl border border-gray-200 group-hover:border-mpl-blue/40 hover:shadow-lg transition-all duration-300 p-6 lg:p-7 flex items-start gap-5">
-                      {/* Icon Container */}
-                      <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-mpl-navy/10 to-mpl-blue/5 flex items-center justify-center group-hover:from-mpl-navy/20 group-hover:to-mpl-blue/10 transition-all duration-300">
-                        <IconComponent className="w-7 h-7 text-mpl-navy group-hover:text-mpl-blue transition-colors" />
-                      </div>
-
-                      {/* Content */}
-                      <div className="flex-grow">
-                        <h4 className="font-serif font-bold text-mpl-navy text-lg mb-1 group-hover:text-mpl-blue transition-colors">
-                          {resource.title}
-                        </h4>
-                        <p className="text-gray-600 text-sm leading-relaxed">
-                          {resource.description}
-                        </p>
-                      </div>
-
-                      {/* CTA */}
-                      <button className="flex-shrink-0 w-10 h-10 rounded-full bg-mpl-blue/10 flex items-center justify-center text-mpl-navy group-hover:bg-mpl-blue group-hover:text-white transition-all duration-300 hover:shadow-md">
-                        <Download className="w-5 h-5" />
-                      </button>
-                    </div>
+                    <item.icon className="w-8 h-8" />
                   </div>
-                );
-              })}
-            </div>
-
-            {/* Additional Info */}
-            <div className="mt-8 p-6 lg:p-8 bg-gradient-to-br from-mpl-navy/5 to-mpl-blue/5 rounded-2xl border border-mpl-blue/20">
-              <p className="text-gray-700 text-sm">
-                <span className="font-semibold text-mpl-navy">
-                  All resources
-                </span>{" "}
-                are free to download and share. No registration required.
-              </p>
-            </div>
+                  <div>
+                    <h4 className="text-2xl font-serif text-mpl-navy mb-1 group-hover:text-mpl-blue transition-colors">
+                      {item.title}
+                    </h4>
+                    <p className="text-gray-400 text-sm font-medium uppercase tracking-wider">
+                      Free PDF Download
+                    </p>
+                  </div>
+                </div>
+                <div className="w-12 h-12 rounded-full border border-gray-100 flex items-center justify-center text-gray-400 group-hover:bg-mpl-navy group-hover:text-white group-hover:border-mpl-navy transition-all">
+                  <Download className="w-5 h-5" />
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
