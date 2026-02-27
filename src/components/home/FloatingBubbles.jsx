@@ -1,101 +1,92 @@
 import { useEffect, useState } from "react";
-import { motion as Motion } from "framer-motion";
-import { Scale, Gavel } from "lucide-react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 const FloatingBubbles = () => {
-  const bubbleCount = 12;
-
+  // Premium, subtle floating orbs
   const [bubbles] = useState(() =>
-    Array.from({ length: bubbleCount }).map((_, index) => ({
-      id: index,
-      top: 5 + Math.random() * 90,
-      left: 5 + Math.random() * 90,
-      size: 26 + Math.random() * 18,
-      icon: index % 2 === 0 ? "scale" : "gavel",
-      duration: 6 + Math.random() * 4,
-    })),
+    Array.from({ length: 5 }).map((_, i) => ({
+      id: i,
+      left: Math.random() * 100,
+      top: Math.random() * 100,
+      size: 300 + Math.random() * 200, // Large, ambient
+      color: i % 3 === 0 ? "bg-mpl-navy" : i % 3 === 1 ? "bg-mpl-blue" : "bg-mpl-lightBlue",
+      duration: 20 + Math.random() * 10,
+      delay: Math.random() * 5,
+    }))
   );
 
-  const [offsets, setOffsets] = useState(() =>
-    Array.from({ length: bubbleCount }).map(() => ({ dx: 0, dy: 0 })),
-  );
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
 
   useEffect(() => {
-    const handleMove = (event) => {
-      const { innerWidth, innerHeight } = window;
-      const mouseX = event.clientX;
-      const mouseY = event.clientY;
-      const threshold = 140;
-      const maxPush = 40;
-
-      setOffsets(
-        bubbles.map((bubble) => {
-          const bubbleX = (bubble.left / 100) * innerWidth;
-          const bubbleY = (bubble.top / 100) * innerHeight;
-          const dx = bubbleX - mouseX;
-          const dy = bubbleY - mouseY;
-          const distance = Math.sqrt(dx * dx + dy * dy) || 0.001;
-
-          if (distance > threshold) {
-            return { dx: 0, dy: 0 };
-          }
-
-          const force = ((threshold - distance) / threshold) * maxPush;
-          const nx = dx / distance;
-          const ny = dy / distance;
-
-          return { dx: nx * force, dy: ny * force };
-        }),
-      );
+    const handleMove = (e) => {
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
     };
-
-    window.addEventListener("pointermove", handleMove);
-    return () => window.removeEventListener("pointermove", handleMove);
-  }, [bubbles]);
+    window.addEventListener("mousemove", handleMove);
+    return () => window.removeEventListener("mousemove", handleMove);
+  }, [mouseX, mouseY]);
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
-      {bubbles.map((bubble, index) => {
-        const offset = offsets[index] || { dx: 0, dy: 0 };
-        const Icon = bubble.icon === "scale" ? Scale : Gavel;
-
-        return (
-          <div
-            key={bubble.id}
-            style={{
-              position: "absolute",
-              top: `${bubble.top}%`,
-              left: `${bubble.left}%`,
-              transform: `translate(-50%, -50%) translate(${offset.dx}px, ${offset.dy}px)`,
-            }}
-          >
-            <Motion.div
-              className="rounded-full bg-mpl-navy/5 border border-mpl-navy/20 flex items-center justify-center text-mpl-navy/70 shadow-sm"
-              style={{
-                width: bubble.size,
-                height: bubble.size,
-              }}
-              initial={{
-                rotate: 0,
-                scale: 1,
-              }}
-              animate={{
-                rotate: [0, 25, -25, 10, -10, 0],
-                scale: [1, 1.15, 0.9, 1.1, 0.95, 1],
-              }}
-              transition={{
-                duration: bubble.duration,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            >
-              <Icon className="w-3 h-3" />
-            </Motion.div>
-          </div>
-        );
-      })}
+    <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        {/* Background base */}
+        <div className="absolute inset-0 bg-gray-50/30" />
+        
+        {bubbles.map((bubble, i) => (
+            <Bubble 
+                key={bubble.id} 
+                {...bubble} 
+                mouseX={mouseX} 
+                mouseY={mouseY} 
+                index={i}
+            />
+        ))}
+        
+        {/* Glass overlay for texture */}
+        <div className="absolute inset-0 backdrop-blur-[1px] bg-white/10" />
     </div>
   );
 };
+
+const Bubble = ({ left, top, size, color, duration, delay, mouseX, mouseY, index }) => {
+    const depth = (index + 1) * 0.01; // Very subtle parallax
+    
+    // Smooth mouse follow
+    const x = useTransform(mouseX, (value) => (value - window.innerWidth / 2) * depth);
+    const y = useTransform(mouseY, (value) => (value - window.innerHeight / 2) * depth);
+    
+    const springConfig = { damping: 100, stiffness: 200, mass: 3 }; // Heavy, smooth feel
+    const springX = useSpring(x, springConfig);
+    const springY = useSpring(y, springConfig);
+
+    return (
+        <motion.div
+            className={`absolute rounded-full ${color} mix-blend-multiply filter blur-[80px] opacity-[0.08]`}
+            style={{
+                left: `${left}%`,
+                top: `${top}%`,
+                width: size,
+                height: size,
+                x: springX, // Parallax movement
+                y: springY,
+            }}
+        >
+             <motion.div 
+                className="w-full h-full rounded-full"
+                animate={{
+                    x: [0, 50, -30, 0],
+                    y: [0, -40, 30, 0],
+                    scale: [1, 1.1, 0.9, 1],
+                }}
+                transition={{
+                    duration: duration,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: delay,
+                }}
+             />
+        </motion.div>
+    );
+}
 
 export default FloatingBubbles;

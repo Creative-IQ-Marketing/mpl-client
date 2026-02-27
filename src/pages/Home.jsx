@@ -7,13 +7,11 @@ import MeetOurTeam from "../components/home/MeetOurTeam";
 import Testimonials from "../components/home/Testimonials";
 import NewsAndResources from "../components/home/NewsAndResources";
 import Consultation from "../components/home/Consultation";
-import FloatingBubbles from "../components/home/FloatingBubbles";
 import Achievements from "../components/home/Achievements";
 
 const Home = () => {
   return (
     <div className="relative">
-      <FloatingBubbles />
       <div className="relative z-10">
         <Hero />
         <PracticeAreas />

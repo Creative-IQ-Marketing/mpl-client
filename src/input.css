@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400..700;1,400..700&family=Playfair+Display:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
 
 @theme {
   --color-mpl-navy: #234374;

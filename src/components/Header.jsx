@@ -29,6 +29,7 @@ const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const isHome = location.pathname === "/";
 
   const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
   const closeMenu = () => {
@@ -57,11 +58,10 @@ const Header = () => {
     { name: "Home", path: "/" },
     {
       name: "About",
-      path: "/about",
+      path: "/firm-overview",
       children: [
-        { name: "Firm Overview", path: "/about" },
-        { name: "Our Team", path: "/about#team" },
-        { name: "Mission", path: "/about#mission" },
+        { name: "Firm Overview", path: "/firm-overview" },
+        { name: "Testimonials", path: "/testimonials" },
       ],
     },
     {
@@ -115,15 +115,17 @@ const Header = () => {
         { name: "Forms", path: "#" },
       ],
     },
-    { name: "Contact", path: "#consultation" },
+    { name: "Contact", path: "/contact" },
   ];
 
   return (
     <header
-      className={`fixed w-full z-50 transition-colors duration-300 ${
-        isScrolled
-          ? "text-mpl-navy bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60 shadow-md"
-          : "bg-transparent text-white"
+      className={`fixed top-0 left-0 right-0 w-full z-50 transition-colors duration-300 ${
+        isHome
+          ? isScrolled
+            ? "text-mpl-navy bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60 shadow-md"
+            : "bg-transparent text-white"
+          : "text-mpl-navy bg-white shadow-md"
       }`}
     >
       <div className="container-custom py-3">
@@ -132,9 +134,11 @@ const Header = () => {
             <a
               href="tel:7262044044"
               className={`flex items-center text-sm md:text-base font-semibold transition-colors ${
-                isScrolled
-                  ? "text-mpl-navy hover:text-mpl-blue"
-                  : "text-white hover:text-white/80"
+                isHome
+                  ? isScrolled
+                    ? "text-mpl-navy hover:text-mpl-blue"
+                    : "text-white hover:text-white/80"
+                  : "text-mpl-navy hover:text-mpl-blue"
               }`}
             >
               <Phone size={18} className="mr-2" />
@@ -152,14 +156,22 @@ const Header = () => {
               src={logo}
               alt="Morales Padia Law logo"
               className={`w-auto mx-auto transition-all duration-300 ${
-                isScrolled ? "h-12 md:h-10 lg:h-20" : "h-20 md:h-16 lg:h-24"
+                isHome
+                  ? isScrolled
+                    ? "h-12 md:h-10 lg:h-20"
+                    : "h-20 md:h-16 lg:h-24"
+                  : "h-12 md:h-10 lg:h-20"
               }`}
             />
           </Link>
 
           <div
             className={`hidden md:flex items-center space-x-3 ${
-              isScrolled ? "text-mpl-navy" : "text-white"
+              isHome
+                ? isScrolled
+                  ? "text-mpl-navy"
+                  : "text-white"
+                : "text-mpl-navy"
             }`}
           >
             <SocialIcon label="Facebook" href="https://facebook.com">
@@ -181,7 +193,11 @@ const Header = () => {
 
           <button
             className={`md:hidden ml-4 ${
-              isScrolled ? "text-mpl-navy" : "text-white"
+              isHome
+                ? isScrolled
+                  ? "text-mpl-navy"
+                  : "text-white"
+                : "text-mpl-navy"
             }`}
             onClick={toggleMenu}
             aria-label="Toggle navigation menu"
@@ -193,9 +209,11 @@ const Header = () => {
 
       <div
         className={`hidden xl:block ${
-          isScrolled
-            ? "backdrop-blur supports-[backdrop-filter]:bg-white/70"
-            : "border-t border-white/20 bg-transparent"
+          isHome
+            ? isScrolled
+              ? "backdrop-blur supports-[backdrop-filter]:bg-white/70"
+              : "border-t border-white/20 bg-transparent"
+            : ""
         }`}
       >
         <div className="container-custom">
@@ -210,14 +228,18 @@ const Header = () => {
                   <Link
                     to={link.path}
                     className={`text-sm md:text-base font-medium py-3 transition-colors relative after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 hover:after:w-full after:transition-all ${
-                      isScrolled
-                        ? "after:bg-mpl-blue text-gray-700 hover:text-mpl-blue"
-                        : "after:bg-white text-white/80 hover:text-white"
+                      isHome
+                        ? isScrolled
+                          ? "after:bg-mpl-blue text-gray-700 hover:text-mpl-blue"
+                          : "after:bg-white text-white/80 hover:text-white"
+                        : "after:bg-mpl-blue text-mpl-navy hover:text-mpl-blue"
                     } ${
                       location.pathname === link.path && !link.children
-                        ? isScrolled
-                          ? "text-mpl-navy font-bold"
-                          : "text-white"
+                        ? isHome
+                          ? isScrolled
+                            ? "text-mpl-navy font-bold"
+                            : "text-white"
+                          : "text-mpl-navy font-bold"
                         : ""
                     }`}
                   >
@@ -227,9 +249,11 @@ const Header = () => {
                     <ChevronDown
                       size={16}
                       className={`ml-1 transition-colors ${
-                        isScrolled
-                          ? "text-gray-400 group-hover:text-mpl-blue"
-                          : "text-white/60 group-hover:text-white"
+                        isHome
+                          ? isScrolled
+                            ? "text-gray-400 group-hover:text-mpl-blue"
+                            : "text-white/60 group-hover:text-white"
+                          : "text-gray-400 group-hover:text-mpl-blue"
                       }`}
                     />
                   )}
