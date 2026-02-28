@@ -9,6 +9,7 @@ import {
   FaYoutube,
 } from "react-icons/fa6";
 import logo from "../assets/mpl_logo.png";
+import { teamMembers } from "../data/team";
 
 function SocialIcon({ label, href, children }) {
   return (
@@ -67,18 +68,29 @@ const Header = () => {
     {
       name: "Team",
       path: "/about",
-      children: [
-        { name: "Trisha Morales Padia", path: "/about" },
-        { name: "Aiden Gamble", path: "/about" },
-      ],
+      children: (teamMembers || []).map((member) => ({
+        name: member.name,
+        path: `/team/${member.id}`,
+      })),
     },
     {
       name: "Family Law",
-      path: "/services",
+      path: "/family-law",
       children: [
-        { name: "Divorce", path: "/services#family-law" },
-        { name: "Child Custody", path: "/services#family-law" },
-        { name: "Adoption", path: "/services#family-law" },
+        { name: "Family Attorney", path: "/family-law" },
+        { name: "Uncontested Divorce", path: "/uncontested-divorce" },
+        { name: "Uncontested Flat Fee Divorce", path: "/uncontested-divorce" },
+        { name: "Contested Divorce", path: "/contested-divorce" },
+        { name: "Child Custody", path: "/child-custody" },
+        { name: "Child Support", path: "/child-support" },
+        { name: "Adoption", path: "/adoption" },
+        { name: "Name Change", path: "/name-change" },
+        { name: "Modification of Previous Order", path: "/family-law" },
+        { name: "Enforcement", path: "/family-law" },
+        { name: "Property Division", path: "/family-law" },
+        { name: "Spousal Maintenance", path: "/family-law" },
+        { name: "Prenuptial Agreement", path: "/family-law" },
+        { name: "Postnuptial Agreement", path: "/family-law" },
       ],
     },
     {
@@ -260,7 +272,7 @@ const Header = () => {
                 </div>
 
                 {link.children && (
-                  <div className="absolute left-1/2 -translate-x-1/2 mt-0 w-56 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top border border-gray-100 z-50 translate-y-2 group-hover:translate-y-0">
+                  <div className="absolute left-1/2 -translate-x-1/2 mt-0 w-56 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top border border-gray-100 z-50 translate-y-2 group-hover:translate-y-0 max-h-[70vh] overflow-y-auto">
                     <div className="py-2">
                       {link.children.map((child, childIndex) => (
                         <Link
