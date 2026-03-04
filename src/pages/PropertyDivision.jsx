@@ -1,24 +1,25 @@
 import React from "react";
-import { motion as Motion } from "framer-motion";
+import { motion } from "framer-motion";
 import {
-  Users,
+  Home,
+  Coins,
   Building2,
-  Heart,
-  FileText,
-  ShieldCheck,
+  Car,
+  BarChart3,
   Scale,
-  Baby,
-  UserPlus,
-  UsersRound,
+  Gem,
+  FileText,
   Phone,
   MapPin,
   Mail,
-  ArrowRight,
+  Lightbulb,
+  CreditCard,
+  Briefcase
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import ConsultationForm from "../components/ConsultationForm";
 
-const Adoption = () => {
+const PropertyDivision = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       <HeroSection />
@@ -36,25 +37,24 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-white pt-20">
       <div className="container-custom relative z-10 flex flex-col items-center text-center">
-        <Motion.div
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="max-w-4xl"
         >
           <div className="inline-block px-4 py-1.5 bg-mpl-blue/10 text-mpl-blue rounded-full text-sm font-bold tracking-wider mb-6 uppercase border border-mpl-blue/20">
-            Building Families Through Legal Adoption
+            Fair Division of Marital Assets and Debts
           </div>
           <h1 className="text-5xl md:text-7xl font-serif font-bold text-mpl-navy mb-8 leading-tight">
-            Adoption <br />
+            Property Division <br />
             <span className="text-mpl-blue italic">Attorney</span>
           </h1>
           <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Adoption is one of the most rewarding legal processes, creating new
-            families and providing children with loving homes. Our experienced
-            San Antonio adoption attorneys guide families through all types of
-            adoptions, ensuring the process is completed correctly and
-            efficiently while protecting everyone's rights.
+            Property division is often one of the most complex aspects of divorce.
+            Our experienced San Antonio property division attorneys help ensure
+            fair and equitable distribution of marital assets, debts, and property
+            according to Texas community property laws.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -71,10 +71,9 @@ const HeroSection = () => {
               Call (726) 204-4044
             </a>
           </div>
-        </Motion.div>
+        </motion.div>
       </div>
 
-      {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-mpl-blue/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-mpl-gold/5 rounded-full blur-3xl"></div>
@@ -86,34 +85,34 @@ const HeroSection = () => {
 const WhyChooseSection = () => {
   const features = [
     {
-      icon: Users,
-      title: "Step-Parent Adoptions",
-      desc: "We help step-parents legally adopt their step-children, creating stronger family bonds and legal relationships.",
+      icon: Home,
+      title: "Real Estate Division",
+      desc: "We help divide marital homes, investment properties, and other real estate assets fairly and efficiently.",
+    },
+    {
+      icon: Coins,
+      title: "Financial Assets",
+      desc: "We assist with dividing bank accounts, investments, retirement accounts, and other financial assets.",
     },
     {
       icon: Building2,
-      title: "Agency Adoptions",
-      desc: "We work with adoption agencies to ensure all legal requirements are met for agency-facilitated adoptions.",
+      title: "Business Interests",
+      desc: "We handle complex business valuations and division of business interests, partnerships, and professional practices.",
     },
     {
-      icon: Heart,
-      title: "Private Adoptions",
-      desc: "We handle private adoption arrangements between birth parents and adoptive parents, ensuring legal compliance.",
+      icon: Car,
+      title: "Personal Property",
+      desc: "We help divide vehicles, furniture, jewelry, artwork, and other personal property items.",
     },
     {
-      icon: FileText,
-      title: "Legal Documentation",
-      desc: "We prepare all necessary legal documents and ensure compliance with Texas adoption laws and procedures.",
-    },
-    {
-      icon: ShieldCheck,
-      title: "Rights Protection",
-      desc: "We protect the rights of all parties involved, including birth parents, adoptive parents, and children.",
+      icon: BarChart3,
+      title: "Asset Valuation",
+      desc: "We work with financial experts to ensure accurate valuation of all marital assets and property.",
     },
     {
       icon: Scale,
-      title: "Court Representation",
-      desc: "We represent you in court proceedings and ensure all legal requirements are met for final adoption orders.",
+      title: "Debt Division",
+      desc: "We help fairly divide marital debts, including credit cards, loans, mortgages, and other obligations.",
     },
   ];
 
@@ -122,17 +121,17 @@ const WhyChooseSection = () => {
       <div className="container-custom">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-mpl-navy mb-6">
-            Why Choose Our Adoption Services?
+            Why Choose Our Property Division Services?
           </h2>
           <p className="text-lg text-gray-600">
-            We provide compassionate and comprehensive adoption representation for
-            all types of adoptions.
+            We provide comprehensive property division representation to ensure
+            fair distribution of assets and debts.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <Motion.div
+            <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -149,7 +148,7 @@ const WhyChooseSection = () => {
               <p className="text-gray-600 leading-relaxed text-sm">
                 {feature.desc}
               </p>
-            </Motion.div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -161,33 +160,33 @@ const ProcessSection = () => {
   const steps = [
     {
       id: 1,
-      title: "Initial Consultation",
-      desc: "We review your adoption situation and determine the best approach for your specific type of adoption.",
+      title: "Asset Inventory",
+      desc: "We identify and catalog all marital assets, including real estate, financial accounts, and personal property.",
     },
     {
       id: 2,
-      title: "Documentation Preparation",
-      desc: "We prepare all necessary legal documents including petitions, consents, and supporting documentation.",
+      title: "Asset Valuation",
+      desc: "We work with experts to determine the fair market value of all marital assets and property.",
     },
     {
       id: 3,
-      title: "Background Checks",
-      desc: "We ensure all required background checks and home studies are completed according to Texas law.",
+      title: "Debt Assessment",
+      desc: "We identify and assess all marital debts and determine how they should be divided between spouses.",
     },
     {
       id: 4,
-      title: "Filing Petition",
-      desc: "We file the adoption petition with the appropriate court and serve all required parties.",
+      title: "Division Strategy",
+      desc: "We develop a fair division strategy that considers Texas community property laws and your specific circumstances.",
     },
     {
       id: 5,
-      title: "Court Proceedings",
-      desc: "We represent you in court hearings and ensure all legal requirements are met for the adoption.",
+      title: "Negotiation",
+      desc: "We negotiate with the other party to reach a fair property division agreement when possible.",
     },
     {
       id: 6,
-      title: "Final Decree",
-      desc: "We obtain the final adoption decree, legally establishing the parent-child relationship.",
+      title: "Court Resolution",
+      desc: "If negotiation fails, we present your case in court to ensure fair property division according to Texas law.",
     },
   ];
 
@@ -196,16 +195,17 @@ const ProcessSection = () => {
       <div className="container-custom">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-mpl-navy mb-6">
-            The Adoption Process
+            The Property Division Process
           </h2>
           <p className="text-lg text-gray-600">
-            Understanding the steps involved in adoption proceedings in Texas.
+            Understanding the steps involved in property division during divorce
+            proceedings.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {steps.map((step, index) => (
-            <Motion.div
+            <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -222,7 +222,7 @@ const ProcessSection = () => {
               <p className="text-gray-600 leading-relaxed text-sm">
                 {step.desc}
               </p>
-            </Motion.div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -233,34 +233,34 @@ const ProcessSection = () => {
 const TypesSection = () => {
   const types = [
     {
-      icon: Users,
-      title: "Step-Parent Adoption",
-      desc: "Legal adoption of step-children by step-parents, creating permanent legal relationships and family bonds.",
+      icon: Home,
+      title: "Real Estate",
+      desc: "Marital homes, investment properties, vacation homes, and other real estate assets requiring fair division.",
+    },
+    {
+      icon: Coins,
+      title: "Financial Accounts",
+      desc: "Bank accounts, investment accounts, retirement accounts, and other financial assets accumulated during marriage.",
     },
     {
       icon: Building2,
-      title: "Agency Adoption",
-      desc: "Adoptions facilitated through licensed adoption agencies, ensuring compliance with all agency and legal requirements.",
+      title: "Business Assets",
+      desc: "Business interests, partnerships, professional practices, and other business-related assets.",
     },
     {
-      icon: Heart,
-      title: "Private Adoption",
-      desc: "Direct adoptions between birth parents and adoptive parents, handled with careful attention to legal requirements.",
+      icon: Car,
+      title: "Vehicles",
+      desc: "Cars, trucks, motorcycles, boats, and other vehicles owned by the marital estate.",
     },
     {
-      icon: Baby,
-      title: "Infant Adoption",
-      desc: "Adoption of newborns and infants, ensuring all legal requirements are met for the protection of all parties.",
+      icon: Gem,
+      title: "Personal Property",
+      desc: "Furniture, jewelry, artwork, collectibles, and other personal property items.",
     },
     {
-      icon: UserPlus,
-      title: "Older Child Adoption",
-      desc: "Adoption of older children, including those in foster care, with special attention to their unique needs and circumstances.",
-    },
-    {
-      icon: UsersRound,
-      title: "Relative Adoption",
-      desc: "Adoption by relatives, including grandparents, aunts, uncles, and other family members, ensuring legal family relationships.",
+      icon: FileText,
+      title: "Intellectual Property",
+      desc: "Patents, trademarks, copyrights, and other intellectual property rights acquired during marriage.",
     },
   ];
 
@@ -269,17 +269,17 @@ const TypesSection = () => {
       <div className="container-custom">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-mpl-navy mb-6">
-            Types of Adoptions We Handle
+            Types of Property We Handle
           </h2>
           <p className="text-lg text-gray-600">
-            Comprehensive adoption representation for all types of adoption
-            situations.
+            Comprehensive property division representation for all types of marital
+            assets and debts.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {types.map((type, index) => (
-            <Motion.div
+            <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -300,7 +300,7 @@ const TypesSection = () => {
                   {type.desc}
                 </p>
               </div>
-            </Motion.div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -310,36 +310,32 @@ const TypesSection = () => {
 
 const CTABanner = () => {
   return (
-    <section className="py-12 bg-white">
-      <div className="container-custom">
-        <div className="bg-mpl-blue rounded-3xl p-12 text-center relative overflow-hidden shadow-xl">
-          <div className="absolute inset-0 bg-mpl-navy/20 mix-blend-multiply"></div>
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-          
-          <div className="relative z-10 max-w-4xl mx-auto text-white">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
-              Ready to Start Your Adoption Journey?
-            </h2>
-            <p className="text-xl text-white/90 mb-10">
-              Let us help you build your family through legal adoption. Contact
-              our experienced San Antonio adoption attorneys today.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
-                className="bg-white text-mpl-blue px-8 py-4 rounded-full font-bold shadow-lg hover:bg-gray-100 transition-all transform hover:-translate-y-1"
-              >
-                Schedule Consultation
-              </Link>
-              <a
-                href="tel:7262044044"
-                className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white/10 transition-all flex items-center justify-center gap-2"
-              >
-                <Phone size={20} />
-                Call (726) 204-4044
-              </a>
-            </div>
-          </div>
+    <section className="bg-mpl-blue py-20 relative overflow-hidden">
+      <div className="absolute inset-0 bg-mpl-navy/20 mix-blend-multiply"></div>
+      <div className="absolute -left-20 -bottom-20 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+      <div className="absolute -right-20 -top-20 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+
+      <div className="container-custom relative z-10 text-center text-white">
+        <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">
+          Protect Your Property Rights
+        </h2>
+        <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto font-light">
+          Ensure fair division of your marital assets. Contact our experienced
+          San Antonio property division attorneys today.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link
+            to="/contact"
+            className="bg-white text-mpl-blue px-8 py-4 rounded-full font-bold shadow-lg hover:bg-gray-100 transition-all transform hover:-translate-y-1 text-lg"
+          >
+            Schedule Consultation
+          </Link>
+          <a
+            href="tel:7262044044"
+            className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white/10 transition-all text-lg"
+          >
+            Call (726) 204-4044
+          </a>
         </div>
       </div>
     </section>
@@ -347,58 +343,59 @@ const CTABanner = () => {
 };
 
 const ContactInfoSection = () => {
-  const contacts = [
+  const contactInfo = [
     {
       icon: Phone,
       title: "Phone",
       content: "(726) 204-4044",
       link: "tel:7262044044",
-      color: "text-red-500",
     },
     {
       icon: MapPin,
       title: "Office",
-      content: "45 NE Interstate 410 Loop Suite 307 San Antonio, TX 78216",
-      link: "https://maps.google.com/?q=45+NE+Interstate+410+Loop+Suite+307+San+Antonio+TX+78216",
-      color: "text-red-500",
+      content: "45 NE Interstate 410 Loop Suite 207 San Antonio, TX 78216",
+      link: "https://maps.google.com/?q=45+NE+Interstate+410+Loop+Suite+207+San+Antonio+TX+78216",
     },
     {
       icon: Mail,
       title: "Email",
       content: "info@moralespadialaw.com",
       link: "mailto:info@moralespadialaw.com",
-      color: "text-blue-500",
     },
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-24 bg-white">
       <div className="container-custom">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-mpl-navy">
-            Contact Our Adoption Attorneys
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-mpl-navy mb-6">
+            Contact Our Property Division Attorneys
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {contacts.map((contact, index) => (
-            <div
+          {contactInfo.map((item, index) => (
+            <motion.div
               key={index}
-              className="bg-white p-8 rounded-2xl border border-gray-100 shadow-lg text-center hover:shadow-xl transition-all"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center hover:border-mpl-blue/30 transition-all duration-300"
             >
-              <div className="w-12 h-12 mx-auto bg-gray-50 rounded-full flex items-center justify-center mb-4 text-mpl-blue">
-                <contact.icon size={24} />
+              <div className="w-16 h-16 bg-mpl-blue/10 rounded-full flex items-center justify-center text-mpl-blue mx-auto mb-6">
+                <item.icon size={32} />
               </div>
-              <h3 className="text-xl font-bold text-mpl-navy mb-2">
-                {contact.title}
+              <h3 className="text-xl font-bold text-mpl-navy mb-4">
+                {item.title}
               </h3>
               <a
-                href={contact.link}
-                className="text-mpl-blue hover:text-mpl-navy transition-colors font-medium"
+                href={item.link}
+                className="text-mpl-blue hover:underline text-lg"
               >
-                {contact.content}
+                {item.content}
               </a>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -426,4 +423,4 @@ const FormSection = () => {
   );
 };
 
-export default Adoption;
+export default PropertyDivision;

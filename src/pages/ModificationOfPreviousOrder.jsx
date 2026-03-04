@@ -1,24 +1,22 @@
 import React from "react";
-import { motion as Motion } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   Users,
-  Building2,
-  Heart,
+  Coins,
   FileText,
-  ShieldCheck,
   Scale,
-  Baby,
-  UserPlus,
-  UsersRound,
+  RefreshCw,
+  ShieldCheck,
+  FileSignature,
+  Gavel,
   Phone,
   MapPin,
   Mail,
-  ArrowRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import ConsultationForm from "../components/ConsultationForm";
 
-const Adoption = () => {
+const ModificationOfPreviousOrder = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       <HeroSection />
@@ -36,25 +34,25 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-white pt-20">
       <div className="container-custom relative z-10 flex flex-col items-center text-center">
-        <Motion.div
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="max-w-4xl"
         >
           <div className="inline-block px-4 py-1.5 bg-mpl-blue/10 text-mpl-blue rounded-full text-sm font-bold tracking-wider mb-6 uppercase border border-mpl-blue/20">
-            Building Families Through Legal Adoption
+            Updating Court Orders to Reflect Life Changes
           </div>
           <h1 className="text-5xl md:text-7xl font-serif font-bold text-mpl-navy mb-8 leading-tight">
-            Adoption <br />
-            <span className="text-mpl-blue italic">Attorney</span>
+            Modification of Previous <br />
+            <span className="text-mpl-blue italic">Order</span>
           </h1>
           <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Adoption is one of the most rewarding legal processes, creating new
-            families and providing children with loving homes. Our experienced
-            San Antonio adoption attorneys guide families through all types of
-            adoptions, ensuring the process is completed correctly and
-            efficiently while protecting everyone's rights.
+            Life circumstances change, and court orders may need to be modified
+            to reflect new situations. Our experienced San Antonio modification
+            attorneys help you update divorce decrees, custody orders, child
+            support orders, and other family law orders when circumstances
+            warrant changes.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -71,10 +69,9 @@ const HeroSection = () => {
               Call (726) 204-4044
             </a>
           </div>
-        </Motion.div>
+        </motion.div>
       </div>
 
-      {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-mpl-blue/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-mpl-gold/5 rounded-full blur-3xl"></div>
@@ -87,33 +84,33 @@ const WhyChooseSection = () => {
   const features = [
     {
       icon: Users,
-      title: "Step-Parent Adoptions",
-      desc: "We help step-parents legally adopt their step-children, creating stronger family bonds and legal relationships.",
+      title: "Custody Modifications",
+      desc: "We help modify custody arrangements when children's needs change or parental circumstances require adjustments.",
     },
     {
-      icon: Building2,
-      title: "Agency Adoptions",
-      desc: "We work with adoption agencies to ensure all legal requirements are met for agency-facilitated adoptions.",
-    },
-    {
-      icon: Heart,
-      title: "Private Adoptions",
-      desc: "We handle private adoption arrangements between birth parents and adoptive parents, ensuring legal compliance.",
+      icon: Coins,
+      title: "Support Modifications",
+      desc: "We assist with child support and spousal support modifications when financial circumstances change significantly.",
     },
     {
       icon: FileText,
-      title: "Legal Documentation",
-      desc: "We prepare all necessary legal documents and ensure compliance with Texas adoption laws and procedures.",
+      title: "Property Modifications",
+      desc: "We help modify property division orders when new assets are discovered or circumstances change.",
+    },
+    {
+      icon: RefreshCw,
+      title: "Visitation Modifications",
+      desc: "We assist with modifying visitation schedules to accommodate changing work schedules, school needs, or other life circumstances.",
+    },
+    {
+      icon: Gavel,
+      title: "Court Representation",
+      desc: "We represent you in court proceedings and ensure all legal requirements are met for modification approval.",
     },
     {
       icon: ShieldCheck,
       title: "Rights Protection",
-      desc: "We protect the rights of all parties involved, including birth parents, adoptive parents, and children.",
-    },
-    {
-      icon: Scale,
-      title: "Court Representation",
-      desc: "We represent you in court proceedings and ensure all legal requirements are met for final adoption orders.",
+      desc: "We protect your rights while ensuring modifications serve the best interests of all parties, especially children.",
     },
   ];
 
@@ -122,17 +119,17 @@ const WhyChooseSection = () => {
       <div className="container-custom">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-mpl-navy mb-6">
-            Why Choose Our Adoption Services?
+            Why Choose Our Modification Services?
           </h2>
           <p className="text-lg text-gray-600">
-            We provide compassionate and comprehensive adoption representation for
-            all types of adoptions.
+            We provide comprehensive modification representation to ensure court
+            orders reflect current circumstances.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <Motion.div
+            <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -149,7 +146,7 @@ const WhyChooseSection = () => {
               <p className="text-gray-600 leading-relaxed text-sm">
                 {feature.desc}
               </p>
-            </Motion.div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -161,33 +158,33 @@ const ProcessSection = () => {
   const steps = [
     {
       id: 1,
-      title: "Initial Consultation",
-      desc: "We review your adoption situation and determine the best approach for your specific type of adoption.",
+      title: "Case Evaluation",
+      desc: "We review your current order and assess whether circumstances warrant a modification under Texas law.",
     },
     {
       id: 2,
-      title: "Documentation Preparation",
-      desc: "We prepare all necessary legal documents including petitions, consents, and supporting documentation.",
+      title: "Documentation Gathering",
+      desc: "We gather evidence and documentation to support the need for modification of the existing order.",
     },
     {
       id: 3,
-      title: "Background Checks",
-      desc: "We ensure all required background checks and home studies are completed according to Texas law.",
+      title: "Petition Preparation",
+      desc: "We prepare the modification petition and all supporting legal documents required by the court.",
     },
     {
       id: 4,
-      title: "Filing Petition",
-      desc: "We file the adoption petition with the appropriate court and serve all required parties.",
+      title: "Filing & Service",
+      desc: "We file the modification petition with the court and serve the other party according to Texas law.",
     },
     {
       id: 5,
       title: "Court Proceedings",
-      desc: "We represent you in court hearings and ensure all legal requirements are met for the adoption.",
+      desc: "We represent you in court and present evidence supporting the need for modification of the existing order.",
     },
     {
       id: 6,
-      title: "Final Decree",
-      desc: "We obtain the final adoption decree, legally establishing the parent-child relationship.",
+      title: "Modified Order",
+      desc: "We obtain the modified court order that reflects the new circumstances and serves all parties' best interests.",
     },
   ];
 
@@ -196,16 +193,17 @@ const ProcessSection = () => {
       <div className="container-custom">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-mpl-navy mb-6">
-            The Adoption Process
+            The Modification Process
           </h2>
           <p className="text-lg text-gray-600">
-            Understanding the steps involved in adoption proceedings in Texas.
+            Understanding the steps involved in modifying previous court orders
+            in Texas.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {steps.map((step, index) => (
-            <Motion.div
+            <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -222,7 +220,7 @@ const ProcessSection = () => {
               <p className="text-gray-600 leading-relaxed text-sm">
                 {step.desc}
               </p>
-            </Motion.div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -234,33 +232,33 @@ const TypesSection = () => {
   const types = [
     {
       icon: Users,
-      title: "Step-Parent Adoption",
-      desc: "Legal adoption of step-children by step-parents, creating permanent legal relationships and family bonds.",
+      title: "Custody Order Modifications",
+      desc: "Modifying custody arrangements when children's needs change, parents relocate, or circumstances require different arrangements.",
     },
     {
-      icon: Building2,
-      title: "Agency Adoption",
-      desc: "Adoptions facilitated through licensed adoption agencies, ensuring compliance with all agency and legal requirements.",
+      icon: Coins,
+      title: "Child Support Modifications",
+      desc: "Modifying child support amounts when income changes significantly or circumstances change.",
     },
     {
-      icon: Heart,
-      title: "Private Adoption",
-      desc: "Direct adoptions between birth parents and adoptive parents, handled with careful attention to legal requirements.",
+      icon: Scale,
+      title: "Spousal Support Modifications",
+      desc: "Modifying spousal maintenance orders when financial circumstances change or support is no longer needed.",
     },
     {
-      icon: Baby,
-      title: "Infant Adoption",
-      desc: "Adoption of newborns and infants, ensuring all legal requirements are met for the protection of all parties.",
+      icon: RefreshCw,
+      title: "Visitation Modifications",
+      desc: "Modifying visitation schedules to accommodate changing work schedules, school needs, or other life circumstances.",
     },
     {
-      icon: UserPlus,
-      title: "Older Child Adoption",
-      desc: "Adoption of older children, including those in foster care, with special attention to their unique needs and circumstances.",
+      icon: FileText,
+      title: "Property Division Modifications",
+      desc: "Modifying property division orders when new assets are discovered or circumstances change significantly.",
     },
     {
-      icon: UsersRound,
-      title: "Relative Adoption",
-      desc: "Adoption by relatives, including grandparents, aunts, uncles, and other family members, ensuring legal family relationships.",
+      icon: FileSignature,
+      title: "Divorce Decree Modifications",
+      desc: "Modifying various aspects of divorce decrees when circumstances change or new issues arise.",
     },
   ];
 
@@ -269,17 +267,17 @@ const TypesSection = () => {
       <div className="container-custom">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-mpl-navy mb-6">
-            Types of Adoptions We Handle
+            Types of Modifications We Handle
           </h2>
           <p className="text-lg text-gray-600">
-            Comprehensive adoption representation for all types of adoption
-            situations.
+            Comprehensive modification representation for all types of family
+            law orders.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {types.map((type, index) => (
-            <Motion.div
+            <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -300,7 +298,7 @@ const TypesSection = () => {
                   {type.desc}
                 </p>
               </div>
-            </Motion.div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -315,14 +313,14 @@ const CTABanner = () => {
         <div className="bg-mpl-blue rounded-3xl p-12 text-center relative overflow-hidden shadow-xl">
           <div className="absolute inset-0 bg-mpl-navy/20 mix-blend-multiply"></div>
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-          
+
           <div className="relative z-10 max-w-4xl mx-auto text-white">
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
-              Ready to Start Your Adoption Journey?
+              Need to Modify a Court Order?
             </h2>
             <p className="text-xl text-white/90 mb-10">
-              Let us help you build your family through legal adoption. Contact
-              our experienced San Antonio adoption attorneys today.
+              Don't let outdated court orders control your life. Contact our
+              experienced San Antonio modification attorneys today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -376,7 +374,7 @@ const ContactInfoSection = () => {
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-mpl-navy">
-            Contact Our Adoption Attorneys
+            Contact Our Modification Attorneys
           </h2>
         </div>
 
@@ -426,4 +424,4 @@ const FormSection = () => {
   );
 };
 
-export default Adoption;
+export default ModificationOfPreviousOrder;

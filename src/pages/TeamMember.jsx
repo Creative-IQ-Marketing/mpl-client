@@ -10,6 +10,7 @@ import {
   Scale,
   Mail,
   Phone,
+  ChevronDown,
 } from "lucide-react";
 import { teamMembers } from "../data/team";
 import ConsultationForm from "../components/ConsultationForm";
@@ -142,6 +143,34 @@ const TeamMember = () => {
               </div>
             </motion.div>
           </div>
+
+          {/* Scroll Down Indicator */}
+          <motion.div
+            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center cursor-pointer z-20"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 1 }}
+            onClick={() => {
+              const bioSection = document.getElementById("bio");
+              if (bioSection) {
+                bioSection.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+          >
+            <span className="text-white/70 text-sm mb-2 font-light tracking-widest uppercase">
+              Scroll Down
+            </span>
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{
+                repeat: Infinity,
+                duration: 1.5,
+                ease: "easeInOut",
+              }}
+            >
+              <ChevronDown className="text-mpl-gold w-8 h-8" />
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 

@@ -44,7 +44,7 @@ const Contact = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6">
+            <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 text-white">
               Contact Us
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 max-w-2xl mx-auto font-light">

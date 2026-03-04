@@ -13,11 +13,12 @@ export const teamMembers = [
     name: "Trisha Morales Padia",
     role: "Founder & CEO",
     image: TrishaImg,
-    headline: "Hey, I'm Trisha Morales Padia!",
+    headline: "Strategic Advocacy & Compassionate Guidance",
     bio: [
-      "Trisha Morales Padia is a dedicated attorney based in San Antonio, Texas, specializing in estate planning, family law, and criminal defense. She earned her Juris Doctor from St. Mary's University in 2013 and has been actively practicing law since then.",
-      "In 2013, she founded Morales Padia Law, PLLC, where she oversees cases across various legal domains, including criminal, family, probate, bankruptcy, and personal injury law.",
-      "Throughout her career, Ms. Morales Padia has been recognized for her legal expertise and commitment to her clients."
+      "Trisha Morales Padia is an experienced attorney specializing in estate planning and criminal law. Before pursuing law, she built a successful career in marketing and advertising as a media buyer. In 2013, she earned her law degree from St. Mary’s University School of Law, bringing her strategic mindset and problem-solving skills into the legal field.",
+      "Trisha is passionate about guiding clients through life’s most challenging legal matters, whether navigating the criminal justice system or planning for the future. She believes in clear communication, realistic expectations, and strong advocacy to ensure her clients feel informed and supported every step of the way.",
+      "In addition to her legal practice, Trisha is deeply involved in the legal and business communities. She currently serves as the President of the San Antonio Criminal Defense Lawyers Association (2024-2025) and is an active member of the National Association of Women Business Owners and SA Connections. Committed to lifelong learning, she is also pursuing her MBA at the University of Nevada at Reno.",
+      "Outside of work, Trisha enjoys spending time with her husband and two children, embracing the balance between family life and professional growth."
     ],
     achievements: [
       "Featured multiple times in San Antonio Scene Magazine earning titles such as:",
@@ -40,8 +41,9 @@ export const teamMembers = [
     image: AidenImg,
     headline: "Justice through dedication and integrity.",
     bio: [
-      "Aiden Gamble brings a dynamic perspective to the firm, specializing in Criminal Defense and Family Law. He is committed to ensuring that every client receives a fair defense and that their rights are upheld throughout the legal process.",
-      "Aiden's approach is detailed and client-focused. He understands that criminal charges or family disputes can be life-altering, and he works tirelessly to achieve the best possible outcomes, whether through negotiation or litigation."
+      "Aiden Gamble is a dedicated attorney with a strong background in family law, criminal appeals, and personal injury. After earning her law degree from LSU Paul M. Hebert Law School in 2021, she gained valuable experience as a staff attorney for the Louisiana 3rd Circuit Court of Appeals, focusing on criminal appeals. She later expanded her practice into personal injury and family law, working with Sralla Family Law before joining Morales Padia Law.",
+      "Aiden is committed to helping clients navigate complex legal matters with respect, strategy, and a problem-solving mindset. She prioritizes resolving cases amicably whenever possible, ensuring her clients' long-term goals remain at the forefront. While her primary focus is family law and legal research, she hopes to continue handling criminal appeals as part of her practice.",
+      "Outside of work, Aiden enjoys gaming, gardening, and spending time with her cats. She is also learning Japanese and has a fond appreciation for Miffy, the classic storybook character."
     ],
     quote: "Justice is the constant and perpetual wish to render to every man his due.",
     quoteAuthor: "Justinian",
@@ -57,9 +59,14 @@ export const teamMembers = [
     name: "Dorothy Dominguez",
     role: "Paralegal",
     image: DorothyImg,
-    headline: "Meet Dorothy Dominguez",
+    headline: "Compassionate Support & Meticulous Detail",
     bio: [
-      "Dorothy Dominguez brings organizational expertise to Morales Padia Law as a Paralegal. She plays a crucial role in case management and client communication, ensuring that every case is handled with care and efficiency."
+      "Dorothy earned her Associate Degree in Paralegal Studies from San Antonio College, where she developed a strong foundation in legal research, case management, and client support. Since May 2017, she has been a certified Family Service professional, equipping her with the skills to work compassionately with families and guide them through challenging situations.",
+      "With experience in the legal field since January 2021, Dorothy has worked as a Family Service Associate for a Head Start Program and as an Immigration Legal Assistant. These roles allowed her to develop a deep understanding of client advocacy and the legal processes that affect families. Her background in immigration law has given her valuable insights that now inform her work in family and probate law.",
+      "At Morales Padia Law, Dorothy focuses on family and probate matters, providing essential support to attorneys through legal research, case management, and client care. She takes pride in helping clients navigate some of the most challenging times in their lives, ensuring they feel informed and supported every step of the way. Her approach to legal matters is rooted in providing clarity, care, and peace of mind.",
+      "Outside of work, Dorothy enjoys spending quality time with her family, hiking, discovering new adventures, and relaxing with her husband while watching movies. While she is not currently involved in professional organizations, she is dedicated to continuous learning and is always seeking new opportunities for growth.",
+      "Dorothy’s journey into the legal field was inspired by a former supervisor’s dream of attending law school. Supporting that vision sparked her own passion for the legal profession and her commitment to making a positive impact on clients’ lives. One of her most rewarding experiences came from her time in immigration law, where she witnessed firsthand how legal assistance can transform lives.",
+      "Clients appreciate Dorothy’s meticulous attention to detail and her dedication to providing thorough, compassionate support. Her commitment to helping both attorneys and clients ensures that every case is handled with care, precision, and a focus on achieving the best outcomes."
     ],
     quote: "Injustice anywhere is a threat to justice everywhere.",
     quoteAuthor: "Martin Luther King Jr.",
@@ -73,11 +80,14 @@ export const teamMembers = [
   {
     id: "allyson-gilmore",
     name: "Allyson Gilmore",
-    role: "Accounting Manager",
+    role: "Accounting",
     image: AllysonImg,
-    headline: "Meet Allyson Gilmore",
+    headline: "Precision, Transparency, and Client Care",
     bio: [
-      "Allyson Gilmore oversees the financial operations of Morales Padia Law as the Accounting Manager. She ensures the firm operates smoothly and efficiently, supporting the firm's commitment to professional excellence."
+      "Allyson brings a unique blend of expertise and passion to Morales Padia Law, with an Associate Degree in Psychology from Del Mar College and a Bachelor of Science in Business Management from Western Governors University. With over four years of legal experience, including three years at Morales Padia Law, Allyson specializes in contracts, billing, business operations, and HR management. Her 11 years of experience in the accounting field have sharpened her analytical skills, particularly when it comes to navigating complex financial matters and ensuring smooth operations.",
+      "In her role at Morales Padia Law, Allyson ensures clients feel confident and informed throughout the billing process, offering clear, accurate guidance and simplifying complex financial aspects. She is dedicated to making every client's experience as seamless and stress-free as possible. Whether it's resolving billing concerns or managing contracts, Allyson’s commitment to transparency and open communication ensures that every client receives personalized, efficient service.",
+      "Beyond her professional role, Allyson is a busy mom to a 5-year-old daughter who keeps her on her toes with soccer, basketball, baseball, and dance. When she’s not attending practices or cheering her on, Allyson enjoys playing video games, knitting, painting, and strumming her ukulele. She also finds time to give back to her community by volunteering at her daughter’s school.",
+      "Originally from Corpus Christi, Allyson has called San Antonio home for 17 years, and her deep-rooted connection to the community fuels her passion for delivering exceptional service. With a keen eye for detail, a client-first approach, and an unwavering commitment to excellence, Allyson plays an instrumental role in ensuring the success of both the clients and the firm."
     ],
     quote: "The life of the law has not been logic: it has been experience.",
     quoteAuthor: "Oliver Wendell Holmes Jr.",
@@ -93,9 +103,12 @@ export const teamMembers = [
     name: "Veronica Ruvalcaba",
     role: "Outreach Coordinator",
     image: VeronicaImg,
-    headline: "Meet Veronica Ruvalcaba",
+    headline: "Connecting Community with Compassionate Legal Support",
     bio: [
-      "Veronica Ruvalcaba serves as the Outreach Coordinator, connecting Morales Padia Law with the broader San Antonio community. She organizes events and manages partnerships to ensure the firm remains a pillar of support for local residents."
+      "With a strong background in customer service and a business degree from Incarnate Word University, Veronica brings a unique blend of skills and fresh energy to Morales Padia Law. Despite having just over a year and a half of experience in the legal field, she has quickly become an essential part of the team, specializing in guiding clients through initial consultations and structuring clear and fair pricing. Veronica also holds several valuable licenses, including Mortgage Lender, Notary Public, and Personal Lines Property and Casualty, allowing her to offer comprehensive support to the firm’s clients.",
+      "Veronica takes great pride in connecting with new clients, truly listening to their concerns, and helping them feel confident as they move forward with expert legal advice. With a philosophy grounded in positivity and attentive listening, she ensures that each client feels valued and understood, creating a welcoming and supportive experience at every stage of the process.",
+      "Outside of her professional life, Veronica is a true creative spirit—crafting beautiful charcuterie boards, baking custom cakes and treats, and designing floral arrangements. She is also deeply committed to her community, having volunteered for over six years with the City of San Antonio’s Seniors for Districts 3 and 6, as well as representing the firm at San Antonio Chamber of Commerce networking and charity events.",
+      "Veronica’s journey to the legal field was inspired by her long career in the mortgage industry and her desire to help families through difficult times, particularly with family law and custody matters. Having overcome cancer, Veronica brings a unique resilience and a positive outlook to everything she does. Her personal strength, generosity, and unwavering kindness make her an invaluable asset to both clients and colleagues, ensuring she always brings light and support to any situation."
     ],
     quote: "Liberty is the right to do what the law permits.",
     quoteAuthor: "Montesquieu",
@@ -111,9 +124,13 @@ export const teamMembers = [
     name: "Elena Galaviz",
     role: "Family Law Paralegal",
     image: ElenaImg,
-    headline: "Meet Elena Galaviz",
+    headline: "Advocating for Justice & Family Consistency",
     bio: [
-      "Elena Galaviz specializes in family law cases, providing essential support to attorneys and clients alike. Her empathy and expertise make her an invaluable resource for families navigating difficult transitions."
+      "Elena received her education at San Antonio College, where she earned an Associate Degree in Paralegal Studies. She has been working in the legal field for over a year, including a 3-month internship at Morales Padia Law, which was part of her curriculum.",
+      "Her background includes extensive experience in office environments and client interaction, preparing her to meet deadlines, maintain professionalism, and be available to clients as needed. Elena currently focuses on Family Law, working on cases related to divorce, SAPCR, probate with ad litem, and other family law matters.",
+      "What Elena enjoys most about her role is seeing clients not only satisfied with the results of their cases but also appreciating the efforts of the team. Her philosophy when handling legal matters is to ensure consistency and build trust with clients, ensuring they feel supported and confident throughout the process.",
+      "Outside of work, Elena enjoys Zumba, baking, tarot reading, and spending quality time with her family. While she is not currently involved in any professional organizations or community initiatives, she remains dedicated to her work and her clients.",
+      "Elena’s inspiration for pursuing a career in the legal field comes from her fascination with the law and her belief that justice will always prevail. A personal experience where she and her children felt the system failed them deeply influenced her career path and drives her commitment to advocate for victims and be their voice. Known for her stubbornness as a Taurus, Elena is serious, analytical, and passionate about ensuring that others receive the justice they deserve."
     ],
     quote: "At his best, man is the noblest of all animals; separated from law and justice he is the worst.",
     quoteAuthor: "Aristotle",
@@ -127,11 +144,14 @@ export const teamMembers = [
   {
     id: "cameron-ozuna",
     name: "Cameron Ozuna",
-    role: "Paralegal",
+    role: "Paralegal/Marketing Coordinator",
     image: CameronImg,
-    headline: "Meet Cameron Ozuna",
+    headline: "Merging Legal Expertise with Strategic Marketing",
     bio: [
-      "Cameron Ozuna is a dedicated Paralegal who supports the firm's litigation team. With a focus on trial preparation and evidence management, Cameron helps ensure that the firm is always ready to fight for its clients."
+      "Cameron holds a Bachelor of Science in Criminal Justice from Texas A&M University-San Antonio and brings over two years of experience in the legal field. Specializing in Family Law, Criminal Law, and Marketing, she offers a unique combination of legal knowledge and marketing skills. With a deep understanding of marketing principles, Cameron helps create strong, cohesive messaging that connects with clients and enhances the firm’s reputation in the community. Whether refining the firm’s digital presence or developing engaging client communications, she is committed to promoting the firm’s values and increasing its visibility.",
+      "In addition to marketing, Cameron is dedicated to helping clients navigate complex legal matters with efficiency and care. With a client-focused approach, she strives to make the legal process as smooth and straightforward as possible, ensuring clients feel informed and supported every step of the way.",
+      "Driven by a strong desire to assist others during challenging times, Cameron approaches each case with professionalism, attention to detail, and a commitment to achieving the best possible outcomes. This dedication, combined with a comprehensive understanding of the law, allows her to provide personalized and effective legal support.",
+      "Outside of work, Cameron enjoys spending time with family and friends, traveling, and reading. With a blend of legal knowledge, marketing skills, and a client-centered philosophy, she is dedicated to making a positive impact and providing exceptional service."
     ],
     quote: "No man is above the law and no man is below it.",
     quoteAuthor: "Theodore Roosevelt",
@@ -147,9 +167,11 @@ export const teamMembers = [
     name: "Alexandra Johnson",
     role: "Client Services Director",
     image: AlexandraImg,
-    headline: "Meet Alexandra Johnson",
+    headline: "Compassionate Planning for Future Generations",
     bio: [
-      "Alexandra Johnson leads the client services team, ensuring that every individual who contacts Morales Padia Law receives exceptional care and attention. She is the first point of contact for many and sets the tone for the firm's client-centric approach."
+      "Alexandra has five years of experience in the legal field, with a background in working in the Civil filing department with the Bexar County District Clerk and at the Bexar County Courthouse. This experience has helped shape her deep understanding of legal procedures and the operations of the courthouse.",
+      "At Morales Padia Law, Alexandra specializes in estate planning, where she is dedicated to helping families plan for the future and protect their legacies. What she enjoys most about working with clients is the opportunity to learn about their family dynamics and values, ensuring their estate plans reflect what is most important to them. Alexandra’s approach is centered around listening to her clients' needs, taking the time to understand their specific situation, and creating thoughtful solutions.",
+      "Outside of work, Alexandra enjoys crafting and attending concerts and festivals, embracing her creative side while enjoying live music. She also has a passion for collecting vinyl records, with an impressive collection of over 200 albums. Alexandra's combination of professional experience, genuine interest in her clients, and personal passions make her a dedicated and approachable member of the Morales Padia Law team."
     ],
     quote: "Justice cannot be for one side alone, but must be for both.",
     quoteAuthor: "Eleanor Roosevelt",
