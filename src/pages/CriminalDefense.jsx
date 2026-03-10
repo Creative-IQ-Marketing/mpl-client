@@ -1,5 +1,6 @@
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+const Motion = motion;
 import {
   Gavel,
   Users,
@@ -31,8 +32,8 @@ const CriminalDefense = () => {
     <div className="bg-gray-50 min-h-screen">
       <HeroSection />
       <ServicesSection />
-      <ImmediateHelpBanner />
       <ProcessSection />
+      <BenefitsSection />
       <CTA />
     </div>
   );
@@ -44,7 +45,7 @@ const HeroSection = () => {
 
   return (
     <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-mpl-navy text-white">
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1632152862899-798838332156?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
 
       {/* Animated Background Elements */}
       <motion.div
@@ -60,31 +61,36 @@ const HeroSection = () => {
         className="absolute top-1/4 left-1/4 w-96 h-96 bg-mpl-blue/30 rounded-full blur-[100px] mix-blend-screen"
       />
 
-      <div className="container-custom relative z-10 text-center">
+      <div className="container-custom relative z-10 text-left">
         <motion.div
           style={{ y: y1 }}
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="inline-block px-4 py-1 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm font-semibold tracking-wider mb-6">
-            AGGRESSIVE & EXPERIENCED
-          </div>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif leading-tight mb-6 text-white drop-shadow-xl">
-            Criminal Defense <br />
-            <span className="italic text-mpl-lightBlue relative inline-block">
-              Representation.
-              <motion.span
-                initial={{ width: 0 }}
-                animate={{ width: "100%" }}
-                transition={{ delay: 0.8, duration: 1 }}
-                className="absolute bottom-2 left-0 h-1 bg-white/30"
-              />
-            </span>
+            Fight for Your Rights
           </h1>
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-100 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md">
-            Protecting your rights and future with strategic, determined legal advocacy when you need it most.
+          <h2 className="text-xl md:text-2xl text-white/90 font-semibold mb-4">
+            Criminal defense attorneys protecting your future
+          </h2>
+          <p className="text-lg md:text-xl lg:text-2xl text-gray-100 max-w-2xl font-light leading-relaxed drop-shadow-md">
+            When you're facing criminal charges, your freedom and future are at stake. Our experienced criminal defense attorneys provide aggressive representation, ensuring your rights are protected and you receive the best possible outcome in your case.
           </p>
+          <div className="mt-8 flex items-center gap-4">
+            <a
+              href="tel:7262044044"
+              className="inline-flex items-center gap-2 bg-mpl-blue text-white px-6 py-3 rounded-full font-bold shadow-lg hover:bg-mpl-lightBlue transition-all"
+            >
+              <Phone size={18} /> Schedule a Call
+            </a>
+            <Link
+              to="/criminal-defense#services"
+              className="inline-flex items-center gap-2 border border-white/60 text-white px-6 py-3 rounded-full font-bold hover:bg-white/10 transition-all"
+            >
+              Learn More
+            </Link>
+          </div>
         </motion.div>
       </div>
 
@@ -201,15 +207,18 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-white relative">
+    <section id="services" className="py-24 bg-white relative">
       <div className="container-custom">
         <div className="text-center mb-16">
           <div className="inline-block px-6 py-2 bg-mpl-blue/10 rounded-full text-mpl-blue font-semibold uppercase tracking-wider text-sm border border-mpl-blue/20 mb-8">
-            Our Criminal Defense Services
+            Comprehensive Criminal Defense Services
           </div>
           <h2 className="text-4xl md:text-5xl font-serif text-mpl-navy font-bold mb-4">
-            Comprehensive Criminal Defense
+            Comprehensive Criminal Defense Services
           </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg mb-4">
+            We handle all types of criminal charges with aggressive representation and strategic results.
+          </p>
           <div className="w-24 h-1 bg-mpl-gold mx-auto rounded-full"></div>
         </div>
 
@@ -260,30 +269,86 @@ const ServicesSection = () => {
   );
 };
 
-const ImmediateHelpBanner = () => {
-  return (
-    <section className="bg-mpl-blue py-16 text-white relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-      <div className="absolute inset-0 bg-gradient-to-r from-mpl-navy/50 to-transparent"></div>
+const BenefitsSection = () => {
+  const benefits = [
+    {
+      title: "Constitutional Rights Protection",
+      icon: Shield,
+      desc: "Focused defense that protects your constitutional rights at every stage.",
+    },
+    {
+      title: "24/7 Emergency Support",
+      icon: Phone,
+      desc: "Rapid response when urgent situations arise and immediate guidance is needed.",
+    },
+    {
+      title: "Aggressive Trial Representation",
+      icon: Gavel,
+      desc: "Strategic courtroom advocacy aimed at dismissal, reduction, or acquittal.",
+    },
+    {
+      title: "Strategic Plea Negotiations",
+      icon: MessagesSquare,
+      desc: "Negotiation aimed at favorable outcomes when trial is not the best path.",
+    },
+    {
+      title: "Thorough Case Investigation",
+      icon: FileSearch,
+      desc: "Independent investigation to uncover weaknesses in the prosecution’s case.",
+    },
+    {
+      title: "Personalized Attention",
+      icon: Users,
+      desc: "Clear communication and tailored strategy based on your unique situation.",
+    },
+    {
+      title: "Pre‑Trial Motion Strategy",
+      icon: FileText,
+      desc: "Targeted motions to suppress and exclude improper evidence.",
+    },
+    {
+      title: "Appeals & Post‑Conviction",
+      icon: Landmark,
+      desc: "Guidance and representation beyond trial when necessary.",
+    },
+    {
+      title: "Immediate Response Team",
+      icon: AlertTriangle,
+      desc: "Swift action to protect your rights from the outset.",
+    },
+  ];
 
-      <div className="container-custom relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-        <div className="text-center md:text-left">
-          <h2 className="text-3xl font-serif text-white font-bold mb-3">
-            Facing Criminal Charges?
+  return (
+    <section className="py-24 bg-white">
+      <div className="container-custom">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-serif text-mpl-navy font-bold mb-4">
+            Why Choose Our Criminal Defense?
           </h2>
-          <p className="text-white/80 max-w-2xl text-lg">
-            Time is critical. Our experienced criminal defense team is here to protect your rights and build your defense.
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+            Experience the advantage of a strategic team with aggressive criminal defense advocacy.
           </p>
         </div>
-
-        <Link
-          to="/contact"
-          className="bg-white text-mpl-blue hover:bg-gray-100 px-8 py-4 rounded-full font-bold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 flex items-center gap-3 whitespace-nowrap"
-        >
-          <Phone size={20} className="fill-current" />
-          <span>Free Case Evaluation</span>
-        </Link>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {benefits.map((b, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.05 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl border border-gray-100 shadow-lg p-8 hover:shadow-xl transition-all"
+            >
+              <div className="w-12 h-12 rounded-full bg-mpl-navy text-white flex items-center justify-center mb-6">
+                <b.icon size={22} />
+              </div>
+              <h3 className="text-xl font-serif text-mpl-navy font-bold mb-3">
+                {b.title}
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{b.desc}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -358,13 +423,13 @@ const ProcessSection = () => {
       <div className="container-custom">
         <div className="text-center mb-16">
           <div className="inline-block px-4 py-1 bg-mpl-blue/10 text-mpl-blue rounded-full text-sm font-bold tracking-wider mb-4 uppercase">
-            Our Process
+            The Criminal Defense Process
           </div>
           <h2 className="text-4xl md:text-5xl font-serif text-mpl-navy font-bold mb-4">
-            How We Defend You
+            The Criminal Defense Process
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Our rigorous defense strategy ensures no stone is left unturned in protecting your freedom.
+            Understand your options and the legal process when facing criminal charges.
           </p>
         </div>
 
@@ -436,17 +501,17 @@ const CTA = () => {
 
           <div className="relative z-10 max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 text-white">
-              Don't Face Criminal Charges Alone
+              Don't Wait — Get Help Today
             </h2>
             <p className="text-xl text-white/80 mb-10 leading-relaxed">
-              Your future is on the line. Contact our experienced criminal defense team today for a confidential consultation.
+              When facing criminal charges, every moment counts. Our experienced team is ready to defend your rights now.
             </p>
             <Link
               to="/contact"
               className="inline-flex items-center gap-3 bg-white text-mpl-navy hover:bg-mpl-gold hover:text-white px-10 py-5 rounded-full font-bold transition-all shadow-lg text-lg transform hover:-translate-y-1"
             >
               <Shield size={20} />
-              <span>Get Legal Defense Now</span>
+              <span>Call Now for Emergency Consultation</span>
             </Link>
           </div>
         </div>

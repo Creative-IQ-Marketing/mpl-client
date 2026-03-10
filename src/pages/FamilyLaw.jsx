@@ -1,5 +1,6 @@
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+const Motion = motion;
 import {
   Gavel,
   Users,

@@ -1,5 +1,6 @@
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+const Motion = motion;
 import {
   ChevronDown,
   Phone,
@@ -10,7 +11,9 @@ import {
   Users,
   FileSearch,
   AlertTriangle,
-  Ban
+  Ban,
+  Home,
+  RefreshCcw
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -18,8 +21,9 @@ const ProtectiveOrders = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       <HeroSection />
-      <ImmediateHelpBanner />
+      <BenefitsSection />
       <ProcessSection />
+      <TypesSection />
       <CTA />
     </div>
   );
@@ -32,6 +36,7 @@ const HeroSection = () => {
   return (
     <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-mpl-navy text-white">
       <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+
 
       {/* Animated Background Elements */}
       <motion.div
@@ -47,31 +52,36 @@ const HeroSection = () => {
         className="absolute top-1/4 left-1/4 w-96 h-96 bg-mpl-blue/30 rounded-full blur-[100px] mix-blend-screen"
       />
 
-      <div className="container-custom relative z-10 text-center">
+      <div className="container-custom relative z-10 text-left">
         <motion.div
           style={{ y: y1 }}
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="inline-block px-4 py-1 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm font-semibold tracking-wider mb-6">
-            LEGAL SAFETY & DEFENSE
-          </div>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif leading-tight mb-6 text-white drop-shadow-xl">
-            Protective <br />
-            <span className="italic text-mpl-lightBlue relative inline-block">
-              Orders.
-              <motion.span
-                initial={{ width: 0 }}
-                animate={{ width: "100%" }}
-                transition={{ delay: 0.8, duration: 1 }}
-                className="absolute bottom-2 left-0 h-1 bg-white/30"
-              />
-            </span>
+            Protective Orders Attorney
           </h1>
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-100 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md">
-            Whether you need protection or are defending against an unfair order, we provide the legal guidance you need.
+          <h2 className="text-xl md:text-2xl text-white/90 font-semibold mb-4">
+            Obtaining and Defending Against Protective Orders
+          </h2>
+          <p className="text-lg md:text-xl lg:text-2xl text-gray-100 max-w-2xl font-light leading-relaxed drop-shadow-md">
+            Protective orders can impact freedom, housing, and parental rights. Our team provides strategic representation for both filing and defending against protective orders, focusing on precise documentation and rigorous advocacy.
           </p>
+          <div className="mt-8 flex items-center gap-4">
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 bg-mpl-blue text-white px-6 py-3 rounded-full font-bold shadow-lg hover:bg-mpl-lightBlue transition-all"
+            >
+              <Shield size={18} /> Schedule Consultation
+            </Link>
+            <a
+              href="tel:7262044044"
+              className="inline-flex items-center gap-2 border border-white/60 text-white px-6 py-3 rounded-full font-bold hover:bg-white/10 transition-all"
+            >
+              <Phone size={18} /> Call (726) 204-4044
+            </a>
+          </div>
         </motion.div>
       </div>
 
@@ -99,30 +109,47 @@ const HeroSection = () => {
   );
 };
 
-const ImmediateHelpBanner = () => {
-  return (
-    <section className="bg-mpl-blue py-16 text-white relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-      <div className="absolute inset-0 bg-gradient-to-r from-mpl-navy/50 to-transparent"></div>
+const BenefitsSection = () => {
+  const benefits = [
+    { title: "Victim Protection", icon: Shield, desc: "Immediate representation to secure safety and legal protection." },
+    { title: "Defense Representation", icon: Gavel, desc: "Aggressive defense when you are falsely accused or overcharged." },
+    { title: "Emergency Orders", icon: AlertTriangle, desc: "Guidance on emergency protective orders and urgent filings." },
+    { title: "Comprehensive Documentation", icon: FileText, desc: "Meticulous preparation of affidavits and supporting records." },
+    { title: "Strategic Approach", icon: Scale, desc: "Tailored strategy based on your situation and long‑term goals." },
+    { title: "Enforcement Support", icon: Ban, desc: "Assistance with compliance, enforcement, and modification issues." },
+  ];
 
-      <div className="container-custom relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-        <div className="text-center md:text-left">
-          <h2 className="text-3xl font-serif text-white font-bold mb-3">
-            Need a Protective Order?
+  return (
+    <section className="py-24 bg-white">
+      <div className="container-custom">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-serif text-mpl-navy font-bold mb-4">
+            Why Choose Our Protective Orders Services?
           </h2>
-          <p className="text-white/80 max-w-2xl text-lg">
-            We can help you file for immediate protection. If you've been served, we can help you defend your rights.
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+            We provide comprehensive, practical representation for both filing and defending against protective orders.
           </p>
         </div>
-
-        <Link
-          to="/contact"
-          className="bg-white text-mpl-blue hover:bg-gray-100 px-8 py-4 rounded-full font-bold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 flex items-center gap-3 whitespace-nowrap"
-        >
-          <Phone size={20} className="fill-current" />
-          <span>Consult with Us</span>
-        </Link>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {benefits.map((b, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.05 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl border border-gray-100 shadow-lg p-8 hover:shadow-xl transition-all"
+            >
+              <div className="w-12 h-12 rounded-full bg-mpl-navy text-white flex items-center justify-center mb-6">
+                <b.icon size={22} />
+              </div>
+              <h3 className="text-xl font-serif text-mpl-navy font-bold mb-3">
+                {b.title}
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{b.desc}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -185,13 +212,13 @@ const ProcessSection = () => {
       <div className="container-custom">
         <div className="text-center mb-16">
           <div className="inline-block px-4 py-1 bg-mpl-blue/10 text-mpl-blue rounded-full text-sm font-bold tracking-wider mb-4 uppercase">
-            Our Approach
+            The Protective Orders Process
           </div>
           <h2 className="text-4xl md:text-5xl font-serif text-mpl-navy font-bold mb-4">
-            Navigating Protective Orders
+            The Protective Orders Process
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Protective orders are serious legal matters. We handle them with the urgency and precision they require.
+            Understanding the steps involved in protective order proceedings in Texas.
           </p>
         </div>
 
@@ -252,6 +279,52 @@ const ProcessSection = () => {
   );
 };
 
+const TypesSection = () => {
+  const types = [
+    { title: "Emergency Protective Orders (EPO)", icon: AlertTriangle, desc: "Immediate protection following arrests or urgent situations." },
+    { title: "Family Violence Protective Orders", icon: Home, desc: "Representation in cases involving spouses, partners, or relatives." },
+    { title: "Harassment Protective Order", icon: FileText, desc: "Addressing harassment allegations, including electronic communications." },
+    { title: "False Accusation Defense", icon: Gavel, desc: "Challenging unfounded claims and protecting your reputation." },
+    { title: "Restraining Order Violations", icon: Ban, desc: "Defense and guidance when accused of violating orders." },
+    { title: "Protective Order Modifications", icon: RefreshCcw, desc: "Seeking changes to existing orders to reflect new circumstances." },
+  ];
+
+  return (
+    <section className="py-24 bg-white">
+      <div className="container-custom">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-serif text-mpl-navy font-bold mb-4">
+            Types of Protective Orders We Handle
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+            Comprehensive representation for various protective order situations.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {types.map((t, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.05 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl border border-gray-100 shadow-lg p-8 hover:shadow-xl transition-all"
+            >
+              <div className="w-12 h-12 rounded-full bg-mpl-navy text-white flex items-center justify-center mb-6">
+                <t.icon size={22} />
+              </div>
+              <h3 className="text-xl font-serif text-mpl-navy font-bold mb-3">
+                {t.title}
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{t.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const CTA = () => {
   return (
     <section className="py-24 bg-white">
@@ -263,18 +336,25 @@ const CTA = () => {
 
           <div className="relative z-10 max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 text-white">
-              Get the Protection You Need
+              Need Help with Protective Orders?
             </h2>
             <p className="text-xl text-white/80 mb-10 leading-relaxed">
-              Don't wait until it's too late. Contact us today to discuss your protective order case.
+              Whether you need protection or are facing false accusations, contact our experienced protective orders attorneys now.
             </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-3 bg-white text-mpl-navy hover:bg-mpl-gold hover:text-white px-10 py-5 rounded-full font-bold transition-all shadow-lg text-lg transform hover:-translate-y-1"
-            >
-              <Shield size={20} />
-              <span>Contact Us Today</span>
-            </Link>
+            <div className="flex items-center justify-center gap-4">
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 bg-white text-mpl-navy hover:bg-mpl-gold hover:text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg"
+              >
+                <Shield size={18} /> Schedule Consultation
+              </Link>
+              <a
+                href="tel:7262044044"
+                className="inline-flex items-center gap-2 border border-white/60 text-white px-8 py-4 rounded-full font-bold hover:bg-white/10 transition-all"
+              >
+                <Phone size={18} /> Call (726) 204-4044
+              </a>
+            </div>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+const Motion = motion;
 import TrishaImg from "../assets/team/UF9A2215-Edit-Edit.jpg";
 import TestimonialsComponent from "../components/home/Testimonials";
 import ConsultationForm from "../components/ConsultationForm";

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+const Motion = motion;
 
 const FloatingBubbles = () => {
   // Premium, subtle floating orbs

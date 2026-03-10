@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+const Motion = motion;
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import ConsultationForm from "../components/ConsultationForm";
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+const Motion = motion;
 import {
   ChevronDown,
   Phone,
@@ -18,8 +19,9 @@ const DomesticViolence = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       <HeroSection />
-      <ImmediateHelpBanner />
+      <BenefitsSection />
       <ProcessSection />
+      <TypesSection />
       <CTA />
     </div>
   );
@@ -47,31 +49,36 @@ const HeroSection = () => {
         className="absolute top-1/4 left-1/4 w-96 h-96 bg-mpl-blue/30 rounded-full blur-[100px] mix-blend-screen"
       />
 
-      <div className="container-custom relative z-10 text-center">
+      <div className="container-custom relative z-10 text-left">
         <motion.div
           style={{ y: y1 }}
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="inline-block px-4 py-1 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm font-semibold tracking-wider mb-6">
-            PROTECTING YOUR RIGHTS & FAMILY
-          </div>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif leading-tight mb-6 text-white drop-shadow-xl">
-            Domestic Violence <br />
-            <span className="italic text-mpl-lightBlue relative inline-block">
-              Defense.
-              <motion.span
-                initial={{ width: 0 }}
-                animate={{ width: "100%" }}
-                transition={{ delay: 0.8, duration: 1 }}
-                className="absolute bottom-2 left-0 h-1 bg-white/30"
-              />
-            </span>
+            Domestic Violence Attorney
           </h1>
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-100 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md">
-            Allegations of domestic violence carry serious consequences. We provide sensitive, strategic defense to protect your reputation and future.
+          <h2 className="text-xl md:text-2xl text-white/90 font-semibold mb-4">
+            Aggressive Defense Against Domestic Violence Charges
+          </h2>
+          <p className="text-lg md:text-xl lg:text-2xl text-gray-100 max-w-2xl font-light leading-relaxed drop-shadow-md">
+            Domestic violence charges can have devastating consequences on your career, family, and future. Our experienced defense team provides aggressive representation to protect your rights and reputation.
           </p>
+          <div className="mt-8 flex items-center gap-4">
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 bg-mpl-blue text-white px-6 py-3 rounded-full font-bold shadow-lg hover:bg-mpl-lightBlue transition-all"
+            >
+              <Shield size={18} /> Schedule Consultation
+            </Link>
+            <a
+              href="tel:7262044044"
+              className="inline-flex items-center gap-2 border border-white/60 text-white px-6 py-3 rounded-full font-bold hover:bg-white/10 transition-all"
+            >
+              <Phone size={18} /> Call (726) 204-4044
+            </a>
+          </div>
         </motion.div>
       </div>
 
@@ -99,30 +106,47 @@ const HeroSection = () => {
   );
 };
 
-const ImmediateHelpBanner = () => {
-  return (
-    <section className="bg-mpl-blue py-16 text-white relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-      <div className="absolute inset-0 bg-gradient-to-r from-mpl-navy/50 to-transparent"></div>
+const BenefitsSection = () => {
+  const benefits = [
+    { title: "Aggressive Defense", icon: Gavel, desc: "Strategic representation aimed at dismissal or reduction of charges." },
+    { title: "Defense Analysis", icon: FileSearch, desc: "Thorough review of evidence, reports, and procedures for weaknesses." },
+    { title: "False Accusation Defense", icon: AlertTriangle, desc: "Focused defense against false allegations and misinterpretations." },
+    { title: "Case Investigation", icon: FileText, desc: "Independent investigation, witness interviews, and documentation review." },
+    { title: "Strategic Defense", icon: Scale, desc: "Tailored strategy for negotiation or trial based on your situation." },
+    { title: "Rights Protection", icon: Shield, desc: "Advocacy to protect your constitutional rights at every stage." },
+  ];
 
-      <div className="container-custom relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-        <div className="text-center md:text-left">
-          <h2 className="text-3xl font-serif text-white font-bold mb-3">
-            Accused of Domestic Violence?
+  return (
+    <section className="py-24 bg-white">
+      <div className="container-custom">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-serif text-mpl-navy font-bold mb-4">
+            Why Choose Our Domestic Violence Defense Services?
           </h2>
-          <p className="text-white/80 max-w-2xl text-lg">
-            Immediate action is crucial to prevent protective orders and long-term consequences. Contact us now.
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+            We provide aggressive domestic violence defense representation to protect your rights and reputation.
           </p>
         </div>
-
-        <Link
-          to="/contact"
-          className="bg-white text-mpl-blue hover:bg-gray-100 px-8 py-4 rounded-full font-bold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 flex items-center gap-3 whitespace-nowrap"
-        >
-          <Phone size={20} className="fill-current" />
-          <span>Confidential Consultation</span>
-        </Link>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {benefits.map((b, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.05 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl border border-gray-100 shadow-lg p-8 hover:shadow-xl transition-all"
+            >
+              <div className="w-12 h-12 rounded-full bg-mpl-navy text-white flex items-center justify-center mb-6">
+                <b.icon size={22} />
+              </div>
+              <h3 className="text-xl font-serif text-mpl-navy font-bold mb-3">
+                {b.title}
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{b.desc}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -185,13 +209,13 @@ const ProcessSection = () => {
       <div className="container-custom">
         <div className="text-center mb-16">
           <div className="inline-block px-4 py-1 bg-mpl-blue/10 text-mpl-blue rounded-full text-sm font-bold tracking-wider mb-4 uppercase">
-            Our Defense Approach
+            The Domestic Violence Defense Process
           </div>
           <h2 className="text-4xl md:text-5xl font-serif text-mpl-navy font-bold mb-4">
-            Defending Your Name & Family
+            The Domestic Violence Defense Process
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            We understand the sensitivity of these cases and provide a defense that respects your family dynamics while vigorously protecting your rights.
+            Understanding the steps involved in domestic violence defense proceedings in Texas.
           </p>
         </div>
 
@@ -252,6 +276,52 @@ const ProcessSection = () => {
   );
 };
 
+const TypesSection = () => {
+  const types = [
+    { title: "Family Violence", icon: Home, desc: "Defense for allegations involving spouses, partners, or family members." },
+    { title: "False Accusations", icon: AlertTriangle, desc: "Strategic defense to counter false claims and protect your reputation." },
+    { title: "Assault Charges", icon: Gavel, desc: "Representation for misdemeanor and felony assault allegations." },
+    { title: "Harassment Charges", icon: FileText, desc: "Defense for harassment claims, including electronic communications." },
+    { title: "Child‑Related Charges", icon: Users, desc: "Sensitive representation in cases involving children and custody dynamics." },
+    { title: "Protective Order", icon: Shield, desc: "Assistance with protective order hearings and compliance guidance." },
+  ];
+
+  return (
+    <section className="py-24 bg-white">
+      <div className="container-custom">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-serif text-mpl-navy font-bold mb-4">
+            Types of Domestic Violence Cases We Handle
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+            Comprehensive defense representation for all types of domestic violence charge situations.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {types.map((t, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.05 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl border border-gray-100 shadow-lg p-8 hover:shadow-xl transition-all"
+            >
+              <div className="w-12 h-12 rounded-full bg-mpl-navy text-white flex items-center justify-center mb-6">
+                <t.icon size={22} />
+              </div>
+              <h3 className="text-xl font-serif text-mpl-navy font-bold mb-3">
+                {t.title}
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{t.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const CTA = () => {
   return (
     <section className="py-24 bg-white">
@@ -263,18 +333,25 @@ const CTA = () => {
 
           <div className="relative z-10 max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 text-white">
-              Protect Your Future Today
+              Facing Domestic Violence Charges?
             </h2>
             <p className="text-xl text-white/80 mb-10 leading-relaxed">
-              Don't face domestic violence allegations alone. Contact us for a confidential consultation and let us fight for you.
+              Don't face accusations of domestic violence alone. Contact our experienced defense team today for immediate guidance.
             </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-3 bg-white text-mpl-navy hover:bg-mpl-gold hover:text-white px-10 py-5 rounded-full font-bold transition-all shadow-lg text-lg transform hover:-translate-y-1"
-            >
-              <Home size={20} />
-              <span>Get Legal Help Now</span>
-            </Link>
+            <div className="flex items-center justify-center gap-4">
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 bg-white text-mpl-navy hover:bg-mpl-gold hover:text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg"
+              >
+                <Shield size={18} /> Schedule Consultation
+              </Link>
+              <a
+                href="tel:7262044044"
+                className="inline-flex items-center gap-2 border border-white/60 text-white px-8 py-4 rounded-full font-bold hover:bg-white/10 transition-all"
+              >
+                <Phone size={18} /> Call (726) 204-4044
+              </a>
+            </div>
           </div>
         </div>
       </div>

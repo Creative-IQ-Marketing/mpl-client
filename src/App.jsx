@@ -32,12 +32,19 @@ import PrenuptialAgreement from "./pages/PrenuptialAgreement";
 import PostnuptialAgreement from "./pages/PostnuptialAgreement";
 import TeamMember from "./pages/TeamMember";
 import StyleGuide from "./pages/StyleGuide";
+import Books from "./pages/Books";
+import BookFamilyBlindsided from "./pages/BookFamilyBlindsided";
+import BookDivorceGuide from "./pages/BookDivorceGuide";
+import Blog from "./pages/Blog";
+import FAQ from "./pages/FAQ";
+import VisualEnhancer from "./components/VisualEnhancer";
 
 function App() {
   return (
     <Router>
       <div className="flex flex-col min-h-screen relative">
         <FloatingBubbles />
+        <VisualEnhancer />
         <Header />
         <main className="flex-grow pt-20 relative z-10">
           {" "}
@@ -93,6 +100,11 @@ function App() {
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/style-guide" element={<StyleGuide />} />
+            <Route path="/resources/books" element={<Books />} />
+            <Route path="/resources/books/family-blindsided" element={<BookFamilyBlindsided />} />
+            <Route path="/resources/books/divorce-guide" element={<BookDivorceGuide />} />
+            <Route path="/resources/blog" element={<Blog />} />
+            <Route path="/resources/faq" element={<FAQ />} />
           </Routes>
         </main>
         <Footer />

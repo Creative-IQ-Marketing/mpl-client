@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
+const Motion = motion;
 import {
   ChevronRight,
   Quote,
