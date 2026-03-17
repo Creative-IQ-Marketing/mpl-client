@@ -18,17 +18,17 @@ const Consultation = () => {
                 Let's start the conversation.
               </h2>
               <p className="text-lg text-gray-600 font-light mb-10 max-w-md leading-relaxed">
-                Reach out today for a confidential consultation. We are here to
-                listen and help you move forward.
+                Every situation is different. Tell us about yours, and we’ll help you understand your options and create a clear path forward.
               </p>
             </Motion.div>
 
             <div className="space-y-6">
               {[
-                { label: "Phone", value: "(210) 555-0123", icon: Phone },
+                { label: "Phone", value: "(726) 204-4044", href: "tel:7262044044", icon: Phone },
                 {
                   label: "Email",
-                  value: "hello@moralespadialaw.com",
+                  value: "info@moralespadialaw.com",
+                  href: "mailto:info@moralespadialaw.com",
                   icon: Mail,
                 },
                 { label: "Office", value: "San Antonio, Texas", icon: MapPin },
@@ -41,9 +41,18 @@ const Consultation = () => {
                     <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold mb-1">
                       {item.label}
                     </p>
-                    <p className="text-xl text-mpl-navy font-serif group-hover:text-mpl-blue transition-colors">
-                      {item.value}
-                    </p>
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        className="text-xl text-mpl-navy font-serif group-hover:text-mpl-blue transition-colors"
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      <p className="text-xl text-mpl-navy font-serif group-hover:text-mpl-blue transition-colors">
+                        {item.value}
+                      </p>
+                    )}
                   </div>
                 </div>
               ))}

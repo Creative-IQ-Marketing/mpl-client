@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, ChevronRight } from "lucide-react";
 
 const renderIllustration = (id) => {
   if (id === "family") {
@@ -175,108 +176,157 @@ const PracticeAreas = () => {
       id: "family",
       title: "Family Law",
       description:
-        "When family dynamics shift, you need a steady advocate at your side. Our team handles divorce, custody, child support, and adoption with a blend of strategy and compassion so you can move forward with confidence.",
-      highlights: ["Divorce", "Child Custody", "Adoption", "Child Support"],
+        "Guidance for divorce, custody, support, and adoption—focused on practical steps and steady support.",
+      to: "/family-law",
+      services: [
+        { label: "Uncontested Divorce", to: "/uncontested-divorce" },
+        { label: "Contested Divorce", to: "/contested-divorce" },
+        { label: "Child Custody", to: "/child-custody" },
+        { label: "Child Support", to: "/child-support" },
+        { label: "Adoption", to: "/adoption" },
+        { label: "Name Change", to: "/name-change" },
+        {
+          label: "Modification of Previous Order",
+          to: "/modification-of-previous-order",
+        },
+        { label: "Property Division", to: "/property-division" },
+        { label: "Enforcement", to: "/enforcement" },
+        { label: "Spousal Maintenance", to: "/spousal-maintenance" },
+        { label: "Prenuptial Agreement", to: "/prenuptial-agreement" },
+        { label: "Postnuptial Agreement", to: "/postnuptial-agreement" },
+      ],
     },
     {
       id: "estate",
       title: "Estate Planning",
       description:
-        "Thoughtful planning today protects the people and assets you care about tomorrow. We craft wills, trusts, and long-term strategies that reflect your values and provide clarity for your loved ones.",
-      highlights: ["Wills", "Trusts", "Guardianship"],
+        "Wills, trusts, and planning that protects your family and helps you feel prepared.",
+      to: "/services#estate-planning",
+      services: [
+        { label: "Wills & Trusts", to: "/services#estate-planning" },
+        { label: "Power of Attorney", to: "/services#estate-planning" },
+        { label: "Medical Directives", to: "/services#estate-planning" },
+        { label: "Asset Protection", to: "/services#estate-planning" },
+        { label: "Legacy Preservation", to: "/services#estate-planning" },
+        { label: "Guardianship Designations", to: "/services#estate-planning" },
+      ],
     },
     {
       id: "probate",
       title: "Probate Law",
       description:
-        "Losing a loved one is hard enough without the stress of legal procedures. We guide families through probate, estate administration, and disputes with clear communication and steady, respectful support.",
-      highlights: [
-        "Estate Administration",
-        "Heirship Proceedings",
-        "Will Contests",
+        "Probate and estate administration support with clear steps and responsive communication.",
+      to: "/services#probate-law",
+      services: [
+        { label: "Probate Administration", to: "/services#probate-law" },
+        { label: "Estate Settlement", to: "/services#probate-law" },
+        { label: "Heirship Determinations", to: "/services#probate-law" },
+        { label: "Will Contests", to: "/services#probate-law" },
+        { label: "Small Estate Affidavits", to: "/services#probate-law" },
+        { label: "Executor Assistance", to: "/services#probate-law" },
       ],
     },
     {
       id: "criminal",
       title: "Criminal Law",
       description:
-        "Your future should not be defined by a single charge or mistake. From DWI and drug offenses to more complex allegations, we build focused, strategic defenses to protect your rights and reputation.",
-      highlights: ["DWI/DUI", "Drug Charges", "Domestic Violence"],
+        "Defense for DWI, drug charges, and more—built around protecting your rights and future.",
+      to: "/criminal-defense",
+      services: [
+        { label: "DWI / DUI", to: "/dwi" },
+        { label: "Drug Charges", to: "/drug-charges" },
+        { label: "Domestic Violence", to: "/domestic-violence" },
+        { label: "Protective Orders", to: "/protective-orders" },
+        { label: "Theft & Property Crimes", to: "/theft-property-crimes" },
+        { label: "Juvenile Defense", to: "/juvenile-defense" },
+        {
+          label: "Expungement & Record Sealing",
+          to: "/expungement-record-sealing",
+        },
+      ],
     },
   ];
 
-  const [activeId, setActiveId] = useState(practiceAreas[0].id);
-  const activeArea = practiceAreas.find((area) => area.id === activeId);
-
   return (
-    <section className="py-24 bg-[#f5f7fb]" id="services">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-10 md:mb-12">
+    <section className="py-24 bg-white" id="services">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="text-center mb-12 md:mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-mpl-navy mb-4 leading-tight">
             Practice Areas
           </h2>
-          <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto">
-            Focused expertise across family, estate, probate, and criminal law
-            to support you at every step.
+          <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto">
+            Explore our services and go directly to the page you need.
           </p>
         </div>
 
-        <div className="mb-10 flex justify-center">
-          <div className="inline-flex rounded-full bg-white shadow-lg shadow-mpl-blue/10 p-1">
-            {practiceAreas.map((area) => (
-              <button
-                key={area.id}
-                type="button"
-                onClick={() => setActiveId(area.id)}
-                className={`px-4 md:px-6 py-2 rounded-full text-sm md:text-base transition-all ${
-                  activeId === area.id
-                    ? "bg-mpl-blue text-white shadow-md"
-                    : "text-mpl-navy/70 hover:text-mpl-navy"
-                }`}
-              >
-                {area.title}
-              </button>
-            ))}
-          </div>
-        </div>
+        <div className="space-y-6">
+          {practiceAreas.map((area) => (
+            <div
+              key={area.id}
+              className="rounded-3xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div className="p-7 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
+                <div className="lg:col-span-4">
+                  <div className="flex items-start gap-4">
+                    <div className="w-16 aspect-[4/3] rounded-2xl bg-mpl-blue/10 text-mpl-blue p-2 flex items-center justify-center">
+                      <div className="w-full h-full opacity-90">
+                        {renderIllustration(area.id)}
+                      </div>
+                    </div>
+                    <div className="min-w-0">
+                      <div className="text-[11px] uppercase tracking-[0.18em] text-gray-500">
+                        Practice area
+                      </div>
+                      <h3 className="mt-1 text-2xl md:text-3xl font-serif text-mpl-navy">
+                        <Link
+                          to={area.to}
+                          className="hover:text-mpl-blue transition-colors"
+                        >
+                          {area.title}
+                        </Link>
+                      </h3>
+                    </div>
+                  </div>
 
-        {activeArea && (
-          <div className="bg-white rounded-3xl shadow-xl shadow-mpl-blue/10 border border-mpl-blue/10 p-6 md:p-8 lg:p-10">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-              <div className="md:col-span-1">
-                <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-mpl-blue/10 via-mpl-lightBlue/20 to-mpl-blue/5 flex items-center justify-center">
-                  {renderIllustration(activeArea.id)}
+                  <p className="mt-5 text-gray-600 text-base md:text-lg leading-relaxed">
+                    {area.description}
+                  </p>
+
+                  <div className="mt-6">
+                    <Link
+                      to={area.to}
+                      className="inline-flex items-center gap-2 font-bold text-mpl-blue hover:text-mpl-navy transition-colors"
+                    >
+                      View overview <ArrowRight size={18} />
+                    </Link>
+                  </div>
+                </div>
+
+                <div className="lg:col-span-8">
+                  <div className="text-xs uppercase tracking-[0.18em] text-gray-500">
+                    Services
+                  </div>
+                  <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3">
+                    {area.services.map((service) => (
+                      <li key={`${area.id}-${service.to}-${service.label}`}>
+                        <Link
+                          to={service.to}
+                          className="group/link inline-flex items-start gap-2 text-sm text-gray-700 hover:text-mpl-blue transition-colors"
+                        >
+                          <ChevronRight
+                            size={16}
+                            className="mt-0.5 text-gray-300 group-hover/link:text-mpl-blue transition-colors"
+                          />
+                          <span className="leading-snug">{service.label}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-
-              <div className="md:col-span-2 space-y-4">
-                <h3 className="text-2xl md:text-3xl font-serif text-mpl-navy">
-                  {activeArea.title}
-                </h3>
-                <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-                  {activeArea.description}
-                </p>
-                {activeArea.highlights && (
-                  <>
-                    <p className="text-xs md:text-sm uppercase tracking-[0.18em] text-gray-500 mt-2">
-                      Common matters we handle
-                    </p>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-1">
-                      {activeArea.highlights.map((item) => (
-                        <div
-                          key={item}
-                          className="rounded-xl bg-mpl-blue/5 text-mpl-navy text-sm px-3 py-2"
-                        >
-                          {item}
-                        </div>
-                      ))}
-                    </div>
-                  </>
-                )}
-              </div>
             </div>
-          </div>
-        )}
+          ))}
+        </div>
       </div>
     </section>
   );

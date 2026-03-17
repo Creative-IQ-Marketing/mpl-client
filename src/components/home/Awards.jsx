@@ -1,26 +1,29 @@
 import { Award, Star, Crown, Medal } from "lucide-react";
-import { motion as Motion } from "framer-motion";
 
 const Awards = () => {
   const awards = [
     {
       title: "Top Family Law Lawyer",
       year: "2017",
+      org: "San Antonio Scene Magazine",
       icon: Award,
     },
     {
       title: "Best S.A Female Lawyers",
       year: "2021",
+      org: "San Antonio Scene Magazine",
       icon: Crown,
     },
     {
       title: "Top DUI/DWI Lawyer",
       year: "2023",
+      org: "San Antonio Scene Magazine",
       icon: Medal,
     },
     {
       title: "Top 10 Best Law Firm",
       year: "2025",
+      org: "Independent recognition",
       icon: Star,
     },
   ];
@@ -46,45 +49,29 @@ const Awards = () => {
           </p>
         </div>
 
-        {/* Sliding Awards Row */}
-        <div className="overflow-hidden">
-          <Motion.div
-            className="flex gap-7 md:gap-9"
-            initial={{ x: 0 }}
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          >
-            {[...awards, ...awards].map((award, index) => {
-              const IconComponent = award.icon;
-              return (
-                <div
-                  key={`${award.title}-${index}`}
-                  className="group min-w-[300px] md:min-w-[360px] bg-white/95 backdrop-blur-sm border border-gray-200 rounded-2xl shadow-md px-7 py-6 flex items-center gap-5 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-mpl-blue/40 hover:bg-white"
-                >
-                  <div className="flex-shrink-0">
-                    <div className="w-14 h-14 rounded-full bg-mpl-navy/5 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:bg-mpl-navy/10">
-                      <IconComponent className="w-7 h-7 text-mpl-navy group-hover:text-mpl-blue" />
-                    </div>
-                  </div>
-                  <div>
-                    <p className="text-[11px] md:text-xs uppercase tracking-[0.18em] text-gray-500 mb-1">
-                      Recognition
-                    </p>
-                    <p className="font-serif text-mpl-navy text-sm md:text-lg leading-snug">
-                      {award.title}
-                    </p>
-                    <p className="text-xs md:text-sm text-gray-500 mt-1">
-                      {award.year}
-                    </p>
-                  </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {awards.map((award) => {
+            const IconComponent = award.icon;
+            return (
+              <div
+                key={`${award.title}-${award.year}`}
+                className="bg-white border border-gray-200 rounded-3xl shadow-sm p-7 flex flex-col items-center text-center"
+              >
+                <div className="w-16 h-16 rounded-full bg-mpl-navy/5 flex items-center justify-center">
+                  <IconComponent className="w-8 h-8 text-mpl-navy" />
                 </div>
-              );
-            })}
-          </Motion.div>
+                <div className="mt-5 text-[11px] uppercase tracking-[0.18em] text-gray-500">
+                  {award.org}
+                </div>
+                <div className="mt-2 font-serif text-mpl-navy text-lg leading-snug">
+                  {award.title}
+                </div>
+                <div className="mt-2 inline-flex items-center justify-center rounded-full bg-mpl-blue/10 text-mpl-navy px-3 py-1 text-xs font-semibold">
+                  {award.year}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

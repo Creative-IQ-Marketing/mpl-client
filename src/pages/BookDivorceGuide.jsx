@@ -109,7 +109,7 @@ const Highlights = () => {
     "Financial planning and asset division",
     "Child custody and support information",
     "Real case examples",
-    "Expert legal advice and tips",
+    "Practical legal advice and tips",
   ];
   return (
     <section id="highlights" className="py-16 md:py-20 bg-white">
@@ -179,7 +179,7 @@ const Contents = () => {
 
 const Benefits = () => {
   const items = [
-    { title: "Expert Legal Knowledge", icon: Scale, desc: "Experience-driven insights into divorce cases." },
+    { title: "Practical Legal Knowledge", icon: Scale, desc: "Experience-driven insights into divorce cases." },
     { title: "Protect Your Rights", icon: Shield, desc: "Clear steps to safeguard interests throughout the process." },
     { title: "Financial Guidance", icon: Users, desc: "Understand property division, alimony, and planning." },
     { title: "Child-Focused Approach", icon: Users, desc: "Custody and support information prioritized for children." },

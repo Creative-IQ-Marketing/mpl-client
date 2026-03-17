@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 const MotionDiv = motion.div;
+import { Link } from "react-router-dom";
 import hero1 from "../assets/hero/alvaro-serrano-hjwKMkehBco-unsplash.jpg";
 import hero2 from "../assets/hero/daiga-ellaby-7edWO30e32k-unsplash.jpg";
 import hero3 from "../assets/hero/liv-bruce-odIhQypCuUk-unsplash.jpg";
@@ -113,9 +114,7 @@ const Hero = () => {
                 transition={{ delay: 0.3, duration: 0.8 }}
                 className="text-lg md:text-xl md:max-w-3xl mx-auto text-white/90 font-light leading-relaxed drop-shadow-md pb-8"
               >
-                Compassionate, expert guidance in Family Law, Estate Planning,
-                Probate, and Criminal Defense. Our award-winning, women-led,
-                bilingual team is dedicated to protecting your rights.
+                Trusted guidance in Family Law, Estate Planning, Probate, and Criminal Defense—helping individuals and families move forward with clarity, protection, and confidence.
               </motion.p>
             </div>
 
@@ -126,12 +125,12 @@ const Hero = () => {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="flex flex-col sm:flex-row justify-center items-center gap-6"
             >
-              <a
-                href="#consultation"
+              <Link
+                to="/contact"
                 className="px-10 py-4 border border-white text-white text-lg tracking-widest hover:bg-white hover:text-black transition-all duration-300 min-w-50 uppercase font-light"
               >
                 Book Now
-              </a>
+              </Link>
               <a
                 href="#services"
                 className="px-10 py-4 bg-white text-black text-lg tracking-widest hover:bg-gray-200 transition-all duration-300 min-w-50 uppercase font-light"

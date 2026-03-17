@@ -6,28 +6,38 @@ const Achievements = () => {
   const badges = [
     {
       src: AchievementBestFirms,
+      title: "10 Best Law Firms",
+      subtitle: "Recognition badge",
       alt: "10 Best Law Firms badge",
     },
     {
       src: AchievementBadge1,
+      title: "Award",
+      subtitle: "Recognition badge",
       alt: "Award badge",
     },
     {
       src: AchievementUnnamed,
+      title: "Recognition",
+      subtitle: "Recognition badge",
       alt: "Recognition badge",
     },
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-5xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-10 md:mb-12">
+    <section className="relative py-24 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-24 left-0 w-[520px] h-[520px] bg-mpl-blue/5 rounded-full blur-3xl" />
+        <div className="absolute -bottom-28 right-0 w-[520px] h-[520px] bg-mpl-navy/5 rounded-full blur-3xl" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+        <div className="text-center mb-12 md:mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-mpl-navy mb-4 leading-tight">
-            Recognized achievements.
+            Recognized Achievements
           </h2>
-          <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto">
-            A sampling of the independent badges and honors our work has earned
-            over the years.
+          <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
+            Recognition that reflects our commitment to clear guidance and strong advocacy.
           </p>
         </div>
 
@@ -35,13 +45,19 @@ const Achievements = () => {
           {badges.map((badge) => (
             <div
               key={badge.alt}
-              className="bg-gray-50 rounded-2xl border border-gray-200 shadow-sm px-6 py-6 flex items-center justify-center"
+              className="group bg-white rounded-3xl border border-gray-200 shadow-sm px-6 py-8 flex flex-col items-center justify-center text-center hover:shadow-xl transition-all duration-300"
             >
+              <div className="text-[11px] uppercase tracking-[0.18em] text-gray-500">
+                {badge.subtitle}
+              </div>
               <img
                 src={badge.src}
                 alt={badge.alt}
-                className="max-h-28 md:max-h-40 w-auto object-contain"
+                className="mt-5 max-h-28 md:max-h-40 w-auto object-contain"
               />
+              <div className="mt-5 font-serif text-mpl-navy text-lg">
+                {badge.title}
+              </div>
             </div>
           ))}
         </div>

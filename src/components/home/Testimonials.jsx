@@ -10,37 +10,31 @@ const Testimonials = () => {
       name: "Adolph O.",
       quote:
         "The team was incredibly supportive and knowledgeable throughout my entire case.",
-      role: "Family Law",
     },
     {
       name: "Ned Boyd",
       quote:
         "Professional, compassionate, and effective. They fought for my rights and won.",
-      role: "Criminal Defense",
     },
     {
       name: "Emily Espinoza",
       quote:
         "I felt heard and understood. They made a difficult process much easier to handle.",
-      role: "Probate Law",
     },
     {
       name: "Kristi Krumbholz",
       quote:
         "Excellent communication and results. I am forever grateful for their help.",
-      role: "Estate Planning",
     },
     {
       name: "Sarah Jenkins",
       quote:
         "Morales Padia Law gave me my life back. Their dedication is unmatched in San Antonio.",
-      role: "Divorce Law",
     },
     {
       name: "Michael R.",
       quote:
         "Navigating the legal system is scary, but they made it understandable and less intimidating.",
-      role: "DWI Defense",
     },
   ];
 
@@ -93,9 +87,6 @@ const Testimonials = () => {
                 <div>
                   <p className="mt-4 text-sm tracking-[0.22em] uppercase text-mpl-navy">
                     {testimonials[currentIndex].name}
-                  </p>
-                  <p className="text-xs tracking-[0.22em] uppercase text-gray-500 mt-1">
-                    {testimonials[currentIndex].role}
                   </p>
                 </div>
 

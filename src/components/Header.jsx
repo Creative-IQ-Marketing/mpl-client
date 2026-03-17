@@ -188,9 +188,9 @@ const Header = () => {
               className={`w-auto mx-auto transition-all duration-300 ${
                 isHome
                   ? isScrolled
-                    ? "h-12 md:h-10 lg:h-20"
-                    : "h-20 md:h-16 lg:h-24"
-                  : "h-12 md:h-10 lg:h-20"
+                    ? "h-14 md:h-16 lg:h-24"
+                    : "h-20 md:h-24 lg:h-28"
+                  : "h-14 md:h-16 lg:h-24"
               }`}
             />
           </Link>

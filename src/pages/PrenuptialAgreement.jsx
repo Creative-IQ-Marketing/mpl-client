@@ -388,8 +388,8 @@ const ContactInfoSection = () => {
               <Mail size={24} />
             </div>
             <h3 className="font-bold text-mpl-navy mb-2">Email</h3>
-            <a href="mailto:info@moralespadillalaw.com" className="text-mpl-blue hover:underline">
-              info@moralespadillalaw.com
+            <a href="mailto:info@moralespadialaw.com" className="text-mpl-blue hover:underline">
+              info@moralespadialaw.com
             </a>
           </div>
         </div>
@@ -476,7 +476,7 @@ const FormSection = () => {
                     </div>
                     <div className="flex items-center gap-3">
                       <Mail size={18} className="text-mpl-gold" />
-                      <span className="font-medium">info@moralespadillalaw.com</span>
+                      <span className="font-medium">info@moralespadialaw.com</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <MapPin size={18} className="text-mpl-gold" />

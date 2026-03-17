@@ -46,7 +46,7 @@ const HeroSection = () => {
           className="max-w-4xl"
         >
           <div className="inline-block px-4 py-1.5 bg-mpl-blue/10 text-mpl-blue rounded-full text-sm font-bold tracking-wider mb-6 uppercase border border-mpl-blue/20">
-            San Antonio's Trusted Family Law Expert
+            San Antonio's Trusted Family Law Team
           </div>
           <h1 className="text-5xl md:text-7xl font-serif font-bold text-mpl-navy mb-8 leading-tight">
             Uncontested Divorce <br />
@@ -115,7 +115,7 @@ const WhyChooseSection = () => {
     },
     {
       icon: Compass,
-      title: "Expert Guidance",
+      title: "Trusted Guidance",
       desc: "Our experienced attorneys guide you through every step of the uncontested divorce process.",
     },
   ];
@@ -241,7 +241,7 @@ const BenefitsSection = () => {
     {
       icon: DollarSign,
       title: "Lower Costs",
-      desc: "Significantly reduced legal fees, court costs, and expert witness expenses compared to contested divorces.",
+      desc: "Significantly reduced legal fees, court costs, and witness expenses compared to contested divorces.",
     },
     {
       icon: Smile,

@@ -5,12 +5,15 @@ import { CheckCircle, ArrowRight, Phone, Mail, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import ConsultationForm from "../components/ConsultationForm";
 
+const YOUTUBE_EMBED_BASE = "https://www.youtube.com/embed";
+
 const Blog = () => {
   return (
     <div className="bg-white min-h-screen">
       <Hero />
       <SubscribeBar />
       <FeaturedVideo />
+      <MediaSection />
       <Highlights />
       <LatestPosts />
       <ContactSection />
@@ -102,6 +105,8 @@ const Hero = () => {
 };
 
 const FeaturedVideo = () => {
+  const estatePlanningVideoId = "4Y8nCUwCLBQ";
+
   return (
     <section className="py-10 md:py-12 bg-white">
       <div className="container-custom">
@@ -116,13 +121,70 @@ const FeaturedVideo = () => {
             <div className="aspect-video w-full bg-black">
               <iframe
                 className="w-full h-full"
-                src="https://www.youtube.com/embed/lewEf66tJfY?autoplay=1&mute=1&rel=0&modestbranding=1&playsinline=1&controls=1"
-                title="TRISHA MORALES PADIA Video Trailer"
+                src={`${YOUTUBE_EMBED_BASE}/${estatePlanningVideoId}?autoplay=1&mute=1&rel=0&modestbranding=1&playsinline=1&controls=1`}
+                title="Estate planning video"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />
             </div>
           </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const MediaSection = () => {
+  const items = [
+    {
+      title: "Firm video",
+      youtubeId: "lewEf66tJfY",
+    },
+  ];
+
+  return (
+    <section className="py-12 bg-gray-50">
+      <div className="container-custom">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-end justify-between gap-6">
+            <div>
+              <div className="text-xs font-bold tracking-wider uppercase text-gray-500">
+                Media
+              </div>
+              <h2 className="mt-2 text-3xl md:text-4xl font-serif font-bold text-mpl-navy">
+                Videos
+              </h2>
+            </div>
+          </div>
+
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {items.map((item) => (
+              <a
+                key={item.youtubeId}
+                href={`https://www.youtube.com/watch?v=${item.youtubeId}`}
+                target="_blank"
+                rel="noreferrer"
+                className="group rounded-3xl border border-gray-200 bg-white shadow-sm overflow-hidden hover:shadow-md transition-shadow"
+              >
+                <div className="aspect-video bg-black">
+                  <img
+                    src={`https://i.ytimg.com/vi/${item.youtubeId}/hqdefault.jpg`}
+                    alt={item.title}
+                    className="w-full h-full object-cover opacity-95 group-hover:opacity-100 transition-opacity"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="font-serif text-mpl-navy text-lg">
+                    {item.title}
+                  </div>
+                  <div className="mt-2 text-sm text-gray-600">
+                    Watch on YouTube
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -473,8 +535,8 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: "Email",
-      details: ["hello@moralespadialaw.com"],
-      action: "mailto:hello@moralespadialaw.com",
+      details: ["info@moralespadialaw.com"],
+      action: "mailto:info@moralespadialaw.com",
     },
     {
       icon: MapPin,

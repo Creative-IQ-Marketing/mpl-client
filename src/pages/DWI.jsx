@@ -178,8 +178,8 @@ const ProcessSection = () => {
       id: 3,
       title: "Evidence Analysis",
       icon: Scale,
-      desc: "We analyze legal and scientific issues, preparing foundational strategy and experts as needed.",
-      bullets: ["Probable cause review", "Test reliability analysis", "Expert consultation", "Strategy development"],
+      desc: "We analyze legal and scientific issues, preparing foundational strategy and technical support as needed.",
+      bullets: ["Probable cause review", "Test reliability analysis", "Consultation support", "Strategy development"],
     },
     {
       id: 4,
@@ -199,8 +199,8 @@ const ProcessSection = () => {
       id: 6,
       title: "Trial Representation",
       icon: Gavel,
-      desc: "If needed, we defend you at trial with strategic advocacy and expert challenges.",
-      bullets: ["Jury advocacy", "Cross‑examination", "Expert challenges", "Closing arguments"],
+      desc: "If needed, we defend you at trial with strategic advocacy and evidence challenges.",
+      bullets: ["Jury advocacy", "Cross‑examination", "Evidence challenges", "Closing arguments"],
     },
   ];
 

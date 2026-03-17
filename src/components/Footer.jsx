@@ -79,12 +79,18 @@ const Footer = () => {
             <div className="space-y-1 text-gray-300">
               <p>123 Legal Avenue, Suite 100</p>
               <p>San Antonio, TX 78205</p>
-              <p className="mt-4 block hover:text-white transition-colors font-medium">
-                (210) 555-0123
-              </p>
-              <p className="hover:text-white transition-colors">
-                hello@moralespadialaw.com
-              </p>
+              <a
+                href="tel:7262044044"
+                className="mt-4 block hover:text-white transition-colors font-medium"
+              >
+                (726) 204-4044
+              </a>
+              <a
+                href="mailto:info@moralespadialaw.com"
+                className="block hover:text-white transition-colors"
+              >
+                info@moralespadialaw.com
+              </a>
             </div>
           </div>
         </div>

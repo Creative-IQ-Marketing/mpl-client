@@ -15,8 +15,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      details: ["hello@moralespadialaw.com"],
-      action: "mailto:hello@moralespadialaw.com",
+      details: ["info@moralespadialaw.com"],
+      action: "mailto:info@moralespadialaw.com",
     },
     {
       icon: MapPin,
@@ -70,8 +70,7 @@ const Contact = () => {
                 Get in Touch
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                Whether you have a question about our services or need legal
-                assistance, our team is ready to answer all your questions.
+                Every situation is different. Tell us about yours, and we’ll help you understand your options and create a clear path forward.
               </p>
             </motion.div>
 

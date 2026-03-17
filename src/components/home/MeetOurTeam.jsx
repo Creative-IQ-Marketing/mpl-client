@@ -83,12 +83,12 @@ const MeetOurTeam = () => {
               member.name === "Trisha Morales Padia"
                 ? [
                     "Licensed in Texas",
-                    "Specialized in Family Law & Estate Planning",
+                    "Focused on Family Law & Estate Planning",
                     "Award-winning legal excellence",
                   ]
                 : [
                     "Licensed in Texas",
-                    "Specialized in Criminal Defense & Family Law",
+                    "Focused on Criminal Defense & Family Law",
                     "Strategic advocacy in complex legal matters",
                   ];
 

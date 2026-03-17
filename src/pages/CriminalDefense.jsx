@@ -171,7 +171,7 @@ const ServicesSection = () => {
     {
       title: "Juvenile Defense",
       icon: UserX,
-      desc: "Specialized defense for minors facing criminal charges, focusing on rehabilitation and future protection.",
+      desc: "Dedicated defense for minors facing criminal charges, focusing on rehabilitation and future protection.",
       bullets: [
         "Detention Hearings",
         "School Disciplinary Issues",
@@ -377,7 +377,7 @@ const ProcessSection = () => {
         "Evidence collection",
         "Witness interviews",
         "Police procedure review",
-        "Expert consultation",
+        "Consultation support",
       ],
     },
     {

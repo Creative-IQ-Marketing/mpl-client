@@ -182,7 +182,7 @@ const Benefits = () => {
     { title: "Adaptable Framework", icon: Users, desc: "Built for real families facing real changes." },
     { title: "Protect Loved Ones", icon: Shield, desc: "Reduce risk of conflict and financial strain." },
     { title: "Reliable Terms", icon: BookOpen, desc: "Clear language and useful examples." },
-    { title: "Expert Guidance", icon: Users, desc: "Created by an experienced family law team." },
+    { title: "Trusted Guidance", icon: Users, desc: "Created by an experienced family law team." },
   ];
   return (
     <section className="py-16 bg-white">

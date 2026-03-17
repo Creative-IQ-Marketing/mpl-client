@@ -98,7 +98,7 @@ const Catalog = () => {
       category: "Family Law",
       slug: "/resources/books/divorce-guide",
       desc:
-        "What to do next when facing divorce. Navigate the complex process of divorce with expert guidance and practical steps to protect your interests and your family's future.",
+        "What to do next when facing divorce. Navigate the complex process of divorce with trusted guidance and practical steps to protect your interests and your family's future.",
     },
   ];
   return (

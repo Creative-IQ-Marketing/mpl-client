@@ -181,11 +181,11 @@ const WhoWeAre = () => {
               <p>
                 Our{" "}
                 <span className="font-bold text-mpl-blue">
-                  award-winning, women-led, bilingual team
+                  award-winning team
                 </span>{" "}
                 is dedicated to protecting your rights and achieving the best
                 possible outcome for your case. We serve the diverse community
-                of San Antonio with understanding, expertise, and unwavering
+                of San Antonio with understanding, experience, and unwavering
                 commitment to justice.
               </p>
             </div>
@@ -233,7 +233,7 @@ const PracticeAreas = () => {
     {
       title: "Probate Law",
       icon: Scale,
-      desc: "Expert guidance through probate processes, will disputes, and estate administration. We ensure smooth, legally sound resolution of estate matters.",
+      desc: "Trusted guidance through probate processes, will disputes, and estate administration. We ensure smooth, legally sound resolution of estate matters.",
       link: "/services#probate-law",
     },
   ];

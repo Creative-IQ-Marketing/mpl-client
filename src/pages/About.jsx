@@ -7,7 +7,7 @@ const About = () => {
         <div className="container-custom text-center">
           <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">About Morales Padia Law</h1>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-            Award-winning, women-led, bilingual team dedicated to compassionate, expert legal guidance.
+            Award-winning team dedicated to compassionate, trusted legal guidance.
           </p>
         </div>
       </div>
@@ -22,7 +22,7 @@ const About = () => {
           </p>
           <p className="text-lg text-gray-600 leading-relaxed">
             Whether you are facing a complex family law matter, planning for the future of your estate, or navigating the criminal justice system, 
-            we stand by your side every step of the way. We are proud to be a women-led firm serving the San Antonio community with integrity and dedication.
+            we stand by your side every step of the way. We are proud to serve the San Antonio community with integrity and dedication.
           </p>
         </div>
 
@@ -85,7 +85,7 @@ const About = () => {
               
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  Aiden Gamble brings a dynamic perspective to the firm, specializing in Criminal Defense and Family Law. 
+                  Aiden Gamble brings a dynamic perspective to the firm, focused on Criminal Defense and Family Law. 
                   He is committed to ensuring that every client receives a fair defense and that their rights are upheld throughout the legal process.
                 </p>
                 <p>

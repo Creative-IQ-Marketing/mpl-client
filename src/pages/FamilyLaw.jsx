@@ -136,7 +136,7 @@ const ServicesSection = () => {
     {
       title: "Contested Divorce",
       icon: Scale,
-      desc: "Expert representation in complex divorce cases involving disputes over assets, custody, or support arrangements.",
+      desc: "Strategic representation in complex divorce cases involving disputes over assets, custody, or support arrangements.",
       bullets: [
         "Asset Division Disputes",
         "Custody Battles",
@@ -403,7 +403,7 @@ const ProcessSection = () => {
       desc: "If litigation is necessary, we provide aggressive court representation to protect your rights and achieve the best possible outcome.",
       bullets: [
         "Comprehensive trial preparation",
-        "Expert witness coordination",
+        "Witness coordination",
         "Courtroom advocacy",
         "Post-judgment support",
       ],
@@ -422,7 +422,7 @@ const ProcessSection = () => {
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Our structured approach ensures every aspect of your family law
-            matter is handled with care, expertise, and attention to detail.
+            matter is handled with care, skill, and attention to detail.
           </p>
         </div>
 

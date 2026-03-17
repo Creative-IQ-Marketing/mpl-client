@@ -306,7 +306,7 @@ const ProcessSection = () => {
       title: "Advocacy",
       icon: Gavel,
       desc: "We present a powerful defense in court and fight for the best possible outcome.",
-      bullets: ["Opening/closing", "Cross‑examination", "Expert testimony", "Verdict advocacy"],
+      bullets: ["Opening/closing", "Cross‑examination", "Witness testimony", "Verdict advocacy"],
     },
   ];
 

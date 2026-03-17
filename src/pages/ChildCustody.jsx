@@ -95,7 +95,7 @@ const WhyChooseSection = () => {
     },
     {
       icon: Scale,
-      title: "Texas Family Law Expertise",
+      title: "Texas Family Law Experience",
       desc: "Our attorneys have extensive knowledge of Texas child custody laws, including joint custody, sole custody, and visitation rights.",
     },
     {

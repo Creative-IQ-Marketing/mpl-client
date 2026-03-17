@@ -108,7 +108,7 @@ const WhyChooseSection = () => {
     {
       icon: BarChart3,
       title: "Asset Valuation",
-      desc: "We work with financial experts to ensure accurate valuation of all marital assets and property.",
+      desc: "We work with financial professionals to ensure accurate valuation of all marital assets and property.",
     },
     {
       icon: Scale,
@@ -167,7 +167,7 @@ const ProcessSection = () => {
     {
       id: 2,
       title: "Asset Valuation",
-      desc: "We work with experts to determine the fair market value of all marital assets and property.",
+      desc: "We work with valuation professionals to determine the fair market value of all marital assets and property.",
     },
     {
       id: 3,

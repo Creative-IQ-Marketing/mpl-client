@@ -39,7 +39,7 @@ const Services = () => {
         <div className="container-custom text-center">
           <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">Our Practice Areas</h1>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-            Expert legal representation tailored to your unique needs.
+            Strategic legal representation tailored to your unique needs.
           </p>
         </div>
       </div>

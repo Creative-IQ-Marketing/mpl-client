@@ -100,7 +100,7 @@ const WhyChooseSection = () => {
     },
     {
       icon: Users,
-      title: "Child Custody Expertise",
+      title: "Child Custody Experience",
       desc: "Our attorneys have extensive experience in complex child custody disputes and visitation arrangements.",
     },
     {
@@ -110,8 +110,8 @@ const WhyChooseSection = () => {
     },
     {
       icon: BarChart,
-      title: "Expert Witnesses",
-      desc: "We work with financial experts, psychologists, and other professionals to strengthen your case.",
+      title: "Outside Witnesses",
+      desc: "We work with financial professionals, psychologists, and other partners to strengthen your case.",
     },
     {
       icon: Target,
@@ -237,7 +237,7 @@ const RepresentationNeedsSection = () => {
     {
       icon: Home,
       title: "Complex Property Division",
-      desc: "High-value assets, business interests, real estate, and complex financial portfolios require expert legal representation.",
+      desc: "High-value assets, business interests, real estate, and complex financial portfolios require strategic legal representation.",
     },
     {
       icon: Baby,
@@ -262,7 +262,7 @@ const RepresentationNeedsSection = () => {
     {
       icon: Building,
       title: "Business Ownership",
-      desc: "Divorce involving business interests, partnerships, and professional practices requires specialized expertise.",
+      desc: "Divorce involving business interests, partnerships, and professional practices requires focused experience.",
     },
   ];
 
