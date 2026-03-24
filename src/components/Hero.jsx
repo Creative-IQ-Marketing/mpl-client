@@ -114,7 +114,7 @@ const Hero = () => {
                 transition={{ delay: 0.3, duration: 0.8 }}
                 className="text-lg md:text-xl md:max-w-3xl mx-auto text-white/90 font-light leading-relaxed drop-shadow-md pb-8"
               >
-                Trusted guidance in Family Law, Estate Planning, Probate, and Criminal Defense—helping individuals and families move forward with clarity, protection, and confidence.
+                Trusted guidance in Family Law, Estate Planning, Probate, and Criminal Defense, helping individuals and families move forward with clarity, protection, and confidence.
               </motion.p>
             </div>
 
