@@ -13,7 +13,6 @@ import {
 } from "lucide-react";
 
 import TrishaImg from "../assets/team/UF9A2215-Edit-Edit.jpg";
-import AidenImg from "../assets/team/Aiden1 UF9A2286-Edit-2.jpg";
 import DorothyImg from "../assets/team/Dorothy1 UF9A2316-Edit-2.jpg";
 import AllysonImg from "../assets/team/Allyson1 UF9A2325-Edit-2.jpg";
 import CameronImg from "../assets/team/Cameron1 UF9A2310-Edit-2.jpg";
@@ -339,7 +338,6 @@ const CoreValues = () => {
 const MeetOurTeam = () => {
   const team = [
     { name: "Trisha Morales Padia", role: "Managing Attorney", img: TrishaImg },
-    { name: "Aiden Gamble", role: "Associate Attorney", img: AidenImg },
     { name: "Dorothy Dominguez", role: "Paralegal", img: DorothyImg },
     { name: "Allyson Gilmore", role: "Accounting Manager", img: AllysonImg },
     {

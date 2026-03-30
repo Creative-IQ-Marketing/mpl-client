@@ -1,5 +1,4 @@
 import TrishaImg from "../../assets/team/UF9A2215-Edit-Edit.jpg";
-import AidenImg from "../../assets/team/Aiden1 UF9A2286-Edit-2.jpg";
 import DorothyImg from "../../assets/team/Dorothy1 UF9A2316-Edit-2.jpg";
 import AllysonImg from "../../assets/team/Allyson1 UF9A2325-Edit-2.jpg";
 import CameronImg from "../../assets/team/Cameron1 UF9A2310-Edit-2.jpg";
@@ -15,13 +14,6 @@ const MeetOurTeam = () => {
       specialty: "Family Law & Estate Planning",
       image: TrishaImg,
       size: "large",
-    },
-    {
-      name: "Aiden Gamble",
-      role: "Associate Attorney",
-      specialty: "Criminal Defense & Family Law",
-      image: AidenImg,
-      size: "medium",
     },
     {
       name: "Dorothy Dominguez",
@@ -61,8 +53,8 @@ const MeetOurTeam = () => {
     },
   ];
 
-  const leadMembers = teamMembers.slice(0, 2);
-  const otherMembers = teamMembers.slice(2);
+  const leadMembers = teamMembers.slice(0, 1);
+  const otherMembers = teamMembers.slice(1);
 
   return (
     <section className="py-24 md:py-32 ">
@@ -77,7 +69,7 @@ const MeetOurTeam = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
+        <div className="grid grid-cols-1 gap-10 mb-16 max-w-2xl mx-auto">
           {leadMembers.map((member) => {
             const bullets =
               member.name === "Trisha Morales Padia"

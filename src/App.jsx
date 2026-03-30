@@ -38,11 +38,13 @@ import BookDivorceGuide from "./pages/BookDivorceGuide";
 import Blog from "./pages/Blog";
 import FAQ from "./pages/FAQ";
 import VisualEnhancer from "./components/VisualEnhancer";
+import ChatWidget from "./components/ChatWidget";
 
 function App() {
   return (
     <Router>
       <div className="flex flex-col min-h-screen relative">
+        <ChatWidget />
         <FloatingBubbles />
         <VisualEnhancer />
         <Header />

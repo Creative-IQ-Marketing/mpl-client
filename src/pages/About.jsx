@@ -67,43 +67,6 @@ const About = () => {
               </div>
             </div>
           </div>
-
-          {/* Aiden */}
-          <div className="flex flex-col md:flex-row gap-12 items-start">
-            <div className="w-full md:w-1/3 md:order-2">
-              <div className="rounded-xl overflow-hidden shadow-lg">
-                <img 
-                  src="https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                  alt="Aiden Gamble" 
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-            </div>
-            <div className="w-full md:w-2/3 md:order-1">
-              <h3 className="text-3xl font-serif font-bold text-mpl-navy mb-2">Aiden Gamble</h3>
-              <p className="text-xl text-mpl-blue font-medium mb-6">Associate Attorney</p>
-              
-              <div className="space-y-4 text-gray-600 leading-relaxed">
-                <p>
-                  Aiden Gamble brings a dynamic perspective to the firm, focused on Criminal Defense and Family Law. 
-                  He is committed to ensuring that every client receives a fair defense and that their rights are upheld throughout the legal process.
-                </p>
-                <p>
-                  Aiden's approach is detailed and client-focused. He understands that criminal charges or family disputes can be life-altering, 
-                  and he works tirelessly to achieve the best possible outcomes, whether through negotiation or litigation.
-                </p>
-                
-                <div className="pt-4">
-                  <h4 className="font-bold text-mpl-navy mb-2">Practice Areas:</h4>
-                  <ul className="list-disc list-inside space-y-1 ml-2">
-                    <li>Criminal Defense (DWI, Drug Charges)</li>
-                    <li>Domestic Violence Defense</li>
-                    <li>Family Law Support</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

@@ -1,5 +1,4 @@
 import TrishaImg from "../assets/team/UF9A2215-Edit-Edit.jpg";
-import AidenImg from "../assets/team/Aiden1 UF9A2286-Edit-2.jpg";
 import DorothyImg from "../assets/team/Dorothy1 UF9A2316-Edit-2.jpg";
 import AllysonImg from "../assets/team/Allyson1 UF9A2325-Edit-2.jpg";
 import CameronImg from "../assets/team/Cameron1 UF9A2310-Edit-2.jpg";
@@ -32,26 +31,6 @@ export const teamMembers = [
       "Top DWI Lawyer",
       "Top Family Law Lawyer",
       "Best SATX Female Lawyer"
-    ]
-  },
-  {
-    id: "aiden-gamble",
-    name: "Aiden Gamble",
-    role: "Associate Attorney",
-    image: AidenImg,
-    headline: "Justice through dedication and integrity.",
-    bio: [
-      "Aiden Gamble is a dedicated attorney with a strong background in family law, criminal appeals, and personal injury. After earning her law degree from LSU Paul M. Hebert Law School in 2021, she gained valuable experience as a staff attorney for the Louisiana 3rd Circuit Court of Appeals, focusing on criminal appeals. She later expanded her practice into personal injury and family law, working with Sralla Family Law before joining Morales Padia Law.",
-      "Aiden is committed to helping clients navigate complex legal matters with respect, strategy, and a problem-solving mindset. She prioritizes resolving cases amicably whenever possible, ensuring her clients' long-term goals remain at the forefront. While her primary focus is family law and legal research, she hopes to continue handling criminal appeals as part of her practice.",
-      "Outside of work, Aiden enjoys gaming, gardening, and spending time with her cats. She is also learning Japanese and has a fond appreciation for Miffy, the classic storybook character."
-    ],
-    quote: "Justice is the constant and perpetual wish to render to every man his due.",
-    quoteAuthor: "Justinian",
-    footerTitles: [
-      "Criminal Defense",
-      "Family Law",
-      "DWI/DUI Defense",
-      "Domestic Violence"
     ]
   },
   {
