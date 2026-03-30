@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import SEO from "./components/SEO";
+import StructuredData from "./components/StructuredData";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import FloatingBubbles from "./components/home/FloatingBubbles";
@@ -43,6 +45,8 @@ import ChatWidget from "./components/ChatWidget";
 function App() {
   return (
     <Router>
+      <SEO />
+      <StructuredData />
       <div className="flex flex-col min-h-screen relative">
         <ChatWidget />
         <FloatingBubbles />
