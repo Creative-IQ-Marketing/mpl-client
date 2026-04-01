@@ -77,7 +77,7 @@ const Footer = () => {
               San Antonio Office
             </h3>
             <div className="space-y-1 text-gray-300">
-              <p>123 Legal Avenue, Suite 100</p>
+              <p>45 NE LOOP 410 ste 307</p>
               <p>San Antonio, TX 78205</p>
               <a
                 href="tel:7262044044"
