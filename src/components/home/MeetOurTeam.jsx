@@ -1,5 +1,4 @@
 import TrishaImg from "../../assets/team/UF9A2215-Edit-Edit.jpg";
-import PaulaImg from "../../assets/team/PaulaPerezHeadshot.jpg";
 import DorothyImg from "../../assets/team/Dorothy1 UF9A2316-Edit-2.jpg";
 import AllysonImg from "../../assets/team/Allyson1 UF9A2325-Edit-2.jpg";
 import CameronImg from "../../assets/team/Cameron1 UF9A2310-Edit-2.jpg";
@@ -15,12 +14,6 @@ const MeetOurTeam = () => {
       specialty: "Family Law & Estate Planning",
       image: TrishaImg,
       size: "large",
-    },
-    {
-      name: "Paula Perez",
-      role: "Attorney",
-      image: PaulaImg,
-      size: "medium",
     },
     {
       name: "Dorothy Dominguez",

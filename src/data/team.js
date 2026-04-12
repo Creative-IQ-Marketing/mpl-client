@@ -5,7 +5,6 @@ import CameronImg from "../assets/team/Cameron1 UF9A2310-Edit-2.jpg";
 import VeronicaImg from "../assets/team/veronica.jpeg";
 import ElenaImg from "../assets/team/Elena1 UF9A2289-Edit-2.jpg";
 import AlexandraImg from "../assets/team/Alexandra1 UF9A2272-Edit-2.jpg";
-import PaulaImg from "../assets/team/PaulaPerezHeadshot.jpg";
 
 export const teamMembers = [
   {
@@ -33,12 +32,6 @@ export const teamMembers = [
       "Top Family Law Lawyer",
       "Best SATX Female Lawyer"
     ]
-  },
-  {
-    id: "paula-perez",
-    name: "Paula Perez",
-    role: "Attorney",
-    image: PaulaImg
   },
   {
     id: "dorothy-dominguez",
