@@ -8,12 +8,8 @@ export default function StructuredData() {
       "@type": "WebSite",
       name: "Morales Padia Law",
       url: window.location.origin,
-      description: "Expert legal representation in family law, criminal defense, probate, and estate planning.",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: `${window.location.origin}/search?q={search_term_string}`,
-        "query-input": "required name=search_term_string"
-      }
+      description:
+        "San Antonio attorneys for family law, estate planning, probate, and criminal defense.",
     };
 
     // Organization Schema
@@ -25,7 +21,7 @@ export default function StructuredData() {
       logo: `${window.location.origin}/mpl_logo.png`,
       image: `${window.location.origin}/mpl_logo.png`,
       description:
-        "Morales Padia Law provides expert legal representation in family law, criminal defense, probate, and estate planning.",
+        "San Antonio attorneys for family law, estate planning, probate, and criminal defense.",
       telephone: "+1-726-204-4044",
       contactPoint: {
         "@type": "ContactPoint",
@@ -43,22 +39,40 @@ export default function StructuredData() {
       name: "Morales Padia Law",
       image: `${window.location.origin}/mpl_logo.png`,
       description:
-        "Experienced attorneys specializing in family law and criminal defense.",
+        "San Antonio attorneys for family law, estate planning, probate, and criminal defense.",
       url: window.location.origin,
       telephone: "+1-726-204-4044",
       priceRange: "$$",
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "5.0",
-        reviewCount: "85",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "45 NE LOOP 410 ste 307",
+        addressLocality: "San Antonio",
+        addressRegion: "TX",
+        postalCode: "78205",
+        addressCountry: "US",
       },
+      areaServed: [
+        { "@type": "City", name: "San Antonio" },
+        { "@type": "State", name: "Texas" },
+      ],
       knowsAbout: [
         "Family Law",
-        "Criminal Defense",
         "Divorce",
         "Child Custody",
+        "Child Support",
+        "SAPCR",
+        "Spousal Maintenance",
+        "Protective Orders",
+        "Adoption",
+        "Criminal Defense",
         "DWI Defense",
+        "Domestic Violence Defense",
+        "Expungement",
+        "Record Sealing",
         "Estate Planning",
+        "Wills",
+        "Trusts",
+        "Power of Attorney",
         "Probate Law"
       ],
     };
@@ -102,6 +116,33 @@ export default function StructuredData() {
       itemListElement: [
         {
           "@type": "Service",
+          name: "Divorce",
+          description: "Guidance through contested and uncontested divorce.",
+          provider: {
+            "@type": "Organization",
+            name: "Morales Padia Law",
+          },
+        },
+        {
+          "@type": "Service",
+          name: "Child Custody",
+          description: "Representation for custody and parenting time matters.",
+          provider: {
+            "@type": "Organization",
+            name: "Morales Padia Law",
+          },
+        },
+        {
+          "@type": "Service",
+          name: "Child Support",
+          description: "Help with child support establishment and enforcement.",
+          provider: {
+            "@type": "Organization",
+            name: "Morales Padia Law",
+          },
+        },
+        {
+          "@type": "Service",
           name: "Family Law",
           description: "Compassionate legal representation for divorce, child custody, and family matters.",
           provider: {
@@ -122,6 +163,24 @@ export default function StructuredData() {
           "@type": "Service",
           name: "Estate Planning",
           description: "Comprehensive planning for wills, trusts, and asset protection.",
+          provider: {
+            "@type": "Organization",
+            name: "Morales Padia Law",
+          },
+        },
+        {
+          "@type": "Service",
+          name: "Wills",
+          description: "Drafting wills to protect your family and legacy.",
+          provider: {
+            "@type": "Organization",
+            name: "Morales Padia Law",
+          },
+        },
+        {
+          "@type": "Service",
+          name: "Trusts",
+          description: "Trust planning for long-term protection and control.",
           provider: {
             "@type": "Organization",
             name: "Morales Padia Law",

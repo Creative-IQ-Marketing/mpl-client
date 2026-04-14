@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 
 export default function SEO({
-  title = "Morales Padia Law | Family & Criminal Defense Attorneys",
-  description = "Morales Padia Law provides expert legal representation in family law, criminal defense, probate, and estate planning. Contact us for a consultation.",
-  keywords = "family law, criminal defense, divorce attorney, child custody, DWI lawyer, domestic violence, estate planning, probate law, San Antonio lawyers",
+  title = "Morales Padia Law | San Antonio Family Law, Estate Planning & Criminal Defense",
+  description = "San Antonio attorneys for family law (divorce, custody, child support), estate planning (wills, trusts, power of attorney), probate, and criminal defense (DWI).",
+  keywords = "San Antonio family law attorney, family lawyer San Antonio, divorce lawyer San Antonio, child custody attorney, child support attorney, spousal maintenance, SAPCR, adoption attorney, protective orders, estate planning attorney San Antonio, wills, trusts, power of attorney, probate lawyer San Antonio, criminal defense attorney San Antonio, DWI lawyer, domestic violence defense, expungement, record sealing",
   ogImage = "/mpl_logo.png",
-  canonical = "",
+  canonical = window.location.origin + window.location.pathname,
   pageType = "website",
 }) {
   useEffect(() => {
