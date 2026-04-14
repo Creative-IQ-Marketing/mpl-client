@@ -1,13 +1,16 @@
-import React from 'react';
+import React from "react";
 
 const About = () => {
   return (
     <div className="pt-8 pb-20">
       <div className="bg-mpl-navy text-white py-20 mb-16">
         <div className="container-custom text-center">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">About Morales Padia Law</h1>
+          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">
+            About Morales Padia Law
+          </h1>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-            Award-winning team dedicated to compassionate, trusted legal guidance.
+            Award-winning team dedicated to compassionate, trusted legal
+            guidance.
           </p>
         </div>
       </div>
@@ -15,54 +18,99 @@ const About = () => {
       <div className="container-custom">
         {/* Firm Overview */}
         <div className="max-w-4xl mx-auto text-center mb-24">
-          <h2 className="text-3xl font-serif font-bold text-mpl-navy mb-8">Our Mission</h2>
+          <h2 className="text-3xl font-serif font-bold text-mpl-navy mb-8">
+            Our Mission
+          </h2>
           <p className="text-lg text-gray-600 leading-relaxed mb-8">
-            At Morales Padia Law, we believe that every client deserves a legal team that not only understands the law but also understands their unique situation. 
-            Our mission is to protect your rights and achieve the best possible outcome for your case through aggressive representation and compassionate counsel.
+            At Morales Padia Law, we believe that every client deserves a legal
+            team that not only understands the law but also understands their
+            unique situation. Our mission is to protect your rights and achieve
+            the best possible outcome for your case through aggressive
+            representation and compassionate counsel.
           </p>
           <p className="text-lg text-gray-600 leading-relaxed">
-            Whether you are facing a complex family law matter, planning for the future of your estate, or navigating the criminal justice system, 
-            we stand by your side every step of the way. We are proud to serve the San Antonio community with integrity and dedication.
+            Whether you are facing a complex family law matter, planning for the
+            future of your estate, or navigating the criminal justice system, we
+            stand by your side every step of the way. We are proud to serve the
+            San Antonio community with integrity and dedication.
           </p>
         </div>
 
         {/* Team Section */}
         <div className="mb-20">
-          <h2 className="text-3xl font-serif font-bold text-mpl-navy mb-12 text-center">Our Attorneys</h2>
-          
+          <h2 className="text-3xl font-serif font-bold text-mpl-navy mb-12 text-center">
+            Our Attorneys
+          </h2>
+
           {/* Trisha */}
           <div className="flex flex-col md:flex-row gap-12 mb-20 items-start">
             <div className="w-full md:w-1/3">
               <div className="rounded-xl overflow-hidden shadow-lg">
-                <img 
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                  alt="Trisha Morales Padia" 
+                <img
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                  alt="Trisha Morales Padia"
                   className="w-full h-auto object-cover"
                 />
               </div>
             </div>
             <div className="w-full md:w-2/3">
-              <h3 className="text-3xl font-serif font-bold text-mpl-navy mb-2">Trisha Morales Padia</h3>
-              <p className="text-xl text-mpl-blue font-medium mb-6">Founder & CEO</p>
-              
+              <h3 className="text-3xl font-serif font-bold text-mpl-navy mb-2">
+                Trisha Morales Padia
+              </h3>
+              <p className="text-xl text-mpl-blue font-medium mb-6">
+                Founder & CEO
+              </p>
+
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  Trisha Morales Padia founded Morales Padia Law with a vision to provide accessible, high-quality legal services to families in San Antonio. 
-                  Licensed in Texas, she has dedicated her career to helping clients navigate the emotional and legal complexities of family law and estate planning.
+                  Trisha Morales Padia founded Morales Padia Law with a vision
+                  to provide accessible, high-quality legal services to families
+                  in San Antonio. Licensed in Texas, she has dedicated her
+                  career to helping clients navigate the emotional and legal
+                  complexities of family law and estate planning.
                 </p>
                 <p>
-                  With years of experience handling contested divorces, custody battles, and intricate estate matters, Trisha is known for her strategic approach 
-                  and her ability to find solutions even in the most contentious situations. She is a fierce advocate for her clients in the courtroom and a 
-                  compassionate advisor in the conference room.
+                  With years of experience handling contested divorces, custody
+                  battles, and intricate estate matters, Trisha is known for her
+                  strategic approach and her ability to find solutions even in
+                  the most contentious situations. She is a fierce advocate for
+                  her clients in the courtroom and a compassionate advisor in
+                  the conference room.
                 </p>
-                
+
                 <div className="pt-4">
-                  <h4 className="font-bold text-mpl-navy mb-2">Practice Areas:</h4>
+                  <h4 className="font-bold text-mpl-navy mb-2">
+                    Practice Areas:
+                  </h4>
                   <ul className="list-disc list-inside space-y-1 ml-2">
                     <li>Family Law</li>
                     <li>Divorce & Child Custody</li>
                     <li>Estate Planning & Probate</li>
                   </ul>
+                </div>
+
+                <div className="pt-6">
+                  <h4 className="font-bold text-mpl-navy mb-3">
+                    Professional Profiles:
+                  </h4>
+                  <div className="flex flex-wrap gap-3">
+                    <a
+                      href="https://localestateplannners.com/lawyers/san-antonio-estate-planning-attorney-trisha-morales-padia/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-full text-sm font-medium text-mpl-navy hover:bg-mpl-navy hover:text-white transition-colors"
+                    >
+                      Local Estate Planners Directory
+                    </a>
+                    <a
+                      href="https://citylifestyle.com/businesses/morales-padia-law-pllc-2704869"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-full text-sm font-medium text-mpl-navy hover:bg-mpl-navy hover:text-white transition-colors"
+                    >
+                      City Lifestyle Feature
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

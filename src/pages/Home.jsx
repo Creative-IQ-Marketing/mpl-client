@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import PracticeAreas from "../components/home/PracticeAreas";
 import TrustedBy from "../components/home/TrustedBy";
 import Awards from "../components/home/Awards";
+import FeaturedIn from "../components/home/FeaturedIn";
 import MeetOurTeam from "../components/home/MeetOurTeam";
 import Testimonials from "../components/home/Testimonials";
 import NewsAndResources from "../components/home/NewsAndResources";
@@ -16,6 +17,7 @@ const Home = () => {
         <Hero />
         <PracticeAreas />
         <Awards />
+        <FeaturedIn />
         <MeetOurTeam />
         <TrustedBy />
         <Testimonials />

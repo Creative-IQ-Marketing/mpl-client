@@ -29,6 +29,19 @@ export default function StructuredData() {
         telephone: "+1-726-204-4044",
         availableLanguage: "en",
       },
+      award: [
+        "Top Family Law Lawyer - San Antonio Scene Magazine (2017)",
+        "Best S.A Female Lawyers - San Antonio Scene Magazine (2021)",
+        "Top DUI/DWI Lawyer - San Antonio Scene Magazine (2023)",
+        "Corporate Excellence Awards - Corporate Vision Magazine (2025)",
+        "Featured Law Firm - City Lifestyle Magazine (2026)",
+        "Top 10 Best Law Firm - Independent Recognition (2025)",
+      ],
+      sameAs: [
+        "https://www.corporatevision-news.com/winners/morales-padia-law-pllc/",
+        "https://citylifestyle.com/businesses/morales-padia-law-pllc-2704869",
+        "https://localestateplannners.com/lawyers/san-antonio-estate-planning-attorney-trisha-morales-padia/",
+      ],
     };
 
     // LocalBusiness Schema
@@ -73,7 +86,7 @@ export default function StructuredData() {
         "Wills",
         "Trusts",
         "Power of Attorney",
-        "Probate Law"
+        "Probate Law",
       ],
     };
 
@@ -144,7 +157,8 @@ export default function StructuredData() {
         {
           "@type": "Service",
           name: "Family Law",
-          description: "Compassionate legal representation for divorce, child custody, and family matters.",
+          description:
+            "Compassionate legal representation for divorce, child custody, and family matters.",
           provider: {
             "@type": "Organization",
             name: "Morales Padia Law",
@@ -153,7 +167,8 @@ export default function StructuredData() {
         {
           "@type": "Service",
           name: "Criminal Defense",
-          description: "Aggressive defense for DWI, domestic violence, and other criminal charges.",
+          description:
+            "Aggressive defense for DWI, domestic violence, and other criminal charges.",
           provider: {
             "@type": "Organization",
             name: "Morales Padia Law",
@@ -162,7 +177,8 @@ export default function StructuredData() {
         {
           "@type": "Service",
           name: "Estate Planning",
-          description: "Comprehensive planning for wills, trusts, and asset protection.",
+          description:
+            "Comprehensive planning for wills, trusts, and asset protection.",
           provider: {
             "@type": "Organization",
             name: "Morales Padia Law",
@@ -189,7 +205,8 @@ export default function StructuredData() {
         {
           "@type": "Service",
           name: "Probate Law",
-          description: "Guidance through the probate process and estate administration.",
+          description:
+            "Guidance through the probate process and estate administration.",
           provider: {
             "@type": "Organization",
             name: "Morales Padia Law",
