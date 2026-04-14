@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 const Motion = motion;
 import { CheckCircle, ArrowRight, Phone, Mail, MapPin } from "lucide-react";
@@ -289,6 +289,31 @@ const Highlights = () => {
 };
 
 const LatestPosts = () => {
+  const [selectedCategory, setSelectedCategory] = useState("estate-planning");
+
+  const blogCategories = [
+    // {
+    //   id: "all",
+    //   label: "All Posts",
+    //   url: "https://blog.moralespadialaw.com",
+    //   description: "All blog content",
+    // },
+    {
+      id: "estate-planning",
+      label: "Estate Planning",
+      url: "https://blog.moralespadialaw.com",
+      description: "Wills, trusts & planning",
+    },
+    {
+      id: "family-law",
+      label: "Family Law",
+      url: "https://blog.moralespadialaw.com/family-law-blog",
+      description: "Divorce, custody & family matters",
+    },
+  ];
+
+  const currentBlog = blogCategories.find((cat) => cat.id === selectedCategory);
+
   return (
     <section id="latest" className="py-14 md:py-16 bg-gray-50">
       <div className="container-custom">
@@ -316,23 +341,49 @@ const LatestPosts = () => {
           </div>
         </div>
 
+        {/* Blog Category Filter */}
+        <div className="max-w-7xl mx-auto mb-8">
+          <div className="inline-flex items-center gap-2 bg-white rounded-full border border-gray-300 p-1 shadow-sm">
+            {blogCategories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setSelectedCategory(category.id)}
+                className={`px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 whitespace-nowrap ${
+                  selectedCategory === category.id
+                    ? "bg-mpl-navy text-white shadow-md"
+                    : "bg-transparent text-gray-700 hover:text-mpl-navy hover:bg-gray-50"
+                }`}
+                title={category.description}
+              >
+                {category.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
         {/* Blog Content - Full Width Layout */}
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 xl:grid-cols-12 gap-8">
             {/* Main Blog Embed - Wider on Desktop */}
             <div className="xl:col-span-9">
-              <div className="rounded-3xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+              <motion.div
+                key={selectedCategory}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+                className="rounded-3xl border border-gray-200 bg-white shadow-sm overflow-hidden"
+              >
                 <iframe
-                  src="https://blog.moralespadialaw.com"
+                  src={currentBlog?.url}
                   className="w-full h-[1400px] min-h-[900px] border-0"
-                  title="Morales & Padia Law Blog"
+                  title={`${currentBlog?.label} - Morales & Padia Law Blog`}
                 />
-              </div>
+              </motion.div>
 
               {/* Visit Full Blog CTA */}
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
-                  href="https://blog.moralespadialaw.com/"
+                  href={currentBlog?.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-mpl-navy text-white px-8 py-4 rounded-full font-bold hover:bg-mpl-blue transition-colors shadow-sm w-full sm:w-auto justify-center"
