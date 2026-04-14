@@ -4,12 +4,20 @@ const Motion = motion;
 import { CheckCircle, ArrowRight, Phone, Mail, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import ConsultationForm from "../components/ConsultationForm";
+import SEO from "../components/SEO";
 
 const YOUTUBE_EMBED_BASE = "https://www.youtube.com/embed";
 
 const Blog = () => {
   return (
     <div className="bg-white min-h-screen">
+      <SEO
+        title="Blog | Morales Padia Law - Legal Insights & Resources"
+        description="Stay informed with the latest insights on family law, estate planning, probate, and criminal defense in San Antonio. Expert legal guidance from Morales Padia Law."
+        keywords="San Antonio legal blog, family law blog, estate planning blog, probate blog, divorce insights, custody advice, wills and trusts, legal resources San Antonio"
+        canonical={window.location.origin + "/blog"}
+        pageType="blog"
+      />
       <Hero />
       <SubscribeBar />
       <FeaturedVideo />
@@ -41,7 +49,8 @@ const Hero = () => {
                 Planning for the future
               </h1>
               <p className="mt-4 text-lg text-gray-600 leading-relaxed max-w-2xl">
-                Clear, practical insights from our team—built for families who want confidence, not confusion.
+                Clear, practical insights from our team—built for families who
+                want confidence, not confusion.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <a
@@ -72,7 +81,9 @@ const Hero = () => {
               className="lg:col-span-5"
             >
               <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8">
-                <div className="text-sm font-semibold text-mpl-navy">Topics</div>
+                <div className="text-sm font-semibold text-mpl-navy">
+                  Topics
+                </div>
                 <div className="mt-4 space-y-3 text-gray-600">
                   <div className="flex items-start gap-3">
                     <span className="mt-2 h-1.5 w-1.5 rounded-full bg-mpl-blue" />
@@ -256,12 +267,16 @@ const Highlights = () => {
                 className="rounded-3xl border border-gray-200 bg-white shadow-sm p-7"
               >
                 <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-2xl bg-mpl-navy text-white flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 rounded-2xl bg-mpl-navy text-white flex items-center justify-center shrink-0">
                     <CheckCircle size={18} />
                   </div>
                   <div>
-                    <div className="text-lg font-serif font-bold text-mpl-navy">{it.title}</div>
-                    <div className="mt-2 text-gray-600 leading-relaxed">{it.desc}</div>
+                    <div className="text-lg font-serif font-bold text-mpl-navy">
+                      {it.title}
+                    </div>
+                    <div className="mt-2 text-gray-600 leading-relaxed">
+                      {it.desc}
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -274,237 +289,139 @@ const Highlights = () => {
 };
 
 const LatestPosts = () => {
-  const images = {
-    estate:
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1600&q=80",
-    planning:
-      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=80",
-    probate:
-      "https://images.unsplash.com/photo-1528747045269-390fe33c19a2?auto=format&fit=crop&w=1600&q=80",
-    family:
-      "https://images.unsplash.com/photo-1450101215322-bf5cd27642fc?auto=format&fit=crop&w=1600&q=80",
-    notes:
-      "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1600&q=80",
-    office:
-      "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=80",
-  };
-
-  const posts = [
-    {
-      title: "Estate Planning Basics: What to Do First",
-      category: "Estate Planning",
-      date: "Mar 2026",
-      readTime: "5 min read",
-      img: images.estate,
-    },
-    {
-      title: "Divorce Preparation: Documents and Next Steps",
-      category: "Family Law",
-      date: "Mar 2026",
-      readTime: "6 min read",
-      img: images.family,
-    },
-    {
-      title: "Probate 101: Common Questions Answered",
-      category: "Probate",
-      date: "Mar 2026",
-      readTime: "4 min read",
-      img: images.probate,
-    },
-    {
-      title: "Parenting Plans: Building Stability for Children",
-      category: "Family Law",
-      date: "Mar 2026",
-      readTime: "7 min read",
-      img: images.office,
-    },
-    {
-      title: "Wills vs. Trusts: A Practical Comparison",
-      category: "Estate Planning",
-      date: "Mar 2026",
-      readTime: "5 min read",
-      img: images.planning,
-    },
-    {
-      title: "Avoiding Costly Mistakes During Life Transitions",
-      category: "Planning",
-      date: "Mar 2026",
-      readTime: "8 min read",
-      img: images.notes,
-    },
-  ];
-
   return (
     <section id="latest" className="py-14 md:py-16 bg-gray-50">
       <div className="container-custom">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-end justify-between gap-6 mb-6">
+        {/* Header */}
+        <div className="max-w-7xl mx-auto mb-8">
+          <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
             <div>
               <div className="text-xs font-bold tracking-wider uppercase text-gray-500">
                 Latest
               </div>
-              <h2 className="mt-2 text-3xl md:text-4xl font-serif font-bold text-mpl-navy">
-                Posts
+              <h2 className="mt-2 text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-mpl-navy">
+                Blog Posts
               </h2>
+              <p className="mt-3 text-base md:text-lg text-gray-600 max-w-2xl">
+                Insights on estate planning, family law, probate, and more from
+                our team.
+              </p>
             </div>
             <Link
               to="/resources/books"
-              className="hidden sm:inline-flex items-center gap-2 font-bold text-mpl-blue hover:text-mpl-navy transition-colors"
+              className="inline-flex items-center gap-2 font-bold text-mpl-blue hover:text-mpl-navy transition-colors"
             >
               Explore Books <ArrowRight size={18} />
             </Link>
           </div>
+        </div>
 
-          <div className="mb-8 flex flex-wrap items-center gap-2">
-            {["All", "Family Law", "Estate Planning", "Probate", "Planning"].map((c) => (
-              <span
-                key={c}
-                className={`px-3 py-1.5 rounded-full text-sm font-semibold border ${c === "All" ? "bg-mpl-navy text-white border-mpl-navy" : "border-gray-300 text-gray-600 hover:bg-gray-100"} cursor-default`}
-              >
-                {c}
-              </span>
-            ))}
-          </div>
+        {/* Blog Content - Full Width Layout */}
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 xl:grid-cols-12 gap-8">
+            {/* Main Blog Embed - Wider on Desktop */}
+            <div className="xl:col-span-9">
+              <div className="rounded-3xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+                <iframe
+                  src="https://blog.moralespadialaw.com"
+                  className="w-full h-[1400px] min-h-[900px] border-0"
+                  title="Morales & Padia Law Blog"
+                />
+              </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            <div className="lg:col-span-8">
-              <motion.div
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45 }}
-                className="mb-8 rounded-3xl overflow-hidden border border-gray-200 bg-white shadow-sm"
-              >
-                <div className="relative">
-                  <div className="aspect-[16/9] bg-gray-200 overflow-hidden">
-                    <img src={posts[0].img} alt={posts[0].title} className="w-full h-full object-cover" />
-                  </div>
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 p-7 md:p-8">
-                    <div className="inline-flex items-center gap-2 bg-white/15 border border-white/20 text-white px-3 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase">
-                      Featured • {posts[0].category}
-                    </div>
-                    <div className="mt-4 text-2xl md:text-4xl font-serif font-bold text-white leading-tight">
-                      {posts[0].title}
-                    </div>
-                    <div className="mt-3 text-white/80 text-sm font-semibold">
-                      {posts[0].date} • {posts[0].readTime}
-                    </div>
-                    <div className="mt-6">
-                      <a
-                        href="#contact"
-                        className="inline-flex items-center gap-2 bg-white text-mpl-navy px-6 py-3 rounded-full font-bold hover:bg-mpl-gold hover:text-white transition-colors"
-                      >
-                        Ask a Question <ArrowRight size={18} />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              <div className="space-y-6">
-                {posts.slice(1).map((p, i) => (
-                  <motion.div
-                    key={p.title}
-                    initial={{ opacity: 0, y: 14 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.03, duration: 0.4 }}
-                    className="rounded-3xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow overflow-hidden"
-                  >
-                    <div className="grid grid-cols-1 sm:grid-cols-12">
-                      <div className="sm:col-span-4">
-                        <div className="aspect-[16/10] sm:aspect-auto sm:h-full bg-gray-200 overflow-hidden">
-                          <img src={p.img} alt={p.title} className="w-full h-full object-cover" />
-                        </div>
-                      </div>
-                      <div className="sm:col-span-8 p-7 md:p-8 flex items-center">
-                        <div>
-                          <div className="flex flex-wrap items-center gap-3 text-xs font-bold tracking-wider uppercase text-gray-500">
-                            <span>{p.category}</span>
-                            <span className="text-gray-300">•</span>
-                            <span>{p.date}</span>
-                            <span className="text-gray-300">•</span>
-                            <span>{p.readTime}</span>
-                          </div>
-                          <div className="mt-3 text-2xl font-serif font-bold text-mpl-navy leading-snug">
-                            {p.title}
-                          </div>
-                          <div className="mt-3 text-gray-600 leading-relaxed">
-                            Coming soon.
-                          </div>
-                          <div className="mt-5">
-                            <a
-                              href="#contact"
-                              className="inline-flex items-center gap-2 font-bold text-mpl-blue hover:text-mpl-navy transition-colors"
-                            >
-                              Ask a Question <ArrowRight size={18} />
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
+              {/* Visit Full Blog CTA */}
+              <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a
+                  href="https://blog.moralespadialaw.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-mpl-navy text-white px-8 py-4 rounded-full font-bold hover:bg-mpl-blue transition-colors shadow-sm w-full sm:w-auto justify-center"
+                >
+                  View Full Blog <ArrowRight size={18} />
+                </a>
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 border-2 border-mpl-navy text-mpl-navy px-8 py-4 rounded-full font-bold hover:bg-mpl-navy hover:text-white transition-colors w-full sm:w-auto justify-center"
+                >
+                  Ask a Question
+                </a>
               </div>
             </div>
 
-            <div className="lg:col-span-4">
-              <div className="lg:sticky lg:top-24 space-y-6">
+            {/* Sidebar - Below on Mobile, Side on Desktop */}
+            <div className="xl:col-span-3">
+              <div className="xl:sticky xl:top-24 space-y-6">
                 <div className="rounded-3xl border border-gray-200 bg-white shadow-sm overflow-hidden">
                   <div className="p-7">
                     <div className="text-lg font-serif font-bold text-mpl-navy">
                       Newsletter
                     </div>
                     <div className="mt-2 text-gray-600">
-                      Occasional premium updates. No spam.
+                      Get the latest insights delivered to your inbox.
                     </div>
-                    <div className="mt-6 flex items-stretch gap-3">
+                    <div className="mt-6 flex flex-col gap-3">
                       <input
                         type="email"
-                        placeholder="Email"
+                        placeholder="Your email address"
                         className="w-full h-12 rounded-full border border-gray-300 px-5 text-gray-700 focus:outline-none focus:ring-2 focus:ring-mpl-blue focus:border-mpl-blue"
                       />
-                      <a
-                        href="#subscribe"
-                        className="inline-flex items-center justify-center h-12 px-5 rounded-full bg-mpl-navy text-white font-bold hover:bg-mpl-blue transition-colors"
+                      <Link
+                        to="/contact?topic=blog-subscribe"
+                        className="inline-flex items-center justify-center h-12 px-6 rounded-full bg-mpl-navy text-white font-bold hover:bg-mpl-blue transition-colors"
                       >
-                        Join
-                      </a>
+                        Subscribe
+                      </Link>
                     </div>
                   </div>
                   <div className="h-px bg-gray-100" />
                   <div className="px-7 py-5 text-sm text-gray-500">
-                    Prefer a direct question?{" "}
-                    <a href="#contact" className="font-bold text-mpl-blue hover:text-mpl-navy transition-colors">
+                    Have a question?{" "}
+                    <a
+                      href="#contact"
+                      className="font-bold text-mpl-blue hover:text-mpl-navy transition-colors"
+                    >
                       Contact us
                     </a>
-                    .
                   </div>
                 </div>
 
                 <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-7">
                   <div className="text-lg font-serif font-bold text-mpl-navy">
-                    Popular topics
+                    Practice Areas
                   </div>
                   <div className="mt-5 flex flex-wrap gap-2">
-                    {["Custody", "Wills", "Trusts", "Probate", "Divorce", "Planning"].map((t) => (
-                      <span
-                        key={t}
-                        className="px-3 py-1.5 rounded-full text-sm font-semibold border border-gray-300 text-gray-600"
+                    {[
+                      {
+                        label: "Estate Planning",
+                        link: "/services/estate-planning",
+                      },
+                      { label: "Family Law", link: "/services/family-law" },
+                      { label: "Divorce", link: "/services/divorce" },
+                      { label: "Probate", link: "/services/probate" },
+                      { label: "Custody", link: "/services/child-custody" },
+                      {
+                        label: "Wills & Trusts",
+                        link: "/services/wills-trusts",
+                      },
+                    ].map((topic) => (
+                      <Link
+                        key={topic.label}
+                        to={topic.link}
+                        className="px-3 py-1.5 rounded-full text-sm font-semibold border border-gray-300 text-gray-600 hover:bg-mpl-navy hover:text-white hover:border-mpl-navy transition-colors"
                       >
-                        {t}
-                      </span>
+                        {topic.label}
+                      </Link>
                     ))}
                   </div>
                 </div>
 
                 <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-7">
                   <div className="text-lg font-serif font-bold text-mpl-navy">
-                    Featured resources
+                    Featured Resources
                   </div>
                   <div className="mt-3 text-gray-600">
-                    Explore our free guides for families navigating change.
+                    Explore our comprehensive guides for families navigating
+                    legal matters.
                   </div>
                   <div className="mt-6">
                     <Link
@@ -561,7 +478,8 @@ const ContactSection = () => {
               Contact Us
             </h2>
             <p className="mt-4 text-gray-600 leading-relaxed">
-              Have a question from something you saw here? Send a message and our team will follow up.
+              Have a question from something you saw here? Send a message and
+              our team will follow up.
             </p>
 
             <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
