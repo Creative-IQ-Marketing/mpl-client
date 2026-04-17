@@ -5,6 +5,7 @@ import { CheckCircle, ArrowRight, Phone, Mail, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import ConsultationForm from "../components/ConsultationForm";
 import SEO from "../components/SEO";
+import { subscribeContactToNewsletter } from "../services/ghl";
 
 const YOUTUBE_EMBED_BASE = "https://www.youtube.com/embed";
 
@@ -202,6 +203,78 @@ const MediaSection = () => {
   );
 };
 
+const NewsletterSignup = ({ source = "blog_newsletter_subscribe", compact = false }) => {
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitError("");
+
+    if (!email.trim()) {
+      setSubmitError("Please enter a valid email.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      await subscribeContactToNewsletter(email, {
+        source,
+        pagePath: window.location.pathname,
+      });
+      setIsSubmitted(true);
+      setEmail("");
+    } catch (error) {
+      console.error("Newsletter subscription failed:", error);
+      setSubmitError("Could not subscribe right now. Please try again shortly.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <form
+      onSubmit={handleSubmit}
+      className={`w-full ${compact ? "flex flex-col gap-3" : "flex items-stretch gap-3"}`}
+    >
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => {
+          setEmail(e.target.value);
+          if (submitError) setSubmitError("");
+          if (isSubmitted) setIsSubmitted(false);
+        }}
+        placeholder={compact ? "Your email address" : "Your email"}
+        className={`h-12 rounded-full border border-gray-300 px-5 text-gray-700 focus:outline-none focus:ring-2 focus:ring-mpl-blue focus:border-mpl-blue ${
+          compact ? "w-full" : "w-full md:w-80"
+        }`}
+      />
+      <button
+        type="submit"
+        disabled={isSubmitting}
+        className="inline-flex items-center justify-center h-12 px-6 rounded-full bg-mpl-navy text-white font-bold hover:bg-mpl-blue transition-colors disabled:opacity-70"
+      >
+        {isSubmitting ? "Submitting..." : "Subscribe"}
+      </button>
+      {(isSubmitted || submitError) && (
+        <p
+          className={`text-sm ${isSubmitted ? "text-green-600" : "text-red-600"} ${
+            compact ? "" : "md:basis-full"
+          }`}
+          role={submitError ? "alert" : "status"}
+        >
+          {isSubmitted
+            ? "Thanks, you're subscribed to updates."
+            : submitError}
+        </p>
+      )}
+    </form>
+  );
+};
+
 const SubscribeBar = () => {
   return (
     <section id="subscribe" className="py-6 bg-white">
@@ -216,18 +289,8 @@ const SubscribeBar = () => {
                 Get premium insights delivered occasionally. No spam.
               </div>
             </div>
-            <div className="w-full md:w-auto flex items-stretch gap-3">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="w-full md:w-80 h-12 rounded-full border border-gray-300 px-5 text-gray-700 focus:outline-none focus:ring-2 focus:ring-mpl-blue focus:border-mpl-blue"
-              />
-              <Link
-                to="/contact?topic=blog-subscribe"
-                className="inline-flex items-center justify-center h-12 px-6 rounded-full bg-mpl-navy text-white font-bold hover:bg-mpl-blue transition-colors"
-              >
-                Subscribe
-              </Link>
+            <div className="w-full md:w-auto">
+              <NewsletterSignup source="blog_subscribe_bar" />
             </div>
           </div>
         </div>
@@ -411,17 +474,7 @@ const LatestPosts = () => {
                       Get the latest insights delivered to your inbox.
                     </div>
                     <div className="mt-6 flex flex-col gap-3">
-                      <input
-                        type="email"
-                        placeholder="Your email address"
-                        className="w-full h-12 rounded-full border border-gray-300 px-5 text-gray-700 focus:outline-none focus:ring-2 focus:ring-mpl-blue focus:border-mpl-blue"
-                      />
-                      <Link
-                        to="/contact?topic=blog-subscribe"
-                        className="inline-flex items-center justify-center h-12 px-6 rounded-full bg-mpl-navy text-white font-bold hover:bg-mpl-blue transition-colors"
-                      >
-                        Subscribe
-                      </Link>
+                      <NewsletterSignup source="blog_sidebar_newsletter" compact />
                     </div>
                   </div>
                   <div className="h-px bg-gray-100" />

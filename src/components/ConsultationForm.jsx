@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle } from 'lucide-react';
+import { submitConsultationToGHL } from '../services/ghl';
 
 const ConsultationForm = () => {
   const [formData, setFormData] = useState({
@@ -11,26 +12,34 @@ const ConsultationForm = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
+    setSubmitError('');
+
+    try {
+      await submitConsultationToGHL(formData, {
+        source: 'website_consultation_form',
+        pagePath: window.location.pathname,
+      });
       setIsSubmitting(false);
       setIsSubmitted(true);
-      console.log('Form submitted:', formData);
-      // Reset after showing success message
       setTimeout(() => {
          setIsSubmitted(false);
          setFormData({ name: '', email: '', phone: '', referral: '', message: '' });
       }, 3000);
-    }, 1500);
+    } catch (error) {
+      console.error('Consultation form submission failed:', error);
+      setIsSubmitting(false);
+      setSubmitError('We could not send your request right now. Please call us at (726) 204-4044.');
+    }
   };
 
   if (isSubmitted) {
@@ -153,6 +162,11 @@ const ConsultationForm = () => {
               </>
             )}
           </button>
+          {submitError && (
+            <p className="text-sm text-red-600" role="alert">
+              {submitError}
+            </p>
+          )}
         </form>
       </div>
     </div>
