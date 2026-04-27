@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 const Motion = motion;
 import {
   ArrowRight,
@@ -36,128 +36,134 @@ const FirmOverview = () => {
 };
 
 const HeroSection = () => {
-  const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 500], [0, 200]);
-  const y2 = useTransform(scrollY, [0, 500], [0, -150]);
-
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-mpl-navy text-white">
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
-
-      {/* Animated Background Blobs */}
-      <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute top-1/4 left-1/4 w-96 h-96 bg-mpl-blue/30 rounded-full blur-[100px] mix-blend-screen"
-      />
-      <motion.div
-        animate={{
-          scale: [1.2, 1, 1.2],
-          opacity: [0.2, 0.4, 0.2],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1,
-        }}
-        className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-mpl-lightBlue/20 rounded-full blur-[120px] mix-blend-screen"
-      />
-
-      <div className="container-custom relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <motion.div
-          style={{ y: y1 }}
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+    <section className="relative overflow-hidden bg-[#f7f8fb] pt-20 md:pt-28">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(68,117,181,0.08),transparent_32%),radial-gradient(circle_at_bottom_right,rgba(0,26,77,0.07),transparent_28%)]" />
+        <Motion.svg
+          viewBox="0 0 1200 420"
+          className="absolute inset-x-0 top-0 mx-auto h-72 w-full max-w-7xl text-mpl-blue/10"
+          fill="none"
+          aria-hidden="true"
+          animate={{ opacity: [0.42, 0.68, 0.42] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         >
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif leading-tight mb-6 text-white drop-shadow-xl">
-            Justice <br />
-            <span className="italic text-mpl-lightBlue relative inline-block">
-              Redefined.
-              <motion.span
-                initial={{ width: 0 }}
-                animate={{ width: "100%" }}
-                transition={{ delay: 0.8, duration: 1 }}
-                className="absolute bottom-2 left-0 h-1 bg-white/30"
-              />
-            </span>
-          </h1>
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-100 max-w-lg font-light leading-relaxed drop-shadow-md">
-            Because life changes. Your legal team shouldn't.
-          </p>
-        </motion.div>
-
-        <motion.div style={{ y: y2 }} className="hidden lg:block relative">
-          {/* Decorative elements for desktop */}
-          <div className="absolute top-0 right-0 w-64 h-64 border border-white/10 rounded-full" />
-          <div className="absolute bottom-10 left-10 w-32 h-32 border border-mpl-lightBlue/20 rounded-full" />
-        </motion.div>
+          <path
+            d="M36 235C160 142 260 118 372 149C473 177 572 258 682 245C807 230 896 147 1162 75"
+            stroke="currentColor"
+            strokeWidth="1.5"
+          />
+          <path
+            d="M66 300C175 239 304 214 430 235C547 255 629 316 745 308C873 299 980 232 1148 170"
+            stroke="currentColor"
+            strokeWidth="1.25"
+          />
+        </Motion.svg>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-32 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer z-20"
-        onClick={() =>
-          window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
-        }
-      >
-        <span className="text-sm font-light tracking-widest uppercase text-white/80">
-          Scroll Down
-        </span>
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+      <div className="container-custom relative z-10 pb-16 md:pb-24">
+        <Motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, ease: "easeOut" }}
+          className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center"
         >
-          <ChevronDown className="w-6 h-6 text-white" />
-        </motion.div>
-      </motion.div>
+          <div className="max-w-2xl">
+            <div className="inline-flex rounded-full border border-mpl-blue/15 bg-white/80 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-mpl-blue shadow-sm backdrop-blur">
+              Morales Padia Law
+            </div>
+            <h1 className="mt-6 text-5xl font-serif font-bold leading-[1.02] text-mpl-navy md:text-6xl lg:text-7xl">
+              Legal guidance built for real life.
+            </h1>
+            <p className="mt-6 max-w-xl text-lg leading-8 text-gray-600 md:text-xl">
+              We help clients move through family, estate, probate, and defense
+              matters with clarity, strategy, and a calm sense of direction.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="#who-we-are"
+                className="inline-flex min-h-11 items-center justify-center rounded-full bg-mpl-navy px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-mpl-blue"
+              >
+                Explore Our Approach
+              </a>
+              <a
+                href="/contact#consultation"
+                className="inline-flex min-h-11 items-center justify-center rounded-full border border-mpl-blue/20 bg-white px-6 py-3 text-sm font-semibold text-mpl-navy transition-colors hover:border-mpl-blue/40 hover:text-mpl-blue"
+              >
+                Schedule Consultation
+              </a>
+            </div>
+          </div>
+
+          <div className="relative mx-auto w-full max-w-xl">
+            <div className="absolute -left-4 top-6 h-[92%] w-full rounded-[36px] border border-mpl-blue/10 bg-white/50" />
+            <div className="relative overflow-hidden rounded-[36px] bg-white p-3 shadow-[0_24px_80px_rgba(0,26,77,0.10)]">
+              <div className="relative overflow-hidden rounded-[28px] bg-[#e8edf6] aspect-[4/5]">
+                <img
+                  src={TrishaImg}
+                  alt="Trisha Morales Padia"
+                  className="absolute inset-x-0 bottom-0 mx-auto h-[96%] w-auto max-w-full object-contain"
+                />
+                <div className="absolute inset-y-5 left-5 w-[calc(100%-2.5rem)] rounded-[999px] border border-white/55" />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-mpl-navy/12 to-transparent h-40" />
+              </div>
+              <div className="flex items-center justify-between gap-4 px-3 pb-2 pt-5">
+                <div>
+                  <p className="text-xl font-serif font-semibold text-mpl-navy">
+                    Trisha Morales Padia
+                  </p>
+                  <p className="mt-1 text-sm text-mpl-blue/80">
+                    Founder, attorney, and educator
+                  </p>
+                </div>
+                <div className="hidden rounded-full bg-[#f5f8fd] px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-mpl-blue md:block">
+                  Counsel for every chapter
+                </div>
+              </div>
+            </div>
+          </div>
+        </Motion.div>
+      </div>
     </section>
   );
 };
 
 const WhoWeAre = () => {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
-      {/* Subtle Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-mpl-blue/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-mpl-lightBlue/5 rounded-full blur-3xl" />
-      </div>
-
+    <section
+      id="who-we-are"
+      className="relative overflow-hidden bg-white py-20 md:py-24"
+    >
       <div className="container-custom relative z-10">
-        {/* Header Section */}
-        <div className="text-center max-w-4xl mx-auto mb-20">
-          <h2 className="text-5xl md:text-6xl font-serif text-mpl-navy mb-8 font-bold tracking-tight">
-            Who We Are
-          </h2>
-          <p className="text-xl md:text-2xl text-mpl-blue font-medium leading-relaxed max-w-3xl mx-auto">
-            We provide continuous legal guidance for every stage of life, so
-            your family, your future, and everything you've built stays
-            protected, no matter what comes next.
-          </p>
-        </div>
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-start">
+          <div className="lg:sticky lg:top-28">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-mpl-blue/70">
+              Who We Are
+            </p>
+            <h2 className="mt-4 text-4xl font-serif font-bold leading-tight text-mpl-navy md:text-5xl lg:text-6xl">
+              The firm you turn to when the decision matters.
+            </h2>
+            <p className="mt-6 max-w-xl text-lg leading-8 text-gray-600">
+              We provide continuous legal guidance so your family, future, and
+              everything you have built stays protected as life changes.
+            </p>
+            <div className="mt-8 overflow-hidden rounded-[32px] bg-[#f4f7fb] p-3 shadow-[0_18px_60px_rgba(0,26,77,0.08)]">
+              <div className="overflow-hidden rounded-[24px] aspect-[4/3]">
+                <img
+                  src={LadyJusticeImg}
+                  alt="Courtroom and legal setting"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
 
-        {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          {/* Left Column: Text */}
-          <div className="space-y-8">
-            <h3 className="text-4xl font-serif text-mpl-navy font-bold leading-tight">
-              Our Mission & <br />
-              Commitment
+          <div className="rounded-[32px] border border-gray-100 bg-[#fbfcfe] p-7 shadow-sm md:p-10">
+            <h3 className="text-3xl font-serif font-bold leading-tight text-mpl-navy md:text-4xl">
+              Our mission and commitment
             </h3>
 
-            <div className="text-lg text-mpl-blue/80 leading-relaxed space-y-6 font-medium">
+            <div className="mt-8 space-y-5 text-base leading-8 text-gray-600 md:text-lg">
               <p>
                 At Morales Padia Law, we don't just handle cases, we guide
                 people through some of the most important transitions of their
@@ -186,20 +192,6 @@ const WhoWeAre = () => {
                 earning trust, and being a steady presence during uncertain
                 times.
               </p>
-            </div>
-          </div>
-
-          {/* Right Column: Image */}
-          <div className="relative group">
-            <div className="absolute -inset-4 bg-mpl-blue/5 rounded-3xl transform rotate-2 transition-transform duration-500 group-hover:rotate-1 -z-10"></div>
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl aspect-[4/3]">
-              <img
-                src={LadyJusticeImg}
-                alt="Lady Justice Statue"
-                className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
-              />
-              {/* Overlay gradient for premium feel */}
-              <div className="absolute inset-0 bg-gradient-to-t from-mpl-navy/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
           </div>
         </div>
@@ -359,36 +351,46 @@ const MeetOurTeam = () => {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-20 bg-white md:py-24">
       <div className="container-custom">
-        <h2 className="text-4xl font-serif text-mpl-navy mb-16 text-center">
-          Meet Our Team
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="mx-auto mb-14 max-w-2xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-mpl-blue/70">
+            Meet Our Team
+          </p>
+          <h2 className="mt-4 text-4xl font-serif font-bold text-mpl-navy md:text-5xl">
+            A legal team designed to feel personal.
+          </h2>
+          <p className="mt-4 text-base leading-7 text-gray-600 md:text-lg">
+            Clear communication, strong execution, and people you can trust to
+            stay present through every stage of the process.
+          </p>
+        </div>
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
           {team.map((member, index) => (
-            <div
+            <motion.div
               key={index}
-              className="group relative overflow-hidden aspect-[3/4] bg-gray-100"
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, delay: index * 0.04 }}
+              viewport={{ once: true, amount: 0.15 }}
+              className="group rounded-[24px] border border-gray-100 bg-[#fafbfd] p-3 shadow-sm"
             >
-              <img
-                src={member.img}
-                alt={member.name}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-mpl-navy/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
-                <h3 className="text-xl font-serif text-white">{member.name}</h3>
-                <p className="text-white/90 text-sm">{member.role}</p>
+              <div className="overflow-hidden rounded-[18px] aspect-[4/5] bg-[#edf2f8]">
+                <img
+                  src={member.img}
+                  alt={member.name}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
-
-              {/* Always visible label for mobile or if hover is missed */}
-              <div className="absolute bottom-0 left-0 right-0 p-4 bg-white/90 backdrop-blur md:hidden">
-                <h3 className="text-lg font-serif text-mpl-navy">
+              <div className="px-2 pb-2 pt-4 text-center">
+                <h3 className="text-sm font-serif font-semibold leading-5 text-mpl-navy md:text-lg">
                   {member.name}
                 </h3>
-                <p className="text-xs text-gray-600">{member.role}</p>
+                <p className="mt-1 text-xs leading-5 text-mpl-blue/80 md:text-sm">
+                  {member.role}
+                </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
