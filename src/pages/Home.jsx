@@ -18,10 +18,10 @@ const Home = () => {
         <PracticeAreas />
         <Awards />
         <FeaturedIn />
+        <NewsAndResources />
         <MeetOurTeam />
         <TrustedBy />
         <Testimonials />
-        <NewsAndResources />
         <Consultation />
         <Achievements />
       </div>

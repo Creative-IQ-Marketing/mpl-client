@@ -1,12 +1,40 @@
 import { motion as Motion } from "framer-motion";
-import { Newspaper, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 const FeaturedIn = () => {
   const features = [
     {
+      title: "Divorce can be tough, but Morales Padia Law is here to help",
+      publication: "Watch Daytime",
+      link: "https://watchdaytime.com/lifestyle/divorce-can-be-tough-but-morales-padia-law-is-here-to-help",
+      date: "Mar 2026",
+      category: "Family Law",
+    },
+    {
+      title: "Don't face divorce alone with Morales Padia Law",
+      publication: "Watch Daytime",
+      link: "https://watchdaytime.com/lifestyle/dont-face-divorce-alone-with-morales-padia-law",
+      date: "Feb 2026",
+      category: "Divorce",
+    },
+    {
+      title:
+        "Morales Padia Law Gives Tips on Estate Planning and Why Everyone Should Have a Will",
+      publication: "Watch Daytime",
+      link: "https://watchdaytime.com/lifestyle/trisha-morales-padia-gives-us-tips-on-how-estate-planning-can-be-easy-and-accessible-08-20-2025",
+      date: "Aug 2025",
+      category: "Estate Planning",
+    },
+    {
+      title: "Morales Padia Law, Estate Planning and Family Law",
+      publication: "Watch Daytime",
+      link: "https://watchdaytime.com/lifestyle/morales-padia-law-estate-planning-and-family-law-09-09-2024",
+      date: "Sep 2024",
+      category: "Estate Planning",
+    },
+    {
       title: "What to Know Before Taking the Next Step",
       publication: "News 4 San Antonio",
-      description: "Expert insights on planning for major life transitions",
       link: "https://news4sanantonio.com/sa-living/what-to-know-before-taking-the-next-step",
       date: "Feb 2026",
       category: "Estate Planning",
@@ -14,120 +42,87 @@ const FeaturedIn = () => {
     {
       title: "2025 Winner: Corporate Excellence Awards",
       publication: "Corporate Vision Magazine",
-      description:
-        "Recognized for outstanding legal services and client advocacy",
       link: "https://www.corporatevision-news.com/winners/morales-padia-law-pllc/",
       date: "Jan 2026",
       category: "Awards",
     },
-    {
-      title: "Featured Law Firm Profile",
-      publication: "City Lifestyle Magazine",
-      description:
-        "Spotlight on San Antonio's trusted family law and estate planning firm",
-      link: "https://citylifestyle.com/businesses/morales-padia-law-pllc-2704869",
-      date: "Mar 2026",
-      category: "Feature",
-    },
   ];
 
   return (
-    <section className="relative py-20 md:py-24 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-10 left-10 w-72 h-72 bg-mpl-blue/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 right-10 w-96 h-96 bg-mpl-navy/5 rounded-full blur-3xl" />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+    <section className="relative py-16 md:py-20 bg-white border-t border-b border-gray-200">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Header */}
-        <div className="text-center mb-12 md:mb-16">
+        <div className="mb-12">
           <Motion.div
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 bg-mpl-blue/10 text-mpl-navy px-4 py-2 rounded-full text-sm font-semibold mb-6"
           >
-            <Newspaper className="w-4 h-4" />
-            Press & Media
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-mpl-navy mb-3">
+              Featured In
+            </h2>
+            <p className="text-gray-600 text-base md:text-lg max-w-2xl">
+              Recognized by leading publications and media outlets
+            </p>
           </Motion.div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-mpl-navy mb-6 leading-tight">
-            Featured In
-          </h2>
-          <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
-            Our work and insights have been recognized by leading publications
-            and media outlets.
-          </p>
         </div>
 
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Features List */}
+        <div className="space-y-4">
           {features.map((feature, index) => (
             <Motion.a
-              key={feature.title}
+              key={index}
               href={feature.link}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-white border border-gray-200 rounded-3xl shadow-sm p-8 hover:shadow-xl hover:border-mpl-blue hover:-translate-y-1 transition-all duration-300"
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              className="group block border border-gray-200 rounded-lg p-5 md:p-6 hover:border-mpl-blue hover:bg-gray-50 transition-all duration-300"
             >
-              {/* Category & Date */}
-              <div className="flex items-center justify-between mb-4">
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-mpl-blue/10 text-mpl-navy">
-                  {feature.category}
-                </span>
-                <span className="text-xs text-gray-500">{feature.date}</span>
-              </div>
-
-              {/* Content */}
-              <div className="mb-4">
-                <div className="text-sm font-semibold text-mpl-blue mb-2 flex items-center gap-2">
-                  {feature.publication}
-                  <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xs font-semibold text-mpl-blue uppercase tracking-wide">
+                      {feature.publication}
+                    </span>
+                    <span className="text-xs text-gray-400">•</span>
+                    <span className="text-xs text-gray-500">
+                      {feature.date}
+                    </span>
+                  </div>
+                  <h3 className="text-base md:text-lg font-semibold text-mpl-navy group-hover:text-mpl-blue transition-colors line-clamp-2">
+                    {feature.title}
+                  </h3>
                 </div>
-                <h3 className="text-xl font-serif font-bold text-mpl-navy mb-3 leading-snug group-hover:text-mpl-blue transition-colors">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-
-              {/* Read More Link */}
-              <div className="flex items-center gap-2 text-sm font-semibold text-mpl-blue group-hover:gap-3 transition-all">
-                Read Article
-                <ExternalLink className="w-4 h-4" />
+                <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-mpl-blue transition-colors flex-shrink-0 mt-1" />
               </div>
             </Motion.a>
           ))}
         </div>
 
-        {/* Additional Mentions */}
+        {/* Also Featured In */}
         <Motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 text-center"
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-12 pt-8 border-t border-gray-200"
         >
-          <p className="text-gray-600 mb-4">Also featured in:</p>
-          <div className="flex flex-wrap items-center justify-center gap-6">
+          <p className="text-sm text-gray-600 mb-4 font-medium">
+            Also featured in:
+          </p>
+          <div className="flex flex-wrap items-center gap-4">
             <a
               href="https://localestateplannners.com/lawyers/san-antonio-estate-planning-attorney-trisha-morales-padia/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-500 hover:text-mpl-navy font-medium transition-colors"
+              className="text-sm text-gray-600 hover:text-mpl-navy font-medium transition-colors"
             >
               Local Estate Planners Directory
             </a>
-            <span className="text-gray-300">•</span>
-            <span className="text-gray-500">San Antonio Scene Magazine</span>
-            <span className="text-gray-300">•</span>
-            <span className="text-gray-500">Independent Legal Reviews</span>
           </div>
         </Motion.div>
       </div>
