@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-const Motion = motion;
 import {
   AlertTriangle,
   CheckCircle,
@@ -16,11 +15,18 @@ import {
   Users,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import CleanServiceHero from "../components/CleanServiceHero";
 
 const ExpungementRecordSealing = () => {
   return (
-    <div className="bg-gray-50 min-h-screen">
-      <HeroSection />
+    <div className="bg-white min-h-screen">
+      <CleanServiceHero
+        title="Expungement & Record Sealing in San Antonio"
+        subtitle="Clear your record and move forward."
+        opening="Your past should not continue to hold you back. If you qualify, you may be able to clear or seal your criminal record."
+        infoTitle="What This Means"
+        infoDescription="Expungement removes a record completely, while record sealing limits who can access it."
+      />
       <OverviewSection />
       <OptionsSection />
       <EligibilitySection />
@@ -28,42 +34,6 @@ const ExpungementRecordSealing = () => {
       <ProcessSection />
       <ConsiderationsSection />
     </div>
-  );
-};
-
-const HeroSection = () => {
-  return (
-    <section className="py-20 bg-white">
-      <div className="container-custom">
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="max-w-3xl mx-auto text-center"
-        >
-          <h1 className="text-4xl md:text-5xl font-serif text-mpl-navy font-bold mb-3">
-            Expungement &amp; Record Sealing
-          </h1>
-          <p className="text-gray-600 text-lg mb-8">
-            Clear Your Record, Restore Your Future
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 bg-mpl-navy text-white px-6 py-3 rounded-full font-bold shadow-md hover:bg-mpl-blue transition-all"
-            >
-              <Shield size={18} /> Schedule Consultation
-            </Link>
-            <a
-              href="tel:7262044044"
-              className="inline-flex items-center gap-2 border border-mpl-navy/30 text-mpl-navy px-6 py-3 rounded-full font-bold hover:bg-gray-50 transition-all"
-            >
-              <Phone size={18} /> Call (726) 204-4044
-            </a>
-          </div>
-        </motion.div>
-      </div>
-    </section>
   );
 };
 
@@ -76,7 +46,11 @@ const OverviewSection = () => {
             Understanding Record Clearing Options
           </h2>
           <p className="text-gray-700 leading-relaxed">
-            Expungement and record sealing are legal processes that allow you to clear a criminal record from public view. Each option has specific requirements in Texas and different outcomes. Our experienced criminal defense attorneys can help determine your eligibility and guide you through the complex process.
+            Expungement and record sealing are legal processes that allow you to
+            clear a criminal record from public view. Each option has specific
+            requirements in Texas and different outcomes. Our experienced
+            criminal defense attorneys can help determine your eligibility and
+            guide you through the complex process.
           </p>
         </div>
       </div>
@@ -190,7 +164,10 @@ const OptionsSection = () => {
               </div>
               <div className="space-y-2">
                 {opt.bullets.map((b, idx) => (
-                  <div key={idx} className="flex items-start text-sm text-gray-600">
+                  <div
+                    key={idx}
+                    className="flex items-start text-sm text-gray-600"
+                  >
                     <span className="text-mpl-blue mr-2">•</span>
                     <span>{b}</span>
                   </div>
@@ -209,7 +186,12 @@ const EligibilitySection = () => {
     {
       title: "Dismissed Charges",
       icon: FileText,
-      bullets: ["Charges dropped", "Not guilty verdict", "Charges never filed", "Case dismissed"],
+      bullets: [
+        "Charges dropped",
+        "Not guilty verdict",
+        "Charges never filed",
+        "Case dismissed",
+      ],
     },
     {
       title: "Completion Programs",
@@ -224,12 +206,22 @@ const EligibilitySection = () => {
     {
       title: "Low‑Level Cases",
       icon: Shield,
-      bullets: ["Certain Class C offenses", "Eligibility varies", "Non‑violent charges", "First‑time offenses"],
+      bullets: [
+        "Certain Class C offenses",
+        "Eligibility varies",
+        "Non‑violent charges",
+        "First‑time offenses",
+      ],
     },
     {
       title: "Waiting Periods",
       icon: FileSearch,
-      bullets: ["Class C: 180 days", "Class B: 1 year", "Class A: 2 years", "Felony: 3 years"],
+      bullets: [
+        "Class C: 180 days",
+        "Class B: 1 year",
+        "Class A: 2 years",
+        "Felony: 3 years",
+      ],
     },
   ];
   return (
@@ -241,7 +233,10 @@ const EligibilitySection = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {items.map((it, i) => (
-              <div key={i} className="rounded-xl border border-gray-200 bg-white p-6">
+              <div
+                key={i}
+                className="rounded-xl border border-gray-200 bg-white p-6"
+              >
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-full bg-mpl-navy text-white flex items-center justify-center">
                     <it.icon size={18} />
@@ -252,7 +247,10 @@ const EligibilitySection = () => {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {it.bullets.map((b, idx) => (
-                    <div key={idx} className="text-sm text-gray-600 flex items-start">
+                    <div
+                      key={idx}
+                      className="text-sm text-gray-600 flex items-start"
+                    >
                       <span className="text-mpl-blue mr-2">•</span>
                       <span>{b}</span>
                     </div>
@@ -269,12 +267,36 @@ const EligibilitySection = () => {
 
 const BenefitsSection = () => {
   const benefits = [
-    { title: "Employment Opportunities", icon: Users, desc: "Improves job prospects by removing record barriers." },
-    { title: "Housing Access", icon: Home, desc: "Helps qualify for apartments and rentals." },
-    { title: "Educational Benefits", icon: School, desc: "Supports admissions, scholarships, and advancement." },
-    { title: "Professional Licensing", icon: FileText, desc: "Assists with licensing and credential reviews." },
-    { title: "Restored Rights", icon: Shield, desc: "Removes restrictions and restores confidence." },
-    { title: "Peace of Mind", icon: CheckCircle, desc: "Lets you move forward without past mistakes resurfacing." },
+    {
+      title: "Employment Opportunities",
+      icon: Users,
+      desc: "Improves job prospects by removing record barriers.",
+    },
+    {
+      title: "Housing Access",
+      icon: Home,
+      desc: "Helps qualify for apartments and rentals.",
+    },
+    {
+      title: "Educational Benefits",
+      icon: School,
+      desc: "Supports admissions, scholarships, and advancement.",
+    },
+    {
+      title: "Professional Licensing",
+      icon: FileText,
+      desc: "Assists with licensing and credential reviews.",
+    },
+    {
+      title: "Restored Rights",
+      icon: Shield,
+      desc: "Removes restrictions and restores confidence.",
+    },
+    {
+      title: "Peace of Mind",
+      icon: CheckCircle,
+      desc: "Lets you move forward without past mistakes resurfacing.",
+    },
   ];
   return (
     <section className="py-16 bg-white">
@@ -316,42 +338,72 @@ const ProcessSection = () => {
       title: "Case Evaluation",
       icon: Users,
       desc: "We review your background and case outcome to determine eligibility and the best option.",
-      bullets: ["Eligibility review", "Option selection", "Timeline planning", "Next steps"],
+      bullets: [
+        "Eligibility review",
+        "Option selection",
+        "Timeline planning",
+        "Next steps",
+      ],
     },
     {
       id: 2,
       title: "Record Research",
       icon: FileSearch,
       desc: "We gather records from courts and agencies to ensure accuracy and completeness.",
-      bullets: ["Court records", "Agency records", "Case confirmation", "Documentation review"],
+      bullets: [
+        "Court records",
+        "Agency records",
+        "Case confirmation",
+        "Documentation review",
+      ],
     },
     {
       id: 3,
       title: "Petition Preparation",
       icon: FileText,
       desc: "We draft and file the appropriate petition with supporting exhibits and legal authority.",
-      bullets: ["Petition drafting", "Legal support", "Supporting exhibits", "Court filing"],
+      bullets: [
+        "Petition drafting",
+        "Legal support",
+        "Supporting exhibits",
+        "Court filing",
+      ],
     },
     {
       id: 4,
       title: "Notice to Agencies",
       icon: Shield,
       desc: "We provide required notice to law enforcement, prosecutors, and other agencies as needed.",
-      bullets: ["Proper service", "Agency tracking", "Compliance checks", "Follow‑ups"],
+      bullets: [
+        "Proper service",
+        "Agency tracking",
+        "Compliance checks",
+        "Follow‑ups",
+      ],
     },
     {
       id: 5,
       title: "Court Hearing",
       icon: Gavel,
       desc: "If required, we present your case and respond to objections in court.",
-      bullets: ["Hearing prep", "Court advocacy", "Objection response", "Order request"],
+      bullets: [
+        "Hearing prep",
+        "Court advocacy",
+        "Objection response",
+        "Order request",
+      ],
     },
     {
       id: 6,
       title: "Order Enforcement",
       icon: FileCheck,
       desc: "We ensure the signed order is processed and reflected across agencies and reports.",
-      bullets: ["Order distribution", "Agency confirmation", "Record verification", "Client confirmation"],
+      bullets: [
+        "Order distribution",
+        "Agency confirmation",
+        "Record verification",
+        "Client confirmation",
+      ],
     },
   ];
 
@@ -363,7 +415,8 @@ const ProcessSection = () => {
             The Record Clearing Process
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            A structured, step‑by‑step approach to expungement and record sealing.
+            A structured, step‑by‑step approach to expungement and record
+            sealing.
           </p>
         </div>
 
@@ -396,11 +449,16 @@ const ProcessSection = () => {
                     </h3>
                   </div>
 
-                  <p className="text-gray-600 mb-6 leading-relaxed">{step.desc}</p>
+                  <p className="text-gray-600 mb-6 leading-relaxed">
+                    {step.desc}
+                  </p>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {step.bullets.map((bullet, idx) => (
-                      <div key={idx} className="flex items-center text-sm text-gray-500">
+                      <div
+                        key={idx}
+                        className="flex items-center text-sm text-gray-500"
+                      >
                         <span className="text-mpl-gold mr-2 text-xs">●</span>{" "}
                         {bullet}
                       </div>
@@ -458,23 +516,35 @@ const ConsiderationsSection = () => {
             Important Requirements &amp; Considerations
           </h2>
           <div className="rounded-xl border border-red-200 bg-red-50 p-4 flex items-start gap-3">
-            <AlertTriangle className="text-red-600 flex-shrink-0 mt-0.5" size={20} />
+            <AlertTriangle
+              className="text-red-600 flex-shrink-0 mt-0.5"
+              size={20}
+            />
             <div>
-              <div className="text-sm font-bold text-red-700">Non‑Disclosure Warning</div>
+              <div className="text-sm font-bold text-red-700">
+                Non‑Disclosure Warning
+              </div>
               <div className="text-sm text-gray-700">
-                Eligibility depends on the outcome of your case, timing, and criminal history. A consultation helps avoid filing the wrong request.
+                Eligibility depends on the outcome of your case, timing, and
+                criminal history. A consultation helps avoid filing the wrong
+                request.
               </div>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
             {items.map((it, i) => (
-              <div key={i} className="rounded-xl border border-gray-200 bg-gray-50 p-4">
+              <div
+                key={i}
+                className="rounded-xl border border-gray-200 bg-gray-50 p-4"
+              >
                 <div className="flex items-start gap-3">
                   <div className="w-9 h-9 rounded-full bg-mpl-navy text-white flex items-center justify-center flex-shrink-0">
                     <it.icon size={16} />
                   </div>
                   <div>
-                    <div className="font-serif font-semibold text-mpl-navy">{it.title}</div>
+                    <div className="font-serif font-semibold text-mpl-navy">
+                      {it.title}
+                    </div>
                     <div className="text-sm text-gray-600 mt-1">{it.desc}</div>
                   </div>
                 </div>

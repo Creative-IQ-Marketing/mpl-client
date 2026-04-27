@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 const Motion = motion;
 import {
   ChevronDown,
@@ -12,14 +12,21 @@ import {
   FileSearch,
   Lock,
   Home,
-  AlertTriangle
+  AlertTriangle,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import CleanServiceHero from "../components/CleanServiceHero";
 
 const TheftPropertyCrimes = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
-      <HeroSection />
+      <CleanServiceHero
+        title="Theft & Property Crime Lawyer in San Antonio"
+        subtitle="Defense for theft and property crime charges."
+        opening="A theft charge can impact your record, your employment opportunities, and your reputation."
+        infoTitle="What This Means"
+        infoDescription="Theft and property crimes can range from shoplifting to more serious offenses, with penalties increasing based on value and circumstances."
+      />
       <OverviewSection />
       <TypesSection />
       <PenaltiesSection />
@@ -68,7 +75,8 @@ const HeroSection = () => {
             Aggressive Defense for Property Crime Charges
           </h2>
           <p className="text-lg md:text-xl text-gray-100 max-w-2xl font-light leading-relaxed drop-shadow-md">
-            We defend against theft, burglary, robbery, criminal mischief, fraud, and forgery with strategic, evidence‑driven advocacy.
+            We defend against theft, burglary, robbery, criminal mischief,
+            fraud, and forgery with strategic, evidence‑driven advocacy.
           </p>
         </motion.div>
       </div>
@@ -106,7 +114,11 @@ const OverviewSection = () => {
             Understanding Theft & Property Crimes
           </h2>
           <p className="text-gray-700 leading-relaxed">
-            Theft and property crimes encompass a wide range of offenses involving the unlawful taking or damaging of another’s property. Penalties can vary based on value, prior history, and circumstances of the case. Our experienced theft defense attorneys provide aggressive representation to protect your rights and record.
+            Theft and property crimes encompass a wide range of offenses
+            involving the unlawful taking or damaging of another’s property.
+            Penalties can vary based on value, prior history, and circumstances
+            of the case. Our experienced theft defense attorneys provide
+            aggressive representation to protect your rights and record.
           </p>
         </div>
       </div>
@@ -120,37 +132,67 @@ const TypesSection = () => {
       title: "Theft",
       icon: Lock,
       desc: "Unlawful appropriation of property with intent to deprive the owner.",
-      bullets: ["Shoplifting", "Employee theft", "Receiving stolen property", "Concealment"],
+      bullets: [
+        "Shoplifting",
+        "Employee theft",
+        "Receiving stolen property",
+        "Concealment",
+      ],
     },
     {
       title: "Burglary",
       icon: Home,
       desc: "Entering a habitation or building without consent to commit a felony, theft, or assault.",
-      bullets: ["Residential burglary", "Commercial burglary", "Vehicle burglary", "Burglary of coin‑operated machines"],
+      bullets: [
+        "Residential burglary",
+        "Commercial burglary",
+        "Vehicle burglary",
+        "Burglary of coin‑operated machines",
+      ],
     },
     {
       title: "Robbery",
       icon: Users,
       desc: "Taking property through force, threats, or intimidation from another person.",
-      bullets: ["Simple robbery", "Aggravated robbery", "Carjacking", "Complicity"],
+      bullets: [
+        "Simple robbery",
+        "Aggravated robbery",
+        "Carjacking",
+        "Complicity",
+      ],
     },
     {
       title: "Criminal Mischief",
       icon: FileText,
       desc: "Intentionally or knowingly damaging or tampering with property.",
-      bullets: ["Vandalism", "Graffiti", "Tampering", "Interference with property"],
+      bullets: [
+        "Vandalism",
+        "Graffiti",
+        "Tampering",
+        "Interference with property",
+      ],
     },
     {
       title: "Fraud Crimes",
       icon: FileSearch,
       desc: "Deception‑based offenses involving misrepresentation or unethical schemes.",
-      bullets: ["Check fraud", "Credit card fraud", "Identity theft", "Insurance fraud"],
+      bullets: [
+        "Check fraud",
+        "Credit card fraud",
+        "Identity theft",
+        "Insurance fraud",
+      ],
     },
     {
       title: "Forgery",
       icon: Gavel,
       desc: "Creating, altering, or using false documents with intent to defraud.",
-      bullets: ["Check alteration", "Signature forging", "Fake documents", "Counterfeit instruments"],
+      bullets: [
+        "Check alteration",
+        "Signature forging",
+        "Fake documents",
+        "Counterfeit instruments",
+      ],
     },
   ];
 
@@ -175,11 +217,16 @@ const TypesSection = () => {
               <div className="w-12 h-12 rounded-full bg-mpl-navy text-white flex items-center justify-center mb-6">
                 <t.icon size={22} />
               </div>
-              <h3 className="text-xl font-serif text-mpl-navy font-bold mb-2">{t.title}</h3>
+              <h3 className="text-xl font-serif text-mpl-navy font-bold mb-2">
+                {t.title}
+              </h3>
               <p className="text-gray-600 mb-4">{t.desc}</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 {t.bullets.map((b, idx) => (
-                  <div key={idx} className="text-sm text-gray-500 flex items-center">
+                  <div
+                    key={idx}
+                    className="text-sm text-gray-500 flex items-center"
+                  >
                     <span className="text-mpl-gold mr-2 text-xs">●</span> {b}
                   </div>
                 ))}
@@ -194,12 +241,36 @@ const TypesSection = () => {
 
 const PenaltiesSection = () => {
   const penalties = [
-    { title: "Class C Misdemeanor", desc: "Fine up to $500", note: "Property value: < $100" },
-    { title: "Class B Misdemeanor", desc: "Up to 180 days in jail + $2,000 fine", note: "Property value: $100–$750" },
-    { title: "Class A Misdemeanor", desc: "Up to 1 year in jail + $4,000 fine", note: "Property value: $750–$2,500" },
-    { title: "State Jail Felony", desc: "180 days–2 years + $10,000 fine", note: "Property value: $2,500–$30,000" },
-    { title: "3rd Degree Felony", desc: "2–10 years + $10,000 fine", note: "Property value: $30,000–$150,000" },
-    { title: "2nd Degree Felony", desc: "2–20 years + $10,000 fine", note: "Property value: $150,000–$300,000+" },
+    {
+      title: "Class C Misdemeanor",
+      desc: "Fine up to $500",
+      note: "Property value: < $100",
+    },
+    {
+      title: "Class B Misdemeanor",
+      desc: "Up to 180 days in jail + $2,000 fine",
+      note: "Property value: $100–$750",
+    },
+    {
+      title: "Class A Misdemeanor",
+      desc: "Up to 1 year in jail + $4,000 fine",
+      note: "Property value: $750–$2,500",
+    },
+    {
+      title: "State Jail Felony",
+      desc: "180 days–2 years + $10,000 fine",
+      note: "Property value: $2,500–$30,000",
+    },
+    {
+      title: "3rd Degree Felony",
+      desc: "2–10 years + $10,000 fine",
+      note: "Property value: $30,000–$150,000",
+    },
+    {
+      title: "2nd Degree Felony",
+      desc: "2–20 years + $10,000 fine",
+      note: "Property value: $150,000–$300,000+",
+    },
   ];
 
   return (
@@ -211,8 +282,13 @@ const PenaltiesSection = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {penalties.map((p, i) => (
-              <div key={i} className="rounded-xl border border-red-200 bg-red-50 p-6">
-                <h3 className="text-mpl-navy font-serif font-bold text-lg mb-2">{p.title}</h3>
+              <div
+                key={i}
+                className="rounded-xl border border-red-200 bg-red-50 p-6"
+              >
+                <h3 className="text-mpl-navy font-serif font-bold text-lg mb-2">
+                  {p.title}
+                </h3>
                 <p className="text-red-700 font-semibold">{p.desc}</p>
                 <p className="text-gray-600 text-sm mt-1">{p.note}</p>
               </div>
@@ -226,12 +302,30 @@ const PenaltiesSection = () => {
 
 const StrategiesSection = () => {
   const strategies = [
-    { title: "Lack of Intent", desc: "Challenging the prosecution’s proof of intent to deprive." },
-    { title: "Mistaken Identity", desc: "Disputing identification through evidence and alibi." },
-    { title: "Ownership Rights", desc: "Establishing lawful ownership or permission." },
-    { title: "Insufficient Evidence", desc: "Highlighting gaps and inconsistencies in proof." },
-    { title: "Constitutional Violations", desc: "Suppressing evidence gained through unlawful procedures." },
-    { title: "Value Disputes", desc: "Arguing valuation errors to reduce charge severity." },
+    {
+      title: "Lack of Intent",
+      desc: "Challenging the prosecution’s proof of intent to deprive.",
+    },
+    {
+      title: "Mistaken Identity",
+      desc: "Disputing identification through evidence and alibi.",
+    },
+    {
+      title: "Ownership Rights",
+      desc: "Establishing lawful ownership or permission.",
+    },
+    {
+      title: "Insufficient Evidence",
+      desc: "Highlighting gaps and inconsistencies in proof.",
+    },
+    {
+      title: "Constitutional Violations",
+      desc: "Suppressing evidence gained through unlawful procedures.",
+    },
+    {
+      title: "Value Disputes",
+      desc: "Arguing valuation errors to reduce charge severity.",
+    },
   ];
   return (
     <section className="py-24 bg-white">
@@ -254,7 +348,9 @@ const StrategiesSection = () => {
               <div className="w-10 h-10 rounded-full bg-mpl-navy text-white flex items-center justify-center mb-4">
                 <Shield size={18} />
               </div>
-              <h3 className="text-lg font-serif text-mpl-navy font-bold mb-2">{s.title}</h3>
+              <h3 className="text-lg font-serif text-mpl-navy font-bold mb-2">
+                {s.title}
+              </h3>
               <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
             </motion.div>
           ))}
@@ -271,42 +367,72 @@ const ProcessSection = () => {
       title: "Case Evaluation",
       icon: FileSearch,
       desc: "We assess the case details, property, witness statements, and charges to identify defense opportunities.",
-      bullets: ["Evidence analysis", "Charge review", "Value assessment", "Defense mapping"],
+      bullets: [
+        "Evidence analysis",
+        "Charge review",
+        "Value assessment",
+        "Defense mapping",
+      ],
     },
     {
       id: 2,
       title: "Investigation",
       icon: Users,
       desc: "Independent investigation to gather additional evidence, witness accounts, and documentation.",
-      bullets: ["Witness interviews", "Video review", "Document collection", "Background checks"],
+      bullets: [
+        "Witness interviews",
+        "Video review",
+        "Document collection",
+        "Background checks",
+      ],
     },
     {
       id: 3,
       title: "Legal Strategy",
       icon: Scale,
       desc: "We build a tailored legal strategy to challenge the elements of the offense and suppress unlawful evidence.",
-      bullets: ["Motions practice", "Suppression challenges", "Ownership claims", "Intent rebuttal"],
+      bullets: [
+        "Motions practice",
+        "Suppression challenges",
+        "Ownership claims",
+        "Intent rebuttal",
+      ],
     },
     {
       id: 4,
       title: "Negotiation",
       icon: Users,
       desc: "We pursue dismissal or reduction through negotiations, diversion programs, or restitution when appropriate.",
-      bullets: ["Charge reduction", "Diversion options", "Restitution plans", "Dismissal pursuit"],
+      bullets: [
+        "Charge reduction",
+        "Diversion options",
+        "Restitution plans",
+        "Dismissal pursuit",
+      ],
     },
     {
       id: 5,
       title: "Trial Preparation",
       icon: FileText,
       desc: "If trial is necessary, we prepare thoroughly with motions, exhibits, witnesses, and cross‑examination planning.",
-      bullets: ["Pretrial motions", "Exhibit preparation", "Witness prep", "Jury strategy"],
+      bullets: [
+        "Pretrial motions",
+        "Exhibit preparation",
+        "Witness prep",
+        "Jury strategy",
+      ],
     },
     {
       id: 6,
       title: "Advocacy",
       icon: Gavel,
       desc: "We present a powerful defense in court and fight for the best possible outcome.",
-      bullets: ["Opening/closing", "Cross‑examination", "Witness testimony", "Verdict advocacy"],
+      bullets: [
+        "Opening/closing",
+        "Cross‑examination",
+        "Witness testimony",
+        "Verdict advocacy",
+      ],
     },
   ];
 
@@ -321,7 +447,8 @@ const ProcessSection = () => {
             Our Defense Process
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            A clear, step‑by‑step approach to defending against theft and property crime charges.
+            A clear, step‑by‑step approach to defending against theft and
+            property crime charges.
           </p>
         </div>
 
@@ -384,12 +511,30 @@ const ProcessSection = () => {
 
 const RightsSection = () => {
   const rights = [
-    { title: "Right to Remain Silent", desc: "You are not required to answer questions or provide statements." },
-    { title: "Right to an Attorney", desc: "Request an attorney immediately; avoid making statements during questioning." },
-    { title: "Protection from Illegal Search/Seizure", desc: "Police must follow proper procedures; unlawful evidence can be excluded." },
-    { title: "Right to Phone Call", desc: "You have the right to contact a lawyer or a trusted individual." },
-    { title: "Speedy Trial Rights", desc: "You have the right to a speedy trial and cannot be held without cause." },
-    { title: "Jury Trial Rights", desc: "For many charges, you have the right to have your case decided by a jury." },
+    {
+      title: "Right to Remain Silent",
+      desc: "You are not required to answer questions or provide statements.",
+    },
+    {
+      title: "Right to an Attorney",
+      desc: "Request an attorney immediately; avoid making statements during questioning.",
+    },
+    {
+      title: "Protection from Illegal Search/Seizure",
+      desc: "Police must follow proper procedures; unlawful evidence can be excluded.",
+    },
+    {
+      title: "Right to Phone Call",
+      desc: "You have the right to contact a lawyer or a trusted individual.",
+    },
+    {
+      title: "Speedy Trial Rights",
+      desc: "You have the right to a speedy trial and cannot be held without cause.",
+    },
+    {
+      title: "Jury Trial Rights",
+      desc: "For many charges, you have the right to have your case decided by a jury.",
+    },
   ];
   return (
     <section className="py-24 bg-white">
@@ -398,16 +543,25 @@ const RightsSection = () => {
           <div className="flex items-start gap-3">
             <AlertTriangle className="text-red-600 flex-shrink-0" size={22} />
             <div>
-              <h3 className="text-mpl-navy font-serif font-bold text-lg">Important Legal Reminders</h3>
+              <h3 className="text-mpl-navy font-serif font-bold text-lg">
+                Important Legal Reminders
+              </h3>
               <p className="text-gray-600 text-sm">
-                If you are arrested or questioned about a property crime, exercise your rights. Avoid self‑incrimination and seek legal counsel immediately.
+                If you are arrested or questioned about a property crime,
+                exercise your rights. Avoid self‑incrimination and seek legal
+                counsel immediately.
               </p>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
             {rights.map((r, i) => (
-              <div key={i} className="rounded-xl border border-gray-200 bg-gray-50 p-4">
-                <h4 className="text-mpl-navy font-serif font-semibold">{r.title}</h4>
+              <div
+                key={i}
+                className="rounded-xl border border-gray-200 bg-gray-50 p-4"
+              >
+                <h4 className="text-mpl-navy font-serif font-semibold">
+                  {r.title}
+                </h4>
                 <p className="text-gray-600 text-sm mt-1">{r.desc}</p>
               </div>
             ))}
@@ -432,7 +586,8 @@ const CTA = () => {
               Facing Theft or Property Crime Charges?
             </h2>
             <p className="text-xl text-white/80 mb-10 leading-relaxed">
-              Don’t face these charges alone. Our experienced criminal defense attorneys fight aggressively to protect your rights and freedom.
+              Don’t face these charges alone. Our experienced criminal defense
+              attorneys fight aggressively to protect your rights and freedom.
             </p>
             <Link
               to="/contact"
@@ -461,7 +616,9 @@ const RelatedServices = () => {
     <section className="py-16 bg-white">
       <div className="container-custom">
         <div className="text-center mb-8">
-          <h3 className="text-2xl md:text-3xl font-serif text-mpl-navy font-bold">Related Criminal Defense Services</h3>
+          <h3 className="text-2xl md:text-3xl font-serif text-mpl-navy font-bold">
+            Related Criminal Defense Services
+          </h3>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-3">
           {links.map((l, i) => (

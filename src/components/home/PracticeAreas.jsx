@@ -176,73 +176,66 @@ const PracticeAreas = () => {
       id: "family",
       title: "Family Law",
       description:
-        "Guidance for divorce, custody, support, and adoption—focused on practical steps and steady support.",
+        "Guiding you through divorce, custody, and life-changing decisions with clarity, strategy, and your family’s future in mind.",
       to: "/family-law",
       services: [
-        { label: "Uncontested Divorce", to: "/uncontested-divorce" },
         { label: "Contested Divorce", to: "/contested-divorce" },
+        { label: "Uncontested Divorce", to: "/uncontested-divorce" },
         { label: "Child Custody", to: "/child-custody" },
         { label: "Child Support", to: "/child-support" },
-        { label: "Adoption", to: "/adoption" },
-        { label: "Name Change", to: "/name-change" },
         {
-          label: "Modification of Previous Order",
+          label: "Custody & Support Modifications",
           to: "/modification-of-previous-order",
         },
-        { label: "Property Division", to: "/property-division" },
-        { label: "Enforcement", to: "/enforcement" },
-        { label: "Spousal Maintenance", to: "/spousal-maintenance" },
-        { label: "Prenuptial Agreement", to: "/prenuptial-agreement" },
-        { label: "Postnuptial Agreement", to: "/postnuptial-agreement" },
-      ],
-    },
-    {
-      id: "estate",
-      title: "Estate Planning",
-      description:
-        "Wills, trusts, and planning that protects your family and helps you feel prepared.",
-      to: "/services#estate-planning",
-      services: [
-        { label: "Wills & Trusts", to: "/services#estate-planning" },
-        { label: "Power of Attorney", to: "/services#estate-planning" },
-        { label: "Medical Directives", to: "/services#estate-planning" },
-        { label: "Asset Protection", to: "/services#estate-planning" },
-        { label: "Legacy Preservation", to: "/services#estate-planning" },
-        { label: "Guardianship Designations", to: "/services#estate-planning" },
-      ],
-    },
-    {
-      id: "probate",
-      title: "Probate Law",
-      description:
-        "Probate and estate administration support with clear steps and responsive communication.",
-      to: "/services#probate-law",
-      services: [
-        { label: "Probate Administration", to: "/services#probate-law" },
-        { label: "Estate Settlement", to: "/services#probate-law" },
-        { label: "Heirship Determinations", to: "/services#probate-law" },
-        { label: "Will Contests", to: "/services#probate-law" },
-        { label: "Small Estate Affidavits", to: "/services#probate-law" },
-        { label: "Executor Assistance", to: "/services#probate-law" },
+        { label: "Enforcement of Court Orders", to: "/enforcement" },
       ],
     },
     {
       id: "criminal",
       title: "Criminal Law",
       description:
-        "Defense for DWI, drug charges, and more—built around protecting your rights and future.",
+        "When your future is on the line, we provide strong, strategic defense you can rely on.",
       to: "/criminal-defense",
       services: [
-        { label: "DWI / DUI", to: "/dwi" },
-        { label: "Drug Charges", to: "/drug-charges" },
-        { label: "Domestic Violence", to: "/domestic-violence" },
+        { label: "Assault & Domestic Violence", to: "/domestic-violence" },
         { label: "Protective Orders", to: "/protective-orders" },
-        { label: "Theft & Property Crimes", to: "/theft-property-crimes" },
-        { label: "Juvenile Defense", to: "/juvenile-defense" },
+        { label: "DWI / DUI Defense", to: "/dwi" },
+        { label: "Drug Charges", to: "/drug-charges" },
         {
           label: "Expungement & Record Sealing",
           to: "/expungement-record-sealing",
         },
+        { label: "Juvenile Defense", to: "/juvenile-defense" },
+      ],
+    },
+    {
+      id: "estate",
+      title: "Estate Planning",
+      description:
+        "Helping you create a clear plan so your family is protected and your wishes are honored.",
+      to: "/estate-planning",
+      services: [
+        { label: "Wills & Trusts", to: "/will" },
+        { label: "Revocable Living Trusts", to: "/trust" },
+        { label: "Powers of Attorney", to: "/power-of-attorney" },
+        { label: "Medical Directives", to: "/advance-directives" },
+        { label: "Probate & Estate Administration", to: "/probate-law" },
+        { label: "Asset Protection", to: "/asset-protection" },
+      ],
+    },
+    {
+      id: "probate",
+      title: "Probate Law",
+      description:
+        "Supporting you through the legal process after a loss with clarity and steady guidance.",
+      to: "/probate-law",
+      services: [
+        { label: "Do You Need Probate?", to: "/do-i-need-probate" },
+        { label: "How to Start Probate", to: "/how-to-start-probate" },
+        { label: "Probating a Will", to: "/probating-a-will" },
+        { label: "Probate Without a Will", to: "/probate-without-will" },
+        { label: "Small Estate Affidavit", to: "/small-estate-affidavit" },
+        { label: "Affidavit of Heirship", to: "/affidavit-of-heirship" },
       ],
     },
   ];
@@ -252,7 +245,7 @@ const PracticeAreas = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-mpl-navy mb-4 leading-tight">
-            Practice Areas
+            How We Help You
           </h2>
           <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto">
             Explore our services and go directly to the page you need.
@@ -260,72 +253,78 @@ const PracticeAreas = () => {
         </div>
 
         <div className="space-y-6">
-          {practiceAreas.map((area) => (
-            <div
-              key={area.id}
-              className="rounded-3xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="p-7 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
-                <div className="lg:col-span-4">
-                  <div className="flex items-start gap-4">
-                    <div className="w-16 aspect-[4/3] rounded-2xl bg-mpl-blue/10 text-mpl-blue p-2 flex items-center justify-center">
-                      <div className="w-full h-full opacity-90">
-                        {renderIllustration(area.id)}
+          {practiceAreas.map((area) => {
+            const displayServices = area.services.slice(0, 6);
+
+            return (
+              <div
+                key={area.id}
+                className="rounded-3xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="p-7 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
+                  <div className="lg:col-span-4">
+                    <div className="flex items-start gap-4">
+                      <div className="w-16 aspect-[4/3] rounded-2xl bg-mpl-blue/10 text-mpl-blue p-2 flex items-center justify-center">
+                        <div className="w-full h-full opacity-90">
+                          {renderIllustration(area.id)}
+                        </div>
+                      </div>
+                      <div className="min-w-0">
+                        <div className="text-[11px] uppercase tracking-[0.18em] text-gray-500">
+                          Practice area
+                        </div>
+                        <h3 className="mt-1 text-2xl md:text-3xl font-serif text-mpl-navy">
+                          <Link
+                            to={area.to}
+                            className="hover:text-mpl-blue transition-colors"
+                          >
+                            {area.title}
+                          </Link>
+                        </h3>
                       </div>
                     </div>
-                    <div className="min-w-0">
-                      <div className="text-[11px] uppercase tracking-[0.18em] text-gray-500">
-                        Practice area
-                      </div>
-                      <h3 className="mt-1 text-2xl md:text-3xl font-serif text-mpl-navy">
-                        <Link
-                          to={area.to}
-                          className="hover:text-mpl-blue transition-colors"
-                        >
-                          {area.title}
-                        </Link>
-                      </h3>
+
+                    <p className="mt-5 text-gray-600 text-base md:text-lg leading-relaxed">
+                      {area.description}
+                    </p>
+
+                    <div className="mt-6">
+                      <Link
+                        to={area.to}
+                        className="inline-flex items-center gap-2 font-bold text-mpl-blue hover:text-mpl-navy transition-colors"
+                      >
+                        View more <ArrowRight size={18} />
+                      </Link>
                     </div>
                   </div>
 
-                  <p className="mt-5 text-gray-600 text-base md:text-lg leading-relaxed">
-                    {area.description}
-                  </p>
-
-                  <div className="mt-6">
-                    <Link
-                      to={area.to}
-                      className="inline-flex items-center gap-2 font-bold text-mpl-blue hover:text-mpl-navy transition-colors"
-                    >
-                      View overview <ArrowRight size={18} />
-                    </Link>
+                  <div className="lg:col-span-8">
+                    <div className="text-xs uppercase tracking-[0.18em] text-gray-500">
+                      Services
+                    </div>
+                    <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3">
+                      {displayServices.map((service) => (
+                        <li key={`${area.id}-${service.to}-${service.label}`}>
+                          <Link
+                            to={service.to}
+                            className="group/link inline-flex items-start gap-2 text-sm text-gray-700 hover:text-mpl-blue transition-colors"
+                          >
+                            <ChevronRight
+                              size={16}
+                              className="mt-0.5 text-gray-300 group-hover/link:text-mpl-blue transition-colors"
+                            />
+                            <span className="leading-snug">
+                              {service.label}
+                            </span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                </div>
-
-                <div className="lg:col-span-8">
-                  <div className="text-xs uppercase tracking-[0.18em] text-gray-500">
-                    Services
-                  </div>
-                  <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3">
-                    {area.services.map((service) => (
-                      <li key={`${area.id}-${service.to}-${service.label}`}>
-                        <Link
-                          to={service.to}
-                          className="group/link inline-flex items-start gap-2 text-sm text-gray-700 hover:text-mpl-blue transition-colors"
-                        >
-                          <ChevronRight
-                            size={16}
-                            className="mt-0.5 text-gray-300 group-hover/link:text-mpl-blue transition-colors"
-                          />
-                          <span className="leading-snug">{service.label}</span>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

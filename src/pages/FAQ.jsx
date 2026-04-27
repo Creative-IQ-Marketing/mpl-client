@@ -17,7 +17,7 @@ const FAQ = () => {
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden bg-white">
+    <section className="relative overflow-hidden bg-white mt-20">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(68,117,181,0.10),transparent_55%),radial-gradient(circle_at_80%_0%,rgba(35,67,116,0.08),transparent_50%),radial-gradient(circle_at_30%_90%,rgba(99,155,227,0.08),transparent_60%)]" />
       <div className="container-custom relative">
         <div className="py-16 md:py-20">

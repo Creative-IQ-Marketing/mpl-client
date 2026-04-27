@@ -1,6 +1,5 @@
 import React from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-const Motion = motion;
+import { motion } from "framer-motion";
 import {
   ChevronDown,
   Phone,
@@ -13,14 +12,24 @@ import {
   AlertTriangle,
   Ban,
   Home,
-  RefreshCcw
+  RefreshCcw,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import CleanServiceHero from "../components/CleanServiceHero";
 
 const ProtectiveOrders = () => {
   return (
-    <div className="bg-gray-50 min-h-screen">
-      <HeroSection />
+    <div className="bg-white min-h-screen">
+      <CleanServiceHero
+        title="Protective Orders in San Antonio"
+        subtitle="Seeking protection or defending your rights."
+        opening={[
+          "When your safety or your child's safety is at risk, you need to act quickly.",
+          "Whether you are seeking protection or responding to an order, the decisions you make now can have immediate and lasting consequences.",
+        ]}
+        infoTitle="What This Means"
+        infoDescription="A protective order is a legal tool designed to prevent contact and provide safety in situations involving family violence or threats."
+      />
       <BenefitsSection />
       <ProcessSection />
       <TypesSection />
@@ -29,94 +38,38 @@ const ProtectiveOrders = () => {
   );
 };
 
-const HeroSection = () => {
-  const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 500], [0, 200]);
-
-  return (
-    <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-mpl-navy text-white">
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
-
-
-      {/* Animated Background Elements */}
-      <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute top-1/4 left-1/4 w-96 h-96 bg-mpl-blue/30 rounded-full blur-[100px] mix-blend-screen"
-      />
-
-      <div className="container-custom relative z-10 text-left">
-        <motion.div
-          style={{ y: y1 }}
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif leading-tight mb-6 text-white drop-shadow-xl">
-            Protective Orders Attorney
-          </h1>
-          <h2 className="text-xl md:text-2xl text-white/90 font-semibold mb-4">
-            Obtaining and Defending Against Protective Orders
-          </h2>
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-100 max-w-2xl font-light leading-relaxed drop-shadow-md">
-            Protective orders can impact freedom, housing, and parental rights. Our team provides strategic representation for both filing and defending against protective orders, focusing on precise documentation and rigorous advocacy.
-          </p>
-          <div className="mt-8 flex items-center gap-4">
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 bg-mpl-blue text-white px-6 py-3 rounded-full font-bold shadow-lg hover:bg-mpl-lightBlue transition-all"
-            >
-              <Shield size={18} /> Schedule Consultation
-            </Link>
-            <a
-              href="tel:7262044044"
-              className="inline-flex items-center gap-2 border border-white/60 text-white px-6 py-3 rounded-full font-bold hover:bg-white/10 transition-all"
-            >
-              <Phone size={18} /> Call (726) 204-4044
-            </a>
-          </div>
-        </motion.div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer z-20"
-        onClick={() =>
-          window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
-        }
-      >
-        <span className="text-sm font-light tracking-widest uppercase text-white/80">
-          Scroll Down
-        </span>
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <ChevronDown className="w-6 h-6 text-white" />
-        </motion.div>
-      </motion.div>
-    </section>
-  );
-};
-
 const BenefitsSection = () => {
   const benefits = [
-    { title: "Victim Protection", icon: Shield, desc: "Immediate representation to secure safety and legal protection." },
-    { title: "Defense Representation", icon: Gavel, desc: "Aggressive defense when you are falsely accused or overcharged." },
-    { title: "Emergency Orders", icon: AlertTriangle, desc: "Guidance on emergency protective orders and urgent filings." },
-    { title: "Comprehensive Documentation", icon: FileText, desc: "Meticulous preparation of affidavits and supporting records." },
-    { title: "Strategic Approach", icon: Scale, desc: "Tailored strategy based on your situation and long‑term goals." },
-    { title: "Enforcement Support", icon: Ban, desc: "Assistance with compliance, enforcement, and modification issues." },
+    {
+      title: "Victim Protection",
+      icon: Shield,
+      desc: "Immediate representation to secure safety and legal protection.",
+    },
+    {
+      title: "Defense Representation",
+      icon: Gavel,
+      desc: "Aggressive defense when you are falsely accused or overcharged.",
+    },
+    {
+      title: "Emergency Orders",
+      icon: AlertTriangle,
+      desc: "Guidance on emergency protective orders and urgent filings.",
+    },
+    {
+      title: "Comprehensive Documentation",
+      icon: FileText,
+      desc: "Meticulous preparation of affidavits and supporting records.",
+    },
+    {
+      title: "Strategic Approach",
+      icon: Scale,
+      desc: "Tailored strategy based on your situation and long‑term goals.",
+    },
+    {
+      title: "Enforcement Support",
+      icon: Ban,
+      desc: "Assistance with compliance, enforcement, and modification issues.",
+    },
   ];
 
   return (
@@ -127,7 +80,8 @@ const BenefitsSection = () => {
             Why Choose Our Protective Orders Services?
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            We provide comprehensive, practical representation for both filing and defending against protective orders.
+            We provide comprehensive, practical representation for both filing
+            and defending against protective orders.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -218,7 +172,8 @@ const ProcessSection = () => {
             The Protective Orders Process
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Understanding the steps involved in protective order proceedings in Texas.
+            Understanding the steps involved in protective order proceedings in
+            Texas.
           </p>
         </div>
 
@@ -237,14 +192,14 @@ const ProcessSection = () => {
                 className="relative flex flex-col md:flex-row gap-8 group"
               >
                 {/* Step Number Bubble */}
-                <div className="flex-shrink-0 z-10">
+                <div className="shrink-0 z-10">
                   <div className="w-16 h-16 rounded-full bg-white border-4 border-mpl-blue text-mpl-blue flex items-center justify-center font-serif font-bold text-2xl shadow-lg group-hover:bg-mpl-blue group-hover:text-white transition-colors duration-300">
                     {step.id}
                   </div>
                 </div>
 
                 {/* Content Card */}
-                <div className="flex-grow bg-white rounded-2xl border border-gray-100 shadow-md p-8 hover:shadow-xl transition-shadow duration-300">
+                <div className="grow bg-white rounded-2xl border border-gray-100 shadow-md p-8 hover:shadow-xl transition-shadow duration-300">
                   <div className="flex items-start gap-4 mb-4">
                     <div className="bg-mpl-blue/10 p-3 rounded-lg text-mpl-blue">
                       <step.icon size={24} />
@@ -281,12 +236,36 @@ const ProcessSection = () => {
 
 const TypesSection = () => {
   const types = [
-    { title: "Emergency Protective Orders (EPO)", icon: AlertTriangle, desc: "Immediate protection following arrests or urgent situations." },
-    { title: "Family Violence Protective Orders", icon: Home, desc: "Representation in cases involving spouses, partners, or relatives." },
-    { title: "Harassment Protective Order", icon: FileText, desc: "Addressing harassment allegations, including electronic communications." },
-    { title: "False Accusation Defense", icon: Gavel, desc: "Challenging unfounded claims and protecting your reputation." },
-    { title: "Restraining Order Violations", icon: Ban, desc: "Defense and guidance when accused of violating orders." },
-    { title: "Protective Order Modifications", icon: RefreshCcw, desc: "Seeking changes to existing orders to reflect new circumstances." },
+    {
+      title: "Emergency Protective Orders (EPO)",
+      icon: AlertTriangle,
+      desc: "Immediate protection following arrests or urgent situations.",
+    },
+    {
+      title: "Family Violence Protective Orders",
+      icon: Home,
+      desc: "Representation in cases involving spouses, partners, or relatives.",
+    },
+    {
+      title: "Harassment Protective Order",
+      icon: FileText,
+      desc: "Addressing harassment allegations, including electronic communications.",
+    },
+    {
+      title: "False Accusation Defense",
+      icon: Gavel,
+      desc: "Challenging unfounded claims and protecting your reputation.",
+    },
+    {
+      title: "Restraining Order Violations",
+      icon: Ban,
+      desc: "Defense and guidance when accused of violating orders.",
+    },
+    {
+      title: "Protective Order Modifications",
+      icon: RefreshCcw,
+      desc: "Seeking changes to existing orders to reflect new circumstances.",
+    },
   ];
 
   return (
@@ -297,7 +276,8 @@ const TypesSection = () => {
             Types of Protective Orders We Handle
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Comprehensive representation for various protective order situations.
+            Comprehensive representation for various protective order
+            situations.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -332,14 +312,15 @@ const CTA = () => {
         <div className="bg-mpl-navy rounded-3xl p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
           {/* Background Decor */}
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-mpl-blue/20 to-transparent pointer-events-none"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-linear-to-br from-mpl-blue/20 to-transparent pointer-events-none"></div>
 
           <div className="relative z-10 max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 text-white">
               Need Help with Protective Orders?
             </h2>
             <p className="text-xl text-white/80 mb-10 leading-relaxed">
-              Whether you need protection or are facing false accusations, contact our experienced protective orders attorneys now.
+              Whether you need protection or are facing false accusations,
+              contact our experienced protective orders attorneys now.
             </p>
             <div className="flex items-center justify-center gap-4">
               <Link

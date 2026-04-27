@@ -16,12 +16,19 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import CleanServiceHero from "../components/CleanServiceHero";
 import ConsultationForm from "../components/ConsultationForm";
 
 const Adoption = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
-      <HeroSection />
+      <CleanServiceHero
+        title="Adoption Attorney in San Antonio"
+        subtitle="Guiding families through the adoption process."
+        opening="Adoption is one of the most meaningful ways to grow your family."
+        infoTitle="What This Means"
+        infoDescription="The adoption process involves legal steps to establish parental rights and responsibilities."
+      />
       <WhyChooseSection />
       <ProcessSection />
       <TypesSection />
@@ -47,8 +54,13 @@ const HeroSection = () => {
           </div>
           <h1 className="text-5xl md:text-7xl font-serif font-bold text-mpl-navy mb-8 leading-tight">
             Adoption <br />
-            <span className="text-mpl-blue italic">Attorney</span>
           </h1>
+          <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+            Adoption is one of the most meaningful ways to grow your family. The
+            adoption process involves legal steps to establish parental rights
+            and responsibilities. We guide you through the process so everything
+            is handled smoothly and correctly.
+          </p>
           <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
             Adoption is one of the most rewarding legal processes, creating new
             families and providing children with loving homes. Our experienced
@@ -125,8 +137,8 @@ const WhyChooseSection = () => {
             Why Choose Our Adoption Services?
           </h2>
           <p className="text-lg text-gray-600">
-            We provide compassionate and comprehensive adoption representation for
-            all types of adoptions.
+            We provide compassionate and comprehensive adoption representation
+            for all types of adoptions.
           </p>
         </div>
 
@@ -315,7 +327,7 @@ const CTABanner = () => {
         <div className="bg-mpl-blue rounded-3xl p-12 text-center relative overflow-hidden shadow-xl">
           <div className="absolute inset-0 bg-mpl-navy/20 mix-blend-multiply"></div>
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-          
+
           <div className="relative z-10 max-w-4xl mx-auto text-white">
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
               Ready to Start Your Adoption Journey?
@@ -359,7 +371,7 @@ const ContactInfoSection = () => {
       icon: MapPin,
       title: "Office",
       content: "45 NE Interstate 410 Loop Suite 307 San Antonio, TX 78216",
-      link: "https://maps.google.com/?q=45+NE+Interstate+410+Loop+Suite+307+San+Antonio+TX+78216",
+      link: "https://maps.google.com/?q=29.52137717375601,-98.48965712995692",
       color: "text-red-500",
     },
     {

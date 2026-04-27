@@ -15,12 +15,19 @@ import {
   Mail,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import CleanServiceHero from "../components/CleanServiceHero";
 import ConsultationForm from "../components/ConsultationForm";
 
 const ModificationOfPreviousOrder = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
-      <HeroSection />
+      <CleanServiceHero
+        title="Custody & Support Modifications in San Antonio"
+        subtitle="Life changes. Your court orders should reflect that."
+        opening="Life changes. Your court orders should reflect that."
+        infoTitle="What This Means"
+        infoDescription="Modifications allow you to update custody or support arrangements when circumstances change."
+      />
       <WhyChooseSection />
       <ProcessSection />
       <TypesSection />
@@ -45,15 +52,17 @@ const HeroSection = () => {
             Updating Court Orders to Reflect Life Changes
           </div>
           <h1 className="text-5xl md:text-7xl font-serif font-bold text-mpl-navy mb-8 leading-tight">
-            Modification of Previous <br />
-            <span className="text-mpl-blue italic">Order</span>
+            Custody & Support Modifications <br />
           </h1>
           <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Life circumstances change, and court orders may need to be modified
-            to reflect new situations. Our experienced San Antonio modification
-            attorneys help you update divorce decrees, custody orders, child
-            support orders, and other family law orders when circumstances
-            warrant changes.
+            Life changes. Your court orders should reflect that. Modifications
+            allow you to update custody or support arrangements when
+            circumstances change.
+          </p>
+          <p className="text-lg text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
+            We help you adjust existing orders when there are changes in income
+            or job, relocation or schedule changes, or evolving needs of your
+            child.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -358,7 +367,7 @@ const ContactInfoSection = () => {
       icon: MapPin,
       title: "Office",
       content: "45 NE Interstate 410 Loop Suite 307 San Antonio, TX 78216",
-      link: "https://maps.google.com/?q=45+NE+Interstate+410+Loop+Suite+307+San+Antonio+TX+78216",
+      link: "https://maps.google.com/?q=29.52137717375601,-98.48965712995692",
       color: "text-red-500",
     },
     {

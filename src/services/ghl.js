@@ -4,6 +4,10 @@ const GHL_LOCATION_ID =
   import.meta.env.VITE_GHL_LOCATION_ID || "9hd3RkAwbYkkmnv2N6kf";
 const GHL_API_BASE = "https://services.leadconnectorhq.com";
 
+function normalizeEmail(email = "") {
+  return email.trim().toLowerCase();
+}
+
 async function makeGHLRequest(endpoint, method = "GET", body = null) {
   const options = {
     method,
@@ -75,9 +79,14 @@ export async function submitConsultationToGHL(formData, context = {}) {
 export async function subscribeContactToNewsletter(email, context = {}) {
   const source = context.source || "blog_newsletter_subscribe";
   const pagePath = context.pagePath || "";
+  const cleanEmail = normalizeEmail(email);
+
+  if (!cleanEmail) {
+    throw new Error("A valid email is required to subscribe.");
+  }
 
   const contactData = {
-    email: email.trim(),
+    email: cleanEmail,
     locationId: GHL_LOCATION_ID,
     tags: ["newsletter", "blog_subscriber", "mpl_website"],
     customFields: [
@@ -95,5 +104,54 @@ export async function subscribeContactToNewsletter(email, context = {}) {
   };
 
   const data = await makeGHLRequest("/contacts/upsert", "POST", contactData);
+  return { success: true, contact: data.contact || data };
+}
+
+export async function unsubscribeEmailFromNewsletter(email, context = {}) {
+  const source = context.source || "newsletter_unsubscribe";
+  const pagePath = context.pagePath || "";
+  const cleanEmail = normalizeEmail(email);
+
+  if (!cleanEmail) {
+    throw new Error("A valid email is required to unsubscribe.");
+  }
+
+  const upsertPayload = {
+    email: cleanEmail,
+    locationId: GHL_LOCATION_ID,
+    tags: ["newsletter_unsubscribed", "mpl_website"],
+    customFields: [
+      {
+        key: "source",
+        field_value: source,
+      },
+      {
+        key: "message",
+        field_value: pagePath
+          ? `Newsletter unsubscribe from ${source} on ${pagePath}`
+          : `Newsletter unsubscribe from ${source}`,
+      },
+    ],
+  };
+
+  const upsertResult = await makeGHLRequest("/contacts/upsert", "POST", upsertPayload);
+  const contactId = upsertResult?.contact?.id || upsertResult?.id;
+
+  if (!contactId) {
+    throw new Error("Unable to find contact ID for unsubscribe request.");
+  }
+
+  const updatePayload = {
+    email: cleanEmail,
+    locationId: GHL_LOCATION_ID,
+    dnd: true,
+    dndSettings: {
+      Email: {
+        status: "active",
+      },
+    },
+  };
+
+  const data = await makeGHLRequest(`/contacts/${contactId}`, "PUT", updatePayload);
   return { success: true, contact: data.contact || data };
 }

@@ -19,12 +19,22 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import CleanServiceHero from "../components/CleanServiceHero";
 import ConsultationForm from "../components/ConsultationForm";
 
 const UncontestedDivorce = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
-      <HeroSection />
+      <CleanServiceHero
+        title="Uncontested Divorce in San Antonio"
+        subtitle="Fast, Affordable Divorce When Both Parties Agree"
+        opening={[
+          "If you and your spouse agree on the major decisions, your divorce does not have to turn into a long and expensive process.",
+          "An uncontested divorce allows you to move forward more quickly, with less stress and more control over the outcome.",
+        ]}
+        infoTitle="What This Means"
+        infoDescription="An uncontested divorce means both parties agree on key issues like property division, child custody, and support. Instead of fighting in court, you work toward a resolution that reflects what is best for your family."
+      />
       <WhyChooseSection />
       <ProcessSection />
       <BenefitsSection />
@@ -32,57 +42,6 @@ const UncontestedDivorce = () => {
       <ContactInfoSection />
       <FormSection />
     </div>
-  );
-};
-
-const HeroSection = () => {
-  return (
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-white pt-20">
-      <div className="container-custom relative z-10 flex flex-col items-center text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-4xl"
-        >
-          <div className="inline-block px-4 py-1.5 bg-mpl-blue/10 text-mpl-blue rounded-full text-sm font-bold tracking-wider mb-6 uppercase border border-mpl-blue/20">
-            San Antonio's Trusted Family Law Team
-          </div>
-          <h1 className="text-5xl md:text-7xl font-serif font-bold text-mpl-navy mb-8 leading-tight">
-            Uncontested Divorce <br />
-            <span className="text-mpl-blue italic">Attorney</span>
-          </h1>
-          <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-            When both parties agree on the terms of divorce, an uncontested
-            divorce can be completed quickly and affordably. Our experienced San
-            Antonio uncontested divorce attorneys guide you through the
-            streamlined process, ensuring all legal requirements are met while
-            protecting your interests.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/contact"
-              className="bg-mpl-navy text-white px-8 py-4 rounded-full font-bold shadow-lg hover:bg-mpl-blue transition-all transform hover:-translate-y-1 text-lg"
-            >
-              Schedule Consultation
-            </Link>
-            <a
-              href="tel:7262044044"
-              className="bg-white text-mpl-navy border-2 border-mpl-navy px-8 py-4 rounded-full font-bold hover:bg-mpl-navy hover:text-white transition-all text-lg flex items-center justify-center gap-2"
-            >
-              <Phone size={20} />
-              Call (726) 204-4044
-            </a>
-          </div>
-        </motion.div>
-      </div>
-
-      {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-mpl-blue/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-mpl-gold/5 rounded-full blur-3xl"></div>
-      </div>
-    </section>
   );
 };
 

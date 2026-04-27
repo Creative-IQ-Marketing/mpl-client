@@ -66,6 +66,7 @@ export default function StructuredData() {
       },
       areaServed: [
         { "@type": "City", name: "San Antonio" },
+        { "@type": "AdministrativeArea", name: "Bexar County" },
         { "@type": "State", name: "Texas" },
       ],
       knowsAbout: [
@@ -86,7 +87,13 @@ export default function StructuredData() {
         "Wills",
         "Trusts",
         "Power of Attorney",
+        "Advance Directives",
+        "Asset Protection",
         "Probate Law",
+        "Heirship Proceedings",
+        "Muniment of Title",
+        "Probate Litigation",
+        "Estate Affidavits",
       ],
     };
 
@@ -207,6 +214,46 @@ export default function StructuredData() {
           name: "Probate Law",
           description:
             "Guidance through the probate process and estate administration.",
+          provider: {
+            "@type": "Organization",
+            name: "Morales Padia Law",
+          },
+        },
+        {
+          "@type": "Service",
+          name: "Heirship Proceedings",
+          description:
+            "Determination of legal heirs and title transfer support in probate matters.",
+          provider: {
+            "@type": "Organization",
+            name: "Morales Padia Law",
+          },
+        },
+        {
+          "@type": "Service",
+          name: "Muniment of Title",
+          description:
+            "Streamlined probate option for qualifying estate and property transfers.",
+          provider: {
+            "@type": "Organization",
+            name: "Morales Padia Law",
+          },
+        },
+        {
+          "@type": "Service",
+          name: "Probate Litigation",
+          description:
+            "Representation for will contests, fiduciary disputes, and probate conflict resolution.",
+          provider: {
+            "@type": "Organization",
+            name: "Morales Padia Law",
+          },
+        },
+        {
+          "@type": "Service",
+          name: "Estate Affidavits",
+          description:
+            "Assistance with small estate affidavits and related transfer documentation.",
           provider: {
             "@type": "Organization",
             name: "Morales Padia Law",

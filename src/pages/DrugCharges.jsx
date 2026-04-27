@@ -1,6 +1,5 @@
 import React from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-const Motion = motion;
+import { motion } from "framer-motion";
 import {
   ChevronDown,
   Phone,
@@ -11,14 +10,21 @@ import {
   Users,
   FileSearch,
   AlertTriangle,
-  Syringe
+  Syringe,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import CleanServiceHero from "../components/CleanServiceHero";
 
 const DrugCharges = () => {
   return (
-    <div className="bg-gray-50 min-h-screen">
-      <HeroSection />
+    <div className="bg-white min-h-screen">
+      <CleanServiceHero
+        title="Drug Charges Defense in San Antonio"
+        subtitle="Strategic defense for possession, distribution, and manufacturing charges."
+        opening="Being charged with a drug offense can leave you uncertain about what happens next and how it could affect your future."
+        infoTitle="What This Means"
+        infoDescription="Drug charges can include possession, distribution, or manufacturing. Penalties vary depending on the type and amount involved."
+      />
       <ImmediateHelpBanner />
       <OverviewSection />
       <TypesSection />
@@ -33,86 +39,12 @@ const DrugCharges = () => {
   );
 };
 
-const HeroSection = () => {
-  const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 500], [0, 200]);
-
-  return (
-    <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-mpl-navy text-white">
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1555881400-74d7acaacd81?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
-
-      {/* Animated Background Elements */}
-      <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute top-1/4 left-1/4 w-96 h-96 bg-mpl-blue/30 rounded-full blur-[100px] mix-blend-screen"
-      />
-
-      <div className="container-custom relative z-10 text-center">
-        <motion.div
-          style={{ y: y1 }}
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <div className="inline-block px-4 py-1 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm font-semibold tracking-wider mb-6">
-            AGGRESSIVE & STRATEGIC
-          </div>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif leading-tight mb-6 text-white drop-shadow-xl">
-            Drug <br />
-            <span className="italic text-mpl-lightBlue relative inline-block">
-              Defense.
-              <motion.span
-                initial={{ width: 0 }}
-                animate={{ width: "100%" }}
-                transition={{ delay: 0.8, duration: 1 }}
-                className="absolute bottom-2 left-0 h-1 bg-white/30"
-              />
-            </span>
-          </h1>
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-100 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md">
-            Facing drug charges can be daunting. We provide experienced defense to challenge the evidence and protect your freedom.
-          </p>
-        </motion.div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer z-20"
-        onClick={() =>
-          window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
-        }
-      >
-        <span className="text-sm font-light tracking-widest uppercase text-white/80">
-          Scroll Down
-        </span>
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <ChevronDown className="w-6 h-6 text-white" />
-        </motion.div>
-      </motion.div>
-    </section>
-  );
-};
-
 const ImmediateHelpBanner = () => {
   return (
     <section className="bg-mpl-blue py-16 text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-      <div className="absolute inset-0 bg-gradient-to-r from-mpl-navy/50 to-transparent"></div>
+      <div className="absolute inset-0 bg-linear-to-r from-mpl-navy/50 to-transparent"></div>
 
       <div className="container-custom relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
         <div className="text-center md:text-left">
@@ -120,7 +52,8 @@ const ImmediateHelpBanner = () => {
             Arrested for Drugs?
           </h2>
           <p className="text-white/80 max-w-2xl text-lg">
-            Drug charges carry harsh penalties. Immediate legal representation is essential to protect your rights.
+            Drug charges carry harsh penalties. Immediate legal representation
+            is essential to protect your rights.
           </p>
         </div>
 
@@ -152,12 +85,15 @@ const OverviewSection = () => {
             Understanding Drug Charges in Texas
           </h2>
           <p className="text-gray-700 leading-relaxed">
-            Drug charges in Texas range from simple possession to trafficking offenses, with penalties that can escalate
-            depending on the type, amount, and circumstances. Texas Controlled Substances Act categorizes drugs into
-            penalty groups, which influence the severity of punishment. Each case is unique, and defense strategies
-            typically involve the suppression of evidence, challenging chain of custody, and asserting constitutional
-            rights. Understanding the specific classification of the drug and a full legal assessment prepares your case
-            with sound strategy.
+            Drug charges in Texas range from simple possession to trafficking
+            offenses, with penalties that can escalate depending on the type,
+            amount, and circumstances. Texas Controlled Substances Act
+            categorizes drugs into penalty groups, which influence the severity
+            of punishment. Each case is unique, and defense strategies typically
+            involve the suppression of evidence, challenging chain of custody,
+            and asserting constitutional rights. Understanding the specific
+            classification of the drug and a full legal assessment prepares your
+            case with sound strategy.
           </p>
         </div>
       </div>
@@ -169,45 +105,69 @@ const TypesSection = () => {
   const items = [
     {
       title: "Drug Possession",
-      desc:
-        "Having illegal substances in your control, whether on your person, in your vehicle, or residence. Severity depends on amount and drug type.",
+      desc: "Having illegal substances in your control, whether on your person, in your vehicle, or residence. Severity depends on amount and drug type.",
       label: "POTENTIAL PENALTIES",
-      bullets: ["Fines and jail time", "Probation eligibility", "Criminal record implications", "License consequences"],
+      bullets: [
+        "Fines and jail time",
+        "Probation eligibility",
+        "Criminal record implications",
+        "License consequences",
+      ],
     },
     {
       title: "Manufacturing or Delivery",
-      desc:
-        "Manufacturing, processing, or delivering controlled substances can result in severe penalties. Charges vary based on quantity, location, and intent.",
+      desc: "Manufacturing, processing, or delivering controlled substances can result in severe penalties. Charges vary based on quantity, location, and intent.",
       label: "CHARGES",
-      bullets: ["Felony offenses", "10+ degree felony ranges", "Asset forfeiture risks", "Enhanced penalties near schools"],
+      bullets: [
+        "Felony offenses",
+        "10+ degree felony ranges",
+        "Asset forfeiture risks",
+        "Enhanced penalties near schools",
+      ],
     },
     {
       title: "Drug Trafficking",
-      desc:
-        "Large‑scale distribution or transportation. Law enforcement focuses on controlled buys, surveillance, and interstate activity.",
+      desc: "Large‑scale distribution or transportation. Law enforcement focuses on controlled buys, surveillance, and interstate activity.",
       label: "RISKY PRACTICES",
-      bullets: ["Undercover operations", "Conspiracy allegations", "Sentencing enhancements", "Federal involvement possible"],
+      bullets: [
+        "Undercover operations",
+        "Conspiracy allegations",
+        "Sentencing enhancements",
+        "Federal involvement possible",
+      ],
     },
     {
       title: "Prescription Drug Crimes",
-      desc:
-        "Unlawful obtaining or distribution of prescription drugs, including ‘doctor shopping’, forging scripts, or selling pills.",
+      desc: "Unlawful obtaining or distribution of prescription drugs, including ‘doctor shopping’, forging scripts, or selling pills.",
       label: "CHARGES INCLUDE",
-      bullets: ["Fraud allegations", "Possession by misrepresentation", "Tampering accusations", "Insurance issues"],
+      bullets: [
+        "Fraud allegations",
+        "Possession by misrepresentation",
+        "Tampering accusations",
+        "Insurance issues",
+      ],
     },
     {
       title: "Drug Paraphernalia",
-      desc:
-        "Possessing, manufacturing, or delivering equipment to use, package, or distribute controlled substances.",
+      desc: "Possessing, manufacturing, or delivering equipment to use, package, or distribute controlled substances.",
       label: "EXAMPLES",
-      bullets: ["Pipes, scales, baggies", "Manufacturing tools", "Distribution materials", "Intent considerations"],
+      bullets: [
+        "Pipes, scales, baggies",
+        "Manufacturing tools",
+        "Distribution materials",
+        "Intent considerations",
+      ],
     },
     {
       title: "DWI with Controlled Substances",
-      desc:
-        "Driving while intoxicated by narcotics or controlled substances. Involves blood tests, impairment evidence, and statutory penalties.",
+      desc: "Driving while intoxicated by narcotics or controlled substances. Involves blood tests, impairment evidence, and statutory penalties.",
       label: "ADDITIONAL CONSEQUENCES",
-      bullets: ["License suspension", "Ignition interlock", "Probation conditions", "Treatment requirements"],
+      bullets: [
+        "License suspension",
+        "Ignition interlock",
+        "Probation conditions",
+        "Treatment requirements",
+      ],
     },
   ];
 
@@ -215,7 +175,9 @@ const TypesSection = () => {
     <section className="py-16 bg-white">
       <div className="container-custom">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-serif text-mpl-navy font-bold">Types of Drug Charges</h2>
+          <h2 className="text-3xl md:text-4xl font-serif text-mpl-navy font-bold">
+            Types of Drug Charges
+          </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {items.map((card, i) => (
@@ -227,16 +189,22 @@ const TypesSection = () => {
               viewport={{ once: true }}
               className="relative bg-white rounded-2xl border border-gray-200 shadow-md p-8 overflow-hidden"
             >
-              <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-mpl-blue to-mpl-lightBlue" />
               <div className="w-12 h-12 rounded-full bg-mpl-navy text-white flex items-center justify-center mb-6">
                 <Syringe size={22} />
               </div>
-              <h3 className="text-xl font-serif text-mpl-navy font-bold mb-2">{card.title}</h3>
+              <h3 className="text-xl font-serif text-mpl-navy font-bold mb-2">
+                {card.title}
+              </h3>
               <p className="text-gray-600 mb-5 leading-relaxed">{card.desc}</p>
-              <div className="text-xs font-bold tracking-wider text-gray-500 mb-2 uppercase">{card.label}:</div>
+              <div className="text-xs font-bold tracking-wider text-gray-500 mb-2 uppercase">
+                {card.label}:
+              </div>
               <div className="space-y-2">
                 {card.bullets.map((b, idx) => (
-                  <div key={idx} className="flex items-start text-sm text-gray-600">
+                  <div
+                    key={idx}
+                    className="flex items-start text-sm text-gray-600"
+                  >
                     <span className="text-mpl-blue mr-2">•</span>
                     <span>{b}</span>
                   </div>
@@ -254,27 +222,51 @@ const PenaltyGroupsSection = () => {
   const groups = [
     {
       title: "Penalty Group 1",
-      bullets: ["Heroin, cocaine, methamphetamine", "Severe felony ranges", "Strict weight thresholds"],
+      bullets: [
+        "Heroin, cocaine, methamphetamine",
+        "Severe felony ranges",
+        "Strict weight thresholds",
+      ],
     },
     {
       title: "Penalty Group 1‑A",
-      bullets: ["LSD and derivatives", "Measured in dosage units", "Unique penalty scheme"],
+      bullets: [
+        "LSD and derivatives",
+        "Measured in dosage units",
+        "Unique penalty scheme",
+      ],
     },
     {
       title: "Penalty Group 2",
-      bullets: ["MDMA, PCP, synthetic cannabinoids", "Enhanced for quantity", "Aggravating factors apply"],
+      bullets: [
+        "MDMA, PCP, synthetic cannabinoids",
+        "Enhanced for quantity",
+        "Aggravating factors apply",
+      ],
     },
     {
       title: "Penalty Group 3",
-      bullets: ["Prescription depressants", "Potential fraud charges", "Doctor shopping issues"],
+      bullets: [
+        "Prescription depressants",
+        "Potential fraud charges",
+        "Doctor shopping issues",
+      ],
     },
     {
       title: "Penalty Group 4",
-      bullets: ["Certain compounds with active narcotics", "Complex classification", "Lower ranges possible"],
+      bullets: [
+        "Certain compounds with active narcotics",
+        "Complex classification",
+        "Lower ranges possible",
+      ],
     },
     {
       title: "Penalty Group 2‑A",
-      bullets: ["Synthetic marijuana classes", "Constant legislative updates", "Lab testing disputes"],
+      bullets: [
+        "Synthetic marijuana classes",
+        "Constant legislative updates",
+        "Lab testing disputes",
+      ],
     },
   ];
   return (
@@ -286,16 +278,24 @@ const PenaltyGroupsSection = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {groups.map((g, i) => (
-              <div key={i} className="rounded-xl border border-gray-200 bg-white p-6">
+              <div
+                key={i}
+                className="rounded-xl border border-gray-200 bg-white p-6"
+              >
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-10 h-10 rounded-full bg-mpl-navy text-white flex items-center justify-center">
                     <Scale size={18} />
                   </div>
-                  <h3 className="text-lg font-serif text-mpl-navy font-bold">{g.title}</h3>
+                  <h3 className="text-lg font-serif text-mpl-navy font-bold">
+                    {g.title}
+                  </h3>
                 </div>
                 <div className="space-y-2">
                   {g.bullets.map((b, idx) => (
-                    <div key={idx} className="text-sm text-gray-600 flex items-start">
+                    <div
+                      key={idx}
+                      className="text-sm text-gray-600 flex items-start"
+                    >
                       <span className="text-mpl-blue mr-2">•</span>
                       <span>{b}</span>
                     </div>
@@ -312,18 +312,38 @@ const PenaltyGroupsSection = () => {
 
 const DefenseStrategiesSection = () => {
   const strategies = [
-    { title: "Illegal Search & Seizure", desc: "Challenging unconstitutional searches and seizures under the Fourth Amendment." },
-    { title: "Lack of Knowledge", desc: "Arguing the accused was unaware of the presence or nature of the substance." },
-    { title: "Lack of Possession", desc: "Disputing actual care, custody, control, or management of the substance." },
-    { title: "Entrapment", desc: "Arguing law enforcement induced conduct the accused was not predisposed to commit." },
-    { title: "Lab Testing Issues", desc: "Challenging reliability, chain of custody, or testing method validity." },
-    { title: "Valid Prescription", desc: "Establishing lawful possession under a valid medical prescription." },
+    {
+      title: "Illegal Search & Seizure",
+      desc: "Challenging unconstitutional searches and seizures under the Fourth Amendment.",
+    },
+    {
+      title: "Lack of Knowledge",
+      desc: "Arguing the accused was unaware of the presence or nature of the substance.",
+    },
+    {
+      title: "Lack of Possession",
+      desc: "Disputing actual care, custody, control, or management of the substance.",
+    },
+    {
+      title: "Entrapment",
+      desc: "Arguing law enforcement induced conduct the accused was not predisposed to commit.",
+    },
+    {
+      title: "Lab Testing Issues",
+      desc: "Challenging reliability, chain of custody, or testing method validity.",
+    },
+    {
+      title: "Valid Prescription",
+      desc: "Establishing lawful possession under a valid medical prescription.",
+    },
   ];
   return (
     <section className="py-16 bg-white">
       <div className="container-custom">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-serif text-mpl-navy font-bold">Common Defense Strategies</h2>
+          <h2 className="text-3xl md:text-4xl font-serif text-mpl-navy font-bold">
+            Common Defense Strategies
+          </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {strategies.map((s, i) => (
@@ -338,7 +358,9 @@ const DefenseStrategiesSection = () => {
               <div className="w-12 h-12 rounded-full bg-mpl-navy text-white flex items-center justify-center mb-6">
                 <Shield size={20} />
               </div>
-              <h3 className="text-xl font-serif text-mpl-navy font-bold mb-2">{s.title}</h3>
+              <h3 className="text-xl font-serif text-mpl-navy font-bold mb-2">
+                {s.title}
+              </h3>
               <p className="text-gray-600 leading-relaxed">{s.desc}</p>
             </motion.div>
           ))}
@@ -350,13 +372,34 @@ const DefenseStrategiesSection = () => {
 
 const ConsequencesSection = () => {
   const items = [
-    { title: "Lifetime Impact", desc: "A drug conviction creates lasting consequences that extend well beyond court penalties." },
-    { title: "Employment Barriers", desc: "Many employers conduct background checks; drug charges can limit job opportunities." },
-    { title: "Professional Licensing", desc: "Licensing boards may deny, suspend, or revoke licenses following convictions." },
-    { title: "Housing Discrimination", desc: "Landlords often deny rentals when drug convictions appear on background checks." },
-    { title: "Educational Impact", desc: "Scholarships, admissions, and financial aid decisions may be affected." },
-    { title: "Immigration Consequences", desc: "Some charges may trigger deportation, denial of status, or inadmissibility." },
-    { title: "Loss of Benefits", desc: "Drug convictions can limit government benefits, including housing assistance." },
+    {
+      title: "Lifetime Impact",
+      desc: "A drug conviction creates lasting consequences that extend well beyond court penalties.",
+    },
+    {
+      title: "Employment Barriers",
+      desc: "Many employers conduct background checks; drug charges can limit job opportunities.",
+    },
+    {
+      title: "Professional Licensing",
+      desc: "Licensing boards may deny, suspend, or revoke licenses following convictions.",
+    },
+    {
+      title: "Housing Discrimination",
+      desc: "Landlords often deny rentals when drug convictions appear on background checks.",
+    },
+    {
+      title: "Educational Impact",
+      desc: "Scholarships, admissions, and financial aid decisions may be affected.",
+    },
+    {
+      title: "Immigration Consequences",
+      desc: "Some charges may trigger deportation, denial of status, or inadmissibility.",
+    },
+    {
+      title: "Loss of Benefits",
+      desc: "Drug convictions can limit government benefits, including housing assistance.",
+    },
   ];
   return (
     <section className="py-16 bg-gray-50">
@@ -367,12 +410,17 @@ const ConsequencesSection = () => {
           </h2>
           <div className="space-y-4">
             {items.map((it, i) => (
-              <div key={i} className="rounded-xl border border-gray-200 bg-white p-4 flex items-start gap-3">
+              <div
+                key={i}
+                className="rounded-xl border border-gray-200 bg-white p-4 flex items-start gap-3"
+              >
                 <div className="w-8 h-8 rounded-full bg-red-100 text-red-700 flex items-center justify-center flex-shrink-0">
                   <AlertTriangle size={16} />
                 </div>
                 <div>
-                  <div className="font-serif font-semibold text-mpl-navy">{it.title}</div>
+                  <div className="font-serif font-semibold text-mpl-navy">
+                    {it.title}
+                  </div>
                   <div className="text-sm text-gray-700">{it.desc}</div>
                 </div>
               </div>
@@ -386,18 +434,38 @@ const ConsequencesSection = () => {
 
 const AlternativeTreatmentSection = () => {
   const items = [
-    { title: "Drug Court Programs", desc: "Structured accountability programs focused on treatment and rehabilitation." },
-    { title: "Pre‑Trial Diversion", desc: "Alternatives that can lead to dismissal upon successful completion." },
-    { title: "Deferred Adjudication", desc: "Probation‑based outcome that may avoid a conviction on record." },
-    { title: "Rehabilitation Programs", desc: "Inpatient or outpatient treatment supporting recovery and mitigation." },
-    { title: "Community Service", desc: "Court‑approved service hours that can provide constructive benefits." },
-    { title: "House Arrest/Monitoring", desc: "Electronic monitoring options where available, reducing jail exposure." },
+    {
+      title: "Drug Court Programs",
+      desc: "Structured accountability programs focused on treatment and rehabilitation.",
+    },
+    {
+      title: "Pre‑Trial Diversion",
+      desc: "Alternatives that can lead to dismissal upon successful completion.",
+    },
+    {
+      title: "Deferred Adjudication",
+      desc: "Probation‑based outcome that may avoid a conviction on record.",
+    },
+    {
+      title: "Rehabilitation Programs",
+      desc: "Inpatient or outpatient treatment supporting recovery and mitigation.",
+    },
+    {
+      title: "Community Service",
+      desc: "Court‑approved service hours that can provide constructive benefits.",
+    },
+    {
+      title: "House Arrest/Monitoring",
+      desc: "Electronic monitoring options where available, reducing jail exposure.",
+    },
   ];
   return (
     <section className="py-16 bg-white">
       <div className="container-custom">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-serif text-mpl-navy font-bold">Alternative Treatment Options</h2>
+          <h2 className="text-3xl md:text-4xl font-serif text-mpl-navy font-bold">
+            Alternative Treatment Options
+          </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {items.map((c, i) => (
@@ -412,7 +480,9 @@ const AlternativeTreatmentSection = () => {
               <div className="w-12 h-12 rounded-full bg-mpl-navy text-white flex items-center justify-center mb-6">
                 <Shield size={20} />
               </div>
-              <h3 className="text-xl font-serif text-mpl-navy font-bold mb-2">{c.title}</h3>
+              <h3 className="text-xl font-serif text-mpl-navy font-bold mb-2">
+                {c.title}
+              </h3>
               <p className="text-gray-600 leading-relaxed">{c.desc}</p>
             </motion.div>
           ))}
@@ -485,7 +555,8 @@ const ProcessSection = () => {
             Defending Your Freedom
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            We understand the intricacies of drug laws and leverage our experience to achieve the best possible outcome for you.
+            We understand the intricacies of drug laws and leverage our
+            experience to achieve the best possible outcome for you.
           </p>
         </div>
 
@@ -553,14 +624,15 @@ const CTA = () => {
         <div className="bg-mpl-navy rounded-3xl p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
           {/* Background Decor */}
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-mpl-blue/20 to-transparent pointer-events-none"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-linear-to-br from-mpl-blue/20 to-transparent pointer-events-none"></div>
 
           <div className="relative z-10 max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 text-white">
               Don't Risk Your Freedom
             </h2>
             <p className="text-xl text-white/80 mb-10 leading-relaxed">
-              Drug convictions can have life-long consequences. Contact us today for a strong defense.
+              Drug convictions can have life-long consequences. Contact us today
+              for a strong defense.
             </p>
             <Link
               to="/contact"
@@ -588,7 +660,9 @@ const RelatedServices = () => {
   return (
     <section className="py-12 bg-white">
       <div className="container-custom text-center">
-        <div className="text-mpl-navy font-serif text-2xl font-bold mb-6">Related Criminal Defense Services</div>
+        <div className="text-mpl-navy font-serif text-2xl font-bold mb-6">
+          Related Criminal Defense Services
+        </div>
         <div className="flex flex-wrap items-center justify-center gap-3">
           {services.map((s, i) => (
             <Link

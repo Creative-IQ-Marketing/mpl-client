@@ -14,6 +14,7 @@ import {
 
 import TrishaImg from "../assets/team/UF9A2215-Edit-Edit.jpg";
 import DorothyImg from "../assets/team/Dorothy1 UF9A2316-Edit-2.jpg";
+import PaulaPerezImg from "../assets/team/PaulaPerezHeadshot.jpg";
 import AllysonImg from "../assets/team/Allyson1 UF9A2325-Edit-2.jpg";
 import CameronImg from "../assets/team/Cameron1 UF9A2310-Edit-2.jpg";
 import VeronicaImg from "../assets/team/veronica.jpeg";
@@ -90,8 +91,7 @@ const HeroSection = () => {
             </span>
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl text-gray-100 max-w-lg font-light leading-relaxed drop-shadow-md">
-            Compassionate counsel. Aggressive representation. We protect what
-            matters most to you.
+            Because life changes. Your legal team shouldn't.
           </p>
         </motion.div>
 
@@ -142,9 +142,9 @@ const WhoWeAre = () => {
             Who We Are
           </h2>
           <p className="text-xl md:text-2xl text-mpl-blue font-medium leading-relaxed max-w-3xl mx-auto">
-            At Morales Padia Law, we are committed to providing compassionate,
-            skilled, and comprehensive legal services to individuals and
-            families across San Antonio, Texas.
+            We provide continuous legal guidance for every stage of life, so
+            your family, your future, and everything you've built stays
+            protected, no matter what comes next.
           </p>
         </div>
 
@@ -159,33 +159,32 @@ const WhoWeAre = () => {
 
             <div className="text-lg text-mpl-blue/80 leading-relaxed space-y-6 font-medium">
               <p>
-                Our team has extensive experience in{" "}
-                <span className="font-bold text-mpl-blue">
-                  family law, estate planning
-                </span>
-                , and{" "}
-                <span className="font-bold text-mpl-blue">probate law</span>,
-                helping clients navigate complex legal matters with confidence
-                and clarity.
+                At Morales Padia Law, we don't just handle cases, we guide
+                people through some of the most important transitions of their
+                lives.
               </p>
               <p>
-                Founded with a dedication to delivering personalized and
-                effective legal solutions, our firm is known for its
-                client-first approach. Whether you're going through a divorce,
-                facing child custody issues, seeking to establish a will or
-                trust, or managing the estate of a loved one, we understand the
-                emotional and financial challenges you face and offer guidance
-                every step of the way.
+                Whether you're navigating a divorce, working through custody
+                decisions, planning for your family's future, or handling the
+                loss of a loved one, these moments are deeply personal. They're
+                not just legal issues, they're life decisions.
               </p>
               <p>
-                Our{" "}
-                <span className="font-bold text-mpl-blue">
-                  award-winning team
-                </span>{" "}
-                is dedicated to protecting your rights and achieving the best
-                possible outcome for your case. We serve the diverse community
-                of San Antonio with understanding, experience, and unwavering
-                commitment to justice.
+                That's why our mission is simple: to be your lawyer for life.
+                We're here not just for the immediate challenge in front of you,
+                but for what comes next, and everything after that.
+              </p>
+              <p>
+                Our approach is hands-on, thoughtful, and tailored to you. Some
+                clients need strong advocacy in the courtroom. Others need
+                guidance, structure, and a path toward resolution without
+                unnecessary conflict.
+              </p>
+              <p>
+                Serving San Antonio and surrounding communities means more to us
+                than providing legal services. It means building relationships,
+                earning trust, and being a steady presence during uncertain
+                times.
               </p>
             </div>
           </div>
@@ -214,26 +213,26 @@ const PracticeAreas = () => {
     {
       title: "Family Law",
       icon: Users,
-      desc: "Comprehensive family law services including divorce, child custody, support, adoption, and more. Our compassionate approach ensures your family's well-being comes first.",
-      link: "/services#family-law",
+      desc: "Guiding you through divorce, custody, and life-changing decisions with clarity, strategy, and your family's future in mind.",
+      link: "/family-law",
     },
     {
       title: "Criminal Law",
       icon: Gavel,
-      desc: "Skilled criminal defense representation for DWI, domestic violence, protective orders, and other criminal charges. We protect your rights and fight for the best outcome.",
-      link: "/services#criminal-law",
+      desc: "When your future is on the line, we provide strong, strategic defense you can rely on.",
+      link: "/criminal-defense",
     },
     {
       title: "Estate Planning",
       icon: FileText,
-      desc: "Comprehensive estate planning including wills, trusts, powers of attorney, and healthcare directives. Secure your legacy and protect your family's future.",
-      link: "/services#estate-planning",
+      desc: "Helping you create a clear plan so your family is protected and your wishes are honored.",
+      link: "/estate-planning",
     },
     {
       title: "Probate Law",
       icon: Scale,
-      desc: "Trusted guidance through probate processes, will disputes, and estate administration. We ensure smooth, legally sound resolution of estate matters.",
-      link: "/services#probate-law",
+      desc: "Supporting you through the legal process after a loss with clarity and steady guidance.",
+      link: "/probate-law",
     },
   ];
 
@@ -245,7 +244,7 @@ const PracticeAreas = () => {
       <div className="container-custom relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif text-mpl-navy font-bold">
-            Our Practice Areas
+            How We Help You
           </h2>
         </div>
 
@@ -285,20 +284,20 @@ const PracticeAreas = () => {
 const CoreValues = () => {
   const values = [
     {
-      title: "Client-Centric",
-      desc: "We prioritize understanding your unique needs and providing tailored solutions.",
+      title: "Listened.",
+      desc: "We take the time to understand your story so we can guide you through what comes next.",
     },
     {
-      title: "Transparent",
-      desc: "We believe in clear, open communication throughout the legal process.",
+      title: "Informed.",
+      desc: "You will always know where your case stands and what your next step should be.",
     },
     {
-      title: "Skilled",
-      desc: "Effective negotiation is often the key to achieving favorable outcomes.",
+      title: "Focused.",
+      desc: "Every decision we make is focused on protecting your future, not just solving today's problem.",
     },
     {
-      title: "Aggressive",
-      desc: "We leave no stone unturned to build a compelling case on your behalf.",
+      title: "Supported.",
+      desc: "We are here to help you through this moment and to be the team you rely on moving forward.",
     },
   ];
 
@@ -337,16 +336,21 @@ const CoreValues = () => {
 
 const MeetOurTeam = () => {
   const team = [
-    { name: "Trisha Morales Padia", role: "Managing Attorney", img: TrishaImg },
+    { name: "Trisha Morales Padia", role: "Founder/Educator", img: TrishaImg },
     { name: "Dorothy Dominguez", role: "Paralegal", img: DorothyImg },
-    { name: "Allyson Gilmore", role: "Accounting Manager", img: AllysonImg },
+    { name: "Paula Perez", role: "Attorney", img: PaulaPerezImg },
+    { name: "Allyson Gilmore", role: "Operations Director", img: AllysonImg },
     {
       name: "Veronica Ruvalcaba",
       role: "Outreach Coordinator",
       img: VeronicaImg,
     },
     { name: "Elena Galaviz", role: "Family Law Paralegal", img: ElenaImg },
-    { name: "Cameron Ozuna", role: "Paralegal", img: CameronImg },
+    {
+      name: "Cameron Ozuna",
+      role: "Paralegal/Marketing Coordinator",
+      img: CameronImg,
+    },
     {
       name: "Alexandra Johnson",
       role: "Client Services Director",
@@ -374,7 +378,7 @@ const MeetOurTeam = () => {
 
               <div className="absolute inset-0 bg-gradient-to-t from-mpl-navy/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
                 <h3 className="text-xl font-serif text-white">{member.name}</h3>
-                <p className="text-mpl-blue text-sm">{member.role}</p>
+                <p className="text-white/90 text-sm">{member.role}</p>
               </div>
 
               {/* Always visible label for mobile or if hover is missed */}
@@ -397,15 +401,18 @@ const CTA = () => {
     <section className="py-24 bg-gray-50 flex items-center justify-center">
       <div className="container-custom text-center">
         <h2 className="text-4xl md:text-5xl font-serif text-mpl-navy mb-8">
-          Ready to get started?
+          Let's talk about your next step
         </h2>
         <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
-          Contact us today to schedule a consultation. Let us help you protect
-          what matters most.
+          You do not have to make these decisions alone. We will help you
+          understand your options and choose the path that is right for you.
         </p>
-        <button className="bg-mpl-navy text-white px-10 py-4 rounded-full hover:bg-mpl-blue transition-all duration-300 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-          Schedule Consultation
-        </button>
+        <a
+          href="/contact#consultation"
+          className="inline-flex bg-mpl-navy text-white px-10 py-4 rounded-full hover:bg-mpl-blue transition-all duration-300 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+        >
+          Get Started
+        </a>
       </div>
     </section>
   );

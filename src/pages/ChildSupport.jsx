@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-const Motion = motion;
 import {
   Calculator,
   BarChart3,
@@ -17,12 +16,19 @@ import {
   Mail,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import CleanServiceHero from "../components/CleanServiceHero";
 import ConsultationForm from "../components/ConsultationForm";
 
 const ChildSupport = () => {
   return (
-    <div className="bg-gray-50 min-h-screen">
-      <HeroSection />
+    <div className="bg-white min-h-screen">
+      <CleanServiceHero
+        title="Child Support Attorney in San Antonio"
+        subtitle="Ensuring children receive the financial support they deserve."
+        opening="Child support decisions impact your child's stability and your financial future."
+        infoTitle="What This Means"
+        infoDescription="Child support ensures that both parents contribute to the financial needs of their child."
+      />
       <WhyChooseSection />
       <ProcessSection />
       <ServicesSection />
@@ -30,57 +36,6 @@ const ChildSupport = () => {
       <ContactInfoSection />
       <FormSection />
     </div>
-  );
-};
-
-const HeroSection = () => {
-  return (
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-white pt-20">
-      <div className="container-custom relative z-10 flex flex-col items-center text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-4xl"
-        >
-          <div className="inline-block px-4 py-1.5 bg-mpl-blue/10 text-mpl-blue rounded-full text-sm font-bold tracking-wider mb-6 uppercase border border-mpl-blue/20">
-            Ensuring Fair Child Support for Your Children's Future
-          </div>
-          <h1 className="text-5xl md:text-7xl font-serif font-bold text-mpl-navy mb-8 leading-tight">
-            Child Support <br />
-            <span className="text-mpl-blue italic">Attorney</span>
-          </h1>
-          <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Child support is essential for ensuring your children receive the
-            financial resources they need to thrive. Our experienced San Antonio
-            child support attorneys help establish fair support orders, modify
-            existing arrangements, and enforce payment obligations to protect
-            your children's best interests.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/contact"
-              className="bg-mpl-navy text-white px-8 py-4 rounded-full font-bold shadow-lg hover:bg-mpl-blue transition-all transform hover:-translate-y-1 text-lg"
-            >
-              Schedule Consultation
-            </Link>
-            <a
-              href="tel:7262044044"
-              className="bg-white text-mpl-navy border-2 border-mpl-navy px-8 py-4 rounded-full font-bold hover:bg-mpl-navy hover:text-white transition-all text-lg flex items-center justify-center gap-2"
-            >
-              <Phone size={20} />
-              Call (726) 204-4044
-            </a>
-          </div>
-        </motion.div>
-      </div>
-
-      {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-mpl-blue/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-mpl-gold/5 rounded-full blur-3xl"></div>
-      </div>
-    </section>
   );
 };
 
@@ -361,7 +316,7 @@ const ContactInfoSection = () => {
       icon: MapPin,
       title: "Office",
       content: "45 NE Interstate 410 Loop Suite 307 San Antonio, TX 78216",
-      link: "https://maps.google.com/?q=45+NE+Interstate+410+Loop+Suite+307+San+Antonio+TX+78216",
+      link: "https://maps.google.com/?q=29.52137717375601,-98.48965712995692",
       color: "text-red-500",
     },
     {

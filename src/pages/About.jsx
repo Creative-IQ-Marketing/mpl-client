@@ -58,16 +58,16 @@ const About = () => {
                 Trisha Morales Padia
               </h3>
               <p className="text-xl text-mpl-blue font-medium mb-6">
-                Founder & CEO
+                Founder/Educator
               </p>
 
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
                   Trisha Morales Padia founded Morales Padia Law with a vision
-                  to provide accessible, high-quality legal services to families
-                  in San Antonio. Licensed in Texas, she has dedicated her
-                  career to helping clients navigate the emotional and legal
-                  complexities of family law and estate planning.
+                  to provide accessible, high-quality legal services to
+                  families. Licensed in Texas, she has dedicated her career to
+                  helping clients navigate the emotional and legal complexities
+                  of family law and estate planning.
                 </p>
                 <p>
                   With years of experience handling contested divorces, custody

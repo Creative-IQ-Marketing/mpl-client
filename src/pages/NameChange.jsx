@@ -16,12 +16,19 @@ import {
   Mail,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import CleanServiceHero from "../components/CleanServiceHero";
 import ConsultationForm from "../components/ConsultationForm";
 
 const NameChange = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
-      <HeroSection />
+      <CleanServiceHero
+        title="Name Change Attorney in San Antonio"
+        subtitle="Legal name changes made simple and efficient."
+        opening="A name change can mark an important new chapter in your life."
+        infoTitle="What This Means"
+        infoDescription="The legal process ensures your name change is properly recognized."
+      />
       <WhyChooseSection />
       <ProcessSection />
       <TypesSection />
@@ -47,8 +54,12 @@ const HeroSection = () => {
           </div>
           <h1 className="text-5xl md:text-7xl font-serif font-bold text-mpl-navy mb-8 leading-tight">
             Name Change <br />
-            <span className="text-mpl-blue italic">Attorney</span>
           </h1>
+          <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+            A name change can mark an important new chapter in your life. The
+            legal process ensures your name change is properly recognized. We
+            guide you through each step so the process is smooth and efficient.
+          </p>
           <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
             Whether you're changing your name after marriage, divorce, or for
             personal reasons, our experienced San Antonio name change attorneys
@@ -360,7 +371,7 @@ const ContactInfoSection = () => {
       icon: MapPin,
       title: "Office",
       content: "45 NE Interstate 410 Loop Suite 307 San Antonio, TX 78216",
-      link: "https://maps.google.com/?q=45+NE+Interstate+410+Loop+Suite+307+San+Antonio+TX+78216",
+      link: "https://maps.google.com/?q=29.52137717375601,-98.48965712995692",
       color: "text-red-500",
     },
     {

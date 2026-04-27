@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-const Motion = motion;
 import {
   Swords,
   Search,
@@ -19,12 +18,22 @@ import {
   Users,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import CleanServiceHero from "../components/CleanServiceHero";
 import ConsultationForm from "../components/ConsultationForm";
 
 const ContestedDivorce = () => {
   return (
-    <div className="bg-gray-50 min-h-screen">
-      <HeroSection />
+    <div className="bg-white min-h-screen">
+      <CleanServiceHero
+        title="Contested Divorce Attorney in San Antonio"
+        subtitle="Strategic representation when spouses disagree."
+        opening={[
+          "Not every divorce is straightforward. When there are disagreements about property, custody, or support, the process can quickly become overwhelming.",
+          "You need more than legal representation. You need a strategy.",
+        ]}
+        infoTitle="What This Means"
+        infoDescription="A contested divorce involves disputes that require negotiation or court involvement to resolve. These cases often involve complex financial issues or difficult custody decisions."
+      />
       <WhyChooseSection />
       <ProcessSection />
       <RepresentationNeedsSection />
@@ -32,57 +41,6 @@ const ContestedDivorce = () => {
       <ContactInfoSection />
       <FormSection />
     </div>
-  );
-};
-
-const HeroSection = () => {
-  return (
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-white pt-20">
-      <div className="container-custom relative z-10 flex flex-col items-center text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-4xl"
-        >
-          <div className="inline-block px-4 py-1.5 bg-mpl-blue/10 text-mpl-blue rounded-full text-sm font-bold tracking-wider mb-6 uppercase border border-mpl-blue/20">
-            Aggressive Representation for Complex Divorce Cases
-          </div>
-          <h1 className="text-5xl md:text-7xl font-serif font-bold text-mpl-navy mb-8 leading-tight">
-            Contested Divorce <br />
-            <span className="text-mpl-blue italic">Attorney</span>
-          </h1>
-          <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-            When divorce disputes cannot be resolved amicably, you need an
-            experienced contested divorce attorney who will fight for your
-            rights. Our San Antonio contested divorce lawyers provide aggressive
-            representation for complex cases involving property disputes, child
-            custody battles, and support issues.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/contact"
-              className="bg-mpl-navy text-white px-8 py-4 rounded-full font-bold shadow-lg hover:bg-mpl-blue transition-all transform hover:-translate-y-1 text-lg"
-            >
-              Schedule Consultation
-            </Link>
-            <a
-              href="tel:7262044044"
-              className="bg-white text-mpl-navy border-2 border-mpl-navy px-8 py-4 rounded-full font-bold hover:bg-mpl-navy hover:text-white transition-all text-lg flex items-center justify-center gap-2"
-            >
-              <Phone size={20} />
-              Call (726) 204-4044
-            </a>
-          </div>
-        </motion.div>
-      </div>
-
-      {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-mpl-blue/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-mpl-gold/5 rounded-full blur-3xl"></div>
-      </div>
-    </section>
   );
 };
 
@@ -125,11 +83,11 @@ const WhyChooseSection = () => {
       <div className="container-custom">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-mpl-navy mb-6">
-            Why Choose Our Contested Divorce Services?
+            What This Means
           </h2>
           <p className="text-lg text-gray-600">
             We provide aggressive, strategic representation for complex divorce
-            cases in San Antonio.
+            cases.
           </p>
         </div>
 
@@ -197,7 +155,7 @@ const ProcessSection = () => {
       <div className="container-custom">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-mpl-navy mb-6">
-            The Contested Divorce Process
+            How We Help
           </h2>
           <p className="text-lg text-gray-600">
             Understanding the complex steps involved in contested divorce
@@ -271,7 +229,7 @@ const RepresentationNeedsSection = () => {
       <div className="container-custom">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-mpl-navy mb-6">
-            When You Need Contested Divorce Representation
+            Common Situations
           </h2>
           <p className="text-lg text-gray-600">
             Complex divorce situations that require experienced legal advocacy.
@@ -288,7 +246,7 @@ const RepresentationNeedsSection = () => {
               viewport={{ once: true }}
               className="flex gap-4 p-6 bg-gray-50 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gray-100"
             >
-              <div className="flex-shrink-0">
+              <div className="shrink-0">
                 <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-mpl-blue shadow-sm">
                   <need.icon size={24} />
                 </div>
@@ -319,7 +277,7 @@ const CTABanner = () => {
 
           <div className="relative z-10 max-w-4xl mx-auto text-white">
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 text-white">
-              Facing a Contested Divorce?
+              Make sure you have the right strategy in place.
             </h2>
             <p className="text-xl text-white/90 mb-10">
               Don't face complex divorce proceedings alone. Contact our
@@ -360,7 +318,7 @@ const ContactInfoSection = () => {
       icon: MapPin,
       title: "Office",
       content: "45 NE Interstate 410 Loop Suite 307 San Antonio, TX 78216",
-      link: "https://maps.google.com/?q=45+NE+Interstate+410+Loop+Suite+307+San+Antonio+TX+78216",
+      link: "https://maps.google.com/?q=29.52137717375601,-98.48965712995692",
       color: "text-red-500",
     },
     {

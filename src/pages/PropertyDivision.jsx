@@ -15,15 +15,22 @@ import {
   Mail,
   Lightbulb,
   CreditCard,
-  Briefcase
+  Briefcase,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import CleanServiceHero from "../components/CleanServiceHero";
 import ConsultationForm from "../components/ConsultationForm";
 
 const PropertyDivision = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
-      <HeroSection />
+      <CleanServiceHero
+        title="Property Division in San Antonio Divorce"
+        subtitle="Fair asset division in a community property state."
+        opening="Dividing property during a divorce can quickly become one of the most stressful parts of the process."
+        infoTitle="What This Means"
+        infoDescription="Texas law requires a fair division of marital property, which may include assets, debts, and financial accounts."
+      />
       <WhyChooseSection />
       <ProcessSection />
       <TypesSection />
@@ -49,13 +56,17 @@ const HeroSection = () => {
           </div>
           <h1 className="text-5xl md:text-7xl font-serif font-bold text-mpl-navy mb-8 leading-tight">
             Property Division <br />
-            <span className="text-mpl-blue italic">Attorney</span>
           </h1>
           <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Property division is often one of the most complex aspects of divorce.
-            Our experienced San Antonio property division attorneys help ensure
-            fair and equitable distribution of marital assets, debts, and property
-            according to Texas community property laws.
+            Dividing property during a divorce can quickly become one of the
+            most stressful parts of the process. Texas law requires a fair
+            division of marital property, which may include assets, debts, and
+            financial accounts.
+          </p>
+          <p className="text-lg text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
+            We help you understand what is at stake and work toward a fair
+            outcome by identifying and valuing assets, protecting your financial
+            interests, and navigating complex property issues.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -273,8 +284,8 @@ const TypesSection = () => {
             Types of Property We Handle
           </h2>
           <p className="text-lg text-gray-600">
-            Comprehensive property division representation for all types of marital
-            assets and debts.
+            Comprehensive property division representation for all types of
+            marital assets and debts.
           </p>
         </div>
 
@@ -355,7 +366,7 @@ const ContactInfoSection = () => {
       icon: MapPin,
       title: "Office",
       content: "45 NE Interstate 410 Loop Suite 207 San Antonio, TX 78216",
-      link: "https://maps.google.com/?q=45+NE+Interstate+410+Loop+Suite+207+San+Antonio+TX+78216",
+      link: "https://maps.google.com/?q=29.52137717375601,-98.48965712995692",
     },
     {
       icon: Mail,

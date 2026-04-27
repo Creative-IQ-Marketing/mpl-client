@@ -62,6 +62,7 @@ const Header = () => {
       path: "/firm-overview",
       children: [
         { name: "Firm Overview", path: "/firm-overview" },
+        // { name: "Credentials", path: "/partners" },
         { name: "Testimonials", path: "/testimonials" },
       ],
     },
@@ -77,63 +78,109 @@ const Header = () => {
       name: "Family Law",
       path: "/family-law",
       children: [
-        { name: "Family Attorney", path: "/family-law" },
-        { name: "Uncontested Divorce", path: "/uncontested-divorce" },
-        { name: "Uncontested Flat Fee Divorce", path: "/uncontested-divorce" },
-        { name: "Contested Divorce", path: "/contested-divorce" },
+        { name: "Family Law Overview", path: "/family-law", isOverview: true },
+        { name: "Adoption", path: "/adoption" },
+        { name: "Alimony / Spousal Maintenance", path: "/spousal-maintenance" },
         { name: "Child Custody", path: "/child-custody" },
         { name: "Child Support", path: "/child-support" },
-        { name: "Adoption", path: "/adoption" },
-        { name: "Name Change", path: "/name-change" },
         {
-          name: "Modification of Previous Order",
+          name: "Child Visitation & Possession",
+          path: "/child-visitation-possession",
+        },
+        { name: "Contested Divorce", path: "/contested-divorce" },
+        {
+          name: "Custody & Support Modifications",
           path: "/modification-of-previous-order",
         },
-        { name: "Enforcement", path: "/enforcement" },
+        { name: "Emergency Custody Orders", path: "/emergency-custody-orders" },
+        { name: "Enforcement of Court Orders", path: "/enforcement" },
+        { name: "Flat Fee Divorce", path: "/flat-fee-divorce" },
+        { name: "Grandparents' Rights", path: "/grandparents-rights" },
+        {
+          name: "Mediation & Collaborative Divorce",
+          path: "/mediation-collaborative-divorce",
+        },
+        { name: "Name Change", path: "/name-change" },
+        {
+          name: "Paternity & Father's Rights",
+          path: "/paternity-fathers-rights",
+        },
+        { name: "Postnuptial Agreements", path: "/postnuptial-agreement" },
+        { name: "Prenuptial Agreements", path: "/prenuptial-agreement" },
         { name: "Property Division", path: "/property-division" },
-        { name: "Spousal Maintenance", path: "/spousal-maintenance" },
-        { name: "Prenuptial Agreement", path: "/prenuptial-agreement" },
-        { name: "Postnuptial Agreement", path: "/postnuptial-agreement" },
+        { name: "Protective Orders", path: "/protective-orders" },
+        { name: "Uncontested Divorce", path: "/uncontested-divorce" },
       ],
     },
     {
       name: "Criminal Law",
       path: "/criminal-defense",
       children: [
-        { name: "Criminal Defense Overview", path: "/criminal-defense" },
+        {
+          name: "Criminal Defense Overview",
+          path: "/criminal-defense",
+          isOverview: true,
+        },
+        {
+          name: "Assault & Family Violence Charges",
+          path: "/assault-family-violence",
+        },
+        { name: "Domestic Violence Defense", path: "/domestic-violence" },
+        { name: "Drug Charges", path: "/drug-charges" },
         { name: "DWI", path: "/dwi" },
-        { name: "Domestic Violence", path: "/domestic-violence" },
-        { name: "Protective Orders", path: "/protective-orders" },
-        { name: "Theft & Property Crimes", path: "/theft-property-crimes" },
-        { name: "Juvenile Defense", path: "/juvenile-defense" },
         {
           name: "Expungement & Record Sealing",
           path: "/expungement-record-sealing",
         },
-        { name: "Drug Charges", path: "/drug-charges" },
+        { name: "Felony Charges Defense", path: "/felony-charges-defense" },
+        { name: "Misdemeanor Defense", path: "/misdemeanor-defense" },
+        { name: "Probation Violations", path: "/probation-violations" },
+        { name: "Protective Orders", path: "/protective-orders" },
+        { name: "Theft & Property Crimes", path: "/theft-property-crimes" },
+        {
+          name: "Under Investigation / Pre-Charge Defense",
+          path: "/under-investigation",
+        },
+        { name: "Warrants & Arrest Defense", path: "/warrants-arrest" },
+        { name: "Weapons Charges", path: "/weapons-charges" },
       ],
     },
     {
       name: "Estate Planning",
-      path: "/services#estate-planning",
+      path: "/estate-planning",
       children: [
-        { name: "Estate Planning Overview", path: "/services#estate-planning" },
-        { name: "Power of Attorney", path: "/services#estate-planning" },
-        { name: "Advance Directives", path: "/services#estate-planning" },
-        { name: "Asset Protection", path: "/services#estate-planning" },
-        { name: "Trust", path: "/services#estate-planning" },
-        { name: "Will", path: "/services#estate-planning" },
+        {
+          name: "Estate Planning Overview",
+          path: "/estate-planning",
+          isOverview: true,
+        },
+        { name: "Advance Directives", path: "/advance-directives" },
+        { name: "Asset Protection", path: "/asset-protection" },
+        { name: "Estate Affidavits", path: "/estate-affidavits" },
+        { name: "Power of Attorney", path: "/power-of-attorney" },
+        { name: "Trust", path: "/trust" },
+        { name: "Will", path: "/will" },
       ],
     },
     {
       name: "Probate Law",
-      path: "/services#probate-law",
+      path: "/probate-law",
       children: [
-        { name: "Probate Overview", path: "/services#probate-law" },
-        { name: "Heirship Proceedings", path: "/services#probate-law" },
-        { name: "Muniment of Title", path: "/services#probate-law" },
-        { name: "Probate Litigation", path: "/services#probate-law" },
-        { name: "Estate Affidavits", path: "/services#probate-law" },
+        { name: "Probate Overview", path: "/probate-law", isOverview: true },
+        { name: "Affidavit of Heirship", path: "/affidavit-of-heirship" },
+        { name: "Do I Need Probate in Texas?", path: "/do-i-need-probate" },
+        { name: "How to Start Probate", path: "/how-to-start-probate" },
+        { name: "No Will? Probate Options", path: "/probate-without-will" },
+        {
+          name: "Probate Disputes & Litigation",
+          path: "/probate-disputes-litigation",
+        },
+        { name: "Probating a Will", path: "/probating-a-will" },
+        { name: "Small Estate Affidavit", path: "/small-estate-affidavit" },
+        {
+          name: "Transferring Property After Death",
+          path: "/transferring-property-after-death",
+        },
       ],
     },
     {
@@ -290,18 +337,46 @@ const Header = () => {
                 </div>
 
                 {link.children && (
-                  <div className="absolute left-1/2 -translate-x-1/2 mt-0 w-56 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top border border-gray-100 z-50 translate-y-2 group-hover:translate-y-0 max-h-[70vh] overflow-y-auto">
-                    <div className="py-2">
-                      {link.children.map((child, childIndex) => (
-                        <Link
-                          key={childIndex}
-                          to={child.path}
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-mpl-gray hover:text-mpl-navy transition-colors"
-                        >
-                          {child.name}
-                        </Link>
-                      ))}
-                    </div>
+                  <div
+                    className={`absolute mt-0 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top border border-gray-100 z-50 translate-y-2 group-hover:translate-y-0 ${
+                      link.children.length > 4
+                        ? "left-1/2 -translate-x-1/2 w-[900px] p-6"
+                        : "left-1/2 -translate-x-1/2 w-56"
+                    } ${link.children.length > 4 ? "" : "max-h-[70vh] overflow-y-auto"}`}
+                  >
+                    {link.children.length > 4 ? (
+                      <div className="grid grid-cols-3 gap-6">
+                        {link.children.map((child, childIndex) => (
+                          <Link
+                            key={childIndex}
+                            to={child.path}
+                            className={`block px-3 py-2 text-sm rounded-md font-medium transition-colors ${
+                              child.isOverview
+                                ? "text-mpl-blue bg-mpl-blue/10 hover:bg-mpl-blue/20 hover:text-mpl-blue"
+                                : "text-gray-700 hover:bg-mpl-blue/10 hover:text-mpl-navy"
+                            }`}
+                          >
+                            {child.name}
+                          </Link>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="py-2">
+                        {link.children.map((child, childIndex) => (
+                          <Link
+                            key={childIndex}
+                            to={child.path}
+                            className={`block px-4 py-2 text-sm rounded-md font-medium transition-colors ${
+                              child.isOverview
+                                ? "text-mpl-blue bg-mpl-blue/10 hover:bg-mpl-blue/20"
+                                : "text-gray-700 hover:bg-mpl-gray hover:text-mpl-navy"
+                            }`}
+                          >
+                            {child.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
@@ -356,7 +431,11 @@ const Header = () => {
                       <Link
                         key={childIndex}
                         to={child.path}
-                        className="block py-1 text-gray-600 hover:text-mpl-navy"
+                        className={`block py-1 font-medium transition-colors ${
+                          child.isOverview
+                            ? "text-mpl-blue hover:text-mpl-blue"
+                            : "text-gray-600 hover:text-mpl-navy"
+                        }`}
                         onClick={closeMenu}
                       >
                         {child.name}

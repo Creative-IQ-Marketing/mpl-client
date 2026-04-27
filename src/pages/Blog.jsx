@@ -1,30 +1,39 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 const Motion = motion;
-import { CheckCircle, ArrowRight, Phone, Mail, MapPin } from "lucide-react";
+import { ArrowRight, Phone, Mail, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import ConsultationForm from "../components/ConsultationForm";
 import SEO from "../components/SEO";
-import { subscribeContactToNewsletter } from "../services/ghl";
+import {
+  subscribeContactToNewsletter,
+  unsubscribeEmailFromNewsletter,
+} from "../services/ghl";
 
 const YOUTUBE_EMBED_BASE = "https://www.youtube.com/embed";
+const BLOG_ORIGIN = "https://blog.moralespadialaw.com";
+const BLOG_FRESH_WINDOW_MS = 2 * 60 * 1000;
+
+const getFreshBlogUrl = () => {
+  const freshnessBucket = Math.floor(Date.now() / BLOG_FRESH_WINDOW_MS);
+  return `${BLOG_ORIGIN}?v=${freshnessBucket}`;
+};
 
 const Blog = () => {
   return (
     <div className="bg-white min-h-screen">
       <SEO
         title="Blog | Morales Padia Law - Legal Insights & Resources"
-        description="Stay informed with the latest insights on family law, estate planning, probate, and criminal defense in San Antonio. Expert legal guidance from Morales Padia Law."
-        keywords="San Antonio legal blog, family law blog, estate planning blog, probate blog, divorce insights, custody advice, wills and trusts, legal resources San Antonio"
-        canonical={window.location.origin + "/blog"}
+        description="Stay informed with practical estate planning and probate insights, including wills, trusts, and advance directives."
+        keywords="San Antonio legal blog, estate planning blog, probate blog, wills and trusts, power of attorney, advance directives, legal resources San Antonio"
+        canonical={window.location.origin + "/resources/blog"}
         pageType="blog"
       />
       <Hero />
-      <SubscribeBar />
+      <LatestPosts />
       <FeaturedVideo />
       <MediaSection />
-      <Highlights />
-      <LatestPosts />
+      <SubscribeBar />
       <ContactSection />
     </div>
   );
@@ -32,81 +41,42 @@ const Blog = () => {
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden bg-white">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(68,117,181,0.10),transparent_55%),radial-gradient(circle_at_80%_0%,rgba(35,67,116,0.08),transparent_50%),radial-gradient(circle_at_30%_90%,rgba(99,155,227,0.08),transparent_60%)]" />
+    <section className="relative bg-white border-b border-gray-100">
       <div className="container-custom relative mt-6 md:mt-8">
-        <div className="py-16 md:py-20">
+        <div className="py-20 md:py-28">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <motion.div
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55 }}
-              className="lg:col-span-7"
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              className="lg:col-span-8"
             >
-              <div className="text-xs font-bold tracking-wider uppercase text-gray-500">
-                San Antonio Legal Blog – Divorce, Estate, Probate & More
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-5 h-px bg-gray-400" />
+                <span className="text-xs font-medium tracking-[0.15em] uppercase text-gray-400">
+                  Insights
+                </span>
               </div>
-              <h1 className="mt-4 text-4xl md:text-5xl font-serif font-bold text-mpl-navy leading-tight">
+              <h1 className="text-4xl md:text-6xl font-serif font-bold text-mpl-navy leading-[1.05] tracking-tight">
                 Planning for the future
               </h1>
-              <p className="mt-4 text-lg text-gray-600 leading-relaxed max-w-2xl">
+              <p className="mt-6 text-base text-gray-500 leading-relaxed max-w-md">
                 Clear, practical insights from our team—built for families who
                 want confidence, not confusion.
               </p>
-              <div className="mt-8 flex flex-col sm:flex-row gap-3">
+              <div className="mt-10 flex flex-col sm:flex-row gap-3">
                 <a
                   href="#latest"
-                  className="inline-flex items-center justify-center gap-2 bg-mpl-navy text-white px-7 py-4 rounded-full font-bold shadow-sm hover:bg-mpl-blue transition-colors"
+                  className="inline-flex items-center justify-center gap-2 bg-mpl-navy text-white px-7 py-3.5 rounded-sm text-sm font-semibold hover:bg-mpl-blue transition-colors"
                 >
-                  View Posts <ArrowRight size={18} />
+                  View Posts <ArrowRight size={15} />
                 </a>
                 <a
                   href="#contact"
-                  className="inline-flex items-center justify-center gap-2 border border-gray-300 text-mpl-navy px-7 py-4 rounded-full font-bold hover:bg-gray-50 transition-colors"
+                  className="inline-flex items-center justify-center gap-2 border border-gray-200 text-mpl-navy px-7 py-3.5 rounded-sm text-sm font-semibold hover:border-gray-400 transition-colors"
                 >
                   Contact Us
                 </a>
-                <a
-                  href="#subscribe"
-                  className="inline-flex items-center justify-center gap-2 bg-mpl-blue text-white px-7 py-4 rounded-full font-bold shadow-sm hover:bg-mpl-navy transition-colors"
-                >
-                  Subscribe
-                </a>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.05 }}
-              className="lg:col-span-5"
-            >
-              <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8">
-                <div className="text-sm font-semibold text-mpl-navy">
-                  Topics
-                </div>
-                <div className="mt-4 space-y-3 text-gray-600">
-                  <div className="flex items-start gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-mpl-blue" />
-                    <span>Divorce, custody, and family transitions</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-mpl-blue" />
-                    <span>Wills, trusts, and planning ahead</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-mpl-blue" />
-                    <span>Probate basics and common pitfalls</span>
-                  </div>
-                </div>
-                <div className="mt-8">
-                  <Link
-                    to="/resources/books"
-                    className="inline-flex items-center gap-2 font-bold text-mpl-blue hover:text-mpl-navy transition-colors"
-                  >
-                    Browse Books <ArrowRight size={18} />
-                  </Link>
-                </div>
               </div>
             </motion.div>
           </div>
@@ -117,18 +87,18 @@ const Hero = () => {
 };
 
 const FeaturedVideo = () => {
-  const estatePlanningVideoId = "4Y8nCUwCLBQ";
+  const estatePlanningVideoId = "lewEf66tJfY";
 
   return (
-    <section className="py-10 md:py-12 bg-white">
+    <section className="py-16 md:py-20 bg-white border-b border-gray-100">
       <div className="container-custom">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 14 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.45 }}
-            className="rounded-3xl border border-gray-200 bg-white shadow-sm overflow-hidden"
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden rounded-sm border border-gray-100 shadow-sm"
           >
             <div className="aspect-video w-full bg-black">
               <iframe
@@ -149,49 +119,49 @@ const FeaturedVideo = () => {
 const MediaSection = () => {
   const items = [
     {
-      title: "Firm video",
-      youtubeId: "lewEf66tJfY",
+      title: "Discussion with Trisha Morales",
+      youtubeId: "4Y8nCUwCLBQ",
     },
   ];
 
   return (
-    <section className="py-12 bg-gray-50">
+    <section className="py-16 md:py-20 bg-gray-50 border-b border-gray-100">
       <div className="container-custom">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-end justify-between gap-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-end justify-between gap-6 mb-12">
             <div>
-              <div className="text-xs font-bold tracking-wider uppercase text-gray-500">
+              <span className="text-xs font-medium tracking-[0.15em] uppercase text-gray-400">
                 Media
-              </div>
-              <h2 className="mt-2 text-3xl md:text-4xl font-serif font-bold text-mpl-navy">
+              </span>
+              <h2 className="mt-3 text-3xl font-serif font-bold text-mpl-navy tracking-tight">
                 Videos
               </h2>
             </div>
           </div>
 
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {items.map((item) => (
               <a
                 key={item.youtubeId}
                 href={`https://www.youtube.com/watch?v=${item.youtubeId}`}
                 target="_blank"
                 rel="noreferrer"
-                className="group rounded-3xl border border-gray-200 bg-white shadow-sm overflow-hidden hover:shadow-md transition-shadow"
+                className="group overflow-hidden rounded-sm border border-gray-200 bg-white hover:border-gray-400 transition-colors"
               >
-                <div className="aspect-video bg-black">
+                <div className="aspect-video bg-black overflow-hidden">
                   <img
                     src={`https://i.ytimg.com/vi/${item.youtubeId}/hqdefault.jpg`}
                     alt={item.title}
-                    className="w-full h-full object-cover opacity-95 group-hover:opacity-100 transition-opacity"
+                    className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-300"
                     loading="lazy"
                   />
                 </div>
-                <div className="p-6">
-                  <div className="font-serif text-mpl-navy text-lg">
+                <div className="p-5">
+                  <div className="font-serif text-mpl-navy text-base font-semibold">
                     {item.title}
                   </div>
-                  <div className="mt-2 text-sm text-gray-600">
-                    Watch on YouTube
+                  <div className="mt-1.5 text-xs text-gray-400 tracking-wide uppercase flex items-center gap-1.5">
+                    Watch on YouTube <ArrowRight size={11} />
                   </div>
                 </div>
               </a>
@@ -203,21 +173,23 @@ const MediaSection = () => {
   );
 };
 
-const NewsletterSignup = ({ source = "blog_newsletter_subscribe", compact = false }) => {
+const NewsletterSignup = ({ source = "blog_newsletter_subscribe" }) => {
   const [email, setEmail] = useState("");
+  const [unsubscribeEmail, setUnsubscribeEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isUnsubmitting, setIsUnsubmitting] = useState(false);
+  const [unsubscribeError, setUnsubscribeError] = useState("");
+  const [isUnsubscribed, setIsUnsubscribed] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitError("");
-
     if (!email.trim()) {
       setSubmitError("Please enter a valid email.");
       return;
     }
-
     setIsSubmitting(true);
     try {
       await subscribeContactToNewsletter(email, {
@@ -226,70 +198,122 @@ const NewsletterSignup = ({ source = "blog_newsletter_subscribe", compact = fals
       });
       setIsSubmitted(true);
       setEmail("");
-    } catch (error) {
-      console.error("Newsletter subscription failed:", error);
-      setSubmitError("Could not subscribe right now. Please try again shortly.");
+    } catch {
+      setSubmitError(
+        "Could not subscribe right now. Please try again shortly.",
+      );
     } finally {
       setIsSubmitting(false);
     }
   };
 
+  const handleUnsubscribe = async (e) => {
+    e.preventDefault();
+    setUnsubscribeError("");
+    if (!unsubscribeEmail.trim()) {
+      setUnsubscribeError("Please enter a valid email.");
+      return;
+    }
+    setIsUnsubmitting(true);
+    try {
+      await unsubscribeEmailFromNewsletter(unsubscribeEmail, {
+        source: source.replace("subscribe", "unsubscribe"),
+        pagePath: window.location.pathname,
+      });
+      setIsUnsubscribed(true);
+      setUnsubscribeEmail("");
+    } catch {
+      setUnsubscribeError(
+        "Could not unsubscribe right now. Please try again shortly.",
+      );
+    } finally {
+      setIsUnsubmitting(false);
+    }
+  };
+
   return (
-    <form
-      onSubmit={handleSubmit}
-      className={`w-full ${compact ? "flex flex-col gap-3" : "flex items-stretch gap-3"}`}
-    >
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => {
-          setEmail(e.target.value);
-          if (submitError) setSubmitError("");
-          if (isSubmitted) setIsSubmitted(false);
-        }}
-        placeholder={compact ? "Your email address" : "Your email"}
-        className={`h-12 rounded-full border border-gray-300 px-5 text-gray-700 focus:outline-none focus:ring-2 focus:ring-mpl-blue focus:border-mpl-blue ${
-          compact ? "w-full" : "w-full md:w-80"
-        }`}
-      />
-      <button
-        type="submit"
-        disabled={isSubmitting}
-        className="inline-flex items-center justify-center h-12 px-6 rounded-full bg-mpl-navy text-white font-bold hover:bg-mpl-blue transition-colors disabled:opacity-70"
-      >
-        {isSubmitting ? "Submitting..." : "Subscribe"}
-      </button>
+    <div className="w-full">
+      <form onSubmit={handleSubmit} className="flex items-stretch gap-2">
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => {
+            setEmail(e.target.value);
+            if (submitError) setSubmitError("");
+            if (isSubmitted) setIsSubmitted(false);
+          }}
+          placeholder="Your email"
+          className="h-11 flex-1 rounded-sm border border-gray-200 px-4 text-sm text-gray-700 focus:outline-none focus:ring-1 focus:ring-mpl-navy focus:border-mpl-navy"
+        />
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="h-11 px-5 rounded-sm bg-mpl-navy text-white text-sm font-semibold hover:bg-mpl-blue transition-colors disabled:opacity-60 whitespace-nowrap"
+        >
+          {isSubmitting ? "..." : "Subscribe"}
+        </button>
+      </form>
+
       {(isSubmitted || submitError) && (
         <p
-          className={`text-sm ${isSubmitted ? "text-green-600" : "text-red-600"} ${
-            compact ? "" : "md:basis-full"
-          }`}
+          className={`mt-2 text-xs ${isSubmitted ? "text-green-600" : "text-red-500"}`}
           role={submitError ? "alert" : "status"}
         >
-          {isSubmitted
-            ? "Thanks, you're subscribed to updates."
-            : submitError}
+          {isSubmitted ? "You're subscribed. Thank you." : submitError}
         </p>
       )}
-    </form>
+
+      <div className="mt-4 pt-4 border-t border-gray-100">
+        <p className="text-xs text-gray-400 mb-2">
+          Prefer not to receive emails?
+        </p>
+        <form onSubmit={handleUnsubscribe} className="flex gap-2">
+          <input
+            type="email"
+            value={unsubscribeEmail}
+            onChange={(e) => {
+              setUnsubscribeEmail(e.target.value);
+              if (unsubscribeError) setUnsubscribeError("");
+              if (isUnsubscribed) setIsUnsubscribed(false);
+            }}
+            placeholder="Email to unsubscribe"
+            className="h-9 flex-1 rounded-sm border border-gray-200 px-3 text-xs text-gray-600 focus:outline-none focus:ring-1 focus:ring-mpl-navy focus:border-mpl-navy"
+          />
+          <button
+            type="submit"
+            disabled={isUnsubmitting}
+            className="h-9 px-4 rounded-sm border border-gray-200 text-xs font-semibold text-gray-500 hover:border-gray-400 hover:text-mpl-navy transition-colors disabled:opacity-60 whitespace-nowrap"
+          >
+            {isUnsubmitting ? "..." : "Unsubscribe"}
+          </button>
+        </form>
+        {(isUnsubscribed || unsubscribeError) && (
+          <p
+            className={`mt-2 text-xs ${isUnsubscribed ? "text-green-600" : "text-red-500"}`}
+          >
+            {isUnsubscribed ? "You've been unsubscribed." : unsubscribeError}
+          </p>
+        )}
+      </div>
+    </div>
   );
 };
 
 const SubscribeBar = () => {
   return (
-    <section id="subscribe" className="py-6 bg-white">
+    <section id="subscribe" className="py-12 bg-white border-b border-gray-100">
       <div className="container-custom">
-        <div className="max-w-6xl mx-auto">
-          <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-6 md:p-8 flex flex-col md:flex-row items-center gap-4 md:gap-6">
-            <div className="flex-1">
-              <div className="text-lg md:text-xl font-serif font-bold text-mpl-navy">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-16">
+            <div className="shrink-0 max-w-xs">
+              <h3 className="text-xl font-serif font-bold text-mpl-navy">
                 Subscribe for new posts
-              </div>
-              <div className="mt-1 text-gray-600">
-                Get premium insights delivered occasionally. No spam.
-              </div>
+              </h3>
+              <p className="mt-2 text-sm text-gray-400 leading-relaxed">
+                Occasional insights. No spam.
+              </p>
             </div>
-            <div className="w-full md:w-auto">
+            <div className="w-full max-w-md">
               <NewsletterSignup source="blog_subscribe_bar" />
             </div>
           </div>
@@ -299,245 +323,79 @@ const SubscribeBar = () => {
   );
 };
 
-const Highlights = () => {
-  const items = [
-    {
-      title: "Clarity-first guidance",
-      desc: "No fluff—just actionable steps and straightforward explanations.",
-    },
-    {
-      title: "Family-centered perspective",
-      desc: "Built around real-life decisions, timelines, and outcomes.",
-    },
-    {
-      title: "Planning that reduces risk",
-      desc: "Strategies that help you avoid common legal and financial mistakes.",
-    },
-  ];
-
-  return (
-    <section className="py-12 md:py-14 bg-white">
-      <div className="container-custom">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {items.map((it, i) => (
-              <motion.div
-                key={it.title}
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.06, duration: 0.4 }}
-                className="rounded-3xl border border-gray-200 bg-white shadow-sm p-7"
-              >
-                <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-2xl bg-mpl-navy text-white flex items-center justify-center shrink-0">
-                    <CheckCircle size={18} />
-                  </div>
-                  <div>
-                    <div className="text-lg font-serif font-bold text-mpl-navy">
-                      {it.title}
-                    </div>
-                    <div className="mt-2 text-gray-600 leading-relaxed">
-                      {it.desc}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
 const LatestPosts = () => {
-  const [selectedCategory, setSelectedCategory] = useState("estate-planning");
-
   const blogCategories = [
-    // {
-    //   id: "all",
-    //   label: "All Posts",
-    //   url: "https://blog.moralespadialaw.com",
-    //   description: "All blog content",
-    // },
     {
       id: "estate-planning",
-      label: "Estate Planning",
-      url: "https://blog.moralespadialaw.com",
+      label: "Blog",
+      url: getFreshBlogUrl(),
       description: "Wills, trusts & planning",
-    },
-    {
-      id: "family-law",
-      label: "Family Law",
-      url: "https://blog.moralespadialaw.com/family-law-blog",
-      description: "Divorce, custody & family matters",
     },
   ];
 
-  const currentBlog = blogCategories.find((cat) => cat.id === selectedCategory);
+  const currentBlog = blogCategories[0];
 
   return (
-    <section id="latest" className="py-14 md:py-16 bg-gray-50">
+    <section id="latest" className="py-16 md:py-20 bg-gray-50">
       <div className="container-custom">
-        {/* Header */}
-        <div className="max-w-7xl mx-auto mb-8">
+        <div className="max-w-5xl mx-auto mb-10">
           <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
             <div>
-              <div className="text-xs font-bold tracking-wider uppercase text-gray-500">
+              <span className="text-xs font-medium tracking-[0.15em] uppercase text-gray-400">
                 Latest
-              </div>
-              <h2 className="mt-2 text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-mpl-navy">
+              </span>
+              <h2 className="mt-3 text-3xl md:text-4xl font-serif font-bold text-mpl-navy tracking-tight">
                 Blog Posts
               </h2>
-              <p className="mt-3 text-base md:text-lg text-gray-600 max-w-2xl">
-                Insights on estate planning, family law, probate, and more from
-                our team.
+              <p className="mt-3 text-sm text-gray-500 max-w-sm leading-relaxed">
+                Insights on estate planning, probate, wills, and trusts from our
+                team.
               </p>
             </div>
             <Link
               to="/resources/books"
-              className="inline-flex items-center gap-2 font-bold text-mpl-blue hover:text-mpl-navy transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-mpl-navy hover:text-mpl-blue transition-colors group"
             >
-              Explore Books <ArrowRight size={18} />
+              Explore Books{" "}
+              <ArrowRight
+                size={14}
+                className="transition-transform duration-200 group-hover:translate-x-1"
+              />
             </Link>
           </div>
         </div>
 
-        {/* Blog Category Filter */}
-        <div className="max-w-7xl mx-auto mb-8">
-          <div className="inline-flex items-center gap-2 bg-white rounded-full border border-gray-300 p-1 shadow-sm">
-            {blogCategories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => setSelectedCategory(category.id)}
-                className={`px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 whitespace-nowrap ${
-                  selectedCategory === category.id
-                    ? "bg-mpl-navy text-white shadow-md"
-                    : "bg-transparent text-gray-700 hover:text-mpl-navy hover:bg-gray-50"
-                }`}
-                title={category.description}
-              >
-                {category.label}
-              </button>
-            ))}
-          </div>
-        </div>
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            key={currentBlog?.id}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            className="rounded-sm border border-gray-200 bg-white overflow-hidden shadow-sm"
+          >
+            <iframe
+              src={currentBlog?.url}
+              className="w-full h-[1400px] min-h-[900px] border-0"
+              title={`${currentBlog?.label} - Morales & Padia Law Blog`}
+              loading="lazy"
+            />
+          </motion.div>
 
-        {/* Blog Content - Full Width Layout */}
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 xl:grid-cols-12 gap-8">
-            {/* Main Blog Embed - Wider on Desktop */}
-            <div className="xl:col-span-9">
-              <motion.div
-                key={selectedCategory}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.3 }}
-                className="rounded-3xl border border-gray-200 bg-white shadow-sm overflow-hidden"
-              >
-                <iframe
-                  src={currentBlog?.url}
-                  className="w-full h-[1400px] min-h-[900px] border-0"
-                  title={`${currentBlog?.label} - Morales & Padia Law Blog`}
-                />
-              </motion.div>
-
-              {/* Visit Full Blog CTA */}
-              <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a
-                  href={currentBlog?.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-mpl-navy text-white px-8 py-4 rounded-full font-bold hover:bg-mpl-blue transition-colors shadow-sm w-full sm:w-auto justify-center"
-                >
-                  View Full Blog <ArrowRight size={18} />
-                </a>
-                <a
-                  href="#contact"
-                  className="inline-flex items-center gap-2 border-2 border-mpl-navy text-mpl-navy px-8 py-4 rounded-full font-bold hover:bg-mpl-navy hover:text-white transition-colors w-full sm:w-auto justify-center"
-                >
-                  Ask a Question
-                </a>
-              </div>
-            </div>
-
-            {/* Sidebar - Below on Mobile, Side on Desktop */}
-            <div className="xl:col-span-3">
-              <div className="xl:sticky xl:top-24 space-y-6">
-                <div className="rounded-3xl border border-gray-200 bg-white shadow-sm overflow-hidden">
-                  <div className="p-7">
-                    <div className="text-lg font-serif font-bold text-mpl-navy">
-                      Newsletter
-                    </div>
-                    <div className="mt-2 text-gray-600">
-                      Get the latest insights delivered to your inbox.
-                    </div>
-                    <div className="mt-6 flex flex-col gap-3">
-                      <NewsletterSignup source="blog_sidebar_newsletter" compact />
-                    </div>
-                  </div>
-                  <div className="h-px bg-gray-100" />
-                  <div className="px-7 py-5 text-sm text-gray-500">
-                    Have a question?{" "}
-                    <a
-                      href="#contact"
-                      className="font-bold text-mpl-blue hover:text-mpl-navy transition-colors"
-                    >
-                      Contact us
-                    </a>
-                  </div>
-                </div>
-
-                <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-7">
-                  <div className="text-lg font-serif font-bold text-mpl-navy">
-                    Practice Areas
-                  </div>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {[
-                      {
-                        label: "Estate Planning",
-                        link: "/services/estate-planning",
-                      },
-                      { label: "Family Law", link: "/services/family-law" },
-                      { label: "Divorce", link: "/services/divorce" },
-                      { label: "Probate", link: "/services/probate" },
-                      { label: "Custody", link: "/services/child-custody" },
-                      {
-                        label: "Wills & Trusts",
-                        link: "/services/wills-trusts",
-                      },
-                    ].map((topic) => (
-                      <Link
-                        key={topic.label}
-                        to={topic.link}
-                        className="px-3 py-1.5 rounded-full text-sm font-semibold border border-gray-300 text-gray-600 hover:bg-mpl-navy hover:text-white hover:border-mpl-navy transition-colors"
-                      >
-                        {topic.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-7">
-                  <div className="text-lg font-serif font-bold text-mpl-navy">
-                    Featured Resources
-                  </div>
-                  <div className="mt-3 text-gray-600">
-                    Explore our comprehensive guides for families navigating
-                    legal matters.
-                  </div>
-                  <div className="mt-6">
-                    <Link
-                      to="/resources/books"
-                      className="inline-flex items-center gap-2 font-bold text-mpl-blue hover:text-mpl-navy transition-colors"
-                    >
-                      Browse Books <ArrowRight size={18} />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a
+              href={currentBlog?.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-mpl-navy text-white px-7 py-3.5 rounded-sm text-sm font-semibold hover:bg-mpl-blue transition-colors w-full sm:w-auto justify-center"
+            >
+              View Full Blog <ArrowRight size={15} />
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 border border-gray-200 text-mpl-navy px-7 py-3.5 rounded-sm text-sm font-semibold hover:border-gray-400 transition-colors w-full sm:w-auto justify-center"
+            >
+              Ask a Question
+            </a>
           </div>
         </div>
       </div>
@@ -563,47 +421,50 @@ const ContactSection = () => {
       icon: MapPin,
       title: "Office",
       details: ["San Antonio, Texas"],
-      action: "https://maps.google.com/?q=San+Antonio,Texas",
+      action: "https://maps.google.com/?q=29.52137717375601,-98.48965712995692",
     },
   ];
 
   return (
-    <section id="contact" className="py-16 md:py-20 bg-white">
+    <section
+      id="contact"
+      className="py-20 md:py-28 bg-white border-t border-gray-100"
+    >
       <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start max-w-5xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="lg:col-span-5"
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-4"
           >
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-mpl-navy">
+            <span className="text-xs font-medium tracking-[0.15em] uppercase text-gray-400">
+              Get in touch
+            </span>
+            <h2 className="mt-3 text-3xl font-serif font-bold text-mpl-navy tracking-tight">
               Contact Us
             </h2>
-            <p className="mt-4 text-gray-600 leading-relaxed">
+            <p className="mt-4 text-sm text-gray-500 leading-relaxed">
               Have a question from something you saw here? Send a message and
               our team will follow up.
             </p>
 
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
+            <div className="mt-10 space-y-6">
               {contactInfo.map((item) => (
-                <div
-                  key={item.title}
-                  className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6"
-                >
-                  <div className="w-12 h-12 bg-mpl-blue/10 rounded-full flex items-center justify-center text-mpl-blue mb-4">
-                    <item.icon className="w-6 h-6" />
+                <div key={item.title} className="flex items-start gap-4">
+                  <div className="w-9 h-9 border border-gray-100 rounded-sm flex items-center justify-center text-gray-400 shrink-0">
+                    <item.icon className="w-4 h-4" />
                   </div>
-                  <div className="text-lg font-serif font-bold text-mpl-navy">
-                    {item.title}
-                  </div>
-                  <div className="mt-2">
+                  <div>
+                    <div className="text-xs font-medium tracking-wide uppercase text-gray-400 mb-1">
+                      {item.title}
+                    </div>
                     {item.details.map((detail) => (
                       <a
                         key={detail}
                         href={item.action}
-                        className="block text-gray-600 hover:text-mpl-blue transition-colors"
+                        className="block text-sm text-mpl-navy hover:text-mpl-blue transition-colors font-medium"
                       >
                         {detail}
                       </a>
@@ -615,13 +476,17 @@ const ContactSection = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="lg:col-span-7"
+            transition={{
+              duration: 0.5,
+              delay: 0.08,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="lg:col-span-8"
           >
-            <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-6 md:p-8">
+            <div className="border border-gray-100 rounded-sm bg-white p-8 md:p-10 shadow-sm">
               <ConsultationForm />
             </div>
           </motion.div>

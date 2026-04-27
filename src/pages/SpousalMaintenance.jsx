@@ -18,12 +18,19 @@ import {
   AlertCircle,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import CleanServiceHero from "../components/CleanServiceHero";
 import ConsultationForm from "../components/ConsultationForm";
 
 const SpousalMaintenance = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
-      <HeroSection />
+      <CleanServiceHero
+        title="Alimony & Spousal Maintenance in San Antonio"
+        subtitle="Financial support arrangements that reflect your situation."
+        opening="Financial support after a divorce can have a lasting impact on your future."
+        infoTitle="What This Means"
+        infoDescription="Spousal maintenance may be awarded to provide financial support under certain circumstances."
+      />
       <WhyChooseSection />
       <ProcessSection />
       <TypesSection />
@@ -48,15 +55,16 @@ const HeroSection = () => {
             Establishing Fair Spousal Support Arrangements
           </div>
           <h1 className="text-5xl md:text-7xl font-serif font-bold text-mpl-navy mb-8 leading-tight">
-            Spousal Maintenance <br />
-            <span className="text-mpl-blue italic">Attorney</span>
+            Alimony & Spousal Maintenance <br />
           </h1>
           <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Spousal maintenance, also known as alimony, provides financial
-            support to a spouse during and after divorce. Our experienced San
-            Antonio spousal maintenance attorneys help establish fair support
-            arrangements, modify existing orders, and enforce payment
-            obligations to ensure financial stability for both parties.
+            Financial support after a divorce can have a lasting impact on your
+            future. Spousal maintenance may be awarded to provide financial
+            support under certain circumstances.
+          </p>
+          <p className="text-lg text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
+            We help you determine eligibility, negotiate fair arrangements, and
+            address disputes regarding spousal support.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -356,7 +364,7 @@ const ContactInfoSection = () => {
       icon: MapPin,
       title: "Office",
       content: "45 NE Interstate 410 Loop Suite 207 San Antonio, TX 78216",
-      link: "https://maps.google.com/?q=45+NE+Interstate+410+Loop+Suite+207+San+Antonio+TX+78216",
+      link: "https://maps.google.com/?q=29.52137717375601,-98.48965712995692",
     },
     {
       icon: Mail,

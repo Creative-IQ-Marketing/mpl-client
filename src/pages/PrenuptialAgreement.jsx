@@ -24,12 +24,19 @@ import {
   Download,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import CleanServiceHero from "../components/CleanServiceHero";
 import ConsultationForm from "../components/ConsultationForm";
 
 const PrenuptialAgreement = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
-      <HeroSection />
+      <CleanServiceHero
+        title="Prenuptial Agreements in San Antonio"
+        subtitle="Protect your future before marriage."
+        opening="Planning ahead is one of the most effective ways to protect your future."
+        infoTitle="What This Means"
+        infoDescription="A prenuptial agreement outlines how assets and finances will be handled in the event of divorce."
+      />
       <WhyChooseSection />
       <ProcessSection />
       <AddressableItemsSection />
@@ -55,11 +62,24 @@ const HeroSection = () => {
             Protecting Your Assets Before Marriage
           </div>
           <h1 className="text-5xl md:text-7xl font-serif font-bold text-mpl-navy mb-8 leading-tight">
-            Prenuptial Agreement <br />
-            <span className="text-mpl-blue italic">Attorney</span>
+            Prenuptial Agreements <br />
           </h1>
           <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-            A prenuptial agreement is a valuable legal tool that protects your assets and interests before marriage. Our experienced San Antonio prenuptial agreement attorneys help couples create comprehensive prenups that address property division, spousal support, and other important matters while ensuring both parties' rights are protected.
+            Planning ahead is one of the most effective ways to protect your
+            future. A prenuptial agreement outlines how assets and finances will
+            be handled in the event of divorce.
+          </p>
+          <p className="text-lg text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
+            We create agreements that are clear, enforceable, and tailored to
+            your goals—protecting assets, reducing future conflict, and creating
+            clarity from the start.
+          </p>
+          <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+            A prenuptial agreement is a valuable legal tool that protects your
+            assets and interests before marriage. Our experienced San Antonio
+            prenuptial agreement attorneys help couples create comprehensive
+            prenups that address property division, spousal support, and other
+            important matters while ensuring both parties' rights are protected.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -129,7 +149,8 @@ const WhyChooseSection = () => {
             Why Choose Our Prenuptial Agreement Services?
           </h2>
           <p className="text-lg text-gray-600">
-            We provide comprehensive prenuptial agreement representation to protect your interests and assets.
+            We provide comprehensive prenuptial agreement representation to
+            protect your interests and assets.
           </p>
         </div>
 
@@ -208,7 +229,8 @@ const ProcessSection = () => {
             The Prenuptial Agreement Process
           </h2>
           <p className="text-lg text-gray-600">
-            Understanding the steps involved in creating a comprehensive prenuptial agreement.
+            Understanding the steps involved in creating a comprehensive
+            prenuptial agreement.
           </p>
         </div>
 
@@ -284,7 +306,8 @@ const AddressableItemsSection = () => {
             What Prenuptial Agreements Can Address
           </h2>
           <p className="text-lg text-gray-600">
-            Comprehensive prenuptial agreement representation for all types of marital and financial matters.
+            Comprehensive prenuptial agreement representation for all types of
+            marital and financial matters.
           </p>
         </div>
 
@@ -325,7 +348,8 @@ const CTABanner = () => {
           Protect Your Assets Before Marriage
         </h2>
         <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-          Don't wait until it's too late. Contact our experienced San Antonio prenuptial agreement attorneys today.
+          Don't wait until it's too late. Contact our experienced San Antonio
+          prenuptial agreement attorneys today.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
@@ -359,7 +383,7 @@ const ContactInfoSection = () => {
             Contact Our Prenuptial Agreement Attorneys
           </h2>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="p-8 bg-gray-50 rounded-2xl text-center hover:shadow-md transition-all">
             <div className="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center text-mpl-red mx-auto mb-4">
@@ -370,25 +394,30 @@ const ContactInfoSection = () => {
               (726) 204-4044
             </a>
           </div>
-          
+
           <div className="p-8 bg-gray-50 rounded-2xl text-center hover:shadow-md transition-all">
             <div className="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center text-mpl-red mx-auto mb-4">
               <MapPin size={24} />
             </div>
             <h3 className="font-bold text-mpl-navy mb-2">Office</h3>
             <p className="text-gray-600">
-              45 NE Interstate 410 Loop<br />
-              Suite 307<br />
+              45 NE Interstate 410 Loop
+              <br />
+              Suite 307
+              <br />
               San Antonio, TX 78216
             </p>
           </div>
-          
+
           <div className="p-8 bg-gray-50 rounded-2xl text-center hover:shadow-md transition-all">
             <div className="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center text-mpl-blue mx-auto mb-4">
               <Mail size={24} />
             </div>
             <h3 className="font-bold text-mpl-navy mb-2">Email</h3>
-            <a href="mailto:info@moralespadialaw.com" className="text-mpl-blue hover:underline">
+            <a
+              href="mailto:info@moralespadialaw.com"
+              className="text-mpl-blue hover:underline"
+            >
               info@moralespadialaw.com
             </a>
           </div>
@@ -416,31 +445,35 @@ const FreeResourceSection = () => {
               Download Our Free Prenup Checklist Here
             </p>
           </div>
-          
+
           <div className="flex-1 w-full md:w-auto">
             <form className="flex flex-col sm:flex-row gap-4">
               <div className="flex-1">
-                <label htmlFor="name" className="sr-only">Full Name</label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  placeholder="Full Name *" 
+                <label htmlFor="name" className="sr-only">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Full Name *"
                   className="w-full px-4 py-3 rounded-lg text-mpl-navy focus:outline-none focus:ring-2 focus:ring-mpl-gold"
                   required
                 />
               </div>
               <div className="flex-1">
-                <label htmlFor="email" className="sr-only">Email</label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  placeholder="Email *" 
+                <label htmlFor="email" className="sr-only">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Email *"
                   className="w-full px-4 py-3 rounded-lg text-mpl-navy focus:outline-none focus:ring-2 focus:ring-mpl-gold"
                   required
                 />
               </div>
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 className="bg-mpl-gold text-mpl-navy px-6 py-3 rounded-lg font-bold hover:bg-white transition-colors whitespace-nowrap"
               >
                 DOWNLOAD NOW!
@@ -466,9 +499,10 @@ const FormSection = () => {
                     Get a Free Consultation
                   </h3>
                   <p className="text-gray-300 mb-8">
-                    Speak with an experienced attorney about your situation. We're here to help you move forward.
+                    Speak with an experienced attorney about your situation.
+                    We're here to help you move forward.
                   </p>
-                  
+
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
                       <Phone size={18} className="text-mpl-gold" />
@@ -476,7 +510,9 @@ const FormSection = () => {
                     </div>
                     <div className="flex items-center gap-3">
                       <Mail size={18} className="text-mpl-gold" />
-                      <span className="font-medium">info@moralespadialaw.com</span>
+                      <span className="font-medium">
+                        info@moralespadialaw.com
+                      </span>
                     </div>
                     <div className="flex items-center gap-3">
                       <MapPin size={18} className="text-mpl-gold" />
@@ -484,11 +520,11 @@ const FormSection = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="absolute bottom-0 right-0 w-64 h-64 bg-mpl-blue opacity-20 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
                 <div className="absolute top-0 left-0 w-32 h-32 bg-mpl-gold opacity-10 rounded-full blur-2xl transform -translate-x-1/2 -translate-y-1/2"></div>
               </div>
-              
+
               <div className="lg:col-span-3 p-10">
                 <ConsultationForm />
               </div>

@@ -59,7 +59,6 @@ const ConsultationForm = () => {
   return (
     <div id="consultation" className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100 relative group">
       {/* Decorative top border */}
-      <div className="h-2 bg-gradient-to-r from-mpl-blue to-mpl-lightBlue w-full"></div>
       
       <div className="p-8 md:p-12 relative z-10">
         <div className="mb-8">

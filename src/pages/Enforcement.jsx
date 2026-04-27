@@ -15,14 +15,22 @@ import {
   MapPin,
   Mail,
   AlertTriangle,
-  Siren
+  Siren,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import CleanServiceHero from "../components/CleanServiceHero";
 import ConsultationForm from "../components/ConsultationForm";
 
 const Enforcement = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
+      <CleanServiceHero
+        title="Enforcement of Court Orders in San Antonio"
+        subtitle="Hold the other party accountable and protect your rights."
+        opening="When the other party is not following court orders, it can disrupt your life and your child's stability."
+        infoTitle="What This Means"
+        infoDescription="Enforcement ensures that existing court orders are followed and upheld."
+      />
       <HeroSection />
       <WhyChooseSection />
       <ProcessSection />
@@ -48,14 +56,18 @@ const HeroSection = () => {
             Enforcing Court Orders and Protecting Your Rights
           </div>
           <h1 className="text-5xl md:text-7xl font-serif font-bold text-mpl-navy mb-8 leading-tight">
-            Enforcement <br />
-            <span className="text-mpl-blue italic">Attorney</span>
+            Enforcement of Court Orders <br />
           </h1>
           <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-            When court orders are not being followed, you need aggressive enforcement action. Our
-            experienced San Antonio enforcement attorneys help enforce divorce decrees, custody orders,
-            child support orders, and other family law orders to ensure your rights are protected and court
-            orders are followed.
+            When the other party is not following court orders, it can disrupt
+            your life and your child's stability. Enforcement ensures that
+            existing court orders are followed and upheld.
+          </p>
+          <p className="text-lg text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
+            We take action to hold the other party accountable and restore
+            compliance by enforcing custody or visitation, addressing unpaid
+            support, and protecting your legal rights. You should not have to
+            deal with violations alone.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -125,8 +137,8 @@ const WhyChooseSection = () => {
             Why Choose Our Enforcement Services?
           </h2>
           <p className="text-lg text-gray-600">
-            We provide aggressive enforcement representation to ensure
-            court orders are followed and your rights are protected.
+            We provide aggressive enforcement representation to ensure court
+            orders are followed and your rights are protected.
           </p>
         </div>
 
@@ -272,8 +284,8 @@ const TypesSection = () => {
             Types of Enforcement We Handle
           </h2>
           <p className="text-lg text-gray-600">
-            Comprehensive enforcement representation for all types of family
-            law court orders.
+            Comprehensive enforcement representation for all types of family law
+            court orders.
           </p>
         </div>
 
@@ -320,8 +332,8 @@ const CTABanner = () => {
           Protect Your Rights
         </h2>
         <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto font-light">
-          Ensure court orders are enforced fairly. Contact our experienced
-          San Antonio enforcement attorneys today.
+          Ensure court orders are enforced fairly. Contact our experienced San
+          Antonio enforcement attorneys today.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
@@ -354,7 +366,7 @@ const ContactInfoSection = () => {
       icon: MapPin,
       title: "Office",
       content: "45 NE Interstate 410 Loop Suite 207 San Antonio, TX 78216",
-      link: "https://maps.google.com/?q=45+NE+Interstate+410+Loop+Suite+207+San+Antonio+TX+78216",
+      link: "https://maps.google.com/?q=29.52137717375601,-98.48965712995692",
     },
     {
       icon: Mail,

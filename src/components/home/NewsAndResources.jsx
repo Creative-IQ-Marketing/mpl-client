@@ -1,118 +1,137 @@
-import {
-  PlayCircle,
-  BookOpen,
-  FileText,
-  Download,
-  ArrowRight,
-  Maximize2,
-} from "lucide-react";
+import { Monitor, ExternalLink } from "lucide-react";
 import { motion as Motion } from "framer-motion";
 
 const NewsAndResources = () => {
+  const newsItems = [
+    {
+      badge: "NEWS4SAN ANTONIO",
+      title: "Morales Padia Law Featured on SA Living",
+      description:
+        "Attorney Trisha Morales Padia discusses the importance of estate planning and family law services, sharing expert insights on protecting your family's future and navigating legal challenges.",
+      icon: Monitor,
+      details: [
+        { label: "SA Living Interview", icon: "📅" },
+        { label: "News4San Antonio", icon: "📍" },
+      ],
+      link: "https://news4sanantonio.com/sa-living/morales-padia-law-estate-planning-and-family-law",
+    },
+  ];
+
   return (
-    <section className="relative py-32 bg-gray-50 overflow-hidden">
-      <div className="max-w-[95rem] mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 min-h-[800px]">
-          {/* Big News Feature - Takes 7 Cols */}
-          <Motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="lg:col-span-7 relative h-[600px] lg:h-auto rounded-[3rem] overflow-hidden group shadow-2xl"
-          >
-            <div className="absolute inset-0 bg-mpl-navy z-0">
-              {/* Placeholder for video thumbnail image */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-mpl-navy/50 to-transparent z-10" />
-            </div>
+    <section className="relative py-20 md:py-28 bg-white overflow-hidden">
+      {/* Subtle background animation */}
+      <div className="absolute inset-0 pointer-events-none">
+        <Motion.div
+          className="absolute top-1/2 right-0 w-96 h-96 bg-mpl-blue/3 rounded-full blur-3xl"
+          animate={{ y: [0, 30, 0] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </div>
 
-            <div className="relative z-20 h-full flex flex-col justify-end p-10 md:p-16">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white text-sm font-medium mb-6 w-fit border border-white/20">
-                <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-                Live Updates
-              </div>
+      <div className="max-w-6xl mx-auto px-6 lg:px-12 relative z-10">
+        {/* News Section */}
+        <div className="mb-12">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-mpl-navy mb-2">
+            Featured In The News
+          </h2>
+          <div className="w-16 h-1 bg-mpl-blue mb-12" />
+        </div>
 
-              <h3 className="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-6 leading-[0.95]">
-                Leading the Conversation <br /> on{" "}
-                <span className="italic text-mpl-lightBlue">Family Law.</span>
-              </h3>
-
-              <div className="flex flex-wrap gap-6 items-center">
-                <button className="h-20 w-20 rounded-full bg-white text-mpl-navy flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                  <PlayCircle className="w-8 h-8 fill-current" />
-                </button>
-                <p className="text-xl text-white/80 max-w-md border-l border-white/30 pl-6">
-                  Watch our exclusive interview on SA Living discussing recent
-                  legislative changes.
-                </p>
-              </div>
-            </div>
-
-            {/* Giant decorative text */}
-            <div className="absolute -top-10 -right-10 text-[15rem] font-bold text-white/5 pointer-events-none select-none overflow-hidden">
-              NEWS
-            </div>
-          </Motion.div>
-
-          {/* Resources Stack - Takes 5 Cols */}
-          <div className="lg:col-span-5 flex flex-col gap-6">
-            <div className="mb-8 p-4">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-mpl-navy mb-4 leading-tight">
-                Empower Yourself.
-              </h2>
-              <p className="text-gray-500 text-lg">
-                Knowledge is your first line of defense.
-              </p>
-            </div>
-
-            {[
-              {
-                title: "Divorce Guide",
-                icon: BookOpen,
-                color: "bg-mpl-lightBlue/10 text-mpl-blue",
-              },
-              {
-                title: "Estate Planning",
-                icon: FileText,
-                color: "bg-mpl-navy/10 text-mpl-navy",
-              },
-              {
-                title: "Probate Checklist",
-                icon: Download,
-                color: "bg-mpl-blue/10 text-mpl-blue",
-              },
-            ].map((item, i) => (
-              <Motion.div
-                key={i}
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15 }}
-                whileHover={{ scale: 1.02, x: -10 }}
-                className="flex-1 bg-white rounded-[2.5rem] p-8 flex items-center justify-between shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group cursor-pointer"
-              >
-                <div className="flex items-center gap-6">
-                  <div
-                    className={`w-16 h-16 rounded-2xl ${item.color} flex items-center justify-center text-xl`}
-                  >
-                    <item.icon className="w-8 h-8" />
+        {/* Featured News Cards - Horizontal Layout */}
+        <div className="space-y-6">
+          {newsItems.map((item, index) => (
+            <Motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6 }}
+              className="bg-white border border-gray-100 rounded-3xl p-8 md:p-10 hover:shadow-lg hover:border-mpl-blue/20 transition-all"
+            >
+              <div className="flex flex-col md:flex-row gap-8 md:gap-10">
+                {/* Icon Circle - Left */}
+                <Motion.div
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="flex-shrink-0"
+                >
+                  <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-mpl-blue/15 flex items-center justify-center">
+                    <item.icon className="w-12 h-12 md:w-14 md:h-14 text-mpl-blue" />
                   </div>
+                </Motion.div>
+
+                {/* Content - Right */}
+                <div className="flex-1 flex flex-col justify-between min-w-0">
+                  {/* Top Section */}
                   <div>
-                    <h4 className="text-2xl font-serif text-mpl-navy mb-1 group-hover:text-mpl-blue transition-colors">
+                    <div className="inline-flex mb-4">
+                      <span className="text-xs font-bold text-white bg-mpl-blue px-4 py-1.5 rounded-full">
+                        {item.badge}
+                      </span>
+                    </div>
+
+                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-mpl-navy mb-3">
                       {item.title}
-                    </h4>
-                    <p className="text-gray-400 text-sm font-medium uppercase tracking-wider">
-                      Free PDF Download
+                    </h3>
+
+                    <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-6">
+                      {item.description}
                     </p>
                   </div>
+
+                  {/* Bottom Section */}
+                  <div>
+                    {/* Details */}
+                    <div className="flex flex-wrap gap-6 mb-6">
+                      {item.details.map((detail, i) => (
+                        <div
+                          key={i}
+                          className="flex items-center gap-2 text-sm text-gray-600"
+                        >
+                          <span>{detail.icon}</span>
+                          <span>{detail.label}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* CTA Button */}
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-mpl-blue text-white font-bold rounded-full hover:bg-mpl-navy transition-colors group"
+                    >
+                      Watch Interview
+                      <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                    </a>
+                  </div>
                 </div>
-                <div className="w-12 h-12 rounded-full border border-gray-100 flex items-center justify-center text-gray-400 group-hover:bg-mpl-navy group-hover:text-white group-hover:border-mpl-navy transition-all">
-                  <Download className="w-5 h-5" />
-                </div>
-              </Motion.div>
-            ))}
-          </div>
+              </div>
+            </Motion.div>
+          ))}
         </div>
+
+        {/* Resources Link */}
+        <Motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-16 text-center"
+        >
+          <p className="text-gray-600 text-lg">
+            Explore our{" "}
+            <a
+              href="/books"
+              className="text-mpl-blue font-bold hover:text-mpl-navy transition-colors"
+            >
+              guides and resources
+            </a>{" "}
+            to empower yourself with legal knowledge.
+          </p>
+        </Motion.div>
       </div>
     </section>
   );

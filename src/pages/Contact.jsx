@@ -22,7 +22,7 @@ const Contact = () => {
       icon: MapPin,
       title: "Office",
       details: ["San Antonio, Texas"],
-      action: "https://maps.google.com/?q=San+Antonio,Texas",
+      action: "https://maps.google.com/?q=29.52137717375601,-98.48965712995692",
     },
     {
       icon: Clock,
@@ -117,7 +117,7 @@ const Contact = () => {
               className="w-full h-64 bg-gray-200 rounded-xl overflow-hidden shadow-inner relative"
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3472.964259737563!2d-98.49514102377855!3d29.42412194883584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865c58aa57e6a56f%3A0xf08a9ad66138158f!2sSan%20Antonio%2C%20TX!5e0!3m2!1sen!2sus!4v1709234567890!5m2!1sen!2sus"
+                src="https://www.google.com/maps?q=29.52137717375601,-98.48965712995692&z=15&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

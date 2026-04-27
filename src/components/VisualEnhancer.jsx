@@ -222,54 +222,6 @@ const VisualEnhancer = ({ scopeSelector = "main" }) => {
         />
 
         <Motion.svg
-          width="1100"
-          height="700"
-          viewBox="0 0 1100 700"
-          className="absolute -left-48 top-28 opacity-60 mix-blend-overlay"
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 0.55, y: 0 }}
-          transition={{ duration: 1.0 }}
-        >
-          <defs>
-            <linearGradient id="veStrokeA" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="rgba(68,117,181,0.0)" />
-              <stop offset="35%" stopColor="rgba(68,117,181,0.55)" />
-              <stop offset="70%" stopColor="rgba(35,67,116,0.35)" />
-              <stop offset="100%" stopColor="rgba(35,67,116,0.0)" />
-            </linearGradient>
-            <filter id="veGlowA" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="2.5" result="blur" />
-              <feMerge>
-                <feMergeNode in="blur" />
-                <feMergeNode in="SourceGraphic" />
-              </feMerge>
-            </filter>
-          </defs>
-          <Motion.path
-            d="M70 410 C 190 260, 330 220, 470 280 C 590 332, 720 465, 840 410 C 940 365, 1010 250, 1060 160"
-            fill="none"
-            stroke="url(#veStrokeA)"
-            strokeWidth="2"
-            strokeLinecap="round"
-            filter="url(#veGlowA)"
-            strokeDasharray="14 18"
-            animate={{ strokeDashoffset: [0, -520] }}
-            transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-          />
-          <Motion.path
-            d="M40 520 C 220 430, 380 520, 520 560 C 720 620, 820 520, 970 430"
-            fill="none"
-            stroke="url(#veStrokeA)"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-            opacity="0.75"
-            strokeDasharray="10 14"
-            animate={{ strokeDashoffset: [0, 420] }}
-            transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
-          />
-        </Motion.svg>
-
-        <Motion.svg
           width="900"
           height="900"
           viewBox="0 0 900 900"

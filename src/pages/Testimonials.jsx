@@ -34,21 +34,17 @@ const Testimonials = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <h1 className="text-4xl lg:text-5xl font-serif font-bold text-mpl-navy mb-8 leading-tight">
-                Client Success Stories: Real Results, Real People
+                Real people. Real situations. Real outcomes.
               </h1>
               <div className="space-y-6 text-mpl-blue text-lg leading-relaxed">
                 <p>
-                  At Morales Padia Law, we take pride in the lasting
-                  relationships we build with our clients and the exceptional
-                  results we achieve. Our clients' stories reflect our
-                  commitment to fighting for justice and delivering personalized
-                  legal solutions.
+                  Every client comes to us at a different moment in life, often
+                  during stress, change, or uncertainty.
                 </p>
                 <p>
-                  Read their testimonials to learn how we've made a difference
-                  in their lives—one case at a time. Their experiences highlight
-                  our dedication, professionalism, and unwavering support
-                  throughout every legal journey.
+                  These testimonials show what it is like to move through that
+                  process with clear guidance and a legal team that stays with
+                  you at every step.
                 </p>
               </div>
             </motion.div>
@@ -67,12 +63,46 @@ const Testimonials = () => {
           className="container-custom relative z-10"
         >
           <h2 className="text-3xl md:text-5xl font-serif font-bold text-white tracking-wide">
-            See What Our Clients Have to Say!
+            See what it’s like to have the right team guiding your next decision.
           </h2>
         </motion.div>
       </section>
 
       {/* Testimonials Component */}
+      <section className="bg-white py-12">
+        <div className="container-custom max-w-5xl space-y-6">
+          <div className="rounded-xl border border-gray-200 p-6 shadow-sm">
+            <p className="text-base text-gray-700 leading-relaxed">
+              “I had an excellent experience with this divorce lawyer firm. From
+              the very beginning, they were professional, responsive, and
+              genuinely attentive to my situation. They explained every step of
+              the process clearly and made sure I understood my options, which
+              helped reduce a lot of the stress. What stood out most was their
+              dedication and compassion. They handled my case efficiently while
+              still taking the time to address my concerns and keep me informed.
+              I always felt like my case mattered and that I was in capable
+              hands. Thanks to their hard work, everything was resolved smoothly
+              and fairly.” 
+            </p>
+            <p className="mt-3 text-sm font-semibold text-mpl-navy">
+              Ron "Bishop" Samurovic
+            </p>
+          </div>
+          <div className="rounded-xl border border-gray-200 p-6 shadow-sm">
+            <p className="text-base text-gray-700 leading-relaxed">
+              “It is difficult enough to go through the divorce process. The
+              overwhelming decision to decide on a firm that is right for you is
+              another decision that may add to the stress. However, Morales
+              Padia Law has been exceptional and I would recommend to anyone in
+              San Antonio who is seeking legal counsel regarding family matters.
+              Their support, understanding, communication, and professionalism
+              throughout this ongoing process have been top notch.”
+            </p>
+            <p className="mt-3 text-sm font-semibold text-mpl-navy">Heather</p>
+          </div>
+        </div>
+      </section>
+
       <div className="bg-gray-50">
         <TestimonialsComponent />
       </div>

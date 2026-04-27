@@ -1,29 +1,39 @@
 import TrishaImg from "../../assets/team/UF9A2215-Edit-Edit.jpg";
 import DorothyImg from "../../assets/team/Dorothy1 UF9A2316-Edit-2.jpg";
+import PaulaPerezImg from "../../assets/team/PaulaPerezHeadshot.jpg";
 import AllysonImg from "../../assets/team/Allyson1 UF9A2325-Edit-2.jpg";
 import CameronImg from "../../assets/team/Cameron1 UF9A2310-Edit-2.jpg";
 import VeronicaImg from "../../assets/team/veronica.jpeg";
 import ElenaImg from "../../assets/team/Elena1 UF9A2289-Edit-2.jpg";
 import AlexandraImg from "../../assets/team/Alexandra1 UF9A2272-Edit-2.jpg";
+import { motion } from "framer-motion";
+import { Gavel } from "lucide-react";
+const Motion = motion;
 
 const MeetOurTeam = () => {
   const teamMembers = [
     {
       name: "Trisha Morales Padia",
-      role: "Founder & CEO",
+      role: "Founder/Educator",
       specialty: "Family Law & Estate Planning",
       image: TrishaImg,
       size: "large",
     },
     {
       name: "Dorothy Dominguez",
-      role: "Family Law Paralegal",
+      role: "Paralegal",
       image: DorothyImg,
       size: "medium",
     },
     {
+      name: "Paula Perez",
+      role: "Attorney",
+      image: PaulaPerezImg,
+      size: "small",
+    },
+    {
       name: "Allyson Gilmore",
-      role: "Accounting Manager",
+      role: "Operations Director",
       image: AllysonImg,
       size: "small",
     },
@@ -41,7 +51,7 @@ const MeetOurTeam = () => {
     },
     {
       name: "Cameron Ozuna",
-      role: "Paralegal/Marketing",
+      role: "Paralegal/Marketing Coordinator",
       image: CameronImg,
       size: "small",
     },
@@ -57,8 +67,59 @@ const MeetOurTeam = () => {
   const otherMembers = teamMembers.slice(1);
 
   return (
-    <section className="py-24 md:py-32 ">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8">
+    <section className="relative overflow-hidden py-24 md:py-32">
+      {/* Animated Background */}
+      <div className="pointer-events-none absolute inset-0">
+        {/* Gradient Background */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(35,67,116,0.05),transparent_45%),radial-gradient(circle_at_85%_20%,rgba(68,117,181,0.05),transparent_48%)]" />
+
+        {/* Floating Background Circles */}
+        <Motion.div
+          className="absolute left-1/4 top-1/3 w-64 h-64 rounded-full bg-mpl-blue/5 blur-3xl"
+          animate={{
+            y: [0, 30, 0],
+            opacity: [0.5, 0.8, 0.5],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <Motion.div
+          className="absolute right-1/4 top-1/2 w-80 h-80 rounded-full bg-mpl-gold/5 blur-3xl"
+          animate={{
+            y: [0, -40, 0],
+            opacity: [0.3, 0.6, 0.3],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+
+        {/* Sceptre Icon - Top Right */}
+        <Motion.div
+          className="absolute right-6 top-12 md:right-16 md:top-16 z-20"
+          animate={{
+            y: [0, -12, 0],
+            rotate: [0, 2, 0, -2, 0],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <Gavel
+            className="w-12 h-12 md:w-16 md:h-16 text-mpl-navy/20"
+            aria-hidden="true"
+          />
+        </Motion.div>
+      </div>
+
+      <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16 md:mb-20">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-mpl-navy mb-4 leading-tight">
             Meet Our Team

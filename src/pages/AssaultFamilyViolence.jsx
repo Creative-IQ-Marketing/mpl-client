@@ -1,0 +1,378 @@
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  Phone,
+  Shield,
+  Users,
+  AlertTriangle,
+  FileText,
+  Gavel,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import CleanServiceHero from "../components/CleanServiceHero";
+
+const AssaultFamilyViolence = () => {
+  return (
+    <div className="bg-gray-50 min-h-screen">
+      <CleanServiceHero
+        title="Assault & Family Violence Lawyer in San Antonio"
+        subtitle="Defense against assault and family violence charges."
+        opening={[
+          "An accusation of assault or family violence can escalate quickly and affect every part of your life.",
+          "These cases often involve heightened emotions, conflicting stories, and serious consequences.",
+        ]}
+        infoTitle="What This Means"
+        infoDescription="Assault charges in Texas can range from misdemeanors to felonies, especially when family members are involved. A conviction can impact your record, employment, and custody rights."
+      />
+      <WhyChooseSection />
+      <ProcessSection />
+      <BenefitsSection />
+      <CTABanner />
+      <ContactInfoSection />
+      <FormSection />
+    </div>
+  );
+};
+
+const HeroSection = () => {
+  const { scrollY } = useScroll();
+  const y1 = useTransform(scrollY, [0, 500], [0, 200]);
+
+  return (
+    <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-mpl-navy text-white">
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1589519160732-57fc498494f8?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+
+      <motion.div
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.3, 0.5, 0.3],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute top-1/4 left-1/4 w-96 h-96 bg-mpl-blue/30 rounded-full blur-[100px] mix-blend-screen"
+      />
+
+      <div className="container-custom relative z-10 text-left">
+        <motion.div
+          style={{ y: y1 }}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif leading-tight mb-6 text-white drop-shadow-xl">
+            Assault & Family Violence Defense
+          </h1>
+          <h2 className="text-xl md:text-2xl text-white/90 font-semibold mb-4">
+            Defending Your Rights Against Assault Charges
+          </h2>
+          <p className="text-lg md:text-xl lg:text-2xl text-gray-100 max-w-2xl font-light leading-relaxed drop-shadow-md">
+            An accusation of assault or family violence can escalate quickly and
+            affect every part of your life. These cases often involve heightened
+            emotions, conflicting stories, and serious consequences. We approach
+            these cases with strategy and awareness of the bigger picture.
+          </p>
+          <div className="mt-8 flex items-center gap-4">
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 bg-mpl-blue text-white px-6 py-3 rounded-full font-bold shadow-lg hover:bg-mpl-lightBlue transition-all"
+            >
+              <Shield size={18} /> Schedule Consultation
+            </Link>
+            <a
+              href="tel:7262044044"
+              className="inline-flex items-center gap-2 border border-white/60 text-white px-6 py-3 rounded-full font-bold hover:bg-white/10 transition-all"
+            >
+              <Phone size={18} /> Call (726) 204-4044
+            </a>
+          </div>
+        </motion.div>
+      </div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer z-20"
+        onClick={() =>
+          window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
+        }
+      >
+        <span className="text-sm font-light tracking-widest uppercase text-white/80">
+          Scroll Down
+        </span>
+        <ChevronDown className="w-5 h-5 animate-bounce text-white/60" />
+      </motion.div>
+    </section>
+  );
+};
+
+const WhyChooseSection = () => {
+  const features = [
+    {
+      icon: Users,
+      title: "Emotional Intelligence",
+      desc: "We understand the heightened emotions and pressure in assault cases and handle them with sensitivity and strategy.",
+    },
+    {
+      icon: FileText,
+      title: "Evidence Investigation",
+      desc: "We thoroughly investigate circumstances, challenge evidence, and identify inconsistencies in the allegations.",
+    },
+    {
+      icon: Gavel,
+      title: "Strategic Representation",
+      desc: "We advocate for reduced or dismissed charges while protecting your freedom, reputation, and custody rights.",
+    },
+    {
+      icon: AlertTriangle,
+      title: "Protective Order Defense",
+      desc: "Many assault cases involve protective order complications. We handle both the criminal and civil aspects.",
+    },
+    {
+      icon: Shield,
+      title: "Rights Protection",
+      desc: "We ensure your constitutional rights are protected throughout the investigation and court process.",
+    },
+    {
+      icon: Phone,
+      title: "Immediate Action",
+      desc: "We respond quickly to assess the situation and take early action to minimize consequences.",
+    },
+  ];
+
+  return (
+    <section className="py-24 bg-white">
+      <div className="container-custom">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-mpl-navy mb-6">
+            Why We're Different
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Assault charges require strategic thinking and emotional
+            intelligence. We bring both.
+          </p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="p-8 bg-gray-50 rounded-lg border border-gray-200 hover:border-mpl-blue hover:shadow-lg transition-all"
+            >
+              <feature.icon className="w-12 h-12 text-mpl-blue mb-4" />
+              <h3 className="text-xl font-bold text-mpl-navy mb-3">
+                {feature.title}
+              </h3>
+              <p className="text-gray-600">{feature.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const ProcessSection = () => {
+  const steps = [
+    {
+      title: "Immediate Assessment",
+      desc: "We quickly evaluate the charges, circumstances, and potential defenses.",
+    },
+    {
+      title: "Evidence Review",
+      desc: "We examine all evidence, witness statements, and police reports for inconsistencies.",
+    },
+    {
+      title: "Strategy Development",
+      desc: "We develop a comprehensive defense strategy addressing both criminal charges and related issues.",
+    },
+    {
+      title: "Protective Order Handling",
+      desc: "We address any protective orders or related civil matters impacting your case.",
+    },
+    {
+      title: "Negotiation & Court",
+      desc: "We pursue dismissals, reductions, or defend you aggressively at trial.",
+    },
+    {
+      title: "Future Protection",
+      desc: "We work to minimize long-term consequences and protect your record and custody rights.",
+    },
+  ];
+
+  return (
+    <section className="py-24 bg-mpl-navy text-white">
+      <div className="container-custom">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">
+            Our Defense Process
+          </h2>
+          <p className="text-lg text-gray-200 max-w-2xl mx-auto">
+            A clear, strategic approach to your defense
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {steps.map((step, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="p-6 border border-mpl-blue/30 rounded-lg hover:bg-mpl-blue/10 transition-all"
+            >
+              <div className="text-3xl font-bold text-mpl-blue mb-3">
+                {index + 1}
+              </div>
+              <h3 className="text-xl font-bold mb-2">{step.title}</h3>
+              <p className="text-gray-300">{step.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const BenefitsSection = () => {
+  const benefits = [
+    "Reduction or dismissal of charges",
+    "Protection of your freedom and rights",
+    "Preservation of custody arrangements",
+    "Minimized impact on employment",
+    "Strategic handling of related protective orders",
+    "Faster resolution when possible",
+  ];
+
+  return (
+    <section className="py-24 bg-white">
+      <div className="container-custom">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-mpl-navy mb-6">
+            What We Help You Achieve
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            These are the outcomes we work toward on your behalf
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          {benefits.map((benefit, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="flex items-start gap-4 p-4 rounded-lg hover:bg-gray-50 transition-all"
+            >
+              <Shield className="w-6 h-6 text-mpl-blue flex-shrink-0 mt-1" />
+              <p className="text-lg text-gray-700">{benefit}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const CTABanner = () => {
+  return (
+    <section className="py-16 bg-gradient-to-r from-mpl-navy to-mpl-blue text-white">
+      <div className="container-custom text-center">
+        <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
+          If you're facing an assault allegation, get guidance early
+        </h2>
+        <p className="text-lg text-gray-100 mb-8 max-w-2xl mx-auto">
+          The decisions you make now can significantly impact your future.
+        </p>
+        <Link
+          to="/contact"
+          className="inline-flex items-center gap-2 bg-white text-mpl-navy px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all shadow-lg"
+        >
+          <Shield size={20} /> Schedule Your Consultation
+        </Link>
+      </div>
+    </section>
+  );
+};
+
+const ContactInfoSection = () => {
+  return (
+    <section className="py-16 bg-gray-50">
+      <div className="container-custom">
+        <div className="grid md:grid-cols-3 gap-8 text-center">
+          <div>
+            <Phone className="w-8 h-8 text-mpl-blue mx-auto mb-3" />
+            <h3 className="font-bold text-lg text-mpl-navy mb-2">Call Us</h3>
+            <a
+              href="tel:7262044044"
+              className="text-mpl-blue hover:text-mpl-lightBlue font-semibold"
+            >
+              (726) 204-4044
+            </a>
+          </div>
+          <div>
+            <FileText className="w-8 h-8 text-mpl-blue mx-auto mb-3" />
+            <h3 className="font-bold text-lg text-mpl-navy mb-2">Available</h3>
+            <p className="text-gray-600">24/7 for urgent matters</p>
+          </div>
+          <div>
+            <AlertTriangle className="w-8 h-8 text-mpl-blue mx-auto mb-3" />
+            <h3 className="font-bold text-lg text-mpl-navy mb-2">Response</h3>
+            <p className="text-gray-600">Same-day consultations available</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const FormSection = () => {
+  return (
+    <section className="py-24 bg-white">
+      <div className="container-custom max-w-2xl">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-mpl-navy mb-4">
+            Get Started Today
+          </h2>
+          <p className="text-gray-600">
+            Reach out to discuss your case and learn how we can help.
+          </p>
+        </div>
+        <div className="bg-gray-50 p-8 rounded-lg border border-gray-200">
+          <p className="text-center text-gray-600 mb-6">
+            Please call us at{" "}
+            <a
+              href="tel:7262044044"
+              className="text-mpl-blue hover:text-mpl-lightBlue font-bold"
+            >
+              (726) 204-4044
+            </a>{" "}
+            or fill out our contact form to get in touch.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const ChevronDown = ({ className }) => (
+  <svg
+    className={className}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M19 14l-7 7m0 0l-7-7m7 7V3"
+    />
+  </svg>
+);
+
+export default AssaultFamilyViolence;

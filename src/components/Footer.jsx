@@ -30,17 +30,23 @@ const Footer = () => {
 
           {/* Links 1 */}
           <div>
-            <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">
+            <h3 className="text-xs font-bold text-white uppercase tracking-widest mb-4">
               Firm
             </h3>
             <ul className="space-y-2">
-              {["About", "Team", "Careers", "Contact"].map((item) => (
-                <li key={item}>
+              {[
+                { label: "About", to: "/about" },
+                { label: "Team", to: "/about" },
+                { label: "Credentials", to: "/partners" },
+                { label: "Contact", to: "/contact" },
+                { label: "Testimonials", to: "/testimonials" },
+              ].map((item) => (
+                <li key={item.label}>
                   <Link
-                    to="#"
+                    to={item.to}
                     className="text-gray-300 hover:text-white transition-colors"
                   >
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}
@@ -49,22 +55,22 @@ const Footer = () => {
 
           {/* Links 2 */}
           <div>
-            <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">
-              Practice Areas
+            <h3 className="text-xs font-bold text-white uppercase tracking-widest mb-4">
+              How We Help You
             </h3>
             <ul className="space-y-2">
               {[
-                "Family Law",
-                "Criminal Defense",
-                "Estate Planning",
-                "Probate",
+                { label: "Family Law", to: "/family-law" },
+                { label: "Criminal Defense", to: "/criminal-defense" },
+                { label: "Estate Planning", to: "/estate-planning" },
+                { label: "Probate", to: "/probate-law" },
               ].map((item) => (
-                <li key={item}>
+                <li key={item.label}>
                   <Link
-                    to="#"
+                    to={item.to}
                     className="text-gray-300 hover:text-white transition-colors"
                   >
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}
@@ -73,7 +79,7 @@ const Footer = () => {
 
           {/* Contact - Compact */}
           <div>
-            <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">
+            <h3 className="text-xs font-bold text-white uppercase tracking-widest mb-4">
               San Antonio Office
             </h3>
             <div className="space-y-1 text-gray-300">
@@ -95,15 +101,21 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-300">
           <p>&copy; {new Date().getFullYear()} Morales Padia Law PLLC.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">
+            <Link to="/privacy" className="hover:text-white transition-colors">
               Privacy
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
+            </Link>
+            <Link to="/terms" className="hover:text-white transition-colors">
               Terms
-            </a>
+            </Link>
+            <Link
+              to="/newsletter/unsubscribe"
+              className="hover:text-white transition-colors"
+            >
+              Unsubscribe
+            </Link>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import TrishaImg from "../assets/team/UF9A2215-Edit-Edit.jpg";
 import DorothyImg from "../assets/team/Dorothy1 UF9A2316-Edit-2.jpg";
+import PaulaPerezImg from "../assets/team/PaulaPerezHeadshot.jpg";
 import AllysonImg from "../assets/team/Allyson1 UF9A2325-Edit-2.jpg";
 import CameronImg from "../assets/team/Cameron1 UF9A2310-Edit-2.jpg";
 import VeronicaImg from "../assets/team/veronica.jpeg";
@@ -10,7 +11,7 @@ export const teamMembers = [
   {
     id: "trisha-morales-padia",
     name: "Trisha Morales Padia",
-    role: "Founder & CEO",
+    role: "Founder/Educator",
     image: TrishaImg,
     headline: "Strategic Advocacy & Compassionate Guidance",
     bio: [
@@ -57,9 +58,18 @@ export const teamMembers = [
     ]
   },
   {
+    id: "paula-perez",
+    name: "Paula Perez",
+    role: "Attorney",
+    image: PaulaPerezImg,
+    headline: "",
+    bio: [],
+    footerTitles: [],
+  },
+  {
     id: "allyson-gilmore",
     name: "Allyson Gilmore",
-    role: "Accounting",
+    role: "Operations Director",
     image: AllysonImg,
     headline: "Precision, Transparency, and Client Care",
     bio: [
