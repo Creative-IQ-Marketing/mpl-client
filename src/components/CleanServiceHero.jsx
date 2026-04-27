@@ -10,8 +10,8 @@ const CleanServiceHero = ({
   return (
     <section className="pt-24 pb-12 bg-white mt-20">
       <div className="container-custom text-center">
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-mpl-navy leading-tight max-w-4xl mx-auto">
-          {title}
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-mpl-navy leading-tight max-w-4xl mx-auto" style={{ wordBreak: "keep-all" }}>
+          {title?.replace(/San Antonio/g, "San\u00A0Antonio") || ""}
         </h1>
         {subtitle && (
           <p className="mt-4 text-gray-600 text-lg max-w-2xl mx-auto">
