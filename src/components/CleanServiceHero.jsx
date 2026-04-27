@@ -1,5 +1,25 @@
 import React from "react";
 
+
+const protectProperNouns = (text) => {
+  if (!text) return "";
+  const regex = /([A-Z][a-z]+(?:\s[A-Z][a-z]+)+)/g;
+  const parts = [];
+  let last = 0;
+  let match;
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > last) parts.push(text.slice(last, match.index));
+    parts.push(
+      <span key={match.index} style={{ whiteSpace: "nowrap" }}>
+        {match[0]}
+      </span>
+    );
+    last = match.index + match[0].length;
+  }
+  if (last < text.length) parts.push(text.slice(last));
+  return parts.length === 1 && typeof parts[0] === "string" ? parts[0] : parts;
+};
+
 const CleanServiceHero = ({
   title,
   subtitle,
@@ -10,8 +30,11 @@ const CleanServiceHero = ({
   return (
     <section className="pt-24 pb-12 bg-white mt-20">
       <div className="container-custom text-center">
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-mpl-navy leading-tight max-w-4xl mx-auto" style={{ wordBreak: "keep-all" }}>
-          {title?.replace(/San Antonio/g, "San\u00A0Antonio") || ""}
+        <h1
+          className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-mpl-navy leading-tight max-w-4xl mx-auto"
+          style={{ overflowWrap: "normal", wordBreak: "normal", hyphens: "none" }}
+        >
+          {protectProperNouns(title)}
         </h1>
         {subtitle && (
           <p className="mt-4 text-gray-600 text-lg max-w-2xl mx-auto">
