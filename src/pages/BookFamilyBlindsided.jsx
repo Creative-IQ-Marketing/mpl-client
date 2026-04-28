@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-const Motion = motion;
 import {
   ArrowRight,
   CheckCircle,
@@ -8,8 +7,12 @@ import {
   Users,
   BookOpen,
   Star,
+  Download,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+
+const PDF_PATH = "/Family_Blindsided_.pdf";
+const PDF_FILENAME = "Family_Blindsided_by_Trisha_Morales_Padia.pdf";
 
 const BookFamilyBlindsided = () => {
   return (
@@ -40,7 +43,7 @@ const Hero = () => {
             </span>
           </div>
           <h1
-            className="text-5xl md:text-6xl font-serif font-bold text-mpl-navy leading-tight mb-6"
+            className="text-3xl md:text-3xl font-serif font-bold text-mpl-navy leading-tight mb-6"
             style={{ wordBreak: "break-word", overflowWrap: "break-word" }}
           >
             Helping families stay connected, not conflicted
@@ -65,17 +68,19 @@ const Hero = () => {
           </div>
           <div className="flex flex-col sm:flex-row gap-3">
             <a
-              href="#highlights"
+              href={PDF_PATH}
+              download={PDF_FILENAME}
               className="inline-flex items-center justify-center gap-2 bg-mpl-navy text-white hover:bg-mpl-blue px-8 py-3 rounded-lg text-sm font-semibold transition-colors"
+            >
+              <Download size={16} />
+              Download Free PDF
+            </a>
+            <a
+              href="#highlights"
+              className="inline-flex items-center justify-center gap-2 border border-gray-300 text-mpl-navy hover:border-gray-400 px-8 py-3 rounded-lg text-sm font-semibold transition-colors"
             >
               View Highlights <ArrowRight size={16} />
             </a>
-            <Link
-              to="/contact?book=Family%20Blindsided"
-              className="inline-flex items-center justify-center gap-2 border border-gray-300 text-mpl-navy hover:border-gray-400 px-8 py-3 rounded-lg text-sm font-semibold transition-colors"
-            >
-              Contact Us
-            </Link>
           </div>
         </motion.div>
       </div>
@@ -254,18 +259,28 @@ const CTA = () => {
           className="max-w-2xl mx-auto"
         >
           <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-white">
-            Get Book
+            Get the Book — Free
           </h2>
-          <p className="text-lg text-white/80 mb-8">
-            Get practical, clear guidance for navigating family transitions with
-            clarity and peace of mind.
+          <p className="text-lg text-white/80 mb-10">
+            Download your copy now and get practical, clear guidance for
+            navigating family transitions with confidence and peace of mind.
           </p>
-          <Link
-            to="/contact?book=Family%20Blindsided"
-            className="inline-flex items-center justify-center gap-2 bg-white text-mpl-navy hover:bg-mpl-gold px-8 py-4 rounded-lg font-bold transition-colors"
-          >
-            Get Your Copy <ArrowRight size={18} />
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href={PDF_PATH}
+              download={PDF_FILENAME}
+              className="inline-flex items-center justify-center gap-2 bg-white text-mpl-navy hover:bg-mpl-gold px-10 py-4 rounded-lg font-bold transition-colors text-base"
+            >
+              <Download size={18} />
+              Download Free PDF
+            </a>
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center gap-2 border border-white/40 text-white hover:border-white px-10 py-4 rounded-lg font-semibold transition-colors text-base"
+            >
+              Questions? Contact Us <ArrowRight size={16} />
+            </Link>
+          </div>
         </motion.div>
       </div>
     </section>
