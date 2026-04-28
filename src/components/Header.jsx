@@ -210,7 +210,7 @@ const Header = () => {
           <div className="flex items-center">
             <a
               href="tel:7262044044"
-              className={`flex items-center text-sm md:text-base font-semibold transition-colors ${
+              className={`flex items-center text-md md:text-base font-semibold transition-colors ${
                 isHome
                   ? isScrolled
                     ? "text-mpl-navy hover:text-mpl-blue"
@@ -236,7 +236,7 @@ const Header = () => {
                 isHome
                   ? isScrolled
                     ? "h-14 md:h-16 lg:h-24"
-                    : "h-20 md:h-24 lg:h-28"
+                    : "h-20 md:h-24 lg:h-28 drop-shadow-[0_2px_8px_rgba(255,255,255,0.85)] brightness-145"
                   : "h-14 md:h-16 lg:h-24"
               }`}
             />

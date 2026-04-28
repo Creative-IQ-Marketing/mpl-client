@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Disallow admin, utility, and non-public pages
+Disallow: /style-guide
+Disallow: /newsletter-unsubscribe
+
+# Sitemap location
+Sitemap: https://www.moralespadialaw.com/sitemap.xml
+
+# Crawl delay for courtesy
+Crawl-delay: 1

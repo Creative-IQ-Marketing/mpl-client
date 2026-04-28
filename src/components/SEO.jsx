@@ -3,7 +3,7 @@ import { useEffect } from "react";
 export default function SEO({
   title = "Morales Padia Law | San Antonio Family Law, Estate Planning & Criminal Defense",
   description = "San Antonio and Bexar County attorneys for family law (divorce, custody, child support), estate planning (wills, trusts, power of attorney), probate, and criminal defense (DWI). Serving New Braunfels, Boerne, and surrounding areas.",
-  keywords = "San Antonio family law attorney, family lawyer San Antonio, divorce lawyer San Antonio, child custody attorney, child support attorney, spousal maintenance, SAPCR, adoption attorney, protective orders, estate planning attorney San Antonio, New Braunfels, Boerne, Bexar County Guadalupe County, wills, trusts, power of attorney, probate lawyer San Antonio, criminal defense attorney San Antonio, DWI lawyer, domestic violence defense, expungement, record sealing",
+  keywords = "Morales Padia Law, San Antonio family law attorney, divorce lawyer San Antonio TX, child custody attorney San Antonio, child support attorney Bexar County, spousal maintenance attorney San Antonio, SAPCR attorney Texas, adoption attorney San Antonio, protective order lawyer San Antonio, estate planning attorney San Antonio TX, wills and trusts attorney San Antonio, power of attorney lawyer Texas, probate attorney San Antonio TX, probate lawyer Bexar County, criminal defense attorney San Antonio TX, DWI attorney San Antonio, domestic violence defense lawyer, expungement attorney San Antonio, record sealing Texas, New Braunfels attorney, Boerne TX attorney, award-winning attorney San Antonio",
   ogImage = "/mpl_logo.png",
   canonical = window.location.origin + window.location.pathname,
   pageType = "website",
@@ -65,6 +65,16 @@ export default function SEO({
         content: "black-translucent",
       },
       { name: "format-detection", content: "telephone=no" },
+      // Geo / Local SEO signals
+      { name: "geo.region", content: "US-TX" },
+      { name: "geo.placename", content: "San Antonio, Texas" },
+      { name: "geo.position", content: "29.5194;-98.4815" },
+      { name: "ICBM", content: "29.5194, -98.4815" },
+      { name: "DC.title", content: title },
+      { name: "DC.language", content: "en-US" },
+      // Page classification
+      { name: "classification", content: "Legal Services" },
+      { name: "category", content: "Attorney, Lawyer, San Antonio TX" },
     ];
 
     metaTags.forEach(({ name, property, content }) => {
