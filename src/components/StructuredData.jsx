@@ -163,7 +163,11 @@ export default function StructuredData() {
         },
       ],
       areaServed: [
-        { "@type": "City", name: "San Antonio", containedInPlace: { "@type": "State", name: "Texas" } },
+        {
+          "@type": "City",
+          name: "San Antonio",
+          containedInPlace: { "@type": "State", name: "Texas" },
+        },
         { "@type": "AdministrativeArea", name: "Bexar County" },
         { "@type": "City", name: "New Braunfels" },
         { "@type": "City", name: "Boerne" },
@@ -315,18 +319,89 @@ export default function StructuredData() {
       "@context": "https://schema.org",
       "@type": "ItemList",
       name: "Legal Services at Morales Padia Law",
-      description: "Full-service San Antonio law firm offering family law, estate planning, probate, and criminal defense.",
+      description:
+        "Full-service San Antonio law firm offering family law, estate planning, probate, and criminal defense.",
       itemListElement: [
-        { "@type": "Service", position: 1, name: "Contested Divorce", description: "Aggressive representation for complex divorces involving property, custody, and support disputes in San Antonio TX.", provider: { "@type": "Organization", name: "Morales Padia Law" } },
-        { "@type": "Service", position: 2, name: "Uncontested Divorce", description: "Affordable flat fee uncontested divorce attorney in San Antonio TX.", provider: { "@type": "Organization", name: "Morales Padia Law" } },
-        { "@type": "Service", position: 3, name: "Child Custody", description: "SAPCR and child custody representation protecting your parental rights in Bexar County.", provider: { "@type": "Organization", name: "Morales Padia Law" } },
-        { "@type": "Service", position: 4, name: "Child Support", description: "Child support establishment, modification, and enforcement in San Antonio TX.", provider: { "@type": "Organization", name: "Morales Padia Law" } },
-        { "@type": "Service", position: 5, name: "DWI Defense", description: "Aggressive DWI defense attorney in San Antonio TX for first offense and felony DWI charges.", provider: { "@type": "Organization", name: "Morales Padia Law" } },
-        { "@type": "Service", position: 6, name: "Estate Planning", description: "Wills, trusts, power of attorney, and advance directives from a San Antonio estate planning attorney.", provider: { "@type": "Organization", name: "Morales Padia Law" } },
-        { "@type": "Service", position: 7, name: "Probate Law", description: "Probate administration and litigation from a Bexar County probate attorney.", provider: { "@type": "Organization", name: "Morales Padia Law" } },
-        { "@type": "Service", position: 8, name: "Expungement & Record Sealing", description: "Clear your criminal record with an expunction or order of nondisclosure in Texas.", provider: { "@type": "Organization", name: "Morales Padia Law" } },
-        { "@type": "Service", position: 9, name: "Protective Orders", description: "Protective order attorney in San Antonio TX for family violence victims and defense.", provider: { "@type": "Organization", name: "Morales Padia Law" } },
-        { "@type": "Service", position: 10, name: "Adoption", description: "Stepparent and private adoption attorney in San Antonio TX.", provider: { "@type": "Organization", name: "Morales Padia Law" } },
+        {
+          "@type": "Service",
+          position: 1,
+          name: "Contested Divorce",
+          description:
+            "Aggressive representation for complex divorces involving property, custody, and support disputes in San Antonio TX.",
+          provider: { "@type": "Organization", name: "Morales Padia Law" },
+        },
+        {
+          "@type": "Service",
+          position: 2,
+          name: "Uncontested Divorce",
+          description:
+            "Affordable flat fee uncontested divorce attorney in San Antonio TX.",
+          provider: { "@type": "Organization", name: "Morales Padia Law" },
+        },
+        {
+          "@type": "Service",
+          position: 3,
+          name: "Child Custody",
+          description:
+            "SAPCR and child custody representation protecting your parental rights in Bexar County.",
+          provider: { "@type": "Organization", name: "Morales Padia Law" },
+        },
+        {
+          "@type": "Service",
+          position: 4,
+          name: "Child Support",
+          description:
+            "Child support establishment, modification, and enforcement in San Antonio TX.",
+          provider: { "@type": "Organization", name: "Morales Padia Law" },
+        },
+        {
+          "@type": "Service",
+          position: 5,
+          name: "DWI Defense",
+          description:
+            "Aggressive DWI defense attorney in San Antonio TX for first offense and felony DWI charges.",
+          provider: { "@type": "Organization", name: "Morales Padia Law" },
+        },
+        {
+          "@type": "Service",
+          position: 6,
+          name: "Estate Planning",
+          description:
+            "Wills, trusts, power of attorney, and advance directives from a San Antonio estate planning attorney.",
+          provider: { "@type": "Organization", name: "Morales Padia Law" },
+        },
+        {
+          "@type": "Service",
+          position: 7,
+          name: "Probate Law",
+          description:
+            "Probate administration and litigation from a Bexar County probate attorney.",
+          provider: { "@type": "Organization", name: "Morales Padia Law" },
+        },
+        {
+          "@type": "Service",
+          position: 8,
+          name: "Expungement & Record Sealing",
+          description:
+            "Clear your criminal record with an expunction or order of nondisclosure in Texas.",
+          provider: { "@type": "Organization", name: "Morales Padia Law" },
+        },
+        {
+          "@type": "Service",
+          position: 9,
+          name: "Protective Orders",
+          description:
+            "Protective order attorney in San Antonio TX for family violence victims and defense.",
+          provider: { "@type": "Organization", name: "Morales Padia Law" },
+        },
+        {
+          "@type": "Service",
+          position: 10,
+          name: "Adoption",
+          description:
+            "Stepparent and private adoption attorney in San Antonio TX.",
+          provider: { "@type": "Organization", name: "Morales Padia Law" },
+        },
       ],
     };
 
@@ -342,297 +417,14 @@ export default function StructuredData() {
 
     schemas.forEach((schema, index) => {
       const schemaId = `mpl-schema-${index}`;
-      let script = document.querySelector(`script[data-mpl-schema="${schemaId}"]`);
-
-      if (!script) {
-        script = document.createElement("script");
-        script.type = "application/ld+json";
-        script.setAttribute("data-mpl-schema", schemaId);
-        document.head.appendChild(script);
-      }
-
-      script.textContent = JSON.stringify(schema);
-    });
-  }, []);
-
-  return null;
-}
-
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      name: "Morales Padia Law",
-      url: window.location.origin,
-      description:
-        "San Antonio attorneys for family law, estate planning, probate, and criminal defense.",
-    };
-
-    // Organization Schema
-    const organizationSchema = {
-      "@context": "https://schema.org",
-      "@type": "LegalService",
-      name: "Morales Padia Law",
-      url: window.location.origin,
-      logo: `${window.location.origin}/mpl_logo.png`,
-      image: `${window.location.origin}/mpl_logo.png`,
-      description:
-        "San Antonio attorneys for family law, estate planning, probate, and criminal defense.",
-      telephone: "+1-726-204-4044",
-      contactPoint: {
-        "@type": "ContactPoint",
-        contactType: "Customer Service",
-        telephone: "+1-726-204-4044",
-        availableLanguage: "en",
-      },
-      award: [
-        "Top Family Law Lawyer - San Antonio Scene Magazine (2017)",
-        "Best S.A Female Lawyers - San Antonio Scene Magazine (2021)",
-        "Top DUI/DWI Lawyer - San Antonio Scene Magazine (2023)",
-        "Corporate Excellence Awards - Corporate Vision Magazine (2025)",
-        "Featured Law Firm - City Lifestyle Magazine (2026)",
-        "Top 10 Best Law Firm - Independent Recognition (2025)",
-      ],
-      sameAs: [
-        "https://www.corporatevision-news.com/winners/morales-padia-law-pllc/",
-        "https://citylifestyle.com/businesses/morales-padia-law-pllc-2704869",
-        "https://localestateplannners.com/lawyers/san-antonio-estate-planning-attorney-trisha-morales-padia/",
-      ],
-    };
-
-    // LocalBusiness Schema
-    const localBusinessSchema = {
-      "@context": "https://schema.org",
-      "@type": "LegalService",
-      "@id": window.location.origin,
-      name: "Morales Padia Law",
-      image: `${window.location.origin}/mpl_logo.png`,
-      description:
-        "San Antonio attorneys for family law, estate planning, probate, and criminal defense.",
-      url: window.location.origin,
-      telephone: "+1-726-204-4044",
-      priceRange: "$$",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "45 NE LOOP 410 ste 307",
-        addressLocality: "San Antonio",
-        addressRegion: "TX",
-        postalCode: "78205",
-        addressCountry: "US",
-      },
-      areaServed: [
-        { "@type": "City", name: "San Antonio" },
-        { "@type": "AdministrativeArea", name: "Bexar County" },
-        { "@type": "State", name: "Texas" },
-      ],
-      knowsAbout: [
-        "Family Law",
-        "Divorce",
-        "Child Custody",
-        "Child Support",
-        "SAPCR",
-        "Spousal Maintenance",
-        "Protective Orders",
-        "Adoption",
-        "Criminal Defense",
-        "DWI Defense",
-        "Domestic Violence Defense",
-        "Expungement",
-        "Record Sealing",
-        "Estate Planning",
-        "Wills",
-        "Trusts",
-        "Power of Attorney",
-        "Advance Directives",
-        "Asset Protection",
-        "Probate Law",
-        "Heirship Proceedings",
-        "Muniment of Title",
-        "Probate Litigation",
-        "Estate Affidavits",
-      ],
-    };
-
-    // BreadcrumbList Schema
-    const breadcrumbSchema = {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: window.location.origin,
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "Family Law",
-          item: `${window.location.origin}/family-law`,
-        },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: "Criminal Defense",
-          item: `${window.location.origin}/criminal-defense`,
-        },
-        {
-          "@type": "ListItem",
-          position: 4,
-          name: "Contact",
-          item: `${window.location.origin}/contact`,
-        },
-      ],
-    };
-
-    // Services Schema
-    const servicesSchema = {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      itemListElement: [
-        {
-          "@type": "Service",
-          name: "Divorce",
-          description: "Guidance through contested and uncontested divorce.",
-          provider: {
-            "@type": "Organization",
-            name: "Morales Padia Law",
-          },
-        },
-        {
-          "@type": "Service",
-          name: "Child Custody",
-          description: "Representation for custody and parenting time matters.",
-          provider: {
-            "@type": "Organization",
-            name: "Morales Padia Law",
-          },
-        },
-        {
-          "@type": "Service",
-          name: "Child Support",
-          description: "Help with child support establishment and enforcement.",
-          provider: {
-            "@type": "Organization",
-            name: "Morales Padia Law",
-          },
-        },
-        {
-          "@type": "Service",
-          name: "Family Law",
-          description:
-            "Compassionate legal representation for divorce, child custody, and family matters.",
-          provider: {
-            "@type": "Organization",
-            name: "Morales Padia Law",
-          },
-        },
-        {
-          "@type": "Service",
-          name: "Criminal Defense",
-          description:
-            "Aggressive defense for DWI, domestic violence, and other criminal charges.",
-          provider: {
-            "@type": "Organization",
-            name: "Morales Padia Law",
-          },
-        },
-        {
-          "@type": "Service",
-          name: "Estate Planning",
-          description:
-            "Comprehensive planning for wills, trusts, and asset protection.",
-          provider: {
-            "@type": "Organization",
-            name: "Morales Padia Law",
-          },
-        },
-        {
-          "@type": "Service",
-          name: "Wills",
-          description: "Drafting wills to protect your family and legacy.",
-          provider: {
-            "@type": "Organization",
-            name: "Morales Padia Law",
-          },
-        },
-        {
-          "@type": "Service",
-          name: "Trusts",
-          description: "Trust planning for long-term protection and control.",
-          provider: {
-            "@type": "Organization",
-            name: "Morales Padia Law",
-          },
-        },
-        {
-          "@type": "Service",
-          name: "Probate Law",
-          description:
-            "Guidance through the probate process and estate administration.",
-          provider: {
-            "@type": "Organization",
-            name: "Morales Padia Law",
-          },
-        },
-        {
-          "@type": "Service",
-          name: "Heirship Proceedings",
-          description:
-            "Determination of legal heirs and title transfer support in probate matters.",
-          provider: {
-            "@type": "Organization",
-            name: "Morales Padia Law",
-          },
-        },
-        {
-          "@type": "Service",
-          name: "Muniment of Title",
-          description:
-            "Streamlined probate option for qualifying estate and property transfers.",
-          provider: {
-            "@type": "Organization",
-            name: "Morales Padia Law",
-          },
-        },
-        {
-          "@type": "Service",
-          name: "Probate Litigation",
-          description:
-            "Representation for will contests, fiduciary disputes, and probate conflict resolution.",
-          provider: {
-            "@type": "Organization",
-            name: "Morales Padia Law",
-          },
-        },
-        {
-          "@type": "Service",
-          name: "Estate Affidavits",
-          description:
-            "Assistance with small estate affidavits and related transfer documentation.",
-          provider: {
-            "@type": "Organization",
-            name: "Morales Padia Law",
-          },
-        },
-      ],
-    };
-
-    const schemas = [
-      websiteSchema,
-      organizationSchema,
-      localBusinessSchema,
-      breadcrumbSchema,
-      servicesSchema,
-    ];
-
-    schemas.forEach((schema) => {
       let script = document.querySelector(
-        `script[data-schema-type="${schema["@type"]}"]`,
+        `script[data-mpl-schema="${schemaId}"]`,
       );
 
       if (!script) {
         script = document.createElement("script");
         script.type = "application/ld+json";
-        script.setAttribute("data-schema-type", schema["@type"]);
+        script.setAttribute("data-mpl-schema", schemaId);
         document.head.appendChild(script);
       }
 

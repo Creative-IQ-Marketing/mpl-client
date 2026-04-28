@@ -106,7 +106,8 @@ function RouteSEO() {
 
     // ─── ABOUT ──────────────────────────────────────────────────────────
     "/firm-overview": {
-      title: "Firm Overview | Award-Winning San Antonio Law Firm | Morales Padia Law",
+      title:
+        "Firm Overview | Award-Winning San Antonio Law Firm | Morales Padia Law",
       description:
         "Learn about Morales Padia Law — a women-led, award-winning San Antonio law firm. Top-rated attorneys for family law, estate planning, probate, and criminal defense in Bexar County.",
       keywords:
@@ -150,7 +151,8 @@ function RouteSEO() {
         "child support attorney San Antonio TX, child support lawyer San Antonio, establish child support Texas, modify child support San Antonio, enforce child support Bexar County, child support arrears attorney Texas, child support calculation Texas, child support enforcement San Antonio, how much is child support in Texas, Texas child support guidelines",
     },
     "/child-visitation-possession": {
-      title: "Child Visitation & Possession Attorney San Antonio | Morales Padia Law",
+      title:
+        "Child Visitation & Possession Attorney San Antonio | Morales Padia Law",
       description:
         "San Antonio attorney for child visitation, possession schedules, and parenting time disputes. Standard possession orders, expanded schedules, and enforcement in Bexar County.",
       keywords:
@@ -171,7 +173,8 @@ function RouteSEO() {
         "contested divorce attorney San Antonio TX, contested divorce lawyer Bexar County, high-conflict divorce attorney San Antonio, divorce lawyer San Antonio TX, property division divorce attorney, custody dispute divorce lawyer San Antonio, divorce trial attorney Texas, best divorce attorney San Antonio, divorce litigation attorney Texas, marital property dispute lawyer",
     },
     "/flat-fee-divorce": {
-      title: "Flat Fee Divorce Lawyer San Antonio | Affordable Divorce | Morales Padia Law",
+      title:
+        "Flat Fee Divorce Lawyer San Antonio | Affordable Divorce | Morales Padia Law",
       description:
         "Flat fee divorce attorney in San Antonio TX — clear, upfront pricing for uncontested divorces. No hidden costs. Serving couples in Bexar County who want a smooth, cost-effective divorce.",
       keywords:
@@ -199,14 +202,16 @@ function RouteSEO() {
         "name change attorney San Antonio TX, legal name change lawyer Texas, name change petition Bexar County, how to change your name in Texas, name change after divorce Texas, name change after marriage Texas, adult name change attorney San Antonio, child name change lawyer Texas",
     },
     "/modification-of-previous-order": {
-      title: "Modify Custody or Support Orders San Antonio TX | Morales Padia Law",
+      title:
+        "Modify Custody or Support Orders San Antonio TX | Morales Padia Law",
       description:
         "San Antonio modification attorney for changing child custody, visitation, or child support orders. When circumstances change, we help you update your court orders in Bexar County.",
       keywords:
         "modification attorney San Antonio TX, modify custody order Texas, modify child support San Antonio, modification of SAPCR order, custody modification lawyer Bexar County, change child support order Texas, modification of visitation order San Antonio, material change in circumstances Texas, how to modify a court order in Texas",
     },
     "/enforcement": {
-      title: "Enforcement of Court Orders Attorney San Antonio | Morales Padia Law",
+      title:
+        "Enforcement of Court Orders Attorney San Antonio | Morales Padia Law",
       description:
         "San Antonio enforcement attorney when the other party violates court orders for child support, custody, or visitation. We pursue contempt and enforcement actions in Bexar County.",
       keywords:
@@ -241,7 +246,8 @@ function RouteSEO() {
         "postnuptial agreement lawyer San Antonio TX, postnup attorney Texas, marital agreement after marriage San Antonio, postmarital agreement lawyer Bexar County, marital property agreement Texas, protect assets in marriage Texas, postnuptial agreement validity Texas",
     },
     "/paternity-fathers-rights": {
-      title: "Paternity & Father's Rights Attorney San Antonio TX | Morales Padia Law",
+      title:
+        "Paternity & Father's Rights Attorney San Antonio TX | Morales Padia Law",
       description:
         "San Antonio paternity and father's rights attorney. We fight for fathers' rights to custody, visitation, and meaningful relationships with their children in Bexar County.",
       keywords:
@@ -255,7 +261,8 @@ function RouteSEO() {
         "grandparents rights attorney San Antonio TX, grandparent visitation rights Texas, grandparent custody attorney San Antonio, can grandparents get custody in Texas, grandparent visitation order Bexar County, grandparents rights lawyer Texas, third-party custody Texas",
     },
     "/emergency-custody-orders": {
-      title: "Emergency Custody Order Attorney San Antonio TX | Morales Padia Law",
+      title:
+        "Emergency Custody Order Attorney San Antonio TX | Morales Padia Law",
       description:
         "Urgent emergency custody attorney in San Antonio TX. We file emergency SAPCR orders, temporary restraining orders, and ex parte motions when children are at risk in Bexar County.",
       keywords:
@@ -278,21 +285,24 @@ function RouteSEO() {
         "criminal defense attorney San Antonio TX, criminal lawyer San Antonio, best criminal defense attorney Bexar County, criminal defense lawyer Texas, felony attorney San Antonio, misdemeanor attorney San Antonio TX, DWI defense lawyer San Antonio, drug charges defense attorney Texas, assault defense attorney San Antonio, how to beat criminal charges in Texas",
     },
     "/dwi": {
-      title: "DWI Attorney San Antonio TX | Aggressive DWI Defense | Morales Padia Law",
+      title:
+        "DWI Attorney San Antonio TX | Aggressive DWI Defense | Morales Padia Law",
       description:
         "Aggressive San Antonio DWI attorney with a proven track record. First offense DWI, felony DWI, license suspension, ALR hearings, and sobriety test challenges in Bexar County. Call now.",
       keywords:
         "DWI attorney San Antonio TX, DWI lawyer San Antonio, drunk driving defense attorney Texas, DUI attorney San Antonio, first offense DWI San Antonio, DWI felony defense Texas, ALR hearing attorney San Antonio, DWI license suspension Texas, field sobriety test challenge, breathalyzer attorney Texas, intoxication assault defense, intoxication manslaughter attorney San Antonio, best DWI lawyer San Antonio TX",
     },
     "/domestic-violence": {
-      title: "Domestic Violence Defense Attorney San Antonio TX | Morales Padia Law",
+      title:
+        "Domestic Violence Defense Attorney San Antonio TX | Morales Padia Law",
       description:
         "Skilled domestic violence defense attorney in San Antonio TX. Fight domestic assault charges, family violence allegations, and protective order violations in Bexar County. Protect your rights.",
       keywords:
         "domestic violence defense attorney San Antonio TX, domestic assault attorney San Antonio, family violence defense lawyer Texas, assault family violence Bexar County, fight domestic violence charges Texas, domestic violence false accusation attorney San Antonio, domestic violence protective order defense, continuous violence against family Texas, domestic violence first offense Texas",
     },
     "/assault-family-violence": {
-      title: "Assault & Family Violence Attorney San Antonio TX | Morales Padia Law",
+      title:
+        "Assault & Family Violence Attorney San Antonio TX | Morales Padia Law",
       description:
         "San Antonio assault and family violence defense attorney. We challenge assault charges, affirmative findings, and family violence enhancements in Bexar County courts.",
       keywords:
@@ -306,7 +316,8 @@ function RouteSEO() {
         "drug charges attorney San Antonio TX, drug possession defense lawyer Texas, drug delivery defense attorney San Antonio, controlled substance defense Bexar County, marijuana charges defense Texas, cocaine possession attorney San Antonio, methamphetamine charges lawyer Texas, drug trafficking attorney San Antonio TX, drug paraphernalia charges Texas, first-time drug offense Texas attorney",
     },
     "/expungement-record-sealing": {
-      title: "Expungement & Record Sealing Attorney San Antonio TX | Morales Padia Law",
+      title:
+        "Expungement & Record Sealing Attorney San Antonio TX | Morales Padia Law",
       description:
         "San Antonio expungement and record sealing attorney. Clear your criminal record with an expunction or order of nondisclosure in Texas. Regain employment, housing, and freedom. Call (726) 204-4044.",
       keywords:
@@ -334,28 +345,32 @@ function RouteSEO() {
         "probation violation attorney San Antonio TX, probation revocation lawyer Texas, motion to revoke probation defense San Antonio, probation violation hearing attorney Bexar County, MTR attorney San Antonio, felony probation violation Texas, avoid probation revocation attorney, community supervision violation attorney",
     },
     "/theft-property-crimes": {
-      title: "Theft & Property Crimes Defense San Antonio TX | Morales Padia Law",
+      title:
+        "Theft & Property Crimes Defense San Antonio TX | Morales Padia Law",
       description:
         "San Antonio theft and property crimes defense attorney. We fight shoplifting, theft, burglary, robbery, and fraud charges in Bexar County. Protect your record.",
       keywords:
         "theft attorney San Antonio TX, property crimes defense lawyer Texas, shoplifting attorney San Antonio, burglary defense attorney Bexar County, robbery defense lawyer Texas, theft by check San Antonio, organized retail theft attorney, fraud charges defense San Antonio TX, theft felony defense Texas",
     },
     "/under-investigation": {
-      title: "Under Investigation? Pre-Charge Defense Attorney San Antonio | Morales Padia Law",
+      title:
+        "Under Investigation? Pre-Charge Defense Attorney San Antonio | Morales Padia Law",
       description:
         "If you're under criminal investigation in San Antonio TX, call us before charges are filed. Pre-charge defense can prevent an arrest. Representing targets of state and federal investigations in Texas.",
       keywords:
         "under investigation attorney San Antonio TX, pre-charge defense lawyer Texas, criminal investigation defense San Antonio, target of investigation attorney Bexar County, federal investigation defense Texas, grand jury target attorney San Antonio, what to do if under investigation Texas, criminal investigation lawyer",
     },
     "/warrants-arrest": {
-      title: "Warrant & Arrest Defense Attorney San Antonio TX | Morales Padia Law",
+      title:
+        "Warrant & Arrest Defense Attorney San Antonio TX | Morales Padia Law",
       description:
         "San Antonio warrant attorney helping you address outstanding arrest warrants before you're taken into custody. We file motions to quash and negotiate bond in Bexar County.",
       keywords:
         "warrant attorney San Antonio TX, arrest warrant defense lawyer Texas, outstanding warrant attorney Bexar County, quash warrant attorney San Antonio, turn yourself in attorney Texas, bail bond attorney San Antonio, bench warrant defense lawyer, capias attorney Texas",
     },
     "/weapons-charges": {
-      title: "Weapons Charges Defense Attorney San Antonio TX | Morales Padia Law",
+      title:
+        "Weapons Charges Defense Attorney San Antonio TX | Morales Padia Law",
       description:
         "San Antonio weapons charges defense attorney. We fight unlawful carrying, prohibited weapons, felon in possession, and deadly conduct charges in Bexar County.",
       keywords:
@@ -371,21 +386,24 @@ function RouteSEO() {
 
     // ─── ESTATE PLANNING ─────────────────────────────────────────────────
     "/estate-planning": {
-      title: "Estate Planning Attorney San Antonio TX | Wills, Trusts & More | Morales Padia Law",
+      title:
+        "Estate Planning Attorney San Antonio TX | Wills, Trusts & More | Morales Padia Law",
       description:
         "Award-winning San Antonio estate planning attorney for wills, trusts, power of attorney, advance directives, and asset protection. Protect your family and legacy in Bexar County. Call (726) 204-4044.",
       keywords:
         "estate planning attorney San Antonio TX, estate planning lawyer Texas, wills and trusts attorney San Antonio, will attorney Bexar County, trust lawyer San Antonio TX, power of attorney attorney Texas, estate plan San Antonio, living trust attorney San Antonio, legacy planning lawyer Texas, estate planning near me San Antonio, best estate planning attorney San Antonio",
     },
     "/will": {
-      title: "Will Attorney San Antonio TX | Last Will & Testament | Morales Padia Law",
+      title:
+        "Will Attorney San Antonio TX | Last Will & Testament | Morales Padia Law",
       description:
         "San Antonio will attorney drafting legally valid last wills and testaments. Protect your assets, appoint guardians for children, and direct your estate with a proper Texas will.",
       keywords:
         "will attorney San Antonio TX, last will and testament lawyer Texas, will preparation attorney San Antonio, simple will attorney Bexar County, Texas will requirements, guardian nomination will Texas, how to make a will in Texas, will drafting attorney San Antonio, testamentary will Texas attorney, how much does a will cost in Texas",
     },
     "/trust": {
-      title: "Trust Attorney San Antonio TX | Living Trust & More | Morales Padia Law",
+      title:
+        "Trust Attorney San Antonio TX | Living Trust & More | Morales Padia Law",
       description:
         "San Antonio trust attorney setting up revocable living trusts, irrevocable trusts, special needs trusts, and testamentary trusts. Avoid probate and protect your family in Bexar County.",
       keywords:
@@ -399,7 +417,8 @@ function RouteSEO() {
         "power of attorney attorney San Antonio TX, durable power of attorney Texas, medical power of attorney San Antonio, financial power of attorney Bexar County, POA attorney Texas, healthcare power of attorney San Antonio, springing power of attorney Texas, how to get power of attorney in Texas, power of attorney for elderly parent Texas",
     },
     "/advance-directives": {
-      title: "Advance Directives Attorney San Antonio TX | Living Will | Morales Padia Law",
+      title:
+        "Advance Directives Attorney San Antonio TX | Living Will | Morales Padia Law",
       description:
         "San Antonio advance directives attorney helping you prepare living wills, medical directives, and POLST forms. Make your healthcare decisions known in Texas before a crisis.",
       keywords:
@@ -422,63 +441,72 @@ function RouteSEO() {
 
     // ─── PROBATE LAW ─────────────────────────────────────────────────────
     "/probate-law": {
-      title: "Probate Attorney San Antonio TX | Bexar County Probate Court | Morales Padia Law",
+      title:
+        "Probate Attorney San Antonio TX | Bexar County Probate Court | Morales Padia Law",
       description:
         "Experienced San Antonio probate attorney navigating Bexar County probate court. Estate administration, executor guidance, heirship, muniment of title, and probate litigation. Call (726) 204-4044.",
       keywords:
         "probate attorney San Antonio TX, probate lawyer Bexar County, probate court San Antonio, estate attorney San Antonio TX, probate administration attorney Texas, executor attorney San Antonio, probate process Texas, probate without attorney Texas, how long does probate take in Texas, best probate attorney San Antonio",
     },
     "/do-i-need-probate": {
-      title: "Do I Need Probate in Texas? | San Antonio Probate Attorney | Morales Padia Law",
+      title:
+        "Do I Need Probate in Texas? | San Antonio Probate Attorney | Morales Padia Law",
       description:
         "Not sure if your estate needs probate in Texas? San Antonio probate attorney explains when probate is required, when it can be avoided, and what alternatives exist in Bexar County.",
       keywords:
         "do I need probate in Texas, Texas probate requirements, when is probate required Texas, avoid probate Texas, probate alternatives Texas, assets that avoid probate Texas, small estate affidavit vs probate Texas, probate attorney San Antonio, is probate required in Texas",
     },
     "/how-to-start-probate": {
-      title: "How to Start Probate in Texas | San Antonio Probate Guide | Morales Padia Law",
+      title:
+        "How to Start Probate in Texas | San Antonio Probate Guide | Morales Padia Law",
       description:
         "Step-by-step guide on how to start probate in Texas from a San Antonio probate attorney. Learn the filing requirements, timeline, and how Bexar County probate court works.",
       keywords:
         "how to start probate in Texas, probate process San Antonio TX, filing for probate Texas, probate court Bexar County, probate timeline Texas, Texas probate steps, open an estate in Texas, independent administration Texas probate, probate attorney San Antonio TX",
     },
     "/probating-a-will": {
-      title: "Probating a Will in Texas | San Antonio Attorney | Morales Padia Law",
+      title:
+        "Probating a Will in Texas | San Antonio Attorney | Morales Padia Law",
       description:
         "San Antonio probate attorney explaining the process of probating a will in Texas. Admitting a will to probate in Bexar County, executor duties, and estate distribution.",
       keywords:
         "probating a will Texas, how to probate a will in Texas, will probate attorney San Antonio, admit will to probate Bexar County, executor of estate attorney Texas, Texas probate court will, independent executor Texas, filing will for probate San Antonio",
     },
     "/probate-without-will": {
-      title: "No Will? Probate Options in Texas | San Antonio Attorney | Morales Padia Law",
+      title:
+        "No Will? Probate Options in Texas | San Antonio Attorney | Morales Padia Law",
       description:
         "Died without a will in Texas? San Antonio probate attorney explains intestate succession, heirship proceedings, and alternative estate settlement options in Bexar County.",
       keywords:
         "probate without will Texas, intestate succession Texas, died without will San Antonio, no will estate attorney Bexar County, intestate estate attorney Texas, who inherits without will Texas, probate no will attorney San Antonio, determination of heirship Texas attorney",
     },
     "/small-estate-affidavit": {
-      title: "Small Estate Affidavit Attorney San Antonio TX | Morales Padia Law",
+      title:
+        "Small Estate Affidavit Attorney San Antonio TX | Morales Padia Law",
       description:
         "San Antonio small estate affidavit attorney helping families collect assets under $75,000 without probate in Texas. Fast, cost-effective estate settlement in Bexar County.",
       keywords:
         "small estate affidavit attorney San Antonio TX, small estate affidavit Texas, estate under 75000 Texas, avoid probate small estate Texas, small estate affidavit Bexar County, Texas small estate affidavit requirements, small estate affidavit bank accounts Texas, how to file small estate affidavit Texas",
     },
     "/affidavit-of-heirship": {
-      title: "Affidavit of Heirship Attorney San Antonio TX | Morales Padia Law",
+      title:
+        "Affidavit of Heirship Attorney San Antonio TX | Morales Padia Law",
       description:
         "San Antonio affidavit of heirship attorney establishing heirs and transferring property title in Texas without full probate. Serving Bexar County and surrounding areas.",
       keywords:
         "affidavit of heirship attorney San Antonio TX, affidavit of heirship Texas, heirship affidavit Bexar County, transfer property with heirship affidavit Texas, affidavit of heirship real property Texas, how to file affidavit of heirship Texas, title company affidavit of heirship Texas",
     },
     "/transferring-property-after-death": {
-      title: "Transferring Property After Death in Texas | San Antonio Attorney | Morales Padia Law",
+      title:
+        "Transferring Property After Death in Texas | San Antonio Attorney | Morales Padia Law",
       description:
         "San Antonio attorney explaining all methods to transfer property after death in Texas — probate, trusts, affidavits of heirship, muniment of title, and beneficiary designations.",
       keywords:
         "transferring property after death Texas, how to transfer property after death in Texas, property title transfer death San Antonio, transfer home after death Texas, estate settlement property transfer Bexar County, inherit property Texas attorney, transfer real estate after death Texas",
     },
     "/probate-disputes-litigation": {
-      title: "Probate Disputes & Litigation Attorney San Antonio TX | Morales Padia Law",
+      title:
+        "Probate Disputes & Litigation Attorney San Antonio TX | Morales Padia Law",
       description:
         "San Antonio probate litigation attorney handling will contests, executor misconduct, undue influence claims, and estate disputes in Bexar County probate court.",
       keywords:
@@ -508,35 +536,40 @@ function RouteSEO() {
 
     // ─── RESOURCES & OTHER ───────────────────────────────────────────────
     "/resources/blog": {
-      title: "Legal Blog | Family Law, Estate Planning & Probate Tips | Morales Padia Law",
+      title:
+        "Legal Blog | Family Law, Estate Planning & Probate Tips | Morales Padia Law",
       description:
         "Free legal insights from San Antonio attorneys on family law, estate planning, probate, and criminal defense. Learn how Texas law affects your life and family.",
       keywords:
         "family law blog San Antonio, estate planning blog Texas, probate law blog, Texas legal tips, divorce advice Texas, how to make a will Texas, child custody tips Texas, DWI advice Texas, San Antonio attorney blog, Texas law articles",
     },
     "/resources/books": {
-      title: "Free Legal Books by Morales Padia Law | San Antonio Attorney Resources",
+      title:
+        "Free Legal Books by Morales Padia Law | San Antonio Attorney Resources",
       description:
         "Download free legal guides by Morales Padia Law on divorce, estate planning, and family law in Texas. Written by award-winning San Antonio attorneys.",
       keywords:
         "free legal book Texas attorney, divorce guide Texas, family law book San Antonio, estate planning guide Texas, legal resources San Antonio, free attorney guide Texas",
     },
     "/resources/faq": {
-      title: "Legal FAQ | Common Questions Answered | Morales Padia Law San Antonio",
+      title:
+        "Legal FAQ | Common Questions Answered | Morales Padia Law San Antonio",
       description:
         "Answers to frequently asked legal questions about divorce, child custody, estate planning, probate, and criminal defense in Texas. From San Antonio attorneys at Morales Padia Law.",
       keywords:
         "family law FAQ Texas, divorce questions San Antonio, child custody FAQ Texas, estate planning FAQ, probate FAQ Texas, criminal defense FAQ San Antonio, Texas law questions answered, common legal questions Texas",
     },
     "/contact": {
-      title: "Contact a San Antonio Attorney | Free Consultation | Morales Padia Law",
+      title:
+        "Contact a San Antonio Attorney | Free Consultation | Morales Padia Law",
       description:
         "Contact Morales Padia Law in San Antonio TX to schedule your consultation. Family law, estate planning, probate, and criminal defense attorneys. Call (726) 204-4044 or fill out our form.",
       keywords:
         "contact San Antonio attorney, schedule consultation family law Texas, free consultation divorce attorney San Antonio, lawyer consultation Bexar County, attorney near me San Antonio TX, law firm contact San Antonio, estate planning consultation Texas, criminal defense consultation San Antonio",
     },
     "/services": {
-      title: "Legal Services San Antonio TX | Family Law, Estate Planning & Criminal Defense | Morales Padia Law",
+      title:
+        "Legal Services San Antonio TX | Family Law, Estate Planning & Criminal Defense | Morales Padia Law",
       description:
         "Full-service San Antonio law firm offering family law, estate planning, probate law, and criminal defense. Award-winning attorneys serving Bexar County, New Braunfels, and Boerne.",
       keywords:
