@@ -15,7 +15,7 @@ const Will = () => {
   return (
     <div className="bg-white min-h-screen">
       <CleanServiceHero
-        title="Why a Will Matters"
+        title="San Antonio Will Attorney — Why a Will Matters"
         subtitle="Protect your legacy and your family's future."
         infoTitle="What is a Will?"
         infoDescription="A will is a legal document that directs how your property should be distributed after death. It names an executor to handle your estate and can specify guardians for minor children."

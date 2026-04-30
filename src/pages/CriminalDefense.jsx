@@ -3,19 +3,12 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { CheckCircle } from "lucide-react";
-import SEO from "../components/SEO";
-import StructuredData from "../components/StructuredData";
+
 import OverviewHero from "../components/OverviewHero";
 
 const CriminalDefense = () => {
   return (
     <div className="bg-white">
-      <SEO
-        title="Criminal Defense Attorney | Morales Padia Law"
-        description="Criminal defense representation for DWI, domestic violence allegations, drug charges, and more."
-        keywords="criminal defense attorney, DWI lawyer, domestic violence defense, drug charges defense, theft defense"
-      />
-      <StructuredData type="LegalService" />
       <OverviewHero
         category="Criminal Law"
         heading="Criminal Defense Attorney in San Antonio"

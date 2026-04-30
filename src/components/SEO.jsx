@@ -107,9 +107,20 @@ export default function SEO({
       langLink = document.createElement("link");
       langLink.setAttribute("rel", "alternate");
       langLink.setAttribute("hreflang", "en");
-      langLink.setAttribute("href", window.location.href);
       document.head.appendChild(langLink);
     }
+    langLink.setAttribute("href", canonical || window.location.href);
+
+    let langLinkUS = document.querySelector(
+      'link[rel="alternate"][hreflang="en-US"]',
+    );
+    if (!langLinkUS) {
+      langLinkUS = document.createElement("link");
+      langLinkUS.setAttribute("rel", "alternate");
+      langLinkUS.setAttribute("hreflang", "en-US");
+      document.head.appendChild(langLinkUS);
+    }
+    langLinkUS.setAttribute("href", canonical || window.location.href);
   }, [title, description, keywords, ogImage, canonical, pageType]);
 
   return null;

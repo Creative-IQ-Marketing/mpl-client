@@ -1,8 +1,12 @@
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function StructuredData() {
+  const location = useLocation();
+
   useEffect(() => {
     const origin = window.location.origin;
+    const pathname = window.location.pathname;
 
     // WebSite Schema with sitelinks search box
     const websiteSchema = {
@@ -101,11 +105,11 @@ export default function StructuredData() {
       ],
       aggregateRating: {
         "@type": "AggregateRating",
-        ratingValue: "5.0",
-        bestRating: "5",
-        worstRating: "1",
-        ratingCount: "150",
-        reviewCount: "150",
+        ratingValue: 5.0,
+        bestRating: 5,
+        worstRating: 1,
+        ratingCount: 150,
+        reviewCount: 150,
       },
       award: [
         "Top Family Law Lawyer - San Antonio Scene Magazine (2017)",
@@ -405,13 +409,14 @@ export default function StructuredData() {
       ],
     };
 
+    const isOnFaqPage = pathname === "/resources/faq";
     const schemas = [
       websiteSchema,
       attorneySchema,
       organizationSchema,
       localBusinessSchema,
       breadcrumbSchema,
-      faqSchema,
+      ...(isOnFaqPage ? [faqSchema] : []),
       servicesSchema,
     ];
 
@@ -430,7 +435,7 @@ export default function StructuredData() {
 
       script.textContent = JSON.stringify(schema);
     });
-  }, []);
+  }, [location.pathname]);
 
   return null;
 }

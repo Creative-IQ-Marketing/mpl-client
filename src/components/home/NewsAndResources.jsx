@@ -124,7 +124,7 @@ const NewsAndResources = () => {
           <p className="text-gray-600 text-lg">
             Explore our{" "}
             <a
-              href="/books"
+              href="/resources/books"
               className="text-mpl-blue font-bold hover:text-mpl-navy transition-colors"
             >
               guides and resources

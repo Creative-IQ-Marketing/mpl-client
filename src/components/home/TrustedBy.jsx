@@ -10,12 +10,19 @@ import logo6 from "../../assets/trusted by/imgi_24_68c5c0aaccedb24320083bbe.webp
 
 const TrustedBy = () => {
   const logos = [
-    { src: logo1, alt: "Client 1" },
-    { src: logo2, alt: "Client 2" },
-    { src: logo3, alt: "Client 3" },
-    { src: logo4, alt: "Client 4" },
-    { src: logo5, alt: "Client 5" },
-    { src: logo6, alt: "Client 6", featured: true },
+    { src: logo1, alt: "San Antonio community partner — Morales Padia Law" },
+    { src: logo2, alt: "San Antonio business partner — Morales Padia Law" },
+    { src: logo3, alt: "San Antonio media feature — Morales Padia Law" },
+    { src: logo4, alt: "San Antonio professional partner — Morales Padia Law" },
+    {
+      src: logo5,
+      alt: "San Antonio community recognition — Morales Padia Law",
+    },
+    {
+      src: logo6,
+      alt: "Featured San Antonio law firm partner",
+      featured: true,
+    },
   ];
 
   const duplicated = [...logos, ...logos];

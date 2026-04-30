@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+  Navigate,
   useLocation,
 } from "react-router-dom";
 import SEO from "./components/SEO";
@@ -79,6 +80,9 @@ import FAQ from "./pages/FAQ";
 import NewsletterUnsubscribe from "./pages/NewsletterUnsubscribe";
 import VisualEnhancer from "./components/VisualEnhancer";
 import ChatWidget from "./components/ChatWidget";
+import JuvenileDefense from "./pages/JuvenileDefense";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 
 const BLOG_ORIGIN = "https://blog.moralespadialaw.com";
 const BLOG_FRESH_WINDOW_MS = 2 * 60 * 1000;
@@ -688,7 +692,10 @@ function AppShell() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/about" element={<FirmOverview />} />
+            <Route
+              path="/about"
+              element={<Navigate to="/firm-overview" replace />}
+            />
             <Route path="/firm-overview" element={<FirmOverview />} />
             <Route path="/family-law" element={<FamilyLaw />} />
             <Route path="/criminal-defense" element={<CriminalDefense />} />
@@ -717,6 +724,7 @@ function AppShell() {
               path="/under-investigation"
               element={<UnderInvestigation />}
             />
+            <Route path="/juvenile-defense" element={<JuvenileDefense />} />
             <Route path="/weapons-charges" element={<WeaponsCharges />} />
             <Route
               path="/felony-charges-defense"
@@ -834,6 +842,8 @@ function AppShell() {
               path="/newsletter/unsubscribe"
               element={<NewsletterUnsubscribe />}
             />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
           </Routes>
         </main>
         <Footer />

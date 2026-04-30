@@ -37,7 +37,7 @@ const Hero = () => {
               Credentials
             </span>
           </div>
-          <h1 className="text-5xl md:text-6xl font-serif font-bold text-mpl-navy leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl font-serif font-bold text-mpl-navy leading-tight mb-6">
             Trusted, recognized, and featured
           </h1>
           <p className="text-lg text-gray-600 leading-relaxed max-w-2xl">
@@ -199,11 +199,8 @@ const Organizations = () => {
             <p className="text-gray-600 leading-relaxed mb-6 max-w-2xl mx-auto">
               Our recognition in these organizations and media outlets reflects
               our commitment to providing excellent legal services, staying
-              current with best practices, and contributing meaningfully to our
-              San Antonio community.
-            </p>
-            <p className="text-sm text-gray-500">
-              Building on the professional, minimal UI you expect from us.
+              current with best practices, and continous meaningful
+              contributions.
             </p>
           </motion.div>
         </div>

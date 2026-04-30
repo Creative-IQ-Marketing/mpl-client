@@ -3,19 +3,12 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { CheckCircle } from "lucide-react";
-import SEO from "../components/SEO";
-import StructuredData from "../components/StructuredData";
+
 import OverviewHero from "../components/OverviewHero";
 
 const FamilyLaw = () => {
   return (
     <div className="bg-white">
-      <SEO
-        title="Family Law Attorney | Morales Padia Law"
-        description="Family law representation for divorce, child custody, child support, modifications, enforcement, and protective orders."
-        keywords="family law attorney, divorce lawyer, child custody attorney, child support attorney, family law services"
-      />
-      <StructuredData type="LegalService" />
       <OverviewHero
         category="Family Law"
         heading="Family Law Services & Guidance"

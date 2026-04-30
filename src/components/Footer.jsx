@@ -16,15 +16,42 @@ const Footer = () => {
               Strategic legal excellence customized to your needs.
             </p>
             <div className="flex gap-4">
-              {[Instagram, Facebook, Linkedin, Youtube].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  <Icon className="w-4 h-4" />
-                </a>
-              ))}
+              <a
+                href="https://www.instagram.com/moralespadialaw"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Morales Padia Law on Instagram"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.facebook.com/moralespadialaw"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Morales Padia Law on Facebook"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/morales-padia-law"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Morales Padia Law on LinkedIn"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.youtube.com/@moralespadialaw"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Morales Padia Law on YouTube"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <Youtube className="w-4 h-4" />
+              </a>
             </div>
           </div>
 
@@ -35,9 +62,9 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2">
               {[
-                { label: "About", to: "/about" },
-                { label: "Team", to: "/about" },
-                { label: "Credentials", to: "/partners" },
+                { label: "About", to: "/firm-overview" },
+                { label: "Team", to: "/firm-overview" },
+                // { label: "Credentials", to: "/partners" },
                 { label: "Contact", to: "/contact" },
                 { label: "Testimonials", to: "/testimonials" },
               ].map((item) => (
@@ -84,7 +111,7 @@ const Footer = () => {
             </h3>
             <div className="space-y-1 text-gray-300">
               <p>45 NE LOOP 410 ste 307</p>
-              <p>San Antonio, TX 78205</p>
+              <p>San Antonio, TX 78216</p>
               <a
                 href="tel:7262044044"
                 className="mt-4 block hover:text-white transition-colors font-medium"
@@ -104,10 +131,16 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-300">
           <p>&copy; {new Date().getFullYear()} Morales Padia Law PLLC.</p>
           <div className="flex gap-6">
-            <Link to="/privacy" className="hover:text-white transition-colors">
+            <Link
+              to="/privacy-policy"
+              className="hover:text-white transition-colors"
+            >
               Privacy
             </Link>
-            <Link to="/terms" className="hover:text-white transition-colors">
+            <Link
+              to="/terms-of-service"
+              className="hover:text-white transition-colors"
+            >
               Terms
             </Link>
             <Link

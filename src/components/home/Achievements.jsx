@@ -7,20 +7,20 @@ const Achievements = () => {
     {
       src: AchievementBestFirms,
       title: "10 Best Law Firms",
-      subtitle: "Recognition badge",
-      alt: "10 Best Law Firms badge",
+      subtitle: "American Institute of Family Law Attorneys",
+      alt: "10 Best Family Law Firms Award — American Institute of Family Law Attorneys 2025",
     },
     {
       src: AchievementBadge1,
-      title: "Award",
-      subtitle: "Recognition badge",
-      alt: "Award badge",
+      title: "Top San Antonio Attorney",
+      subtitle: "San Antonio Scene Magazine",
+      alt: "Top San Antonio Attorney Award — San Antonio Scene Magazine",
     },
     {
       src: AchievementUnnamed,
-      title: "Recognition",
-      subtitle: "Recognition badge",
-      alt: "Recognition badge",
+      title: "Corporate Excellence",
+      subtitle: "Corporate Vision Magazine",
+      alt: "Corporate Excellence Award — Corporate Vision Magazine 2025 — Morales Padia Law",
     },
   ];
 
@@ -37,7 +37,8 @@ const Achievements = () => {
             Recognized Achievements
           </h2>
           <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
-            Recognition that reflects our commitment to clear guidance and strong advocacy.
+            Recognition that reflects our commitment to clear guidance and
+            strong advocacy.
           </p>
         </div>
 

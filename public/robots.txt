@@ -3,10 +3,33 @@ Allow: /
 
 # Disallow admin, utility, and non-public pages
 Disallow: /style-guide
-Disallow: /newsletter-unsubscribe
+Disallow: /newsletter/unsubscribe
+Disallow: /privacy-policy
+Disallow: /terms-of-service
 
 # Sitemap location
 Sitemap: https://www.moralespadialaw.com/sitemap.xml
 
 # Crawl delay for courtesy
 Crawl-delay: 1
+
+# Googlebot — full access
+User-agent: Googlebot
+Allow: /
+
+# Bingbot — full access
+User-agent: Bingbot
+Allow: /
+
+# AI crawlers — allow for generative engine visibility
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /

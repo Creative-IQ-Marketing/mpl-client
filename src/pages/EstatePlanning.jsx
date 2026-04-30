@@ -3,22 +3,15 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { CheckCircle } from "lucide-react";
-import SEO from "../components/SEO";
-import StructuredData from "../components/StructuredData";
+
 import OverviewHero from "../components/OverviewHero";
 
 const EstatePlanning = () => {
   return (
     <div className="bg-white">
-      <SEO
-        title="Estate Planning Attorney | Morales Padia Law"
-        description="Estate planning services for wills, trusts, powers of attorney, and advance directives to protect your family and legacy."
-        keywords="estate planning attorney, wills and trusts, power of attorney, advance directives, legacy planning"
-      />
-      <StructuredData type="LegalService" />
       <OverviewHero
         category="Estate Planning"
-        heading="Protect Your Family & Legacy"
+        heading="Estate Planning Attorney in San Antonio, TX"
         description="Strategic estate planning to protect your assets, honor your wishes, and provide clarity for your loved ones. We advocate estate planning to avoid probate complications."
         primaryButtonText="Schedule Consultation"
         secondaryButtonText="View Services"

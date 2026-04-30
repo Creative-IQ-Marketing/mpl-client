@@ -33,7 +33,7 @@ const Testimonials = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h1 className="text-4xl lg:text-5xl font-serif font-bold text-mpl-navy mb-8 leading-tight">
+              <h1 className="text-3xl lg:text-3xl font-serif font-bold text-mpl-navy mb-8 leading-tight">
                 Real people. Real situations. Real outcomes.
               </h1>
               <div className="space-y-6 text-mpl-blue text-lg leading-relaxed">
@@ -63,7 +63,8 @@ const Testimonials = () => {
           className="container-custom relative z-10"
         >
           <h2 className="text-3xl md:text-5xl font-serif font-bold text-white tracking-wide">
-            See what it’s like to have the right team guiding your next decision.
+            See what it’s like to have the right team guiding your next
+            decision.
           </h2>
         </motion.div>
       </section>
@@ -82,7 +83,7 @@ const Testimonials = () => {
               still taking the time to address my concerns and keep me informed.
               I always felt like my case mattered and that I was in capable
               hands. Thanks to their hard work, everything was resolved smoothly
-              and fairly.” 
+              and fairly.”
             </p>
             <p className="mt-3 text-sm font-semibold text-mpl-navy">
               Ron "Bishop" Samurovic

@@ -3,19 +3,12 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { CheckCircle } from "lucide-react";
-import SEO from "../components/SEO";
-import StructuredData from "../components/StructuredData";
+
 import OverviewHero from "../components/OverviewHero";
 
 const ProbateLaw = () => {
   return (
     <div className="bg-white">
-      <SEO
-        title="Probate Attorney | Morales Padia Law"
-        description="Probate legal services including administration, heirship support, executor guidance, and court representation."
-        keywords="probate attorney, probate administration, executor support, heirship proceedings, estate distribution"
-      />
-      <StructuredData type="LegalService" />
       <OverviewHero
         category="Probate Law"
         heading="Probate Administration & Estate Settlement"
