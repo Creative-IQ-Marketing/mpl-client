@@ -11,6 +11,7 @@ import {
   FileText,
   ChevronDown,
 } from "lucide-react";
+import LazyImage from "../components/LazyImage";
 
 import TrishaImg from "../assets/team/UF9A2215-Edit-Edit.jpg";
 import DorothyImg from "../assets/team/Dorothy1 UF9A2316-Edit-2.jpg";
@@ -376,7 +377,7 @@ const MeetOurTeam = () => {
               className="group rounded-[24px] border border-gray-100 bg-[#fafbfd] p-3 shadow-sm"
             >
               <div className="overflow-hidden rounded-[18px] aspect-[4/5] bg-[#edf2f8]">
-                <img
+                <LazyImage
                   src={member.img}
                   alt={member.name}
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"

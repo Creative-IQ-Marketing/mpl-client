@@ -11,6 +11,7 @@ const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [_mousePosition, _setMousePosition] = useState({ x: 0, y: 0 });
   const [isPaused, _setIsPaused] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const heroRef = useRef(null);
 
   const images = [
@@ -18,6 +19,15 @@ const Hero = () => {
     { src: hero2, alt: "Legal team collaboration" },
     { src: hero3, alt: "Community support" },
   ];
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 50);
@@ -31,7 +41,7 @@ const Hero = () => {
     };
 
     const heroElement = heroRef.current;
-    if (heroElement) {
+    if (heroElement && !isMobile) {
       heroElement.addEventListener("mousemove", handleMouseMove);
     }
 
@@ -41,17 +51,20 @@ const Hero = () => {
         heroElement.removeEventListener("mousemove", handleMouseMove);
       }
     };
-  }, []);
+  }, [isMobile]);
 
   useEffect(() => {
     if (isPaused) return;
 
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % images.length);
-    }, 5000);
+    const interval = setInterval(
+      () => {
+        setCurrentSlide((prev) => (prev + 1) % images.length);
+      },
+      isMobile ? 6000 : 5000,
+    );
 
     return () => clearInterval(interval);
-  }, [isPaused, images.length]);
+  }, [isPaused, images.length, isMobile]);
 
   return (
     <section
@@ -64,9 +77,9 @@ const Hero = () => {
         {images.map((image, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              currentSlide === index ? "opacity-100 z-10" : "opacity-0 z-0"
-            }`}
+            className={`absolute inset-0 transition-opacity ${
+              isMobile ? "duration-700" : "duration-1000"
+            } ${currentSlide === index ? "opacity-100 z-10" : "opacity-0 z-0"}`}
           >
             {/* Darker overlay for better text contrast without the card */}
             <div className="absolute inset-0 bg-black/40 z-10" />
@@ -74,8 +87,9 @@ const Hero = () => {
             <img
               src={image.src}
               alt={image.alt}
+              decoding="async"
               className={`w-full h-full object-cover ${
-                currentSlide === index ? "animate-ken-burns" : ""
+                !isMobile && currentSlide === index ? "animate-ken-burns" : ""
               }`}
             />
           </div>
@@ -114,7 +128,9 @@ const Hero = () => {
                 transition={{ delay: 0.3, duration: 0.8 }}
                 className="text-lg md:text-xl md:max-w-3xl mx-auto text-white/90 font-light leading-relaxed drop-shadow-md pb-8"
               >
-                Trusted guidance in Family Law, Estate Planning, Probate, and Criminal Defense, helping individuals and families move forward with clarity, protection, and confidence.
+                Trusted guidance in Family Law, Estate Planning, Probate, and
+                Criminal Defense, helping individuals and families move forward
+                with clarity, protection, and confidence.
               </motion.p>
             </div>
 

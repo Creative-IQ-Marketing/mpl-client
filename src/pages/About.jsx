@@ -1,4 +1,5 @@
 import React from "react";
+import LazyImage from "../components/LazyImage";
 
 const About = () => {
   return (
@@ -46,7 +47,7 @@ const About = () => {
           <div className="flex flex-col md:flex-row gap-12 mb-20 items-start">
             <div className="w-full md:w-1/3">
               <div className="rounded-xl overflow-hidden shadow-lg">
-                <img
+                <LazyImage
                   src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
                   alt="Trisha Morales Padia"
                   className="w-full h-auto object-cover"
