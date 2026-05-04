@@ -251,19 +251,34 @@ const Header = () => {
                 : "text-mpl-navy"
             }`}
           >
-            <SocialIcon label="Facebook" href="https://facebook.com">
+            <SocialIcon
+              label="Facebook"
+              href="https://www.facebook.com/MoralesPadiaLaw"
+            >
               <FaFacebookF className="w-4 h-4" />
             </SocialIcon>
-            <SocialIcon label="Instagram" href="https://instagram.com">
+            <SocialIcon
+              label="Instagram"
+              href="https://www.instagram.com/moralespadialaw/"
+            >
               <FaInstagram className="w-4 h-4" />
             </SocialIcon>
-            <SocialIcon label="TikTok" href="https://tiktok.com">
+            <SocialIcon
+              label="TikTok"
+              href="https://www.tiktok.com/@moralespadialaw"
+            >
               <FaTiktok className="w-4 h-4" />
             </SocialIcon>
-            <SocialIcon label="LinkedIn" href="https://linkedin.com">
+            <SocialIcon
+              label="LinkedIn"
+              href="https://www.linkedin.com/in/tmoralespapadia/"
+            >
               <FaLinkedinIn className="w-4 h-4" />
             </SocialIcon>
-            <SocialIcon label="YouTube" href="https://youtube.com">
+            <SocialIcon
+              label="YouTube"
+              href="https://www.youtube.com/@moralespadialaw"
+            >
               <FaYoutube className="w-4 h-4" />
             </SocialIcon>
           </div>
@@ -455,19 +470,34 @@ const Header = () => {
                 (726) 204-4044
               </a>
               <div className="flex items-center justify-center space-x-3 text-mpl-navy">
-                <SocialIcon label="Facebook" href="https://facebook.com">
+                <SocialIcon
+                  label="Facebook"
+                  href="https://www.facebook.com/MoralesPadiaLaw"
+                >
                   <FaFacebookF className="w-4 h-4" />
                 </SocialIcon>
-                <SocialIcon label="Instagram" href="https://instagram.com">
+                <SocialIcon
+                  label="Instagram"
+                  href="https://www.instagram.com/moralespadialaw/"
+                >
                   <FaInstagram className="w-4 h-4" />
                 </SocialIcon>
-                <SocialIcon label="TikTok" href="https://tiktok.com">
+                <SocialIcon
+                  label="TikTok"
+                  href="https://www.tiktok.com/@moralespadialaw"
+                >
                   <FaTiktok className="w-4 h-4" />
                 </SocialIcon>
-                <SocialIcon label="LinkedIn" href="https://linkedin.com">
+                <SocialIcon
+                  label="LinkedIn"
+                  href="https://www.linkedin.com/in/tmoralespapadia/"
+                >
                   <FaLinkedinIn className="w-4 h-4" />
                 </SocialIcon>
-                <SocialIcon label="YouTube" href="https://youtube.com">
+                <SocialIcon
+                  label="YouTube"
+                  href="https://www.youtube.com/@moralespadialaw"
+                >
                   <FaYoutube className="w-4 h-4" />
                 </SocialIcon>
               </div>

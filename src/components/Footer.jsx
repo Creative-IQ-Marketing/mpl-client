@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+import { FaTiktok } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -17,31 +18,13 @@ const Footer = () => {
             </p>
             <div className="flex gap-4">
               <a
-                href="https://www.instagram.com/moralespadialaw"
+                href="https://www.tiktok.com/@moralespadialaw"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Morales Padia Law on Instagram"
+                aria-label="Morales Padia Law on TikTok"
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a
-                href="https://www.facebook.com/moralespadialaw"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Morales Padia Law on Facebook"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <Facebook className="w-4 h-4" />
-              </a>
-              <a
-                href="https://www.linkedin.com/company/morales-padia-law"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Morales Padia Law on LinkedIn"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <Linkedin className="w-4 h-4" />
+                <FaTiktok className="w-4 h-4" />
               </a>
               <a
                 href="https://www.youtube.com/@moralespadialaw"
@@ -51,6 +34,33 @@ const Footer = () => {
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 <Youtube className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.facebook.com/MoralesPadiaLaw"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Morales Padia Law on Facebook"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.instagram.com/moralespadialaw/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Morales Padia Law on Instagram"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/tmoralespapadia/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Morales Padia Law on LinkedIn"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <Linkedin className="w-4 h-4" />
               </a>
             </div>
           </div>
