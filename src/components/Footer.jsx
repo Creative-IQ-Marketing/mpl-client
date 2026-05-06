@@ -10,9 +10,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12 border-b border-white/10 pb-12">
           {/* Brand */}
           <div className="col-span-1 md:col-span-1">
-            <h2 className="text-xl font-serif font-medium tracking-tight mb-4 text-white">
+            <h3 className="text-xl font-serif font-medium tracking-tight mb-4 text-white">
               MORALES PADIA LAW
-            </h2>
+            </h3>
             <p className="text-gray-400 text-xs leading-5 mb-6 max-w-[200px]">
               Strategic legal excellence customized to your needs.
             </p>

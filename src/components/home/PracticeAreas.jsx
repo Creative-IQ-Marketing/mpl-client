@@ -179,15 +179,15 @@ const PracticeAreas = () => {
         "Guiding you through divorce, custody, and life-changing decisions with clarity, strategy, and your family’s future in mind.",
       to: "/family-law",
       services: [
-        { label: "Contested Divorce", to: "/contested-divorce" },
-        { label: "Uncontested Divorce", to: "/uncontested-divorce" },
-        { label: "Child Custody", to: "/child-custody" },
+        { label: "Contested/ Uncontested Divorce", to: "/contested-divorce" },
+        { label: "Custody and Conservatorship", to: "/child-custody" },
+        { label: "High-Asset Divorce", to: "/contested-divorce" },
         { label: "Child Support", to: "/child-support" },
         {
-          label: "Custody & Support Modifications",
+          label: "Modifications to Orders",
           to: "/modification-of-previous-order",
         },
-        { label: "Enforcement of Court Orders", to: "/enforcement" },
+        { label: "Enforcement of Orders", to: "/enforcement" },
       ],
     },
     {
@@ -197,15 +197,14 @@ const PracticeAreas = () => {
         "When your future is on the line, we provide strong, strategic defense you can rely on.",
       to: "/criminal-defense",
       services: [
-        { label: "Assault & Domestic Violence", to: "/domestic-violence" },
+        { label: "Assault / Domestic Violence", to: "/domestic-violence" },
         { label: "Protective Orders", to: "/protective-orders" },
-        { label: "DWI / DUI Defense", to: "/dwi" },
-        { label: "Drug Charges", to: "/drug-charges" },
+        { label: "DWI Defense", to: "/dwi" },
+        { label: "Drug Possession", to: "/drug-charges" },
         {
-          label: "Expungement & Record Sealing",
+          label: "Expunctions",
           to: "/expungement-record-sealing",
         },
-        { label: "Juvenile Defense", to: "/juvenile-defense" },
       ],
     },
     {
@@ -220,7 +219,7 @@ const PracticeAreas = () => {
         { label: "Powers of Attorney", to: "/power-of-attorney" },
         { label: "Medical Directives", to: "/advance-directives" },
         { label: "Probate & Estate Administration", to: "/probate-law" },
-        { label: "Asset Protection", to: "/asset-protection" },
+        { label: "Minor Children Protection", to: "/trust" },
       ],
     },
     {
@@ -313,9 +312,29 @@ const PracticeAreas = () => {
                               size={16}
                               className="mt-0.5 text-gray-300 group-hover/link:text-mpl-blue transition-colors"
                             />
-                            <span className="leading-snug">
-                              {service.label}
-                            </span>
+                            {service.label === "Wills & Trusts" ? (
+                              <span className="leading-snug">
+                                <Link
+                                  to="/will"
+                                  className="text-gray-700 hover:text-mpl-blue transition-colors"
+                                  onClick={(e) => e.stopPropagation()}
+                                >
+                                  Wills
+                                </Link>
+                                {" & "}
+                                <Link
+                                  to="/trust"
+                                  className="text-gray-700 hover:text-mpl-blue transition-colors"
+                                  onClick={(e) => e.stopPropagation()}
+                                >
+                                  Trusts
+                                </Link>
+                              </span>
+                            ) : (
+                              <span className="leading-snug">
+                                {service.label}
+                              </span>
+                            )}
                           </Link>
                         </li>
                       ))}

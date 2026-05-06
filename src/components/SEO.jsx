@@ -3,7 +3,7 @@ import { useEffect } from "react";
 export default function SEO({
   title = "Morales Padia Law | San Antonio Family Law, Estate Planning & Criminal Defense",
   description = "San Antonio and Bexar County attorneys for family law (divorce, custody, child support), estate planning (wills, trusts, power of attorney), probate, and criminal defense (DWI). Serving New Braunfels, Boerne, and surrounding areas.",
-  keywords = "Morales Padia Law, San Antonio family law attorney, divorce lawyer San Antonio TX, child custody attorney San Antonio, child support attorney Bexar County, spousal maintenance attorney San Antonio, SAPCR attorney Texas, adoption attorney San Antonio, protective order lawyer San Antonio, estate planning attorney San Antonio TX, wills and trusts attorney San Antonio, power of attorney lawyer Texas, probate attorney San Antonio TX, probate lawyer Bexar County, criminal defense attorney San Antonio TX, DWI attorney San Antonio, domestic violence defense lawyer, expungement attorney San Antonio, record sealing Texas, New Braunfels attorney, Boerne TX attorney, award-winning attorney San Antonio",
+  keywords = "Morales Padia Law, San Antonio attorney, family law, divorce, child custody, estate planning, probate, criminal defense, DWI, adoption, award-winning law firm",
   ogImage = "/mpl_logo.png",
   canonical = window.location.origin + window.location.pathname,
   pageType = "website",

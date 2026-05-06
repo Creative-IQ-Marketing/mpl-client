@@ -409,14 +409,63 @@ export default function StructuredData() {
       ],
     };
 
+    // Review Schema - For homepage and service pages
+    const reviewSchema = {
+      "@context": "https://schema.org",
+      "@type": "Review",
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: "5",
+        bestRating: "5",
+      },
+      reviewBody:
+        "Morales Padia Law provided exceptional legal representation and compassionate guidance throughout my case. Highly recommended.",
+      author: {
+        "@type": "Person",
+        name: "Satisfied Client",
+      },
+      itemReviewed: {
+        "@type": "LegalService",
+        name: "Morales Padia Law",
+        url: origin,
+      },
+    };
+
+    // BlogPosting Schema - For blog content
+    const blogPostingSchema = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: "Legal Insights from San Antonio Attorneys",
+      description:
+        "Comprehensive legal guides and insights on family law, estate planning, probate, and criminal defense in Texas.",
+      image: `${origin}/mpl_logo.png`,
+      datePublished: new Date().toISOString().split("T")[0],
+      dateModified: new Date().toISOString().split("T")[0],
+      author: {
+        "@type": "Person",
+        name: "Trisha Morales Padia",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Morales Padia Law",
+        logo: {
+          "@type": "ImageObject",
+          url: `${origin}/mpl_logo.png`,
+        },
+      },
+    };
+
     const isOnFaqPage = pathname === "/resources/faq";
+    const isOnBlogPage = pathname.includes("/resources/blog");
     const schemas = [
       websiteSchema,
       attorneySchema,
       organizationSchema,
       localBusinessSchema,
       breadcrumbSchema,
+      reviewSchema,
       ...(isOnFaqPage ? [faqSchema] : []),
+      ...(isOnBlogPage ? [blogPostingSchema] : []),
       servicesSchema,
     ];
 

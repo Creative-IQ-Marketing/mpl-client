@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { Suspense, useEffect, useRef, lazy } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -10,79 +10,102 @@ import SEO from "./components/SEO";
 import StructuredData from "./components/StructuredData";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import LoadingSpinner from "./components/LoadingSpinner";
 import FloatingBubbles from "./components/home/FloatingBubbles";
-import Home from "./pages/Home";
-import Services from "./pages/Services";
-import About from "./pages/About";
-import FirmOverview from "./pages/FirmOverview";
-import FamilyLaw from "./pages/FamilyLaw";
-import CriminalDefense from "./pages/CriminalDefense";
-import DWI from "./pages/DWI";
-import DomesticViolence from "./pages/DomesticViolence";
-import ProtectiveOrders from "./pages/ProtectiveOrders";
-import TheftPropertyCrimes from "./pages/TheftPropertyCrimes";
-import ExpungementRecordSealing from "./pages/ExpungementRecordSealing";
-import DrugCharges from "./pages/DrugCharges";
-import AssaultFamilyViolence from "./pages/AssaultFamilyViolence";
-import ProbationViolations from "./pages/ProbationViolations";
-import WarrantsArrest from "./pages/WarrantsArrest";
-import UnderInvestigation from "./pages/UnderInvestigation";
-import WeaponsCharges from "./pages/WeaponsCharges";
-import FelonyChargesDefense from "./pages/FelonyChargesDefense";
-import MisdemeanorDefense from "./pages/MisdemeanorDefense";
-import UncontestedDivorce from "./pages/UncontestedDivorce";
-import ContestedDivorce from "./pages/ContestedDivorce";
-import ChildCustody from "./pages/ChildCustody";
-import Testimonials from "./pages/Testimonials";
-import Contact from "./pages/Contact";
-import ChildSupport from "./pages/ChildSupport";
-import Adoption from "./pages/Adoption";
-import NameChange from "./pages/NameChange";
-import ModificationOfPreviousOrder from "./pages/ModificationOfPreviousOrder";
-import PropertyDivision from "./pages/PropertyDivision";
-import Enforcement from "./pages/Enforcement";
-import SpousalMaintenance from "./pages/SpousalMaintenance";
-import PrenuptialAgreement from "./pages/PrenuptialAgreement";
-import PostnuptialAgreement from "./pages/PostnuptialAgreement";
-import PaternityFathersRights from "./pages/PaternityFathersRights";
-import GrandparentsRights from "./pages/GrandparentsRights";
-import FlatFeeDivorce from "./pages/FlatFeeDivorce";
-import ChildVisitationPossession from "./pages/ChildVisitationPossession";
-import MediationCollaborativeDivorce from "./pages/MediationCollaborativeDivorce";
-import EmergencyCustodyOrders from "./pages/EmergencyCustodyOrders";
-import EstatePlanning from "./pages/EstatePlanning";
-import PowerOfAttorney from "./pages/PowerOfAttorney";
-import AdvanceDirectives from "./pages/AdvanceDirectives";
-import AssetProtection from "./pages/AssetProtection";
-import Trust from "./pages/Trust";
-import Will from "./pages/Will";
-import ProbateLaw from "./pages/ProbateLaw";
-import DoINeedProbate from "./pages/DoINeedProbate";
-import HowToStartProbate from "./pages/HowToStartProbate";
-import ProbatingAWill from "./pages/ProbatingAWill";
-import ProbateWithoutWill from "./pages/ProbateWithoutWill";
-import SmallEstateAffidavit from "./pages/SmallEstateAffidavit";
-import AffidavitOfHeirship from "./pages/AffidavitOfHeirship";
-import TransferringPropertyAfterDeath from "./pages/TransferringPropertyAfterDeath";
-import ProbateDisputesLitigation from "./pages/ProbateDisputesLitigation";
-import HeirshipProceedings from "./pages/HeirshipProceedings";
-import MunimentOfTitle from "./pages/MunimentOfTitle";
-import ProbateLitigation from "./pages/ProbateLitigation";
-import EstateAffidavits from "./pages/EstateAffidavits";
-import TeamMember from "./pages/TeamMember";
-import StyleGuide from "./pages/StyleGuide";
-import Books from "./pages/Books";
-import BookFamilyBlindsided from "./pages/BookFamilyBlindsided";
-import BookDivorceGuide from "./pages/BookDivorceGuide";
-import Blog from "./pages/Blog";
-import Partners from "./pages/Partners";
-import FAQ from "./pages/FAQ";
-import NewsletterUnsubscribe from "./pages/NewsletterUnsubscribe";
-import VisualEnhancer from "./components/VisualEnhancer";
-import ChatWidget from "./components/ChatWidget";
-import JuvenileDefense from "./pages/JuvenileDefense";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import TermsOfService from "./pages/TermsOfService";
+
+// Lazy load all pages for code splitting
+const Home = lazy(() => import("./pages/Home"));
+const Services = lazy(() => import("./pages/Services"));
+const About = lazy(() => import("./pages/About"));
+const FirmOverview = lazy(() => import("./pages/FirmOverview"));
+const FamilyLaw = lazy(() => import("./pages/FamilyLaw"));
+const CriminalDefense = lazy(() => import("./pages/CriminalDefense"));
+const DWI = lazy(() => import("./pages/DWI"));
+const DomesticViolence = lazy(() => import("./pages/DomesticViolence"));
+const ProtectiveOrders = lazy(() => import("./pages/ProtectiveOrders"));
+const TheftPropertyCrimes = lazy(() => import("./pages/TheftPropertyCrimes"));
+const ExpungementRecordSealing = lazy(
+  () => import("./pages/ExpungementRecordSealing"),
+);
+const DrugCharges = lazy(() => import("./pages/DrugCharges"));
+const AssaultFamilyViolence = lazy(
+  () => import("./pages/AssaultFamilyViolence"),
+);
+const ProbationViolations = lazy(() => import("./pages/ProbationViolations"));
+const WarrantsArrest = lazy(() => import("./pages/WarrantsArrest"));
+const UnderInvestigation = lazy(() => import("./pages/UnderInvestigation"));
+const WeaponsCharges = lazy(() => import("./pages/WeaponsCharges"));
+const FelonyChargesDefense = lazy(() => import("./pages/FelonyChargesDefense"));
+const MisdemeanorDefense = lazy(() => import("./pages/MisdemeanorDefense"));
+const UncontestedDivorce = lazy(() => import("./pages/UncontestedDivorce"));
+const ContestedDivorce = lazy(() => import("./pages/ContestedDivorce"));
+const ChildCustody = lazy(() => import("./pages/ChildCustody"));
+const Testimonials = lazy(() => import("./pages/Testimonials"));
+const Contact = lazy(() => import("./pages/Contact"));
+const ChildSupport = lazy(() => import("./pages/ChildSupport"));
+const Adoption = lazy(() => import("./pages/Adoption"));
+const NameChange = lazy(() => import("./pages/NameChange"));
+const ModificationOfPreviousOrder = lazy(
+  () => import("./pages/ModificationOfPreviousOrder"),
+);
+const PropertyDivision = lazy(() => import("./pages/PropertyDivision"));
+const Enforcement = lazy(() => import("./pages/Enforcement"));
+const SpousalMaintenance = lazy(() => import("./pages/SpousalMaintenance"));
+const PrenuptialAgreement = lazy(() => import("./pages/PrenuptialAgreement"));
+const PostnuptialAgreement = lazy(() => import("./pages/PostnuptialAgreement"));
+const PaternityFathersRights = lazy(
+  () => import("./pages/PaternityFathersRights"),
+);
+const GrandparentsRights = lazy(() => import("./pages/GrandparentsRights"));
+const FlatFeeDivorce = lazy(() => import("./pages/FlatFeeDivorce"));
+const ChildVisitationPossession = lazy(
+  () => import("./pages/ChildVisitationPossession"),
+);
+const MediationCollaborativeDivorce = lazy(
+  () => import("./pages/MediationCollaborativeDivorce"),
+);
+const EmergencyCustodyOrders = lazy(
+  () => import("./pages/EmergencyCustodyOrders"),
+);
+const EstatePlanning = lazy(() => import("./pages/EstatePlanning"));
+const PowerOfAttorney = lazy(() => import("./pages/PowerOfAttorney"));
+const AdvanceDirectives = lazy(() => import("./pages/AdvanceDirectives"));
+const AssetProtection = lazy(() => import("./pages/AssetProtection"));
+const Trust = lazy(() => import("./pages/Trust"));
+const Will = lazy(() => import("./pages/Will"));
+const ProbateLaw = lazy(() => import("./pages/ProbateLaw"));
+const DoINeedProbate = lazy(() => import("./pages/DoINeedProbate"));
+const HowToStartProbate = lazy(() => import("./pages/HowToStartProbate"));
+const ProbatingAWill = lazy(() => import("./pages/ProbatingAWill"));
+const ProbateWithoutWill = lazy(() => import("./pages/ProbateWithoutWill"));
+const SmallEstateAffidavit = lazy(() => import("./pages/SmallEstateAffidavit"));
+const AffidavitOfHeirship = lazy(() => import("./pages/AffidavitOfHeirship"));
+const TransferringPropertyAfterDeath = lazy(
+  () => import("./pages/TransferringPropertyAfterDeath"),
+);
+const ProbateDisputesLitigation = lazy(
+  () => import("./pages/ProbateDisputesLitigation"),
+);
+const HeirshipProceedings = lazy(() => import("./pages/HeirshipProceedings"));
+const MunimentOfTitle = lazy(() => import("./pages/MunimentOfTitle"));
+const ProbateLitigation = lazy(() => import("./pages/ProbateLitigation"));
+const EstateAffidavits = lazy(() => import("./pages/EstateAffidavits"));
+const TeamMember = lazy(() => import("./pages/TeamMember"));
+const StyleGuide = lazy(() => import("./pages/StyleGuide"));
+const Books = lazy(() => import("./pages/Books"));
+const BookFamilyBlindsided = lazy(() => import("./pages/BookFamilyBlindsided"));
+const BookDivorceGuide = lazy(() => import("./pages/BookDivorceGuide"));
+const Blog = lazy(() => import("./pages/Blog"));
+const Partners = lazy(() => import("./pages/Partners"));
+const FAQ = lazy(() => import("./pages/FAQ"));
+const NewsletterUnsubscribe = lazy(
+  () => import("./pages/NewsletterUnsubscribe"),
+);
+const VisualEnhancer = lazy(() => import("./components/VisualEnhancer"));
+const ChatWidget = lazy(() => import("./components/ChatWidget"));
+const JuvenileDefense = lazy(() => import("./pages/JuvenileDefense"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const TermsOfService = lazy(() => import("./pages/TermsOfService"));
 
 const BLOG_ORIGIN = "https://blog.moralespadialaw.com";
 const BLOG_FRESH_WINDOW_MS = 2 * 60 * 1000;
@@ -96,7 +119,7 @@ function RouteSEO() {
   const { pathname } = useLocation();
 
   const baseKeywords =
-    "Morales Padia Law, San Antonio family law attorney, divorce lawyer San Antonio TX, child custody attorney San Antonio, child support attorney Bexar County, spousal maintenance attorney San Antonio, SAPCR attorney Texas, adoption attorney San Antonio, protective order lawyer San Antonio, estate planning attorney San Antonio TX, wills and trusts attorney San Antonio, power of attorney lawyer Texas, probate attorney San Antonio TX, probate lawyer Bexar County, criminal defense attorney San Antonio TX, DWI attorney San Antonio, domestic violence defense lawyer, expungement attorney San Antonio, record sealing Texas, New Braunfels attorney, Boerne TX attorney, Converse TX lawyer, Schertz TX attorney, women-led law firm San Antonio, award-winning attorney San Antonio, Trisha Morales Padia attorney";
+    "Morales Padia Law, San Antonio attorney, family law, divorce, child custody, estate planning, probate, criminal defense, DWI, adoption, award-winning";
 
   const seoByPath = {
     // ─── HOME ───────────────────────────────────────────────────────────
@@ -172,15 +195,14 @@ function RouteSEO() {
     "/contested-divorce": {
       title: "Contested Divorce Attorney San Antonio TX | Morales Padia Law",
       description:
-        "Aggressive contested divorce attorney in San Antonio TX. We protect your rights in high-conflict divorces involving property division, child custody, and spousal support disputes in Bexar County.",
+        "Aggressive contested divorce attorney in San Antonio TX. Expert representation in high-conflict property, custody, and support disputes in Bexar County.",
       keywords:
         "contested divorce attorney San Antonio TX, contested divorce lawyer Bexar County, high-conflict divorce attorney San Antonio, divorce lawyer San Antonio TX, property division divorce attorney, custody dispute divorce lawyer San Antonio, divorce trial attorney Texas, best divorce attorney San Antonio, divorce litigation attorney Texas, marital property dispute lawyer",
     },
     "/flat-fee-divorce": {
-      title:
-        "Flat Fee Divorce Lawyer San Antonio | Affordable Divorce | Morales Padia Law",
+      title: "Flat Fee Divorce Lawyer San Antonio TX | Morales Padia Law",
       description:
-        "Flat fee divorce attorney in San Antonio TX — clear, upfront pricing for uncontested divorces. No hidden costs. Serving couples in Bexar County who want a smooth, cost-effective divorce.",
+        "Flat fee divorce attorney in San Antonio TX with clear upfront pricing. Uncontested divorces, no hidden costs. Serving Bexar County couples.",
       keywords:
         "flat fee divorce San Antonio, affordable divorce lawyer San Antonio TX, low cost divorce attorney Bexar County, cheap divorce attorney San Antonio, fixed price divorce Texas, no-fault divorce flat fee, uncontested divorce flat fee San Antonio, how much does a divorce cost in Texas",
     },
@@ -206,46 +228,44 @@ function RouteSEO() {
         "name change attorney San Antonio TX, legal name change lawyer Texas, name change petition Bexar County, how to change your name in Texas, name change after divorce Texas, name change after marriage Texas, adult name change attorney San Antonio, child name change lawyer Texas",
     },
     "/modification-of-previous-order": {
-      title:
-        "Modify Custody or Support Orders San Antonio TX | Morales Padia Law",
+      title: "Modify Custody or Support Orders San Antonio | Morales Padia Law",
       description:
-        "San Antonio modification attorney for changing child custody, visitation, or child support orders. When circumstances change, we help you update your court orders in Bexar County.",
+        "San Antonio modification attorney for updating child custody, visitation, and support orders. Expert guidance when circumstances change in Bexar County.",
       keywords:
         "modification attorney San Antonio TX, modify custody order Texas, modify child support San Antonio, modification of SAPCR order, custody modification lawyer Bexar County, change child support order Texas, modification of visitation order San Antonio, material change in circumstances Texas, how to modify a court order in Texas",
     },
     "/enforcement": {
-      title:
-        "Enforcement of Court Orders Attorney San Antonio | Morales Padia Law",
+      title: "Enforce Court Orders Attorney San Antonio | Morales Padia Law",
       description:
-        "San Antonio enforcement attorney when the other party violates court orders for child support, custody, or visitation. We pursue contempt and enforcement actions in Bexar County.",
+        "San Antonio enforcement attorney when orders are violated. Contempt and enforcement actions for child support, custody, and visitation in Bexar County.",
       keywords:
         "enforcement attorney San Antonio TX, enforce child support order Texas, enforce custody order San Antonio, enforce visitation order Bexar County, contempt of court family law Texas, motion to enforce San Antonio, child support contempt attorney Texas, violation of court order attorney San Antonio",
     },
     "/property-division": {
-      title: "Property Division in Divorce San Antonio TX | Morales Padia Law",
+      title: "Property Division in Divorce San Antonio | Morales Padia Law",
       description:
-        "San Antonio property division attorney ensuring fair division of marital assets in divorce. Texas community property law, hidden assets, business valuation, and retirement accounts.",
+        "San Antonio property division attorney for fair marital asset division. Texas community property law, business valuation, retirement accounts handled.",
       keywords:
         "property division attorney San Antonio TX, community property divorce Texas, divorce property division lawyer Bexar County, marital property division San Antonio, divide house in divorce Texas, retirement account division divorce, hidden assets divorce attorney San Antonio, business valuation divorce Texas, community property vs separate property Texas",
     },
     "/spousal-maintenance": {
       title: "Spousal Maintenance Attorney San Antonio TX | Morales Padia Law",
       description:
-        "San Antonio spousal maintenance attorney handling alimony, spousal support, and maintenance orders in divorce. We fight for fair outcomes in Bexar County family court.",
+        "San Antonio spousal maintenance and alimony attorney. Expert representation for fair outcomes in Bexar County family court divorce cases.",
       keywords:
         "spousal maintenance attorney San Antonio TX, alimony attorney Texas, spousal support lawyer San Antonio, spousal maintenance Texas law, how long does spousal maintenance last in Texas, contractual alimony Texas, divorce alimony San Antonio, spousal maintenance modification attorney Texas",
     },
     "/prenuptial-agreement": {
       title: "Prenuptial Agreement Lawyer San Antonio TX | Morales Padia Law",
       description:
-        "San Antonio prenuptial agreement lawyer drafting and reviewing premarital agreements to protect your assets before marriage. Serving Bexar County couples.",
+        "San Antonio prenup attorney drafting and reviewing premarital agreements to protect your assets. Serving Bexar County couples.",
       keywords:
         "prenuptial agreement lawyer San Antonio TX, prenup attorney Texas, premarital agreement San Antonio, how to get a prenup in Texas, prenuptial agreement cost Texas, prenup before marriage San Antonio, protect assets with prenup Texas, valid prenuptial agreement Texas requirements",
     },
     "/postnuptial-agreement": {
       title: "Postnuptial Agreement Lawyer San Antonio TX | Morales Padia Law",
       description:
-        "San Antonio postnuptial agreement attorney drafting marital property agreements after marriage. Protect your financial future with a legally binding postnup in Texas.",
+        "San Antonio postnup attorney drafting marital property agreements. Protect your financial future with legally binding agreements in Texas.",
       keywords:
         "postnuptial agreement lawyer San Antonio TX, postnup attorney Texas, marital agreement after marriage San Antonio, postmarital agreement lawyer Bexar County, marital property agreement Texas, protect assets in marriage Texas, postnuptial agreement validity Texas",
     },
@@ -689,162 +709,170 @@ function AppShell() {
         <main className="flex-grow pt-20 relative z-10">
           {" "}
           {/* pt-20 to account for fixed header */}
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/services" element={<Services />} />
-            <Route
-              path="/about"
-              element={<Navigate to="/firm-overview" replace />}
-            />
-            <Route path="/firm-overview" element={<FirmOverview />} />
-            <Route path="/family-law" element={<FamilyLaw />} />
-            <Route path="/criminal-defense" element={<CriminalDefense />} />
-            <Route path="/dwi" element={<DWI />} />
-            <Route path="/domestic-violence" element={<DomesticViolence />} />
-            <Route path="/protective-orders" element={<ProtectiveOrders />} />
-            <Route
-              path="/theft-property-crimes"
-              element={<TheftPropertyCrimes />}
-            />
-            <Route
-              path="/expungement-record-sealing"
-              element={<ExpungementRecordSealing />}
-            />
-            <Route path="/drug-charges" element={<DrugCharges />} />
-            <Route
-              path="/assault-family-violence"
-              element={<AssaultFamilyViolence />}
-            />
-            <Route
-              path="/probation-violations"
-              element={<ProbationViolations />}
-            />
-            <Route path="/warrants-arrest" element={<WarrantsArrest />} />
-            <Route
-              path="/under-investigation"
-              element={<UnderInvestigation />}
-            />
-            <Route path="/juvenile-defense" element={<JuvenileDefense />} />
-            <Route path="/weapons-charges" element={<WeaponsCharges />} />
-            <Route
-              path="/felony-charges-defense"
-              element={<FelonyChargesDefense />}
-            />
-            <Route
-              path="/misdemeanor-defense"
-              element={<MisdemeanorDefense />}
-            />
-            <Route
-              path="/uncontested-divorce"
-              element={<UncontestedDivorce />}
-            />
-            <Route path="/flat-fee-divorce" element={<FlatFeeDivorce />} />
-            <Route path="/contested-divorce" element={<ContestedDivorce />} />
-            <Route
-              path="/child-visitation-possession"
-              element={<ChildVisitationPossession />}
-            />
-            <Route path="/child-custody" element={<ChildCustody />} />
-            <Route path="/child-support" element={<ChildSupport />} />
-            <Route path="/adoption" element={<Adoption />} />
-            <Route path="/name-change" element={<NameChange />} />
-            <Route
-              path="/modification-of-previous-order"
-              element={<ModificationOfPreviousOrder />}
-            />
-            <Route path="/property-division" element={<PropertyDivision />} />
-            <Route path="/enforcement" element={<Enforcement />} />
-            <Route
-              path="/spousal-maintenance"
-              element={<SpousalMaintenance />}
-            />
-            <Route
-              path="/prenuptial-agreement"
-              element={<PrenuptialAgreement />}
-            />
-            <Route
-              path="/postnuptial-agreement"
-              element={<PostnuptialAgreement />}
-            />
-            <Route
-              path="/paternity-fathers-rights"
-              element={<PaternityFathersRights />}
-            />
-            <Route
-              path="/grandparents-rights"
-              element={<GrandparentsRights />}
-            />
-            <Route
-              path="/mediation-collaborative-divorce"
-              element={<MediationCollaborativeDivorce />}
-            />
-            <Route
-              path="/emergency-custody-orders"
-              element={<EmergencyCustodyOrders />}
-            />
-            <Route path="/estate-planning" element={<EstatePlanning />} />
-            <Route path="/power-of-attorney" element={<PowerOfAttorney />} />
-            <Route path="/advance-directives" element={<AdvanceDirectives />} />
-            <Route path="/asset-protection" element={<AssetProtection />} />
-            <Route path="/trust" element={<Trust />} />
-            <Route path="/will" element={<Will />} />
-            <Route path="/probate-law" element={<ProbateLaw />} />
-            <Route path="/do-i-need-probate" element={<DoINeedProbate />} />
-            <Route
-              path="/how-to-start-probate"
-              element={<HowToStartProbate />}
-            />
-            <Route path="/probating-a-will" element={<ProbatingAWill />} />
-            <Route
-              path="/probate-without-will"
-              element={<ProbateWithoutWill />}
-            />
-            <Route
-              path="/small-estate-affidavit"
-              element={<SmallEstateAffidavit />}
-            />
-            <Route
-              path="/affidavit-of-heirship"
-              element={<AffidavitOfHeirship />}
-            />
-            <Route
-              path="/transferring-property-after-death"
-              element={<TransferringPropertyAfterDeath />}
-            />
-            <Route
-              path="/probate-disputes-litigation"
-              element={<ProbateDisputesLitigation />}
-            />
-            <Route
-              path="/heirship-proceedings"
-              element={<HeirshipProceedings />}
-            />
-            <Route path="/muniment-of-title" element={<MunimentOfTitle />} />
-            <Route path="/probate-litigation" element={<ProbateLitigation />} />
-            <Route path="/estate-affidavits" element={<EstateAffidavits />} />
-            <Route path="/team/:id" element={<TeamMember />} />
-            <Route path="/testimonials" element={<Testimonials />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/style-guide" element={<StyleGuide />} />
-            <Route path="/resources/books" element={<Books />} />
-            <Route
-              path="/resources/books/family-blindsided"
-              element={<BookFamilyBlindsided />}
-            />
-            <Route
-              path="/resources/books/divorce-guide"
-              element={<BookDivorceGuide />}
-            />
-            <Route path="/resources/blog" element={<BlogRouteGate />} />
-            <Route path="/partners" element={<Partners />} />
-            <Route path="/resources/faq" element={<FAQ />} />
-            <Route
-              path="/newsletter/unsubscribe"
-              element={<NewsletterUnsubscribe />}
-            />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/terms-of-service" element={<TermsOfService />} />
-          </Routes>
+          <Suspense fallback={<LoadingSpinner />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/services" element={<Services />} />
+              <Route
+                path="/about"
+                element={<Navigate to="/firm-overview" replace />}
+              />
+              <Route path="/firm-overview" element={<FirmOverview />} />
+              <Route path="/family-law" element={<FamilyLaw />} />
+              <Route path="/criminal-defense" element={<CriminalDefense />} />
+              <Route path="/dwi" element={<DWI />} />
+              <Route path="/domestic-violence" element={<DomesticViolence />} />
+              <Route path="/protective-orders" element={<ProtectiveOrders />} />
+              <Route
+                path="/theft-property-crimes"
+                element={<TheftPropertyCrimes />}
+              />
+              <Route
+                path="/expungement-record-sealing"
+                element={<ExpungementRecordSealing />}
+              />
+              <Route path="/drug-charges" element={<DrugCharges />} />
+              <Route
+                path="/assault-family-violence"
+                element={<AssaultFamilyViolence />}
+              />
+              <Route
+                path="/probation-violations"
+                element={<ProbationViolations />}
+              />
+              <Route path="/warrants-arrest" element={<WarrantsArrest />} />
+              <Route
+                path="/under-investigation"
+                element={<UnderInvestigation />}
+              />
+              <Route path="/juvenile-defense" element={<JuvenileDefense />} />
+              <Route path="/weapons-charges" element={<WeaponsCharges />} />
+              <Route
+                path="/felony-charges-defense"
+                element={<FelonyChargesDefense />}
+              />
+              <Route
+                path="/misdemeanor-defense"
+                element={<MisdemeanorDefense />}
+              />
+              <Route
+                path="/uncontested-divorce"
+                element={<UncontestedDivorce />}
+              />
+              <Route path="/flat-fee-divorce" element={<FlatFeeDivorce />} />
+              <Route path="/contested-divorce" element={<ContestedDivorce />} />
+              <Route
+                path="/child-visitation-possession"
+                element={<ChildVisitationPossession />}
+              />
+              <Route path="/child-custody" element={<ChildCustody />} />
+              <Route path="/child-support" element={<ChildSupport />} />
+              <Route path="/adoption" element={<Adoption />} />
+              <Route path="/name-change" element={<NameChange />} />
+              <Route
+                path="/modification-of-previous-order"
+                element={<ModificationOfPreviousOrder />}
+              />
+              <Route path="/property-division" element={<PropertyDivision />} />
+              <Route path="/enforcement" element={<Enforcement />} />
+              <Route
+                path="/spousal-maintenance"
+                element={<SpousalMaintenance />}
+              />
+              <Route
+                path="/prenuptial-agreement"
+                element={<PrenuptialAgreement />}
+              />
+              <Route
+                path="/postnuptial-agreement"
+                element={<PostnuptialAgreement />}
+              />
+              <Route
+                path="/paternity-fathers-rights"
+                element={<PaternityFathersRights />}
+              />
+              <Route
+                path="/grandparents-rights"
+                element={<GrandparentsRights />}
+              />
+              <Route
+                path="/mediation-collaborative-divorce"
+                element={<MediationCollaborativeDivorce />}
+              />
+              <Route
+                path="/emergency-custody-orders"
+                element={<EmergencyCustodyOrders />}
+              />
+              <Route path="/estate-planning" element={<EstatePlanning />} />
+              <Route path="/power-of-attorney" element={<PowerOfAttorney />} />
+              <Route
+                path="/advance-directives"
+                element={<AdvanceDirectives />}
+              />
+              <Route path="/asset-protection" element={<AssetProtection />} />
+              <Route path="/trust" element={<Trust />} />
+              <Route path="/will" element={<Will />} />
+              <Route path="/probate-law" element={<ProbateLaw />} />
+              <Route path="/do-i-need-probate" element={<DoINeedProbate />} />
+              <Route
+                path="/how-to-start-probate"
+                element={<HowToStartProbate />}
+              />
+              <Route path="/probating-a-will" element={<ProbatingAWill />} />
+              <Route
+                path="/probate-without-will"
+                element={<ProbateWithoutWill />}
+              />
+              <Route
+                path="/small-estate-affidavit"
+                element={<SmallEstateAffidavit />}
+              />
+              <Route
+                path="/affidavit-of-heirship"
+                element={<AffidavitOfHeirship />}
+              />
+              <Route
+                path="/transferring-property-after-death"
+                element={<TransferringPropertyAfterDeath />}
+              />
+              <Route
+                path="/probate-disputes-litigation"
+                element={<ProbateDisputesLitigation />}
+              />
+              <Route
+                path="/heirship-proceedings"
+                element={<HeirshipProceedings />}
+              />
+              <Route path="/muniment-of-title" element={<MunimentOfTitle />} />
+              <Route
+                path="/probate-litigation"
+                element={<ProbateLitigation />}
+              />
+              <Route path="/estate-affidavits" element={<EstateAffidavits />} />
+              <Route path="/team/:id" element={<TeamMember />} />
+              <Route path="/testimonials" element={<Testimonials />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/style-guide" element={<StyleGuide />} />
+              <Route path="/resources/books" element={<Books />} />
+              <Route
+                path="/resources/books/family-blindsided"
+                element={<BookFamilyBlindsided />}
+              />
+              <Route
+                path="/resources/books/divorce-guide"
+                element={<BookDivorceGuide />}
+              />
+              <Route path="/resources/blog" element={<BlogRouteGate />} />
+              <Route path="/partners" element={<Partners />} />
+              <Route path="/resources/faq" element={<FAQ />} />
+              <Route
+                path="/newsletter/unsubscribe"
+                element={<NewsletterUnsubscribe />}
+              />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-of-service" element={<TermsOfService />} />
+            </Routes>
+          </Suspense>
         </main>
         <Footer />
       </div>
