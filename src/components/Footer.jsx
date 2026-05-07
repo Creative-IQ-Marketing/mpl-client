@@ -140,6 +140,17 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-300">
           <p>&copy; {new Date().getFullYear()} Morales Padia Law PLLC.</p>
+          <a
+            href="https://creativeiq.marketing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-500 tracking-widest uppercase hover:text-white transition-colors duration-300"
+          >
+            Powered by{" "}
+            <span className="font-semibold text-gray-400 hover:text-white">
+              Creative IQ
+            </span>
+          </a>
           <div className="flex gap-6">
             <Link
               to="/privacy-policy"
