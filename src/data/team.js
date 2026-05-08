@@ -171,7 +171,7 @@ export const teamMembers = [
   {
     id: "laritza-downs",
     name: "Laritza Downs",
-    role: "Attorney",
+    role: "Assistant",
     image: LaritzaImg,
     headline: "",
     bio: [],

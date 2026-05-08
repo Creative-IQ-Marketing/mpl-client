@@ -352,7 +352,7 @@ const MeetOurTeam = () => {
     },
     {
       name: "Laritza Downs",
-      role: "Attorney",
+      role: "Assistant",
       img: LaritzaImg,
     },
   ];

@@ -9,8 +9,13 @@ import {
   Users,
   BookOpen,
   Star,
+  Download,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import BookCoverImg from "../assets/divorcebook/1778273573694-9670c431-0cde-4839-8c05-98c928426015_1.png";
+
+const PDF_PATH = "/Truth_Before_the_Split_Divorce_Playbook.pdf";
+const PDF_FILENAME = "Truth_Before_the_Split_by_Trisha_Morales_Padia.pdf";
 
 const BookDivorceGuide = () => {
   return (
@@ -28,57 +33,79 @@ const Hero = () => {
   return (
     <section className="relative bg-white border-b border-gray-100">
       <div className="container-custom py-16 md:py-24">
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl"
-        >
-          <div className="inline-flex items-center gap-2 mb-6">
-            <BookOpen size={18} className="text-mpl-navy" />
-            <span className="text-xs font-bold tracking-wider uppercase text-gray-500">
-              Divorce Guide
-            </span>
-          </div>
-          <h1
-            className="text-5xl md:text-6xl font-serif font-bold text-mpl-navy leading-tight mb-6"
-            style={{ wordBreak: "break-word", overflowWrap: "break-word" }}
+        <div className="flex flex-col md:flex-row gap-12 items-center">
+          {/* Left Content */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="flex-1"
           >
-            Your roadmap to a better future
-          </h1>
-          <p className="text-lg text-gray-600 leading-relaxed mb-8 max-w-2xl">
-            Step-by-step guidance and practical strategies to navigate the
-            divorce process confidently.
-          </p>
-          <div className="flex items-center gap-4 mb-8">
-            <span className="inline-flex items-center gap-1">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star
-                  key={i}
-                  size={16}
-                  className="fill-mpl-gold text-mpl-gold"
-                />
-              ))}
-            </span>
-            <span className="text-sm font-semibold text-gray-700">
-              By Morales Padia Law Team
-            </span>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <a
-              href="#highlights"
-              className="inline-flex items-center justify-center gap-2 bg-mpl-navy text-white hover:bg-mpl-blue px-8 py-3 rounded-lg text-sm font-semibold transition-colors"
+            <div className="inline-flex items-center gap-2 mb-6">
+              <BookOpen size={18} className="text-mpl-navy" />
+              <span className="text-xs font-bold tracking-wider uppercase text-gray-500">
+                Divorce Guide
+              </span>
+            </div>
+            <h1
+              className="text-5xl md:text-6xl font-serif font-bold text-mpl-navy leading-tight mb-6"
+              style={{ wordBreak: "break-word", overflowWrap: "break-word" }}
             >
-              View Highlights <ArrowRight size={16} />
-            </a>
-            <Link
-              to="/contact?book=Divorce%20Guide"
-              className="inline-flex items-center justify-center gap-2 border border-gray-300 text-mpl-navy hover:border-gray-400 px-8 py-3 rounded-lg text-sm font-semibold transition-colors"
-            >
-              Contact Us
-            </Link>
-          </div>
-        </motion.div>
+              Truth Before the Split
+            </h1>
+            <p className="text-lg text-gray-600 leading-relaxed mb-8">
+              The divorce playbook no one gave you. Navigate the complex process
+              of divorce with trusted guidance and practical steps to protect
+              your interests and your family's future.
+            </p>
+            <div className="flex items-center gap-4 mb-8">
+              <span className="inline-flex items-center gap-1">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star
+                    key={i}
+                    size={16}
+                    className="fill-mpl-gold text-mpl-gold"
+                  />
+                ))}
+              </span>
+              <span className="text-sm font-semibold text-gray-700">
+                By Trisha Morales Padia
+              </span>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href={PDF_PATH}
+                download={PDF_FILENAME}
+                className="inline-flex items-center justify-center gap-2 bg-mpl-navy text-white hover:bg-mpl-blue px-8 py-3 rounded-lg text-sm font-semibold transition-colors"
+              >
+                <Download size={16} />
+                Download Free PDF
+              </a>
+              <a
+                href="#highlights"
+                className="inline-flex items-center justify-center gap-2 border border-gray-300 text-mpl-navy hover:border-gray-400 px-8 py-3 rounded-lg text-sm font-semibold transition-colors"
+              >
+                View Highlights <ArrowRight size={16} />
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Right Book Cover */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex-1 flex justify-end"
+          >
+            <div className="w-full max-w-xs">
+              <img
+                src={BookCoverImg}
+                alt="Truth Before the Split - Divorce Playbook by Trisha Morales Padia"
+                className="w-full h-auto rounded-xl shadow-2xl"
+              />
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
@@ -237,12 +264,14 @@ const CTA = () => {
             Download your copy now and take the first step toward a brighter
             future.
           </p>
-          <Link
-            to="/contact?book=Divorce%20Guide"
+          <a
+            href={PDF_PATH}
+            download={PDF_FILENAME}
             className="inline-flex items-center gap-2 bg-white text-mpl-navy hover:bg-mpl-gold hover:text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg"
           >
-            Download Free Guide <ArrowRight size={18} />
-          </Link>
+            <Download size={18} />
+            Download Free Guide
+          </a>
         </div>
       </div>
     </section>

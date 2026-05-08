@@ -35,7 +35,8 @@ const Hero = () => {
                 Books
               </h1>
               <p className="mt-6 text-base text-gray-500 leading-relaxed max-w-md">
-                Practical guides written to help families make confident legal decisions.
+                Practical guides written to help families make confident legal
+                decisions.
               </p>
             </motion.div>
           </div>
@@ -51,16 +52,14 @@ const Catalog = () => {
       title: "Family Blindsided",
       category: "Estate Planning",
       slug: "/resources/books/family-blindsided",
-      desc:
-        "Helping families stay connected, not conflicted. A comprehensive guide to estate planning that ensures your family avoids unnecessary legal and financial hurdles during challenging times.",
+      desc: "Helping families stay connected, not conflicted. A comprehensive guide to estate planning that ensures your family avoids unnecessary legal and financial hurdles during challenging times.",
       number: "01",
     },
     {
-      title: "Divorce Guide",
+      title: "Truth Before the Split",
       category: "Family Law",
       slug: "/resources/books/divorce-guide",
-      desc:
-        "What to do next when facing divorce. Navigate the complex process of divorce with trusted guidance and practical steps to protect your interests and your family's future.",
+      desc: "The divorce playbook no one gave you. Navigate the complex process of divorce with trusted guidance and practical steps to protect your interests and your family's future.",
       number: "02",
     },
   ];
@@ -74,7 +73,6 @@ const Catalog = () => {
               <span className="text-xs font-medium tracking-[0.15em] uppercase text-gray-400">
                 Available Books
               </span>
-
             </div>
           </div>
 
@@ -85,7 +83,11 @@ const Catalog = () => {
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                transition={{
+                  delay: i * 0.08,
+                  duration: 0.5,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
                 className="group py-12 md:py-16 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10"
               >
                 {/* Number */}

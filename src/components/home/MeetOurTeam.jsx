@@ -64,7 +64,7 @@ const MeetOurTeam = () => {
     },
     {
       name: "Laritza Downs",
-      role: "Attorney",
+      role: "Assistant",
       image: LaritzaImg,
       size: "small",
     },
