@@ -6,6 +6,7 @@ import CameronImg from "../../assets/team/Cameron1 UF9A2310-Edit-2.jpg";
 import VeronicaImg from "../../assets/team/veronica.jpeg";
 import ElenaImg from "../../assets/team/Elena1 UF9A2289-Edit-2.jpg";
 import AlexandraImg from "../../assets/team/Alexandra1 UF9A2272-Edit-2.jpg";
+import LaritzaImg from "../../assets/team/Laritza (1).png";
 import { motion } from "framer-motion";
 import { Gavel } from "lucide-react";
 const Motion = motion;
@@ -60,6 +61,12 @@ const MeetOurTeam = () => {
       role: "Client Services Director",
       image: AlexandraImg,
       size: "medium",
+    },
+    {
+      name: "Laritza Downs",
+      role: "Attorney",
+      image: LaritzaImg,
+      size: "small",
     },
   ];
 

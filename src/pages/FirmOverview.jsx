@@ -21,6 +21,7 @@ import CameronImg from "../assets/team/Cameron1 UF9A2310-Edit-2.jpg";
 import VeronicaImg from "../assets/team/veronica.jpeg";
 import ElenaImg from "../assets/team/Elena1 UF9A2289-Edit-2.jpg";
 import AlexandraImg from "../assets/team/Alexandra1 UF9A2272-Edit-2.jpg";
+import LaritzaImg from "../assets/team/Laritza (1).png";
 import LadyJusticeImg from "../assets/hero/alvaro-serrano-hjwKMkehBco-unsplash.jpg";
 
 const FirmOverview = () => {
@@ -348,6 +349,11 @@ const MeetOurTeam = () => {
       name: "Alexandra Johnson",
       role: "Client Services Director",
       img: AlexandraImg,
+    },
+    {
+      name: "Laritza Downs",
+      role: "Attorney",
+      img: LaritzaImg,
     },
   ];
 
