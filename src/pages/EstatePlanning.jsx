@@ -11,7 +11,7 @@ const EstatePlanning = () => {
     <div className="bg-white">
       <OverviewHero
         category="Estate Planning"
-        heading="Estate Planning Attorney in San Antonio, TX"
+        heading="Estate Planning Attorney"
         description="Strategic estate planning to protect your assets, honor your wishes, and provide clarity for your loved ones. We advocate estate planning to avoid probate complications."
         primaryButtonText="Schedule Consultation"
         secondaryButtonText="View Services"
