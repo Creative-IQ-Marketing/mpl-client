@@ -167,20 +167,77 @@ export default function StructuredData() {
         },
       ],
       areaServed: [
+        // ── Counties ──────────────────────────────────────────────────
         {
-          "@type": "City",
-          name: "San Antonio",
+          "@type": "AdministrativeArea",
+          name: "Bexar County",
           containedInPlace: { "@type": "State", name: "Texas" },
         },
-        { "@type": "AdministrativeArea", name: "Bexar County" },
-        { "@type": "City", name: "New Braunfels" },
-        { "@type": "City", name: "Boerne" },
+        {
+          "@type": "AdministrativeArea",
+          name: "Comal County",
+          containedInPlace: { "@type": "State", name: "Texas" },
+        },
+        {
+          "@type": "AdministrativeArea",
+          name: "Kendall County",
+          containedInPlace: { "@type": "State", name: "Texas" },
+        },
+        {
+          "@type": "AdministrativeArea",
+          name: "Atascosa County",
+          containedInPlace: { "@type": "State", name: "Texas" },
+        },
+        {
+          "@type": "AdministrativeArea",
+          name: "Wilson County",
+          containedInPlace: { "@type": "State", name: "Texas" },
+        },
+        {
+          "@type": "AdministrativeArea",
+          name: "Medina County",
+          containedInPlace: { "@type": "State", name: "Texas" },
+        },
+        // ── Bexar County Cities ────────────────────────────────────────
+        { "@type": "City", name: "San Antonio" },
+        { "@type": "City", name: "Alamo Heights" },
+        { "@type": "City", name: "Balcones Heights" },
+        { "@type": "City", name: "Castle Hills" },
         { "@type": "City", name: "Converse" },
-        { "@type": "City", name: "Schertz" },
-        { "@type": "City", name: "Leon Valley" },
+        { "@type": "City", name: "Fair Oaks Ranch" },
         { "@type": "City", name: "Helotes" },
+        { "@type": "City", name: "Hill Country Village" },
+        { "@type": "City", name: "Hollywood Park" },
+        { "@type": "City", name: "Kirby" },
+        { "@type": "City", name: "Leon Valley" },
         { "@type": "City", name: "Live Oak" },
-        { "@type": "State", name: "Texas" },
+        { "@type": "City", name: "Olmos Park" },
+        { "@type": "City", name: "Sandy Oaks" },
+        { "@type": "City", name: "Schertz" },
+        { "@type": "City", name: "Selma" },
+        { "@type": "City", name: "Shavano Park" },
+        { "@type": "City", name: "Somerset" },
+        { "@type": "City", name: "St. Hedwig" },
+        { "@type": "City", name: "Terrell Hills" },
+        { "@type": "City", name: "Universal City" },
+        { "@type": "City", name: "Windcrest" },
+        // ── Comal County ──────────────────────────────────────────────
+        { "@type": "City", name: "New Braunfels" },
+        { "@type": "City", name: "Canyon Lake" },
+        // ── Kendall County ────────────────────────────────────────────
+        { "@type": "City", name: "Boerne" },
+        // ── Atascosa County ───────────────────────────────────────────
+        { "@type": "City", name: "Pleasanton" },
+        { "@type": "City", name: "Lytle" },
+        // ── Wilson County ─────────────────────────────────────────────
+        { "@type": "City", name: "Floresville" },
+        { "@type": "City", name: "La Vernia" },
+        // ── Medina County ─────────────────────────────────────────────
+        { "@type": "City", name: "Castroville" },
+        // ── Extended SEO reach (search intent area) ───────────────────
+        { "@type": "City", name: "Cibolo" },
+        { "@type": "City", name: "Marion" },
+        { "@type": "City", name: "Seguin" },
       ],
       knowsAbout: [
         "Family Law",

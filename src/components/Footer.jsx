@@ -138,6 +138,37 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Areas We Serve */}
+        <div className="border-t border-white/10 pt-8 pb-8 mb-8">
+          <p className="text-xs font-bold text-white uppercase tracking-widest mb-5">
+            Areas We Serve
+          </p>
+          <div className="flex flex-wrap gap-3">
+            {[
+              "Bexar County",
+              "Comal County",
+              "Kendall County",
+              "Atascosa County",
+              "Wilson County",
+              "Medina County",
+            ].map((county) => (
+              <Link
+                key={county}
+                to="/service-area"
+                className="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-gray-300 hover:text-white hover:bg-white/15 text-xs font-semibold transition-colors"
+              >
+                {county}
+              </Link>
+            ))}
+          </div>
+          <Link
+            to="/service-area"
+            className="block mt-5 text-mpl-gold text-xs font-bold hover:text-white transition-colors"
+          >
+            View All Service Areas →
+          </Link>
+        </div>
+
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-300">
           <p>&copy; {new Date().getFullYear()} Morales Padia Law PLLC.</p>
           <a

@@ -106,6 +106,7 @@ const ChatWidget = lazy(() => import("./components/ChatWidget"));
 const JuvenileDefense = lazy(() => import("./pages/JuvenileDefense"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./pages/TermsOfService"));
+const ServiceArea = lazy(() => import("./pages/ServiceArea"));
 
 const BLOG_ORIGIN = "https://blog.moralespadialaw.com";
 const BLOG_FRESH_WINDOW_MS = 2 * 60 * 1000;
@@ -127,8 +128,10 @@ function RouteSEO() {
       title:
         "Morales Padia Law | San Antonio Family Law, Estate Planning & Criminal Defense Attorney",
       description:
-        "Award-winning San Antonio attorneys for family law (divorce, child custody, child support), estate planning (wills, trusts, power of attorney), probate, and criminal defense (DWI). Serving Bexar County, New Braunfels, Boerne & surrounding areas. Call (726) 204-4044.",
-      keywords: baseKeywords,
+        "Award-winning San Antonio attorneys for family law, estate planning, probate & criminal defense. Serving Bexar, Comal, Kendall, Atascosa, Wilson & Medina Counties — including Alamo Heights, Helotes, New Braunfels, Boerne, Converse, Live Oak, Schertz, Floresville & more. Call (726) 204-4044.",
+      keywords:
+        baseKeywords +
+        ", Bexar County attorney, Comal County attorney, Kendall County attorney, Atascosa County attorney, Wilson County attorney, Medina County attorney, Alamo Heights attorney, Helotes attorney, New Braunfels attorney, Boerne attorney, Converse attorney, Live Oak attorney, Schertz attorney, Universal City attorney",
     },
 
     // ─── ABOUT ──────────────────────────────────────────────────────────
@@ -157,11 +160,12 @@ function RouteSEO() {
 
     // ─── FAMILY LAW ─────────────────────────────────────────────────────
     "/family-law": {
-      title: "Family Law Attorney San Antonio TX | Morales Padia Law",
+      title:
+        "Family Law Attorney San Antonio, Alamo Heights & Bexar County | Morales Padia Law",
       description:
-        "Experienced San Antonio family law attorney for divorce, child custody, child support, modifications, spousal maintenance, adoption, and protective orders. Serving Bexar County, New Braunfels & Boerne. Call (726) 204-4044.",
+        "Experienced family law attorneys serving San Antonio, Alamo Heights, Helotes, Converse, Live Oak, New Braunfels, Boerne and all of Bexar, Comal, Kendall, Atascosa, Wilson & Medina Counties. Divorce, child custody, child support, modifications & more. Call (726) 204-4044.",
       keywords:
-        "family law attorney San Antonio TX, family lawyer San Antonio, divorce attorney San Antonio TX, child custody lawyer San Antonio, child support attorney Bexar County, SAPCR attorney Texas, spousal maintenance lawyer San Antonio, modification attorney San Antonio, protective order lawyer San Antonio, adoption attorney San Antonio, family court Bexar County, Texas family law, best family lawyer San Antonio",
+        "family law attorney San Antonio TX, family lawyer San Antonio, divorce attorney San Antonio TX, child custody lawyer San Antonio, child support attorney Bexar County, SAPCR attorney Texas, spousal maintenance lawyer San Antonio, family law attorney Alamo Heights TX, family law attorney Helotes TX, family lawyer New Braunfels TX, divorce attorney Boerne TX, child custody attorney Converse TX, family law attorney Live Oak TX, family law attorney Schertz TX, family lawyer Universal City TX, attorney Floresville TX, family law Kendall County, family law Comal County",
     },
     "/child-custody": {
       title: "Child Custody Attorney San Antonio TX | Morales Padia Law",
@@ -302,11 +306,12 @@ function RouteSEO() {
 
     // ─── CRIMINAL LAW ────────────────────────────────────────────────────
     "/criminal-defense": {
-      title: "Criminal Defense Attorney San Antonio TX | Morales Padia Law",
+      title:
+        "Criminal Defense Attorney San Antonio & Bexar County | Morales Padia Law",
       description:
-        "Experienced criminal defense attorney in San Antonio TX. We fight DWI, drug charges, domestic violence, assault, felony, and misdemeanor cases in Bexar County. Call (726) 204-4044 — available 24/7.",
+        "Experienced criminal defense attorneys in San Antonio TX defending DWI, drug charges, domestic violence, assault, felony & misdemeanor cases. Serving Converse, Live Oak, Universal City, Schertz, New Braunfels and all Bexar, Comal & Kendall Counties. Call (726) 204-4044.",
       keywords:
-        "criminal defense attorney San Antonio TX, criminal lawyer San Antonio, best criminal defense attorney Bexar County, criminal defense lawyer Texas, felony attorney San Antonio, misdemeanor attorney San Antonio TX, DWI defense lawyer San Antonio, drug charges defense attorney Texas, assault defense attorney San Antonio, how to beat criminal charges in Texas",
+        "criminal defense attorney San Antonio TX, criminal lawyer San Antonio, best criminal defense attorney Bexar County, criminal defense lawyer Texas, felony attorney San Antonio, misdemeanor attorney San Antonio TX, DWI defense lawyer San Antonio, drug charges defense attorney Texas, assault defense attorney San Antonio, criminal attorney Converse TX, criminal lawyer Live Oak TX, criminal defense Universal City TX, criminal attorney Schertz TX, DWI attorney New Braunfels TX, criminal defense Boerne TX, how to beat criminal charges in Texas",
     },
     "/dwi": {
       title:
@@ -411,11 +416,11 @@ function RouteSEO() {
     // ─── ESTATE PLANNING ─────────────────────────────────────────────────
     "/estate-planning": {
       title:
-        "Estate Planning Attorney San Antonio TX | Wills, Trusts & More | Morales Padia Law",
+        "Estate Planning Attorney San Antonio, Boerne & Bexar County | Morales Padia Law",
       description:
-        "Award-winning San Antonio estate planning attorney for wills, trusts, power of attorney, advance directives, and asset protection. Protect your family and legacy in Bexar County. Call (726) 204-4044.",
+        "Award-winning estate planning attorneys serving San Antonio, Boerne, Helotes, Alamo Heights, New Braunfels, Floresville and all of Bexar, Comal, Kendall, Wilson, Atascosa & Medina Counties. Wills, trusts, power of attorney, advance directives & asset protection. Call (726) 204-4044.",
       keywords:
-        "estate planning attorney San Antonio TX, estate planning lawyer Texas, wills and trusts attorney San Antonio, will attorney Bexar County, trust lawyer San Antonio TX, power of attorney attorney Texas, estate plan San Antonio, living trust attorney San Antonio, legacy planning lawyer Texas, estate planning near me San Antonio, best estate planning attorney San Antonio",
+        "estate planning attorney San Antonio TX, estate planning lawyer Texas, wills and trusts attorney San Antonio, will attorney Bexar County, trust lawyer San Antonio TX, estate planning attorney Boerne TX, estate planning attorney Helotes TX, estate planning Alamo Heights TX, estate planning New Braunfels TX, estate attorney Floresville TX, will attorney Kendall County, trust attorney Comal County, estate planning Wilson County, legacy planning lawyer Texas, estate planning near me San Antonio, best estate planning attorney San Antonio",
     },
     "/will": {
       title:
@@ -466,11 +471,11 @@ function RouteSEO() {
     // ─── PROBATE LAW ─────────────────────────────────────────────────────
     "/probate-law": {
       title:
-        "Probate Attorney San Antonio TX | Bexar County Probate Court | Morales Padia Law",
+        "Probate Attorney San Antonio, Boerne & Bexar County | Morales Padia Law",
       description:
-        "Experienced San Antonio probate attorney navigating Bexar County probate court. Estate administration, executor guidance, heirship, muniment of title, and probate litigation. Call (726) 204-4044.",
+        "Experienced probate attorneys serving Bexar, Comal, Kendall, Wilson, Atascosa & Medina County estates. Estate administration, executor guidance, heirship, muniment of title, and probate litigation in San Antonio, Boerne, New Braunfels, Floresville & surrounding areas. Call (726) 204-4044.",
       keywords:
-        "probate attorney San Antonio TX, probate lawyer Bexar County, probate court San Antonio, estate attorney San Antonio TX, probate administration attorney Texas, executor attorney San Antonio, probate process Texas, probate without attorney Texas, how long does probate take in Texas, best probate attorney San Antonio",
+        "probate attorney San Antonio TX, probate lawyer Bexar County, probate court San Antonio, estate attorney San Antonio TX, probate attorney Boerne TX, probate lawyer New Braunfels TX, probate attorney Floresville TX, probate Kendall County, probate Comal County, probate Wilson County, probate Atascosa County, probate administration attorney Texas, executor attorney San Antonio, probate process Texas, best probate attorney San Antonio",
     },
     "/do-i-need-probate": {
       title:
@@ -587,17 +592,25 @@ function RouteSEO() {
       title:
         "Contact a San Antonio Attorney | Free Consultation | Morales Padia Law",
       description:
-        "Contact Morales Padia Law in San Antonio TX to schedule your consultation. Family law, estate planning, probate, and criminal defense attorneys. Call (726) 204-4044 or fill out our form.",
+        "Contact Morales Padia Law to schedule your consultation. Serving San Antonio, Alamo Heights, New Braunfels, Boerne, Converse, Schertz, Live Oak, Floresville and all Bexar, Comal, Kendall, Atascosa, Wilson & Medina Counties. Call (726) 204-4044.",
       keywords:
-        "contact San Antonio attorney, schedule consultation family law Texas, free consultation divorce attorney San Antonio, lawyer consultation Bexar County, attorney near me San Antonio TX, law firm contact San Antonio, estate planning consultation Texas, criminal defense consultation San Antonio",
+        "contact San Antonio attorney, schedule consultation family law Texas, free consultation divorce attorney San Antonio, lawyer consultation Bexar County, attorney near me San Antonio TX, attorney near me New Braunfels TX, attorney near me Boerne TX, attorney near me Converse TX, attorney near me Live Oak TX, attorney near me Schertz TX, law firm contact San Antonio, estate planning consultation Texas, criminal defense consultation San Antonio",
     },
     "/services": {
       title:
         "Legal Services San Antonio TX | Family Law, Estate Planning & Criminal Defense | Morales Padia Law",
       description:
-        "Full-service San Antonio law firm offering family law, estate planning, probate law, and criminal defense. Award-winning attorneys serving Bexar County, New Braunfels, and Boerne.",
+        "Full-service law firm serving San Antonio, Alamo Heights, Helotes, Converse, Live Oak, Schertz, New Braunfels, Boerne, Floresville, Pleasanton, Castroville and all of Bexar, Comal, Kendall, Atascosa, Wilson & Medina Counties. Family law, estate planning, probate & criminal defense.",
       keywords:
-        "legal services San Antonio TX, family law services, estate planning services Texas, probate law services San Antonio, criminal defense services Bexar County, San Antonio attorney services, full service law firm Texas",
+        "legal services San Antonio TX, family law services, estate planning services Texas, probate law services San Antonio, criminal defense services Bexar County, attorney New Braunfels TX, attorney Boerne TX, attorney Converse TX, attorney Live Oak TX, attorney Schertz TX, attorney Floresville TX, attorney Pleasanton TX, attorney Castroville TX, San Antonio attorney services, full service law firm Texas",
+    },
+    "/service-area": {
+      title:
+        "Service Area | San Antonio & Surrounding Counties | Morales Padia Law",
+      description:
+        "Morales Padia Law serves clients across Bexar, Comal, Kendall, Atascosa, Wilson & Medina Counties — including San Antonio, Alamo Heights, Helotes, New Braunfels, Boerne, Converse, Live Oak, Schertz, Floresville, Pleasanton, Castroville and more.",
+      keywords:
+        "Morales Padia Law service area, attorney near me San Antonio TX, attorney Bexar County, attorney Comal County, attorney Kendall County, attorney Atascosa County, attorney Wilson County, attorney Medina County, family law attorney Alamo Heights, estate planning attorney Boerne, criminal defense attorney New Braunfels, attorney near Converse TX, attorney near Live Oak TX, attorney Schertz TX, attorney Floresville TX, attorney Pleasanton TX",
     },
   };
 
@@ -713,6 +726,7 @@ function AppShell() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/services" element={<Services />} />
+              <Route path="/service-area" element={<ServiceArea />} />
               <Route
                 path="/about"
                 element={<Navigate to="/firm-overview" replace />}
