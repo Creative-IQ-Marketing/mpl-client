@@ -232,6 +232,8 @@ const Header = () => {
             <img
               src={logo}
               alt="Morales Padia Law logo"
+              width="705"
+              height="418"
               className={`w-auto mx-auto transition-all duration-300 ${
                 isHome
                   ? isScrolled
