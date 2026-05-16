@@ -121,6 +121,19 @@ const MediaSection = () => {
     {
       title: "Discussion with Trisha Morales",
       youtubeId: "4Y8nCUwCLBQ",
+      type: "youtube",
+    },
+    {
+      title: "Streaming Audio Interview",
+      videoUrl:
+        "https://res.cloudinary.com/dlznleshe/video/upload/v1778965555/MPLaw_SALiv0906f_ibiij6.mp4",
+      type: "cloudinary",
+    },
+    {
+      title: "Discussion & Topic Meeting",
+      videoUrl:
+        "https://res.cloudinary.com/dlznleshe/video/upload/v1778965554/MPLaw_DTM0906f_p0unka.mp4",
+      type: "cloudinary",
     },
   ];
 
@@ -140,32 +153,58 @@ const MediaSection = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {items.map((item) => (
-              <a
-                key={item.youtubeId}
-                href={`https://www.youtube.com/watch?v=${item.youtubeId}`}
-                target="_blank"
-                rel="noreferrer"
-                className="group overflow-hidden rounded-sm border border-gray-200 bg-white hover:border-gray-400 transition-colors"
-              >
-                <div className="aspect-video bg-black overflow-hidden">
-                  <img
-                    src={`https://i.ytimg.com/vi/${item.youtubeId}/hqdefault.jpg`}
-                    alt={item.title}
-                    className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-300"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="p-5">
-                  <div className="font-serif text-mpl-navy text-base font-semibold">
-                    {item.title}
+            {items.map((item) =>
+              item.type === "youtube" ? (
+                <a
+                  key={item.youtubeId}
+                  href={`https://www.youtube.com/watch?v=${item.youtubeId}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group overflow-hidden rounded-sm border border-gray-200 bg-white hover:border-gray-400 transition-colors"
+                >
+                  <div className="aspect-video bg-black overflow-hidden">
+                    <img
+                      src={`https://i.ytimg.com/vi/${item.youtubeId}/hqdefault.jpg`}
+                      alt={item.title}
+                      className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-300"
+                      loading="lazy"
+                    />
                   </div>
-                  <div className="mt-1.5 text-xs text-gray-400 tracking-wide uppercase flex items-center gap-1.5">
-                    Watch on YouTube <ArrowRight size={11} />
+                  <div className="p-5">
+                    <div className="font-serif text-mpl-navy text-base font-semibold">
+                      {item.title}
+                    </div>
+                    <div className="mt-1.5 text-xs text-gray-400 tracking-wide uppercase flex items-center gap-1.5">
+                      Watch on YouTube <ArrowRight size={11} />
+                    </div>
                   </div>
-                </div>
-              </a>
-            ))}
+                </a>
+              ) : (
+                <a
+                  key={item.videoUrl}
+                  href={item.videoUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group overflow-hidden rounded-sm border border-gray-200 bg-white hover:border-gray-400 transition-colors"
+                >
+                  <div className="aspect-video bg-black overflow-hidden">
+                    <video
+                      src={item.videoUrl}
+                      className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-300"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <div className="font-serif text-mpl-navy text-base font-semibold">
+                      {item.title}
+                    </div>
+                    <div className="mt-1.5 text-xs text-gray-400 tracking-wide uppercase flex items-center gap-1.5">
+                      Watch Video <ArrowRight size={11} />
+                    </div>
+                  </div>
+                </a>
+              ),
+            )}
           </div>
         </div>
       </div>
