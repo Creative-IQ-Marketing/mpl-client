@@ -6,10 +6,14 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [tailwindcss(), react()],
   build: {
-    minify: false,
+    // minify defaults to 'esbuild' in production — do not disable
     rollupOptions: {
       output: {
-        manualChunks: undefined,
+        manualChunks: {
+          "vendor-react": ["react", "react-dom", "react-router-dom"],
+          "vendor-motion": ["framer-motion"],
+          "vendor-ui": ["lucide-react"],
+        },
       },
     },
   },

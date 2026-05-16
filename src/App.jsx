@@ -11,7 +11,7 @@ import StructuredData from "./components/StructuredData";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import LoadingSpinner from "./components/LoadingSpinner";
-import FloatingBubbles from "./components/home/FloatingBubbles";
+import StickyMobileCTA from "./components/StickyMobileCTA";
 
 // Lazy load all pages for code splitting
 const Home = lazy(() => import("./pages/Home"));
@@ -102,6 +102,7 @@ const NewsletterUnsubscribe = lazy(
   () => import("./pages/NewsletterUnsubscribe"),
 );
 const VisualEnhancer = lazy(() => import("./components/VisualEnhancer"));
+const FloatingBubbles = lazy(() => import("./components/home/FloatingBubbles"));
 const ChatWidget = lazy(() => import("./components/ChatWidget"));
 const JuvenileDefense = lazy(() => import("./pages/JuvenileDefense"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
@@ -718,6 +719,7 @@ function AppShell() {
         <ChatWidget />
         <FloatingBubbles />
         <VisualEnhancer />
+        <StickyMobileCTA />
         <Header />
         <main className="flex-grow pt-20 relative z-10">
           {" "}

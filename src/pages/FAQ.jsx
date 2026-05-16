@@ -1,19 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-const Motion = motion;
 import { ChevronDown, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const FAQ = () => {
-  return (
-    <div className="bg-gray-50 min-h-screen">
-      <Hero />
-      <FAQCategories />
-      <ReadyCTA />
-      <RelatedServices />
-    </div>
-  );
-};
+// Sub-components are defined first to avoid Temporal Dead Zone errors
+// (all are const arrow functions; FAQ must come after them)
 
 const Hero = () => {
   return (
@@ -384,6 +375,18 @@ const RelatedServices = () => {
         </div>
       </div>
     </section>
+  );
+};
+
+// FAQ wrapper defined last so all sub-components are in scope (avoids TDZ errors)
+const FAQ = () => {
+  return (
+    <div className="bg-gray-50 min-h-screen">
+      <Hero />
+      <FAQCategories />
+      <ReadyCTA />
+      <RelatedServices />
+    </div>
   );
 };
 

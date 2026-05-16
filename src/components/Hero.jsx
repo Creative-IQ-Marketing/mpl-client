@@ -9,7 +9,6 @@ import hero3 from "../assets/hero/liv-bruce-odIhQypCuUk-unsplash.jpg";
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
-  const [_mousePosition, _setMousePosition] = useState({ x: 0, y: 0 });
   const [isPaused, _setIsPaused] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const heroRef = useRef(null);
@@ -31,27 +30,8 @@ const Hero = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 50);
-
-    const handleMouseMove = (e) => {
-      if (!heroRef.current) return;
-      const rect = heroRef.current.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width;
-      const y = (e.clientY - rect.top) / rect.height;
-      _setMousePosition({ x, y });
-    };
-
-    const heroElement = heroRef.current;
-    if (heroElement && !isMobile) {
-      heroElement.addEventListener("mousemove", handleMouseMove);
-    }
-
-    return () => {
-      clearTimeout(timer);
-      if (heroElement) {
-        heroElement.removeEventListener("mousemove", handleMouseMove);
-      }
-    };
-  }, [isMobile]);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     if (isPaused) return;
@@ -87,7 +67,11 @@ const Hero = () => {
             <img
               src={image.src}
               alt={image.alt}
-              decoding="async"
+              width="1920"
+              height="1080"
+              decoding={index === 0 ? "sync" : "async"}
+              loading={index === 0 ? "eager" : "lazy"}
+              fetchPriority={index === 0 ? "high" : "low"}
               className={`w-full h-full object-cover ${
                 !isMobile && currentSlide === index ? "animate-ken-burns" : ""
               }`}

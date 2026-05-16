@@ -1,29 +1,35 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import Hero from "../components/Hero";
-import PracticeAreas from "../components/home/PracticeAreas";
-import TrustedBy from "../components/home/TrustedBy";
-import Awards from "../components/home/Awards";
-import FeaturedIn from "../components/home/FeaturedIn";
-import MeetOurTeam from "../components/home/MeetOurTeam";
-import Testimonials from "../components/home/Testimonials";
-import NewsAndResources from "../components/home/NewsAndResources";
-import Consultation from "../components/home/Consultation";
-import Achievements from "../components/home/Achievements";
+
+// Below-fold sections: lazy-loaded to reduce initial JS parse time (INP fix)
+const PracticeAreas = lazy(() => import("../components/home/PracticeAreas"));
+const TrustedBy = lazy(() => import("../components/home/TrustedBy"));
+const Awards = lazy(() => import("../components/home/Awards"));
+const FeaturedIn = lazy(() => import("../components/home/FeaturedIn"));
+const MeetOurTeam = lazy(() => import("../components/home/MeetOurTeam"));
+const Testimonials = lazy(() => import("../components/home/Testimonials"));
+const NewsAndResources = lazy(
+  () => import("../components/home/NewsAndResources"),
+);
+const Consultation = lazy(() => import("../components/home/Consultation"));
+const Achievements = lazy(() => import("../components/home/Achievements"));
 
 const Home = () => {
   return (
     <div className="relative">
       <div className="relative z-10">
         <Hero />
-        <PracticeAreas />
-        <Awards />
-        <FeaturedIn />
-        <NewsAndResources />
-        <MeetOurTeam />
-        <TrustedBy />
-        <Testimonials />
-        <Consultation />
-        <Achievements />
+        <Suspense fallback={null}>
+          <PracticeAreas />
+          <Awards />
+          <FeaturedIn />
+          <NewsAndResources />
+          <MeetOurTeam />
+          <TrustedBy />
+          <Testimonials />
+          <Consultation />
+          <Achievements />
+        </Suspense>
       </div>
     </div>
   );
