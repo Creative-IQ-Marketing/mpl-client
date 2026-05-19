@@ -69,7 +69,7 @@ const Hero = () => {
               alt={image.alt}
               width="1920"
               height="1080"
-              decoding={index === 0 ? "sync" : "async"}
+              decoding={index === 0 ? "async" : "async"}
               loading={index === 0 ? "eager" : "lazy"}
               fetchPriority={index === 0 ? "high" : "low"}
               className={`w-full h-full object-cover ${
@@ -89,7 +89,7 @@ const Hero = () => {
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
             transition={{ type: "spring", stiffness: 100, damping: 20 }}
           >
-            {/* Main Typography - Mimicking the Reference */}
+            {/* Main Typography - Location-specific H1 for SEO */}
             <div className="space-y-4 mb-8">
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
@@ -97,11 +97,14 @@ const Hero = () => {
                 transition={{ delay: 0.2, duration: 0.8 }}
                 className="flex flex-col items-center justify-center leading-none text-white drop-shadow-xl"
               >
-                <span className="font-serif italic text-6xl md:text-8xl lg:text-9xl tracking-wide font-light mb-4 md:mb-6">
-                  Protecting
+                <span className="font-serif text-5xl md:text-7xl lg:text-8xl font-medium tracking-wide mb-3 md:mb-4">
+                  San Antonio Family Law,
+                </span>
+                <span className="font-serif text-5xl md:text-7xl lg:text-8xl font-medium tracking-wide mb-3 md:mb-4">
+                  Criminal Defense &
                 </span>
                 <span className="font-serif text-5xl md:text-7xl lg:text-8xl font-medium tracking-widest uppercase">
-                  Your Future
+                  & Estate Planning Attorney
                 </span>
               </motion.h1>
 
@@ -110,12 +113,23 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
-                className="text-lg md:text-xl md:max-w-3xl mx-auto text-white/90 font-light leading-relaxed drop-shadow-md pb-8"
+                className="text-lg md:text-xl md:max-w-3xl mx-auto text-white/90 font-light leading-relaxed drop-shadow-md pb-4"
               >
                 Trusted guidance in Family Law, Estate Planning, Probate, and
                 Criminal Defense, helping individuals and families move forward
                 with clarity, protection, and confidence.
               </motion.p>
+
+              {/* Trust Signal */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+                transition={{ delay: 0.35, duration: 0.8 }}
+                className="text-sm md:text-base text-white/75 font-light drop-shadow-md"
+              >
+                30+ Years of Experience | Board Certified Specialist | Serving
+                Bexar County & Beyond
+              </motion.div>
             </div>
 
             {/* CTA Buttons */}

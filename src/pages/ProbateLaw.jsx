@@ -11,7 +11,7 @@ const ProbateLaw = () => {
     <div className="bg-white">
       <OverviewHero
         category="Probate Law"
-        heading="Probate Administration & Estate Settlement"
+        heading="San Antonio Probate Attorney"
         description="From determining if probate is necessary to resolving complex estate disputes, we provide comprehensive guidance tailored to your situation."
         primaryButtonText="Schedule Consultation"
         secondaryButtonText="View Services"

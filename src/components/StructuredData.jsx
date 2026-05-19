@@ -389,6 +389,8 @@ export default function StructuredData() {
           name: "Contested Divorce",
           description:
             "Aggressive representation for complex divorces involving property, custody, and support disputes in San Antonio TX.",
+          url: `${origin}/contested-divorce`,
+          priceRange: "Low to High",
           provider: { "@type": "Organization", name: "Morales Padia Law" },
         },
         {
@@ -397,6 +399,8 @@ export default function StructuredData() {
           name: "Uncontested Divorce",
           description:
             "Affordable flat fee uncontested divorce attorney in San Antonio TX.",
+          url: `${origin}/uncontested-divorce`,
+          priceRange: "Low to High",
           provider: { "@type": "Organization", name: "Morales Padia Law" },
         },
         {
@@ -405,6 +409,8 @@ export default function StructuredData() {
           name: "Child Custody",
           description:
             "SAPCR and child custody representation protecting your parental rights in Bexar County.",
+          url: `${origin}/child-custody`,
+          priceRange: "Low to High",
           provider: { "@type": "Organization", name: "Morales Padia Law" },
         },
         {
@@ -413,6 +419,8 @@ export default function StructuredData() {
           name: "Child Support",
           description:
             "Child support establishment, modification, and enforcement in San Antonio TX.",
+          url: `${origin}/child-support`,
+          priceRange: "Low to High",
           provider: { "@type": "Organization", name: "Morales Padia Law" },
         },
         {
@@ -421,6 +429,8 @@ export default function StructuredData() {
           name: "DWI Defense",
           description:
             "Aggressive DWI defense attorney in San Antonio TX for first offense and felony DWI charges.",
+          url: `${origin}/dwi`,
+          priceRange: "Low to High",
           provider: { "@type": "Organization", name: "Morales Padia Law" },
         },
         {
@@ -429,6 +439,8 @@ export default function StructuredData() {
           name: "Estate Planning",
           description:
             "Wills, trusts, power of attorney, and advance directives from a San Antonio estate planning attorney.",
+          url: `${origin}/estate-planning`,
+          priceRange: "Low to High",
           provider: { "@type": "Organization", name: "Morales Padia Law" },
         },
         {
@@ -437,6 +449,8 @@ export default function StructuredData() {
           name: "Probate Law",
           description:
             "Probate administration and litigation from a Bexar County probate attorney.",
+          url: `${origin}/probate-law`,
+          priceRange: "Low to High",
           provider: { "@type": "Organization", name: "Morales Padia Law" },
         },
         {
@@ -445,6 +459,8 @@ export default function StructuredData() {
           name: "Expungement & Record Sealing",
           description:
             "Clear your criminal record with an expunction or order of nondisclosure in Texas.",
+          url: `${origin}/expungement-record-sealing`,
+          priceRange: "Low to High",
           provider: { "@type": "Organization", name: "Morales Padia Law" },
         },
         {
@@ -453,6 +469,8 @@ export default function StructuredData() {
           name: "Protective Orders",
           description:
             "Protective order attorney in San Antonio TX for family violence victims and defense.",
+          url: `${origin}/protective-orders`,
+          priceRange: "Low to High",
           provider: { "@type": "Organization", name: "Morales Padia Law" },
         },
         {
@@ -461,6 +479,8 @@ export default function StructuredData() {
           name: "Adoption",
           description:
             "Stepparent and private adoption attorney in San Antonio TX.",
+          url: `${origin}/adoption`,
+          priceRange: "Low to High",
           provider: { "@type": "Organization", name: "Morales Padia Law" },
         },
       ],
@@ -496,7 +516,9 @@ export default function StructuredData() {
       description:
         "Comprehensive legal guides and insights on family law, estate planning, probate, and criminal defense in Texas.",
       image: `${origin}/mpl_logo.png`,
-      datePublished: new Date().toISOString().split("T")[0],
+      // Fixed publication date - deployment date
+      datePublished: "2025-07-12",
+      // Current date for modification tracking
       dateModified: new Date().toISOString().split("T")[0],
       author: {
         "@type": "Person",
@@ -513,7 +535,9 @@ export default function StructuredData() {
     };
 
     const isOnFaqPage = pathname === "/resources/faq";
-    const isOnBlogPage = pathname.includes("/resources/blog");
+    // Only render BlogPosting on actual blog post pages, not the listing page
+    const isOnBlogPage =
+      pathname !== "/resources/blog" && pathname.includes("/resources/blog");
     const schemas = [
       websiteSchema,
       attorneySchema,
