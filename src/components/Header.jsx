@@ -8,7 +8,7 @@ import {
   FaLinkedinIn,
   FaYoutube,
 } from "react-icons/fa6";
-import logo from "../assets/mpl_logo.png";
+import logo from "../assets/newlogosmpl/MPL BLUE LOGO.png";
 import { teamMembers } from "../data/team";
 
 function SocialIcon({ label, href, children }) {
@@ -200,12 +200,12 @@ const Header = () => {
       className={`fixed top-0 left-0 right-0 w-full z-50 transition-colors duration-300 ${
         isHome
           ? isScrolled
-            ? "text-mpl-navy bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60 shadow-md"
+            ? "text-mpl-navy bg-white/70 backdrop-blur supports-backdrop-filter:bg-white/60 shadow-md"
             : "bg-transparent text-white"
           : "text-mpl-navy bg-white shadow-md"
       }`}
     >
-      <div className="container-custom py-3">
+      <div className="container-custom py-0">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <a
@@ -225,27 +225,27 @@ const Header = () => {
 
           <Link
             to="/"
-            className="flex items-center flex-shrink-0"
+            className="flex items-center shrink-0 -my-6"
             onClick={closeMenu}
             aria-label="Go to homepage"
           >
             <img
               src={logo}
               alt="Morales Padia Law logo"
-              width="705"
+              width="900"
               height="418"
               className={`w-auto mx-auto transition-all duration-300 ${
                 isHome
                   ? isScrolled
-                    ? "h-14 md:h-16 lg:h-24"
-                    : "h-20 md:h-24 lg:h-28 drop-shadow-[0_2px_8px_rgba(255,255,255,0.85)] brightness-145"
-                  : "h-14 md:h-16 lg:h-24"
+                    ? "h-[6.3rem] md:h-[7.2rem] lg:h-[10.8rem]"
+                    : "h-36 md:h-[10.8rem] lg:h-[12.6rem] brightness-0 invert drop-shadow-[0_2px_8px_rgba(255,255,255,0.4)]"
+                  : "h-[6.3rem] md:h-[7.2rem] lg:h-[10.8rem]"
               }`}
             />
           </Link>
 
           <div
-            className={`hidden md:flex items-center space-x-3 ${
+            className={`hidden md:flex items-center space-x-3 relative z-20 -my-6 ${
               isHome
                 ? isScrolled
                   ? "text-mpl-navy"
@@ -305,7 +305,7 @@ const Header = () => {
         className={`hidden xl:block ${
           isHome
             ? isScrolled
-              ? "backdrop-blur supports-[backdrop-filter]:bg-white/70"
+              ? "backdrop-blur supports-backdrop-filter:bg-white/70"
               : "border-t border-white/20 bg-transparent"
             : ""
         }`}
@@ -357,7 +357,7 @@ const Header = () => {
                   <div
                     className={`absolute mt-0 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top border border-gray-100 z-50 translate-y-2 group-hover:translate-y-0 ${
                       link.children.length > 4
-                        ? "left-1/2 -translate-x-1/2 w-[900px] p-6"
+                        ? "left-1/2 -translate-x-1/2 w-225 p-6"
                         : "left-1/2 -translate-x-1/2 w-56"
                     } ${link.children.length > 4 ? "" : "max-h-[70vh] overflow-y-auto"}`}
                   >

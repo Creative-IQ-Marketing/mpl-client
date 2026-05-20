@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 import { FaTiktok } from "react-icons/fa6";
+import logo from "../assets/newlogosmpl/MPL BLUE LOGO.png";
 
 const Footer = () => {
   return (
@@ -10,10 +11,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12 border-b border-white/10 pb-12">
           {/* Brand */}
           <div className="col-span-1 md:col-span-1">
-            <h3 className="text-xl font-serif font-medium tracking-tight mb-4 text-white">
-              MORALES PADIA LAW
-            </h3>
-            <p className="text-gray-400 text-xs leading-5 mb-6 max-w-[200px]">
+            <Link to="/" aria-label="Go to homepage">
+              <img
+                src={logo}
+                alt="Morales Padia Law"
+                className="h-[9.45rem] w-auto brightness-0 invert"
+              />
+            </Link>
+            <p className="text-gray-400 text-xs leading-5 mb-6 max-w-50">
               Strategic legal excellence customized to your needs.
             </p>
             <div className="flex gap-4">

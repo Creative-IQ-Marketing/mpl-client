@@ -111,7 +111,7 @@ const Testimonials = () => {
       {/* Contact Section */}
       <section className="relative py-24 bg-mpl-navy text-white overflow-hidden">
         {/* Background Elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-mpl-navy via-[#1a2b4b] to-mpl-blue opacity-90"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-mpl-navy via-mpl-navy to-mpl-blue opacity-90"></div>
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
 
         {/* Animated Orbs */}

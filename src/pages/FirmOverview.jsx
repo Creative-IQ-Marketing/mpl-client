@@ -17,7 +17,6 @@ import TrishaImg from "../assets/team/UF9A2215-Edit-Edit.jpg";
 import DorothyImg from "../assets/team/Dorothy1 UF9A2316-Edit-2.jpg";
 import PaulaPerezImg from "../assets/team/PaulaPerezHeadshot.jpg";
 import AllysonImg from "../assets/team/Allyson1 UF9A2325-Edit-2.jpg";
-import CameronImg from "../assets/team/Cameron1 UF9A2310-Edit-2.jpg";
 import VeronicaImg from "../assets/team/veronica.jpeg";
 import ElenaImg from "../assets/team/Elena1 UF9A2289-Edit-2.jpg";
 import AlexandraImg from "../assets/team/Alexandra1 UF9A2272-Edit-2.jpg";
@@ -100,14 +99,14 @@ const HeroSection = () => {
           <div className="relative mx-auto w-full max-w-xl">
             <div className="absolute -left-4 top-6 h-[92%] w-full rounded-[36px] border border-mpl-blue/10 bg-white/50" />
             <div className="relative overflow-hidden rounded-[36px] bg-white p-3 shadow-[0_24px_80px_rgba(0,26,77,0.10)]">
-              <div className="relative overflow-hidden rounded-[28px] bg-[#e8edf6] aspect-[4/5]">
+              <div className="relative overflow-hidden rounded-[28px] bg-[#e8edf6] aspect-4/5">
                 <img
                   src={TrishaImg}
                   alt="Trisha Morales Padia"
                   className="absolute inset-x-0 bottom-0 mx-auto h-[96%] w-auto max-w-full object-contain"
                 />
                 <div className="absolute inset-y-5 left-5 w-[calc(100%-2.5rem)] rounded-[999px] border border-white/55" />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-mpl-navy/12 to-transparent h-40" />
+                <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-mpl-navy/12 to-transparent h-40" />
               </div>
               <div className="flex items-center justify-between gap-4 px-3 pb-2 pt-5">
                 <div>
@@ -150,7 +149,7 @@ const WhoWeAre = () => {
               everything you have built stays protected as life changes.
             </p>
             <div className="mt-8 overflow-hidden rounded-[32px] bg-[#f4f7fb] p-3 shadow-[0_18px_60px_rgba(0,26,77,0.08)]">
-              <div className="overflow-hidden rounded-[24px] aspect-[4/3]">
+              <div className="overflow-hidden rounded-[24px] aspect-4/3">
                 <img
                   src={LadyJusticeImg}
                   alt="Courtroom and legal setting"
@@ -233,7 +232,7 @@ const PracticeAreas = () => {
   return (
     <section className="py-24 bg-gray-50 relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#4475b5_1px,transparent_1px)] [background-size:16px_16px]" />
+      <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#4475b5_1px,transparent_1px)] bg-size-[16px_16px]" />
 
       <div className="container-custom relative z-10">
         <div className="text-center mb-16">
@@ -256,7 +255,7 @@ const PracticeAreas = () => {
                 {practice.title}
               </h3>
 
-              <p className="text-gray-600 leading-relaxed mb-8 flex-grow">
+              <p className="text-gray-600 leading-relaxed mb-8 grow">
                 {practice.desc}
               </p>
 
@@ -341,11 +340,6 @@ const MeetOurTeam = () => {
     },
     { name: "Elena Galaviz", role: "Family Law Paralegal", img: ElenaImg },
     {
-      name: "Cameron Ozuna",
-      role: "Paralegal/Marketing Coordinator",
-      img: CameronImg,
-    },
-    {
       name: "Alexandra Johnson",
       role: "Client Services Director",
       img: AlexandraImg,
@@ -382,7 +376,7 @@ const MeetOurTeam = () => {
               viewport={{ once: true, amount: 0.15 }}
               className="group rounded-[24px] border border-gray-100 bg-[#fafbfd] p-3 shadow-sm"
             >
-              <div className="overflow-hidden rounded-[18px] aspect-[4/5] bg-[#edf2f8]">
+              <div className="overflow-hidden rounded-[18px] aspect-4/5 bg-[#edf2f8]">
                 <LazyImage
                   src={member.img}
                   alt={member.name}

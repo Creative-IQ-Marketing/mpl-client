@@ -2,7 +2,6 @@ import TrishaImg from "../../assets/team/UF9A2215-Edit-Edit.jpg";
 import DorothyImg from "../../assets/team/Dorothy1 UF9A2316-Edit-2.jpg";
 import PaulaPerezImg from "../../assets/team/PaulaPerezHeadshot.jpg";
 import AllysonImg from "../../assets/team/Allyson1 UF9A2325-Edit-2.jpg";
-import CameronImg from "../../assets/team/Cameron1 UF9A2310-Edit-2.jpg";
 import VeronicaImg from "../../assets/team/veronica.jpeg";
 import ElenaImg from "../../assets/team/Elena1 UF9A2289-Edit-2.jpg";
 import AlexandraImg from "../../assets/team/Alexandra1 UF9A2272-Edit-2.jpg";
@@ -49,12 +48,6 @@ const MeetOurTeam = () => {
       role: "Family Law Paralegal",
       image: ElenaImg,
       size: "large",
-    },
-    {
-      name: "Cameron Ozuna",
-      role: "Paralegal/Marketing Coordinator",
-      image: CameronImg,
-      size: "small",
     },
     {
       name: "Alexandra Johnson",
@@ -157,7 +150,7 @@ const MeetOurTeam = () => {
                 key={member.name}
                 className="bg-white rounded-3xl shadow-xl shadow-mpl-blue/10 border border-mpl-blue/10 p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start"
               >
-                <div className="flex-shrink-0">
+                <div className="shrink-0">
                   <div className="w-28 h-32 md:w-32 md:h-40 rounded-2xl overflow-hidden border-4 border-mpl-blue/30">
                     <img
                       src={member.image}
@@ -177,7 +170,7 @@ const MeetOurTeam = () => {
                   <ul className="space-y-1.5 text-sm md:text-base text-gray-700">
                     {bullets.map((item) => (
                       <li key={item} className="flex gap-2">
-                        <span className="mt-[7px] h-[3px] w-[3px] rounded-full bg-mpl-blue" />
+                        <span className="mt-1.75 h-0.75 w-0.75 rounded-full bg-mpl-blue" />
                         <span>{item}</span>
                       </li>
                     ))}
