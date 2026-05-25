@@ -155,6 +155,8 @@ const MeetOurTeam = () => {
                     <img
                       src={member.image}
                       alt={member.name}
+                      width="112"
+                      height="128"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -191,6 +193,8 @@ const MeetOurTeam = () => {
                 <img
                   src={member.image}
                   alt={member.name}
+                  width="96"
+                  height="96"
                   className="w-full h-full object-cover"
                 />
               </div>

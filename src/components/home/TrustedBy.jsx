@@ -84,6 +84,8 @@ const TrustedBy = () => {
                     <img
                       src={logo.src}
                       alt={logo.alt}
+                      width="180"
+                      height="56"
                       className="max-h-14 md:max-h-16 w-auto object-contain"
                     />
                   </div>

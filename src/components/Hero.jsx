@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 const MotionDiv = motion.div;
 import { Link } from "react-router-dom";
-import hero1 from "../assets/hero/alvaro-serrano-hjwKMkehBco-unsplash.jpg";
+// hero-main.jpg lives in /public — stable URL, matches the <link rel="preload"> in index.html
+const hero1 = "/hero-main.jpg";
 import hero2 from "../assets/hero/daiga-ellaby-7edWO30e32k-unsplash.jpg";
 import hero3 from "../assets/hero/liv-bruce-odIhQypCuUk-unsplash.jpg";
 
@@ -69,7 +70,7 @@ const Hero = () => {
               alt={image.alt}
               width="1920"
               height="1080"
-              decoding={index === 0 ? "async" : "async"}
+              decoding={index === 0 ? "sync" : "async"}
               loading={index === 0 ? "eager" : "lazy"}
               fetchPriority={index === 0 ? "high" : "low"}
               className={`w-full h-full object-cover ${

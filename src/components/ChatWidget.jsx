@@ -1,38 +1,58 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
+
+/**
+ * Chat widget loader — deferred until first user interaction OR 3 s.
+ *
+ * Previously injected the LeadConnector script immediately on mount.
+ * That heavy initialisation (loader.js + chat-widget/loader.js) ran
+ * concurrently with React hydration and initial paint, contributing to
+ * the 6 000 ms INP.  Now we wait for the first sign of user intent
+ * before loading any third-party code, so the critical path is clear.
+ */
+const WIDGET_ID = "680fa47e2bada73f44521d20";
+const INTERACTION_EVENTS = ["mousedown", "touchstart", "scroll", "keydown"];
 
 const ChatWidget = () => {
   useEffect(() => {
-    // Check if script is already present to prevent duplicates
-    if (document.querySelector('script[data-widget-id="680fa47e2bada73f44521d20"]')) {
-      return;
-    }
+    let loaded = false;
 
-    const script = document.createElement("script");
-    script.src = "https://beta.leadconnectorhq.com/loader.js";
-    script.setAttribute(
-      "data-resources-url",
-      "https://beta.leadconnectorhq.com/chat-widget/loader.js"
+    const load = () => {
+      if (loaded) return;
+      loaded = true;
+
+      // Remove all listeners — only need to fire once
+      INTERACTION_EVENTS.forEach((ev) => window.removeEventListener(ev, load));
+
+      if (document.querySelector(`script[data-widget-id="${WIDGET_ID}"]`)) {
+        return;
+      }
+
+      const script = document.createElement("script");
+      script.src = "https://beta.leadconnectorhq.com/loader.js";
+      script.setAttribute(
+        "data-resources-url",
+        "https://beta.leadconnectorhq.com/chat-widget/loader.js",
+      );
+      script.setAttribute("data-widget-id", WIDGET_ID);
+      script.async = true;
+      document.body.appendChild(script);
+    };
+
+    // Trigger on first interaction (ideal path — user is engaged)
+    INTERACTION_EVENTS.forEach((ev) =>
+      window.addEventListener(ev, load, { once: true, passive: true }),
     );
-    script.setAttribute("data-widget-id", "680fa47e2bada73f44521d20");
-    script.async = true;
 
-    document.body.appendChild(script);
+    // Fallback: load after 3 s even with no interaction
+    const timer = setTimeout(load, 3000);
 
     return () => {
-      // Cleanup script if component unmounts (optional, but good practice)
-      // Usually chat widgets are meant to stay, but in React it's safer to manage it.
-      // However, the loader might inject other elements that we can't easily clean up.
-      // It's often better to just leave the script or do a soft cleanup.
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-      
-      // Some widgets create an iframe or div we might want to clean up, 
-      // but without knowing the exact ID, we'll just clean the script tag.
+      clearTimeout(timer);
+      INTERACTION_EVENTS.forEach((ev) => window.removeEventListener(ev, load));
     };
   }, []);
 
-  return null; // This component doesn't render any UI itself
+  return null;
 };
 
 export default ChatWidget;

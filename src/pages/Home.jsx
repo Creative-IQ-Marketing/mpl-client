@@ -19,7 +19,7 @@ const Home = () => {
     <div className="relative">
       <div className="relative z-10">
         <Hero />
-        <Suspense fallback={null}>
+        <Suspense fallback={<div style={{ minHeight: "5200px" }} />}>
           <PracticeAreas />
           <Awards />
           <FeaturedIn />

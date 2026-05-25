@@ -654,11 +654,11 @@ function BlogWarmup() {
     };
 
     if (typeof window !== "undefined" && "requestIdleCallback" in window) {
-      const id = window.requestIdleCallback(start, { timeout: 4000 });
+      const id = window.requestIdleCallback(start, { timeout: 8000 });
       return () => window.cancelIdleCallback(id);
     }
 
-    const timeoutId = window.setTimeout(start, 2000);
+    const timeoutId = window.setTimeout(start, 5000);
     return () => window.clearTimeout(timeoutId);
   }, []);
 

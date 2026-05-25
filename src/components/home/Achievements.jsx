@@ -54,6 +54,8 @@ const Achievements = () => {
               <img
                 src={badge.src}
                 alt={badge.alt}
+                width="160"
+                height="112"
                 className="mt-5 max-h-28 md:max-h-40 w-auto object-contain"
               />
               <div className="mt-5 font-serif text-mpl-navy text-lg">
