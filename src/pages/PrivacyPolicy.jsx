@@ -1,16 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SEO from "../components/SEO";
 
 const PrivacyPolicy = () => {
   return (
     <div className="bg-white min-h-screen">
-      <SEO
-        title="Privacy Policy | Morales Padia Law"
-        description="Privacy Policy for Morales Padia Law PLLC, San Antonio TX."
-        canonical="https://www.moralespadialaw.com/privacy-policy"
-        robots="noindex, nofollow"
-      />
       <div className="pt-32 pb-20">
         <div className="container-custom max-w-3xl">
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-mpl-navy mb-8">
@@ -46,9 +39,9 @@ const PrivacyPolicy = () => {
               </h2>
               <p className="leading-relaxed">
                 Information you provide is used solely to respond to your
-                inquiry, schedule a consultation, and provide legal services.
-                We do not sell, rent, or share your personal information with
-                third parties for marketing purposes.
+                inquiry, schedule a consultation, and provide legal services. We
+                do not sell, rent, or share your personal information with third
+                parties for marketing purposes.
               </p>
               <p className="mt-4 leading-relaxed">
                 Communications with our attorneys may be protected by the
@@ -102,7 +95,9 @@ const PrivacyPolicy = () => {
                 us at:
               </p>
               <div className="mt-4 p-6 border border-gray-200 rounded-sm">
-                <p className="font-semibold text-mpl-navy">Morales Padia Law PLLC</p>
+                <p className="font-semibold text-mpl-navy">
+                  Morales Padia Law PLLC
+                </p>
                 <p>45 NE Loop 410, Suite 307</p>
                 <p>San Antonio, TX 78216</p>
                 <a

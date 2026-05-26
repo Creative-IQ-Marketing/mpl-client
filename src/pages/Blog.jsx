@@ -4,7 +4,6 @@ const Motion = motion;
 import { ArrowRight, Phone, Mail, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import ConsultationForm from "../components/ConsultationForm";
-import SEO from "../components/SEO";
 import {
   subscribeContactToNewsletter,
   unsubscribeEmailFromNewsletter,
@@ -22,13 +21,6 @@ const getFreshBlogUrl = () => {
 const Blog = () => {
   return (
     <div className="bg-white min-h-screen">
-      <SEO
-        title="Blog | Morales Padia Law - Legal Insights & Resources"
-        description="Stay informed with practical estate planning and probate insights, including wills, trusts, and advance directives."
-        keywords="San Antonio legal blog, estate planning blog, probate blog, wills and trusts, power of attorney, advance directives, legal resources San Antonio"
-        canonical={window.location.origin + "/resources/blog"}
-        pageType="blog"
-      />
       <Hero />
       <LatestPosts />
       <FeaturedVideo />
@@ -57,9 +49,12 @@ const Hero = () => {
                   Insights
                 </span>
               </div>
-              <h1 className="text-4xl md:text-6xl font-serif font-bold text-mpl-navy leading-[1.05] tracking-tight">
-                Planning for the future
+              <h1 className="sr-only">
+                Legal Blog | San Antonio Attorney Resources | Morales Padia Law
               </h1>
+              <p className="text-4xl md:text-6xl font-serif font-bold text-mpl-navy leading-[1.05] tracking-tight">
+                Planning for the future
+              </p>
               <p className="mt-6 text-base text-gray-500 leading-relaxed max-w-md">
                 Clear, practical insights from our team—built for families who
                 want confidence, not confusion.

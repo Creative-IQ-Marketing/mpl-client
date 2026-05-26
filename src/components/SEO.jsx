@@ -1,10 +1,58 @@
 import { useEffect } from "react";
 
+const getOgImage = (pathname) => {
+  if (
+    pathname.includes("family") ||
+    pathname.includes("custody") ||
+    pathname.includes("divorce") ||
+    pathname.includes("adoption") ||
+    pathname.includes("spousal") ||
+    pathname.includes("paternity") ||
+    pathname.includes("grandparent") ||
+    pathname.includes("modification") ||
+    pathname.includes("enforcement") ||
+    pathname.includes("visitation") ||
+    pathname.includes("protective-order")
+  )
+    return "/og/og-family-law.svg";
+  if (
+    pathname.includes("criminal") ||
+    pathname.includes("dwi") ||
+    pathname.includes("juvenile") ||
+    pathname.includes("drug") ||
+    pathname.includes("felony") ||
+    pathname.includes("misdemeanor") ||
+    pathname.includes("assault") ||
+    pathname.includes("domestic-violence") ||
+    pathname.includes("expungement") ||
+    pathname.includes("weapons") ||
+    pathname.includes("theft") ||
+    pathname.includes("probation") ||
+    pathname.includes("warrants") ||
+    pathname.includes("under-investigation")
+  )
+    return "/og/og-criminal-defense.svg";
+  if (
+    pathname.includes("estate") ||
+    pathname.includes("probate") ||
+    pathname.includes("will") ||
+    pathname.includes("trust") ||
+    pathname.includes("affidavit") ||
+    pathname.includes("heirship") ||
+    pathname.includes("muniment") ||
+    pathname.includes("power-of-attorney") ||
+    pathname.includes("advance-directives") ||
+    pathname.includes("asset-protection")
+  )
+    return "/og/og-estate-probate.svg";
+  return "/og/og-default.svg";
+};
+
 export default function SEO({
   title = "Morales Padia Law | San Antonio Family Law, Estate Planning & Criminal Defense",
   description = "San Antonio and Bexar County attorneys for family law (divorce, custody, child support), estate planning (wills, trusts, power of attorney), probate, and criminal defense (DWI). Serving New Braunfels, Boerne, and surrounding areas.",
   keywords = "Morales Padia Law, San Antonio attorney, family law, divorce, child custody, estate planning, probate, criminal defense, DWI, adoption, award-winning law firm",
-  ogImage = "/mpl_logo.png",
+  ogImage = getOgImage(window.location.pathname),
   canonical = window.location.origin + window.location.pathname,
   pageType = "website",
 }) {
@@ -55,6 +103,7 @@ export default function SEO({
       { property: "og:image:alt", content: title },
       { property: "og:url", content: window.location.href },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:site", content: "@moralespadialaw" },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
       { name: "twitter:image", content: window.location.origin + ogImage },

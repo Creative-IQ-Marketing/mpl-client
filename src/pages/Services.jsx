@@ -69,9 +69,12 @@ const Services = () => {
     <div className="pt-8 pb-20">
       <div className="bg-mpl-navy text-white py-20 mb-16">
         <div className="container-custom text-center">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">
-            How We Help You
+          <h1 className="sr-only">
+            Legal Services San Antonio TX | Morales Padia Law
           </h1>
+          <p className="text-4xl md:text-5xl font-serif font-bold mb-4">
+            How We Help You
+          </p>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto">
             Strategic legal representation tailored to your unique needs.
           </p>

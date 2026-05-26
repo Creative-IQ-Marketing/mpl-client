@@ -92,7 +92,11 @@ const Hero = () => {
           >
             {/* Main Typography - Location-specific H1 for SEO */}
             <div className="space-y-4 mb-8">
-              <motion.h1
+              <h1 className="sr-only">
+                San Antonio Family Law, Estate Planning &amp; Criminal Defense
+                Attorneys | Morales Padia Law
+              </h1>
+              <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
@@ -104,7 +108,7 @@ const Hero = () => {
                 <span className="font-serif text-5xl md:text-7xl lg:text-8xl font-medium tracking-widest uppercase">
                   Your Future
                 </span>
-              </motion.h1>
+              </motion.p>
 
               {/* Summary Text */}
               <motion.p

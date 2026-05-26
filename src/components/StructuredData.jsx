@@ -538,6 +538,162 @@ export default function StructuredData() {
     // Only render BlogPosting on actual blog post pages, not the listing page
     const isOnBlogPage =
       pathname !== "/resources/blog" && pathname.includes("/resources/blog");
+
+    const childCustodyFaqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What types of child custody arrangements are available in Texas?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Texas recognizes joint managing conservatorship, sole managing conservatorship, and possessory conservatorship. Courts also consider visitation rights, parenting plans, and supervised visitation based on the child's best interests.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What is the child custody process in Texas?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The process involves an initial consultation, case evaluation, filing a custody petition, a discovery phase, mediation attempts, and court proceedings if mediation fails. Each step is designed to reach an outcome in the child's best interests.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Why should I hire a child custody attorney in San Antonio?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "A child custody attorney provides child-focused advocacy, comprehensive documentation, thorough investigation of relevant factors, and aggressive representation in court to protect your parental rights and your children's best interests.",
+          },
+        },
+      ],
+    };
+
+    const contestedDivorceFaqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "When do I need a contested divorce attorney in Texas?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "You need a contested divorce attorney when you and your spouse disagree on property division, child custody, spousal support, or other issues — including cases involving complex property, hidden assets, business interests, or domestic violence.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How does the contested divorce process work in Texas?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The contested divorce process involves initial filing, a discovery phase, mediation attempts, pre-trial motions, trial preparation, and a court trial. An experienced attorney guides you through each step to protect your rights.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What issues are typically disputed in a contested divorce?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Contested divorces often involve complex property division, child custody disputes, spousal support disagreements, hidden assets, business ownership interests, and cases involving domestic violence.",
+          },
+        },
+      ],
+    };
+
+    const dwiFaqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What types of DWI cases do you handle in San Antonio?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "We handle first-time DWI, repeat DWI offenses, refusal cases, DWI with accidents, DWI with a child passenger, and high BAC cases. Each situation requires a tailored defense strategy aimed at dismissal, reduction, or acquittal.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What is the DWI defense process in Texas?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The DWI defense process includes an initial consultation, thorough case investigation, evidence analysis, motion filing to suppress improper evidence, negotiation for favorable outcomes, and trial representation if necessary.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Why do I need a DWI attorney in San Antonio?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "A DWI attorney provides aggressive defense, analyzes evidence for weaknesses in stops and tests, protects your license through ALR hearings, and works toward dismissal, reduction, or acquittal of DWI charges in Bexar County.",
+          },
+        },
+      ],
+    };
+
+    const estatePlanningFaqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What estate planning services does Morales Padia Law offer?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "We offer advance directives, asset protection planning, estate affidavits, power of attorney, trust planning, and will preparation to create a comprehensive estate plan tailored to your goals.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What is the estate planning process?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Our process includes an initial planning consultation, goals and family discussion, document preparation, review and revisions, execution and notarization, and ongoing review and updates as your situation changes.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Why should I choose an estate planning attorney in San Antonio?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "A San Antonio estate planning attorney provides comprehensive planning expertise, tax-efficient strategies, probate avoidance focus, personalized guidance, and professional execution support to protect your legacy and provide peace of mind.",
+          },
+        },
+      ],
+    };
+
+    const probateLawFaqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What probate services does Morales Padia Law offer?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "We offer affidavit of heirship, do-I-need-probate assessments, probate initiation guidance, probate options for estates without wills, probate dispute litigation, probating a will, small estate affidavits, and transferring property after death.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What is the probate process in Texas?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The Texas probate process includes an initial consultation, filing a probate petition, a court hearing and appointment, asset inventory and valuation, creditor notification and claims processing, and final distribution and estate closing.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Why do I need a probate attorney in San Antonio?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "A probate attorney provides legal protection and compliance, efficient process management, family dispute reduction, tax optimization, and comprehensive documentation to guide you through every step of the probate process in Bexar County.",
+          },
+        },
+      ],
+    };
+
     const schemas = [
       websiteSchema,
       attorneySchema,
@@ -547,7 +703,12 @@ export default function StructuredData() {
       reviewSchema,
       ...(isOnFaqPage ? [faqSchema] : []),
       ...(isOnBlogPage ? [blogPostingSchema] : []),
-      servicesSchema,
+      ...(pathname === "/" ? [servicesSchema] : []),
+      ...(pathname === "/child-custody" ? [childCustodyFaqSchema] : []),
+      ...(pathname === "/contested-divorce" ? [contestedDivorceFaqSchema] : []),
+      ...(pathname === "/dwi" ? [dwiFaqSchema] : []),
+      ...(pathname === "/estate-planning" ? [estatePlanningFaqSchema] : []),
+      ...(pathname === "/probate-law" ? [probateLawFaqSchema] : []),
     ];
 
     schemas.forEach((schema, index) => {

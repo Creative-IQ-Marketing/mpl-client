@@ -73,9 +73,12 @@ const HeroSection = () => {
             <div className="inline-flex rounded-full border border-mpl-blue/15 bg-white/80 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-mpl-blue shadow-sm backdrop-blur">
               Morales Padia Law
             </div>
-            <h1 className="mt-6 text-5xl font-serif font-bold leading-[1.02] text-mpl-navy md:text-6xl lg:text-7xl">
-              Legal guidance built for real life.
+            <h1 className="sr-only">
+              San Antonio Law Firm | Morales Padia Law
             </h1>
+            <p className="mt-6 text-5xl font-serif font-bold leading-[1.02] text-mpl-navy md:text-6xl lg:text-7xl">
+              Legal guidance built for real life.
+            </p>
             <p className="mt-6 max-w-xl text-lg leading-8 text-gray-600 md:text-xl">
               We help clients move through family, estate, probate, and defense
               matters with clarity, strategy, and a calm sense of direction.

@@ -143,6 +143,7 @@ const Header = () => {
         },
         { name: "Warrants & Arrest Defense", path: "/warrants-arrest" },
         { name: "Weapons Charges", path: "/weapons-charges" },
+        { name: "Juvenile Defense", path: "/juvenile-defense" },
       ],
     },
     {

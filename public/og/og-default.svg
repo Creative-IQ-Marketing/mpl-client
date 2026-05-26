@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#001a4d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d2a5e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#c9a832;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e8c84a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <!-- Decorative circles -->
+  <circle cx="1060" cy="100" r="310" fill="#4475b5" opacity="0.11" />
+  <circle cx="960" cy="560" r="240" fill="#4475b5" opacity="0.07" />
+  <circle cx="100" cy="400" r="160" fill="#c9a832" opacity="0.04" />
+  <!-- Gold accent bar -->
+  <rect x="80" y="180" width="5" height="270" fill="url(#accent)" rx="2" />
+  <!-- Firm name -->
+  <text x="110" y="230" font-family="Georgia, serif" font-size="28" font-weight="400" fill="#c9a832" letter-spacing="4">MORALES PADIA LAW</text>
+  <!-- Tagline -->
+  <text x="110" y="270" font-family="Arial, sans-serif" font-size="18" fill="#7a9bc0" letter-spacing="2">SAN ANTONIO, TEXAS</text>
+  <!-- Main headline -->
+  <text x="110" y="355" font-family="Georgia, serif" font-size="64" font-weight="700" fill="#ffffff">Protecting Your</text>
+  <text x="110" y="430" font-family="Georgia, serif" font-size="64" font-weight="700" fill="#ffffff">Future</text>
+  <!-- Description -->
+  <text x="110" y="478" font-family="Arial, sans-serif" font-size="22" fill="#7a9bc0">Family Law · Estate Planning · Probate · Criminal Defense</text>
+  <!-- Divider -->
+  <rect x="110" y="505" width="980" height="1" fill="#4475b5" opacity="0.4" />
+  <!-- Footer -->
+  <text x="110" y="540" font-family="Arial, sans-serif" font-size="20" fill="#5a7a9e">moralespadialaw.com</text>
+  <text x="980" y="540" font-family="Arial, sans-serif" font-size="20" fill="#5a7a9e" text-anchor="end">(726) 204-4044</text>
+</svg>

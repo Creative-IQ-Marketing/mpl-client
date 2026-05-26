@@ -1,15 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SEO from "../components/SEO";
 
 const TermsOfService = () => {
   return (
     <div className="bg-white min-h-screen">
-      <SEO
-        title="Terms of Service | Morales Padia Law"
-        description="Terms of Service for Morales Padia Law PLLC, San Antonio TX."
-        canonical="https://www.moralespadialaw.com/terms-of-service"
-      />
       <div className="pt-32 pb-20">
         <div className="container-custom max-w-3xl">
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-mpl-navy mb-8">

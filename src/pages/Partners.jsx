@@ -1,18 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Award, Building2, Tv, Globe } from "lucide-react";
-import SEO from "../components/SEO";
 
 const Partners = () => {
   return (
     <div className="bg-white min-h-screen">
-      <SEO
-        title="Our Credentials & Partnerships | Morales Padia Law"
-        description="Recognized partnerships and credentials. Member of Chamber of Commerce, featured in SA Living, Daytime, and more."
-        keywords="San Antonio law firm credentials, professional memberships, media features, partnerships"
-        canonical={window.location.origin + "/partners"}
-        pageType="website"
-      />
       <Hero />
       <Credentials />
       <Media />
