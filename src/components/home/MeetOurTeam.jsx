@@ -1,11 +1,11 @@
 import TrishaImg from "../../assets/team/UF9A2215-Edit-Edit.jpg";
 import DorothyImg from "../../assets/team/Dorothy1 UF9A2316-Edit-2.jpg";
-import PaulaPerezImg from "../../assets/team/PaulaPerezHeadshot.jpg";
 import AllysonImg from "../../assets/team/Allyson1 UF9A2325-Edit-2.jpg";
 import VeronicaImg from "../../assets/team/veronica.jpeg";
 import ElenaImg from "../../assets/team/Elena1 UF9A2289-Edit-2.jpg";
 import AlexandraImg from "../../assets/team/Alexandra1 UF9A2272-Edit-2.jpg";
-import LaritzaImg from "../../assets/team/Laritza (1).png";
+import KaylaImg from "../../assets/team/Kayla.jpeg";
+import LindaImg from "../../assets/team/Linda.png";
 import { motion } from "framer-motion";
 import { Gavel } from "lucide-react";
 const Motion = motion;
@@ -24,12 +24,6 @@ const MeetOurTeam = () => {
       role: "Paralegal",
       image: DorothyImg,
       size: "medium",
-    },
-    {
-      name: "Paula Perez",
-      role: "Attorney",
-      image: PaulaPerezImg,
-      size: "small",
     },
     {
       name: "Allyson Gilmore",
@@ -56,9 +50,15 @@ const MeetOurTeam = () => {
       size: "medium",
     },
     {
-      name: "Laritza Downs",
-      role: "Assistant",
-      image: LaritzaImg,
+      name: "Kayla Kim",
+      role: "File Clerk",
+      image: KaylaImg,
+      size: "small",
+    },
+    {
+      name: "Linda Chapman",
+      role: "Attorney",
+      image: LindaImg,
       size: "small",
     },
   ];

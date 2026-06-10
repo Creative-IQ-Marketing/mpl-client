@@ -15,12 +15,12 @@ import LazyImage from "../components/LazyImage";
 
 import TrishaImg from "../assets/team/UF9A2215-Edit-Edit.jpg";
 import DorothyImg from "../assets/team/Dorothy1 UF9A2316-Edit-2.jpg";
-import PaulaPerezImg from "../assets/team/PaulaPerezHeadshot.jpg";
 import AllysonImg from "../assets/team/Allyson1 UF9A2325-Edit-2.jpg";
 import VeronicaImg from "../assets/team/veronica.jpeg";
 import ElenaImg from "../assets/team/Elena1 UF9A2289-Edit-2.jpg";
 import AlexandraImg from "../assets/team/Alexandra1 UF9A2272-Edit-2.jpg";
-import LaritzaImg from "../assets/team/Laritza (1).png";
+import KaylaImg from "../assets/team/Kayla.jpeg";
+import LindaImg from "../assets/team/Linda.png";
 import LadyJusticeImg from "../assets/hero/alvaro-serrano-hjwKMkehBco-unsplash.jpg";
 
 const FirmOverview = () => {
@@ -334,7 +334,6 @@ const MeetOurTeam = () => {
   const team = [
     { name: "Trisha Morales Padia", role: "Founder/Educator", img: TrishaImg },
     { name: "Dorothy Dominguez", role: "Paralegal", img: DorothyImg },
-    { name: "Paula Perez", role: "Attorney", img: PaulaPerezImg },
     { name: "Allyson Gilmore", role: "Operations Director", img: AllysonImg },
     {
       name: "Veronica Ruvalcaba",
@@ -348,9 +347,14 @@ const MeetOurTeam = () => {
       img: AlexandraImg,
     },
     {
-      name: "Laritza Downs",
-      role: "Assistant",
-      img: LaritzaImg,
+      name: "Kayla Kim",
+      role: "File Clerk",
+      img: KaylaImg,
+    },
+    {
+      name: "Linda Chapman",
+      role: "Attorney",
+      img: LindaImg,
     },
   ];
 
