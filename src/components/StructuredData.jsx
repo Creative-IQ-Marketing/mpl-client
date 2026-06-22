@@ -234,10 +234,17 @@ export default function StructuredData() {
         { "@type": "City", name: "La Vernia" },
         // ── Medina County ─────────────────────────────────────────────
         { "@type": "City", name: "Castroville" },
+        { "@type": "City", name: "Hondo" },
         // ── Extended SEO reach (search intent area) ───────────────────
         { "@type": "City", name: "Cibolo" },
         { "@type": "City", name: "Marion" },
         { "@type": "City", name: "Seguin" },
+        { "@type": "City", name: "China Grove" },
+        { "@type": "City", name: "Garden Ridge" },
+        { "@type": "City", name: "Bulverde" },
+        { "@type": "City", name: "Spring Branch" },
+        { "@type": "City", name: "Timberwood Park" },
+        { "@type": "City", name: "Von Ormy" },
       ],
       knowsAbout: [
         "Family Law",
