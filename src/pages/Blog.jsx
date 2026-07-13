@@ -373,6 +373,12 @@ const LatestPosts = () => {
     },
   ];
 
+  const [activeCategoryId, setActiveCategoryId] = useState(
+    blogCategories[0].id,
+  );
+  const currentBlog =
+    blogCategories.find((c) => c.id === activeCategoryId) || blogCategories[0];
+
   return (
     <section id="latest" className="py-16 md:py-20 bg-gray-50">
       <div className="container-custom">
@@ -401,30 +407,44 @@ const LatestPosts = () => {
               />
             </Link>
           </div>
+
+          <div className="mt-8 flex flex-wrap gap-2">
+            {blogCategories.map((category) => (
+              <button
+                key={category.id}
+                type="button"
+                onClick={() => setActiveCategoryId(category.id)}
+                className={`px-5 py-2.5 rounded-sm text-sm font-semibold transition-colors ${
+                  category.id === activeCategoryId
+                    ? "bg-mpl-navy text-white"
+                    : "border border-gray-200 text-mpl-navy hover:border-gray-400"
+                }`}
+              >
+                {category.label}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div className="max-w-5xl mx-auto space-y-8">
-          {blogCategories.map((category) => (
-            <motion.div
-              key={category.id}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3 }}
-              className="rounded-sm border border-gray-200 bg-white overflow-hidden shadow-sm"
-            >
-              <iframe
-                src={category.url}
-                className="w-full h-[1400px] min-h-[900px] border-0"
-                title={`${category.label} - Morales & Padia Law Blog`}
-                loading="lazy"
-              />
-            </motion.div>
-          ))}
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            key={currentBlog?.id}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            className="rounded-sm border border-gray-200 bg-white overflow-hidden shadow-sm"
+          >
+            <iframe
+              src={currentBlog?.url}
+              className="w-full h-[1400px] min-h-[900px] border-0"
+              title={`${currentBlog?.label} - Morales & Padia Law Blog`}
+              loading="lazy"
+            />
+          </motion.div>
 
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href={blogCategories[0]?.url}
+              href={currentBlog?.url}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-mpl-navy text-white px-7 py-3.5 rounded-sm text-sm font-semibold hover:bg-mpl-blue transition-colors w-full sm:w-auto justify-center"
