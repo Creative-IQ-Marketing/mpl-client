@@ -13,9 +13,9 @@ const YOUTUBE_EMBED_BASE = "https://www.youtube.com/embed";
 const BLOG_ORIGIN = "https://blog.moralespadialaw.com";
 const BLOG_FRESH_WINDOW_MS = 2 * 60 * 1000;
 
-const getFreshBlogUrl = () => {
+const getFreshBlogUrl = (path = "") => {
   const freshnessBucket = Math.floor(Date.now() / BLOG_FRESH_WINDOW_MS);
-  return `${BLOG_ORIGIN}?v=${freshnessBucket}`;
+  return `${BLOG_ORIGIN}${path}?v=${freshnessBucket}`;
 };
 
 const Blog = () => {
@@ -361,13 +361,17 @@ const LatestPosts = () => {
   const blogCategories = [
     {
       id: "estate-planning",
-      label: "Blog",
+      label: "Estate Planning",
       url: getFreshBlogUrl(),
       description: "Wills, trusts & planning",
     },
+    {
+      id: "family-law",
+      label: "Family Law",
+      url: getFreshBlogUrl("/family-law-blog"),
+      description: "Divorce, custody & support",
+    },
   ];
-
-  const currentBlog = blogCategories[0];
 
   return (
     <section id="latest" className="py-16 md:py-20 bg-gray-50">
@@ -382,8 +386,8 @@ const LatestPosts = () => {
                 Blog Posts
               </h2>
               <p className="mt-3 text-sm text-gray-500 max-w-sm leading-relaxed">
-                Insights on estate planning, probate, wills, and trusts from our
-                team.
+                Insights on estate planning, probate, family law, and more from
+                our team.
               </p>
             </div>
             <Link
@@ -399,25 +403,28 @@ const LatestPosts = () => {
           </div>
         </div>
 
-        <div className="max-w-5xl mx-auto">
-          <motion.div
-            key={currentBlog?.id}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.3 }}
-            className="rounded-sm border border-gray-200 bg-white overflow-hidden shadow-sm"
-          >
-            <iframe
-              src={currentBlog?.url}
-              className="w-full h-[1400px] min-h-[900px] border-0"
-              title={`${currentBlog?.label} - Morales & Padia Law Blog`}
-              loading="lazy"
-            />
-          </motion.div>
+        <div className="max-w-5xl mx-auto space-y-8">
+          {blogCategories.map((category) => (
+            <motion.div
+              key={category.id}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3 }}
+              className="rounded-sm border border-gray-200 bg-white overflow-hidden shadow-sm"
+            >
+              <iframe
+                src={category.url}
+                className="w-full h-[1400px] min-h-[900px] border-0"
+                title={`${category.label} - Morales & Padia Law Blog`}
+                loading="lazy"
+              />
+            </motion.div>
+          ))}
 
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href={currentBlog?.url}
+              href={blogCategories[0]?.url}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-mpl-navy text-white px-7 py-3.5 rounded-sm text-sm font-semibold hover:bg-mpl-blue transition-colors w-full sm:w-auto justify-center"
