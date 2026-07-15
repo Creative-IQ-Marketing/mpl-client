@@ -1,51 +1,43 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
-export const LazyImage = ({
+/**
+ * OptimizedImage — native lazy loading, optional priority for LCP,
+ * never hides content behind opacity gates.
+ */
+export function OptimizedImage({
   src,
   alt,
   className = "",
-  placeholderSrc = null,
   width,
   height,
-}) => {
-  const imgRef = useRef(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [imageSrc, setImageSrc] = useState(placeholderSrc || src);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setImageSrc(src);
-          observer.unobserve(entry.target);
-        }
-      },
-      { rootMargin: "50px" },
-    );
-
-    if (imgRef.current) {
-      observer.observe(imgRef.current);
-    }
-
-    return () => {
-      if (imgRef.current) {
-        observer.unobserve(imgRef.current);
-      }
-    };
-  }, [src]);
+  sizes,
+  srcSet,
+  loading = "lazy",
+  fetchPriority = "auto",
+  decoding = "async",
+}) {
+  const [loaded, setLoaded] = useState(false);
+  const isEager = loading === "eager" || fetchPriority === "high";
 
   return (
     <img
-      ref={imgRef}
-      src={imageSrc}
+      src={src}
+      srcSet={srcSet}
+      sizes={sizes}
       alt={alt}
-      className={`${className} ${isLoaded ? "opacity-100" : "opacity-70"} transition-opacity duration-300`}
-      onLoad={() => setIsLoaded(true)}
-      decoding="async"
       width={width}
       height={height}
+      loading={isEager ? "eager" : "lazy"}
+      fetchPriority={fetchPriority}
+      decoding={decoding}
+      onLoad={() => setLoaded(true)}
+      className={className}
+      style={loaded ? undefined : { contentVisibility: "auto" }}
     />
   );
-};
+}
 
-export default LazyImage;
+/** @deprecated Use OptimizedImage — kept as alias for existing imports */
+export const LazyImage = OptimizedImage;
+
+export default OptimizedImage;

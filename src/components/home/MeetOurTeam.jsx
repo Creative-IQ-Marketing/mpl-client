@@ -158,7 +158,7 @@ const MeetOurTeam = () => {
                       width="112"
                       height="128"
                       className="w-full h-full object-cover"
-                    />
+                     loading="lazy" decoding="async" />
                   </div>
                 </div>
 
@@ -196,7 +196,7 @@ const MeetOurTeam = () => {
                   width="96"
                   height="96"
                   className="w-full h-full object-cover"
-                />
+                 loading="lazy" decoding="async" />
               </div>
               <h4 className="font-serif font-semibold text-mpl-navy text-base md:text-lg mb-1">
                 {member.name}

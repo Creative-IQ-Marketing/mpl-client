@@ -18,9 +18,9 @@ const Hero = () => {
     <section className="relative bg-white border-b border-gray-100">
       <div className="container-custom py-16 md:py-24">
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 1, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.2 }}
           className="max-w-3xl"
         >
           <div className="inline-flex items-center gap-2 mb-6">
@@ -80,10 +80,10 @@ const Credentials = () => {
               return (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: 16 }}
+                  initial={{ opacity: 1, y: 0 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  transition={{ duration: 0.2, delay: i * 0.1 }}
                   className="bg-white rounded-lg border border-gray-200 p-8 text-center"
                 >
                   <div className="flex justify-center mb-6">
@@ -153,10 +153,10 @@ const Media = () => {
               return (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: 12 }}
+                  initial={{ opacity: 1, y: 0 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.05 }}
+                  transition={{ duration: 0.2, delay: i * 0.05 }}
                   className="bg-gray-50 rounded-lg border border-gray-200 p-6 text-center flex flex-col items-center justify-center min-h-40"
                 >
                   <Icon className={`w-8 h-8 ${feature.color} mb-3`} />
@@ -180,7 +180,7 @@ const Organizations = () => {
       <div className="container-custom">
         <div className="max-w-4xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="bg-white rounded-lg border border-gray-200 p-8 md:p-12 text-center"

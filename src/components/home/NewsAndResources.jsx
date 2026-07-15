@@ -42,19 +42,19 @@ const NewsAndResources = () => {
           {newsItems.map((item, index) => (
             <Motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.2 }}
               className="bg-white border border-gray-100 rounded-3xl p-8 md:p-10 hover:shadow-lg hover:border-mpl-blue/20 transition-all"
             >
               <div className="flex flex-col md:flex-row gap-8 md:gap-10">
                 {/* Icon Circle - Left */}
                 <Motion.div
-                  initial={{ scale: 0.9, opacity: 0 }}
+                  initial={{ scale: 0.9, opacity: 1 }}
                   whileInView={{ scale: 1, opacity: 1 }}
                   viewport={{ once: true, amount: 0.5 }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
+                  transition={{ duration: 0.2, delay: 0 }}
                   className="flex-shrink-0"
                 >
                   <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-mpl-blue/15 flex items-center justify-center">
@@ -115,10 +115,10 @@ const NewsAndResources = () => {
 
         {/* Resources Link */}
         <Motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 0 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.2, delay: 0 }}
           className="mt-16 text-center"
         >
           <p className="text-gray-600 text-lg">

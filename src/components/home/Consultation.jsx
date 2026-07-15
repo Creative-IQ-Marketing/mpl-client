@@ -9,10 +9,10 @@ const Consultation = () => {
           {/* Left Column: Text & Contact Info */}
           <div className="pt-4">
             <Motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.2 }}
             >
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-mpl-navy mb-6 leading-tight">
                 Let's start the conversation.
@@ -61,10 +61,10 @@ const Consultation = () => {
 
           {/* Right Column: Clean Form */}
           <Motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.2, delay: 0 }}
             className="bg-white rounded-2xl p-8 md:p-10 shadow-xl shadow-gray-200/50 border border-gray-100"
           >
             <h3 className="text-2xl font-serif text-mpl-navy mb-8">

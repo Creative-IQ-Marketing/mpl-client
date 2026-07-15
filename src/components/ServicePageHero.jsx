@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Phone, ArrowRight } from "lucide-react";
 
@@ -14,12 +13,7 @@ const ServicePageHero = ({
   return (
     <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-white pt-20">
       <div className="container-custom relative z-10 flex flex-col items-center text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-4xl"
-        >
+        <div className="max-w-4xl">
           {badge && (
             <div className="inline-block px-4 py-1.5 bg-mpl-blue/10 text-mpl-blue rounded-full text-sm font-bold tracking-wider mb-6 uppercase border border-mpl-blue/20">
               {badge}
@@ -59,10 +53,9 @@ const ServicePageHero = ({
               Call {phoneNumber}
             </a>
           </div>
-        </motion.div>
+        </div>
       </div>
 
-      {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-mpl-blue/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-mpl-gold/5 rounded-full blur-3xl"></div>

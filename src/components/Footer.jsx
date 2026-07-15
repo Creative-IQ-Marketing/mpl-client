@@ -16,7 +16,7 @@ const Footer = () => {
                 src={logo}
                 alt="Morales Padia Law"
                 className="h-[9.45rem] w-auto brightness-0 invert"
-              />
+               loading="lazy" decoding="async" />
             </Link>
             <p className="text-gray-400 text-xs leading-5 mb-6 max-w-50">
               Strategic legal excellence customized to your needs.

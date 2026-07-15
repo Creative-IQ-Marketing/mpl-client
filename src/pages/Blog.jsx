@@ -38,9 +38,9 @@ const Hero = () => {
         <div className="py-20 md:py-28">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <motion.div
-              initial={{ opacity: 0, y: 8 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="lg:col-span-8"
             >
               <div className="flex items-center gap-3 mb-6">
@@ -89,10 +89,10 @@ const FeaturedVideo = () => {
       <div className="container-custom">
         <div className="max-w-5xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="overflow-hidden rounded-sm border border-gray-100 shadow-sm"
           >
             <div className="aspect-video w-full bg-black">
@@ -429,7 +429,7 @@ const LatestPosts = () => {
         <div className="max-w-5xl mx-auto">
           <motion.div
             key={currentBlog?.id}
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
             className="rounded-sm border border-gray-200 bg-white overflow-hidden shadow-sm"
@@ -494,10 +494,10 @@ const ContactSection = () => {
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start max-w-5xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-4"
           >
             <span className="text-xs font-medium tracking-[0.15em] uppercase text-gray-400">
@@ -537,12 +537,12 @@ const ContactSection = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{
-              duration: 0.5,
-              delay: 0.08,
+              duration: 0.2,
+              delay: 0,
               ease: [0.22, 1, 0.36, 1],
             }}
             className="lg:col-span-8"

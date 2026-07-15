@@ -58,9 +58,9 @@ const HeroSection = () => {
       <div className="container-custom relative z-10 text-left">
         <motion.div
           style={{ y: y1 }}
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 1, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.2, ease: "easeOut" }}
         >
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif leading-tight mb-6 text-white drop-shadow-xl">
             Assault & Family Violence Defense
@@ -92,9 +92,9 @@ const HeroSection = () => {
       </div>
 
       <motion.div
-        initial={{ opacity: 0 }}
+        initial={{ opacity: 1 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
+        transition={{ delay: 0, duration: 0.2 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer z-20"
         onClick={() =>
           window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
@@ -159,9 +159,9 @@ const WhyChooseSection = () => {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.2, delay: 0 }}
               className="p-8 bg-gray-50 rounded-lg border border-gray-200 hover:border-mpl-blue hover:shadow-lg transition-all"
             >
               <feature.icon className="w-12 h-12 text-mpl-blue mb-4" />
@@ -220,9 +220,9 @@ const ProcessSection = () => {
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.2, delay: 0 }}
               className="p-6 border border-mpl-blue/30 rounded-lg hover:bg-mpl-blue/10 transition-all"
             >
               <div className="text-3xl font-bold text-mpl-blue mb-3">
@@ -263,9 +263,9 @@ const BenefitsSection = () => {
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 1, x: 0 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.2, delay: 0 }}
               className="flex items-start gap-4 p-4 rounded-lg hover:bg-gray-50 transition-all"
             >
               <Shield className="w-6 h-6 text-mpl-blue flex-shrink-0 mt-1" />

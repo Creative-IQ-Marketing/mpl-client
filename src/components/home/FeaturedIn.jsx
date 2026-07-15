@@ -54,10 +54,10 @@ const FeaturedIn = () => {
         {/* Section Header */}
         <div className="mb-12">
           <Motion.div
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.2 }}
           >
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-mpl-navy mb-3">
               Featured In
@@ -76,10 +76,10 @@ const FeaturedIn = () => {
               href={feature.link}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 1, x: 0 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
+              transition={{ duration: 0.2, delay: 0 }}
               className="group block border border-gray-200 rounded-lg p-5 md:p-6 hover:border-mpl-blue hover:bg-gray-50 transition-all duration-300"
             >
               <div className="flex items-start justify-between gap-4">
@@ -105,10 +105,10 @@ const FeaturedIn = () => {
 
         {/* Also Featured In */}
         <Motion.div
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 1 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.2, delay: 0 }}
           className="mt-12 pt-8 border-t border-gray-200"
         >
           <p className="text-sm text-gray-600 mb-4 font-medium">

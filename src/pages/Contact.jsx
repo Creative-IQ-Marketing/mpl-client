@@ -41,9 +41,9 @@ const Contact = () => {
 
         <div className="container-custom relative z-10 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.2 }}
           >
             <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 text-white">
               Contact Us
@@ -61,10 +61,10 @@ const Contact = () => {
           {/* Left Column: Contact Details */}
           <div className="space-y-12">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 1, x: 0 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.2 }}
             >
               <h2 className="text-4xl font-serif font-bold text-mpl-navy mb-6">
                 Get in Touch
@@ -78,10 +78,10 @@ const Contact = () => {
               {contactInfo.map((item, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 1, y: 0 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  transition={{ delay: 0, duration: 0.2 }}
                   className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
                 >
                   <div className="w-12 h-12 bg-mpl-blue/10 rounded-full flex items-center justify-center text-mpl-blue mb-4">
@@ -110,10 +110,10 @@ const Contact = () => {
 
             {/* Map Placeholder */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.4, duration: 0.6 }}
+              transition={{ delay: 0, duration: 0.2 }}
               className="w-full h-64 bg-gray-200 rounded-xl overflow-hidden shadow-inner relative"
             >
               <iframe
@@ -131,10 +131,10 @@ const Contact = () => {
 
           {/* Right Column: Form */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 1, x: 0 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.2 }}
             className="lg:mt-12"
           >
             <ConsultationForm />

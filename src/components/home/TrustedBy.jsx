@@ -87,7 +87,7 @@ const TrustedBy = () => {
                       width="180"
                       height="56"
                       className="max-h-14 md:max-h-16 w-auto object-contain"
-                    />
+                     loading="lazy" decoding="async" />
                   </div>
                 </Motion.div>
               ))}

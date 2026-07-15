@@ -39,9 +39,9 @@ const HeroSection = () => {
       <div className="container-custom relative z-10 text-left">
         <motion.div
           style={{ y: y1 }}
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 1, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.2, ease: "easeOut" }}
         >
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif leading-tight mb-6 text-white drop-shadow-xl">
             Misdemeanor Defense
@@ -99,9 +99,9 @@ const WhyChooseSection = () => {
           {features.map((f, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
+              transition={{ duration: 0.2, delay: i * 0.1 }}
               className="p-8 bg-gray-50 rounded-lg border border-gray-200 hover:border-mpl-blue hover:shadow-lg transition-all"
             >
               <f.icon className="w-12 h-12 text-mpl-blue mb-4" />
@@ -137,9 +137,9 @@ const ProcessSection = () => {
           {steps.map((s, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
+              transition={{ duration: 0.2, delay: i * 0.1 }}
               className="p-6 border border-mpl-blue/30 rounded-lg hover:bg-mpl-blue/10 transition-all"
             >
               <div className="text-3xl font-bold text-mpl-blue mb-3">

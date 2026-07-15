@@ -42,9 +42,9 @@ export default function NewsletterUnsubscribe() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(68,117,181,0.10),transparent_45%),radial-gradient(circle_at_85%_20%,rgba(35,67,116,0.08),transparent_50%)]" />
       <div className="container-custom relative">
         <Motion.div
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 1, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.2 }}
           className="mx-auto max-w-3xl rounded-3xl border border-gray-200 bg-white p-8 shadow-sm md:p-10"
         >
           <div className="inline-flex items-center gap-2 rounded-full border border-mpl-blue/20 bg-mpl-blue/5 px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] text-mpl-blue">

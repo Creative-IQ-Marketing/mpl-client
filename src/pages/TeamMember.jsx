@@ -73,9 +73,9 @@ const TeamMember = () => {
             {/* Image Column */}
             <motion.div
               className="lg:col-span-5 order-2 lg:order-1"
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 1, x: 0 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.2 }}
             >
               <div className="relative">
                 <div className="absolute inset-0 bg-mpl-blue/20 transform translate-x-4 translate-y-4 rounded-lg"></div>
@@ -83,7 +83,7 @@ const TeamMember = () => {
                   src={member.image}
                   alt={member.name}
                   className="relative w-full h-auto object-cover rounded-lg shadow-2xl border-4 border-white/10"
-                />
+                 loading="lazy" decoding="async" />
 
                 {/* Contact Card Overlay (Desktop) */}
                 <div className="hidden lg:block absolute -bottom-10 -right-10 bg-white text-mpl-navy p-6 rounded-lg shadow-xl max-w-xs">
@@ -117,9 +117,9 @@ const TeamMember = () => {
             {/* Text Column */}
             <motion.div
               className="lg:col-span-7 order-1 lg:order-2 text-center lg:text-left"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.2, delay: 0 }}
             >
               <div className="inline-block px-4 py-1 bg-mpl-gold/20 text-mpl-gold border border-mpl-gold/30 rounded-full text-sm font-semibold tracking-wider mb-4">
                 {member.role.toUpperCase()}
@@ -148,9 +148,9 @@ const TeamMember = () => {
           {/* Scroll Down Indicator */}
           <motion.div
             className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center cursor-pointer z-20"
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 1 }}
+            transition={{ delay: 0, duration: 0.2 }}
             onClick={() => {
               const bioSection = document.getElementById("bio");
               if (bioSection) {
@@ -256,9 +256,9 @@ const TeamMember = () => {
             {/* Main Bio (Right) */}
             <motion.div
               className="lg:col-span-8"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.2 }}
               viewport={{ once: true }}
             >
               <div className="bg-white p-8 md:p-12 rounded-lg shadow-sm">

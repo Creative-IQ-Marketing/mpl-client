@@ -14,9 +14,9 @@ const Testimonials = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left: Image */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 1, x: 0 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.2 }}
               className="relative"
             >
               <div className="absolute inset-0 bg-mpl-blue/10 rounded-lg transform translate-x-4 translate-y-4"></div>
@@ -24,14 +24,14 @@ const Testimonials = () => {
                 src={TrishaImg}
                 alt="Attorney Trisha Morales Padia"
                 className="relative z-10 rounded-lg shadow-xl w-full max-w-md mx-auto object-cover aspect-[3/4]"
-              />
+               loading="lazy" decoding="async" />
             </motion.div>
 
             {/* Right: Text */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 1, x: 0 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.2, delay: 0 }}
             >
               <h1 className="text-3xl lg:text-3xl font-serif font-bold text-mpl-navy mb-8 leading-tight">
                 Real people. Real situations. Real outcomes.
@@ -56,10 +56,10 @@ const Testimonials = () => {
       <section className="bg-mpl-navy py-16 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 0 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.2 }}
           className="container-custom relative z-10"
         >
           <h2 className="text-3xl md:text-5xl font-serif font-bold text-white tracking-wide">
@@ -131,7 +131,7 @@ const Testimonials = () => {
         <div className="container-custom relative z-10">
           <div className="text-center mb-16">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="inline-block px-6 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium tracking-widest uppercase mb-6"
@@ -140,20 +140,20 @@ const Testimonials = () => {
             </motion.div>
 
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
+              transition={{ delay: 0 }}
               className="text-4xl md:text-6xl font-serif font-bold mb-6 text-white"
             >
               Need legal support?
             </motion.h2>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
+              transition={{ delay: 0 }}
               className="text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed"
             >
               Don't navigate the legal system alone. Contact us today for a
@@ -162,10 +162,10 @@ const Testimonials = () => {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0 }}
             className="max-w-3xl mx-auto transform hover:-translate-y-2 transition-transform duration-500"
           >
             <ConsultationForm />

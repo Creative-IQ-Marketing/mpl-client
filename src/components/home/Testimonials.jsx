@@ -63,7 +63,7 @@ const Testimonials = () => {
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <Motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="space-y-6"
@@ -84,7 +84,7 @@ const Testimonials = () => {
             <AnimatePresence mode="wait">
               <Motion.div
                 key={currentIndex}
-                initial={{ opacity: 0, y: 12 }}
+                initial={{ opacity: 1, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -12 }}
                 transition={{ duration: 0.35 }}

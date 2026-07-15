@@ -20,9 +20,9 @@ const Hero = () => {
         <div className="py-20 md:py-28">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
             <motion.div
-              initial={{ opacity: 0, y: 8 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="lg:col-span-7"
             >
               <div className="flex items-center gap-3 mb-6">
@@ -80,12 +80,12 @@ const Catalog = () => {
             {items.map((item, i) => (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 1, y: 0 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{
                   delay: i * 0.08,
-                  duration: 0.5,
+                  duration: 0.2,
                   ease: [0.22, 1, 0.36, 1],
                 }}
                 className="group py-12 md:py-16 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10"

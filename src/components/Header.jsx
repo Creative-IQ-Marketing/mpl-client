@@ -242,6 +242,9 @@ const Header = () => {
                     : "h-36 md:h-[10.8rem] lg:h-[12.6rem] brightness-0 invert drop-shadow-[0_2px_8px_rgba(255,255,255,0.4)]"
                   : "h-[6.3rem] md:h-[7.2rem] lg:h-[10.8rem]"
               }`}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
             />
           </Link>
 

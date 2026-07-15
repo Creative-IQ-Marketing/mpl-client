@@ -13,9 +13,9 @@ const Hero = () => {
       <div className="container-custom relative">
         <div className="py-16 md:py-20">
           <motion.div
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55 }}
+            transition={{ duration: 0.2 }}
             className="max-w-3xl mx-auto text-center"
           >
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-mpl-navy leading-tight">
@@ -211,7 +211,7 @@ const FAQCategories = () => {
             return (
               <motion.div
                 key={category.title}
-                initial={{ opacity: 0, y: 12 }}
+                initial={{ opacity: 1, y: 0 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: catIdx * 0.1 }}
@@ -236,7 +236,7 @@ const FAQCategories = () => {
 
                 {/* Category Contents - Individual FAQs */}
                 <motion.div
-                  initial={{ opacity: 0, height: 0 }}
+                  initial={{ opacity: 1, height: 0 }}
                   animate={{
                     opacity: isCategoryOpen ? 1 : 0,
                     height: isCategoryOpen ? "auto" : 0,
@@ -252,7 +252,7 @@ const FAQCategories = () => {
                       return (
                         <motion.div
                           key={item.q}
-                          initial={{ opacity: 0, y: 8 }}
+                          initial={{ opacity: 1, y: 0 }}
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true }}
                           transition={{ delay: qIdx * 0.02 }}
@@ -281,7 +281,7 @@ const FAQCategories = () => {
 
                           {/* Answer */}
                           <motion.div
-                            initial={{ opacity: 0, height: 0 }}
+                            initial={{ opacity: 1, height: 0 }}
                             animate={{
                               opacity: isQuestionOpen ? 1 : 0,
                               height: isQuestionOpen ? "auto" : 0,

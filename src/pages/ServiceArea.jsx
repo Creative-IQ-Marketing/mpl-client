@@ -156,9 +156,9 @@ const Hero = () => (
     <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(68,117,181,0.10),transparent_55%),radial-gradient(circle_at_80%_0%,rgba(35,67,116,0.08),transparent_50%)]" />
     <div className="container-custom relative py-16 md:py-24">
       <motion.div
-        initial={{ opacity: 0, y: 14 }}
+        initial={{ opacity: 1, y: 0 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.55 }}
+        transition={{ duration: 0.2 }}
         className="max-w-3xl"
       >
         <div className="inline-flex items-center gap-2 text-xs font-bold text-mpl-blue uppercase tracking-widest mb-4 bg-blue-50 border border-blue-100 px-3 py-1.5 rounded-full">
@@ -192,9 +192,9 @@ const Hero = () => (
 
       {/* County badges */}
       <motion.div
-        initial={{ opacity: 0, y: 10 }}
+        initial={{ opacity: 1, y: 0 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3, duration: 0.5 }}
+        transition={{ delay: 0, duration: 0.2 }}
         className="mt-10 flex flex-wrap gap-2"
       >
         {[
@@ -231,7 +231,7 @@ const PracticeHighlights = () => (
           return (
             <motion.div
               key={item.title}
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
@@ -266,7 +266,7 @@ const CountiesSection = () => (
   <section className="py-20 md:py-28">
     <div className="container-custom">
       <motion.div
-        initial={{ opacity: 0, y: 12 }}
+        initial={{ opacity: 1, y: 0 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         className="max-w-2xl mb-14"
@@ -285,7 +285,7 @@ const CountiesSection = () => (
         {counties.map((county, idx) => (
           <motion.div
             key={county.name}
-            initial={{ opacity: 0, y: 14 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: idx * 0.06 }}

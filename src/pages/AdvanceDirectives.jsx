@@ -127,10 +127,10 @@ const TypesSection = () => {
           {cards.map((card, index) => (
             <Motion.div
               key={card.title}
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.04 }}
+              transition={{ delay: 0 }}
               className="rounded-2xl border border-mpl-blue/20 p-6 shadow-sm"
             >
               <div className="w-10 h-10 rounded-full bg-mpl-blue text-white flex items-center justify-center">

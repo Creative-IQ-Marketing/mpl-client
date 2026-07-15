@@ -48,8 +48,12 @@ const About = () => {
             <div className="w-full md:w-1/3">
               <div className="rounded-xl overflow-hidden shadow-lg">
                 <LazyImage
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                  src="/team/trisha.webp"
                   alt="Trisha Morales Padia"
+                  width={800}
+                  height={1000}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto object-cover"
                 />
               </div>

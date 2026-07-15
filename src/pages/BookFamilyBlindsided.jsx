@@ -31,9 +31,9 @@ const Hero = () => {
     <section className="relative bg-white border-b border-gray-100">
       <div className="container-custom py-16 md:py-24">
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 1, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.2 }}
           className="max-w-3xl"
         >
           <div className="inline-flex items-center gap-2 mb-6">
@@ -112,7 +112,7 @@ const Highlights = () => {
           {items.map((b, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 14 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35 }}
@@ -168,7 +168,7 @@ const Contents = () => {
           {chapters.map((c, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35 }}
@@ -227,7 +227,7 @@ const Benefits = () => {
           {items.map((it, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.04 }}
@@ -253,7 +253,7 @@ const CTA = () => {
     <section className="py-24 bg-mpl-navy text-white">
       <div className="container-custom text-center">
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 1, y: 0 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="max-w-2xl mx-auto"

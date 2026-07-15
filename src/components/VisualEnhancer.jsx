@@ -3,6 +3,9 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 const Motion = motion;
 import { useLocation } from "react-router-dom";
 
+/**
+ * Decorative ambience only — never hides page content / H1s.
+ */
 const VisualEnhancer = ({ scopeSelector = "main" }) => {
   const location = useLocation();
   const x = useMotionValue(-1000);
@@ -12,50 +15,11 @@ const VisualEnhancer = ({ scopeSelector = "main" }) => {
 
   const css = useMemo(
     () => `
-      @keyframes veRise {
-        0% { opacity: 0; transform: translate3d(0, 16px, 0); filter: blur(6px); }
-        65% { opacity: 1; filter: blur(0px); }
-        100% { opacity: 1; transform: translate3d(0, 0, 0); filter: blur(0px); }
-      }
-      @keyframes veShimmer {
-        0% { transform: translate3d(-45%, 0, 0); opacity: 0; }
-        25% { opacity: 0.75; }
-        100% { transform: translate3d(45%, 0, 0); opacity: 0; }
-      }
-      @keyframes veUnderline {
-        0% { transform: scaleX(0); opacity: 0; }
-        100% { transform: scaleX(1); opacity: 1; }
-      }
       .ve-h1 {
         position: relative;
         transform: translateZ(0);
-        will-change: transform, opacity;
       }
-      .ve-h1 .ve-ch {
-        display: inline-block;
-        opacity: 0;
-        transform: translate3d(0, 16px, 0);
-        filter: blur(6px);
-        will-change: transform, opacity, filter;
-      }
-      .ve-h1.ve-in .ve-ch {
-        animation: veRise 720ms cubic-bezier(.2,.9,.2,1) forwards;
-        animation-delay: var(--d, 0ms);
-      }
-      .ve-h1.ve-in::after {
-        content: "";
-        position: absolute;
-        left: -10%;
-        right: -10%;
-        top: 15%;
-        bottom: 15%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,.35), transparent);
-        filter: blur(0px);
-        mix-blend-mode: soft-light;
-        animation: veShimmer 1100ms cubic-bezier(.2,.8,.2,1) 220ms forwards;
-        pointer-events: none;
-      }
-      .ve-h1.ve-in::before {
+      .ve-h1::before {
         content: "";
         position: absolute;
         left: 0;
@@ -64,13 +28,11 @@ const VisualEnhancer = ({ scopeSelector = "main" }) => {
         width: 100%;
         transform-origin: left;
         background: linear-gradient(90deg, rgba(68,117,181,.0), rgba(68,117,181,.55), rgba(35,67,116,.0));
-        opacity: 0;
-        animation: veUnderline 700ms cubic-bezier(.2,.8,.2,1) 420ms forwards;
+        opacity: 0.85;
         pointer-events: none;
       }
       @media (prefers-reduced-motion: reduce) {
-        .ve-h1 .ve-ch { opacity: 1; transform: none; filter: none; }
-        .ve-h1.ve-in::after, .ve-h1.ve-in::before { display: none; }
+        .ve-h1::before { display: none; }
       }
     `,
     [],
@@ -84,8 +46,8 @@ const VisualEnhancer = ({ scopeSelector = "main" }) => {
       if (id) {
         const el = document.getElementById(id);
         if (el) {
-          const y = el.getBoundingClientRect().top + window.scrollY - 96;
-          window.scrollTo({ top: Math.max(0, y), left: 0, behavior: "auto" });
+          const top = el.getBoundingClientRect().top + window.scrollY - 96;
+          window.scrollTo({ top: Math.max(0, top), left: 0, behavior: "auto" });
           return;
         }
       }
@@ -131,58 +93,10 @@ const VisualEnhancer = ({ scopeSelector = "main" }) => {
     if (!root) return;
 
     const h1s = Array.from(root.querySelectorAll("h1"));
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("ve-in");
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { root: null, threshold: 0.35 },
-    );
-
     h1s.forEach((h1) => {
-      if (location.pathname === "/" && h1.closest("#hero-section")) {
-        return;
-      }
-
-      if (h1.dataset.veProcessed === "1") {
-        io.observe(h1);
-        return;
-      }
-
-      h1.dataset.veProcessed = "1";
+      if (location.pathname === "/" && h1.closest("#hero-section")) return;
       h1.classList.add("ve-h1");
-
-      if (h1.children.length > 0) {
-        io.observe(h1);
-        return;
-      }
-
-      const raw = (h1.textContent || "").trimEnd();
-      if (!raw) {
-        io.observe(h1);
-        return;
-      }
-
-      const fragment = document.createDocumentFragment();
-      const chars = Array.from(raw);
-      chars.forEach((ch, i) => {
-        const span = document.createElement("span");
-        span.className = "ve-ch";
-        span.style.setProperty("--d", `${i * 18}ms`);
-        span.textContent = ch === " " ? "\u00A0" : ch;
-        fragment.appendChild(span);
-      });
-
-      h1.textContent = "";
-      h1.appendChild(fragment);
-      io.observe(h1);
     });
-
-    return () => io.disconnect();
   }, [location.pathname, scopeSelector]);
 
   return (
@@ -192,16 +106,13 @@ const VisualEnhancer = ({ scopeSelector = "main" }) => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_0%,rgba(68,117,181,0.20),transparent_52%),radial-gradient(circle_at_90%_10%,rgba(35,67,116,0.18),transparent_55%),radial-gradient(circle_at_35%_95%,rgba(99,155,227,0.16),transparent_58%)]" />
 
         <Motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="absolute -top-60 -left-60 h-[660px] w-[660px] rounded-full bg-mpl-blue/30 blur-[90px]"
+          className="absolute -top-60 -left-60 h-[660px] w-[660px] rounded-full bg-mpl-blue/30 blur-[90px] opacity-100"
         />
         <Motion.div
           animate={{
             x: [0, 80, -40, 0],
             y: [0, 40, 90, 0],
-            opacity: [0.22, 0.34, 0.20, 0.22],
+            opacity: [0.22, 0.34, 0.2, 0.22],
           }}
           transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
           className="absolute top-1/3 -right-48 h-[640px] w-[640px] rounded-full bg-mpl-navy/26 blur-[110px]"

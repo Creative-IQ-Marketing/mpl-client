@@ -21,7 +21,6 @@ import ElenaImg from "../assets/team/optimized/Elena1_UF9A2289-Edit-2.webp";
 import AlexandraImg from "../assets/team/optimized/Alexandra1_UF9A2272-Edit-2.webp";
 import KaylaImg from "../assets/team/optimized/Kayla.webp";
 import LindaImg from "../assets/team/optimized/Linda.webp";
-import LadyJusticeImg from "../assets/hero/alvaro-serrano-hjwKMkehBco-unsplash.jpg";
 
 const FirmOverview = () => {
   return (
@@ -64,9 +63,9 @@ const HeroSection = () => {
 
       <div className="container-custom relative z-10 pb-16 md:pb-24">
         <Motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, ease: "easeOut" }}
+          transition={{ duration: 0.2, ease: "easeOut" }}
           className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center"
         >
           <div className="max-w-2xl">
@@ -107,7 +106,7 @@ const HeroSection = () => {
                   src={TrishaImg}
                   alt="Trisha Morales Padia"
                   className="absolute inset-x-0 bottom-0 mx-auto h-[96%] w-auto max-w-full object-contain"
-                />
+                 loading="lazy" decoding="async" />
                 <div className="absolute inset-y-5 left-5 w-[calc(100%-2.5rem)] rounded-[999px] border border-white/55" />
                 <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-mpl-navy/12 to-transparent h-40" />
               </div>
@@ -154,9 +153,13 @@ const WhoWeAre = () => {
             <div className="mt-8 overflow-hidden rounded-[32px] bg-[#f4f7fb] p-3 shadow-[0_18px_60px_rgba(0,26,77,0.08)]">
               <div className="overflow-hidden rounded-[24px] aspect-4/3">
                 <img
-                  src={LadyJusticeImg}
+                  src="/hero/hero-1280.webp"
                   alt="Courtroom and legal setting"
+                  width="1280"
+                  height="853"
                   className="h-full w-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -307,9 +310,9 @@ const CoreValues = () => {
           {values.map((value, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: 0 }}
               viewport={{ once: true }}
               className="relative"
             >
@@ -377,9 +380,9 @@ const MeetOurTeam = () => {
           {team.map((member, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 18 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: index * 0.04 }}
+              transition={{ duration: 0.2, delay: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               className="group rounded-[24px] border border-gray-100 bg-[#fafbfd] p-3 shadow-sm"
             >
@@ -387,6 +390,11 @@ const MeetOurTeam = () => {
                 <LazyImage
                   src={member.img}
                   alt={member.name}
+                  width={640}
+                  height={800}
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>

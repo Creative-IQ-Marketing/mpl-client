@@ -146,7 +146,7 @@ const OptionsSection = () => {
           {options.map((opt, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.04 }}
               viewport={{ once: true }}
@@ -310,7 +310,7 @@ const BenefitsSection = () => {
           {benefits.map((b, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.04 }}
               viewport={{ once: true }}
@@ -427,9 +427,9 @@ const ProcessSection = () => {
             {steps.map((step, index) => (
               <motion.div
                 key={step.id}
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 1, x: 0 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: 0 }}
                 viewport={{ once: true }}
                 className="relative flex flex-col md:flex-row gap-8 group"
               >

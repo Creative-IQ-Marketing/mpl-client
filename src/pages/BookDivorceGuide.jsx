@@ -36,9 +36,9 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row gap-12 items-center">
           {/* Left Content */}
           <motion.div
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.2 }}
             className="flex-1"
           >
             <div className="inline-flex items-center gap-2 mb-6">
@@ -92,9 +92,9 @@ const Hero = () => {
 
           {/* Right Book Cover */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
+            initial={{ opacity: 1, x: 0 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.2, delay: 0 }}
             className="flex-1 flex justify-end"
           >
             <div className="w-full max-w-xs">
@@ -102,7 +102,7 @@ const Hero = () => {
                 src={BookCoverImg}
                 alt="Truth Before the Split - Divorce Playbook by Trisha Morales Padia"
                 className="w-full h-auto rounded-xl shadow-2xl"
-              />
+               loading="lazy" decoding="async" />
             </div>
           </motion.div>
         </div>
@@ -135,7 +135,7 @@ const Highlights = () => {
           {items.map((b, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 14 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35 }}
@@ -171,7 +171,7 @@ const Contents = () => {
           {chapters.map((c, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35 }}
@@ -230,7 +230,7 @@ const Benefits = () => {
           {items.map((it, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.04 }}
