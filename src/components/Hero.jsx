@@ -2,22 +2,41 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 const MotionDiv = motion.div;
 import { Link } from "react-router-dom";
-// hero-main.jpg lives in /public — stable URL, matches the <link rel="preload"> in index.html
-const hero1 = "/hero-main.jpg";
-import hero2 from "../assets/hero/daiga-ellaby-7edWO30e32k-unsplash.jpg";
-import hero3 from "../assets/hero/liv-bruce-odIhQypCuUk-unsplash.jpg";
+
+import slide2Jpg from "../assets/hero/optimized/slide-2.jpg";
+import slide2Webp960 from "../assets/hero/optimized/slide-2-960.webp";
+import slide2Webp1280 from "../assets/hero/optimized/slide-2-1280.webp";
+import slide3Jpg from "../assets/hero/optimized/slide-3.jpg";
+import slide3Webp960 from "../assets/hero/optimized/slide-3-960.webp";
+import slide3Webp1280 from "../assets/hero/optimized/slide-3-1280.webp";
+
+const HERO0_WEBP_SRCSET =
+  "/hero/hero-640.webp 640w, /hero/hero-960.webp 960w, /hero/hero-1280.webp 1280w, /hero/hero-1600.webp 1600w";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [isPaused, _setIsPaused] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [mountExtraSlides, setMountExtraSlides] = useState(false);
   const heroRef = useRef(null);
 
   const images = [
-    { src: hero1, alt: "Client consultation" },
-    { src: hero2, alt: "Legal team collaboration" },
-    { src: hero3, alt: "Community support" },
+    {
+      alt: "Client consultation",
+      // Slide 0 uses public /hero/* paths in <picture>
+      isLcp: true,
+    },
+    {
+      alt: "Legal team collaboration",
+      jpg: slide2Jpg,
+      webpSrcSet: `${slide2Webp960} 960w, ${slide2Webp1280} 1280w`,
+    },
+    {
+      alt: "Community support",
+      jpg: slide3Jpg,
+      webpSrcSet: `${slide3Webp960} 960w, ${slide3Webp1280} 1280w`,
+    },
   ];
 
   useEffect(() => {
@@ -32,6 +51,33 @@ const Hero = () => {
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 50);
     return () => clearTimeout(timer);
+  }, []);
+
+  // Defer mounting non-LCP slides until idle or user advances the carousel
+  useEffect(() => {
+    if (currentSlide > 0) {
+      setMountExtraSlides(true);
+    }
+  }, [currentSlide]);
+
+  useEffect(() => {
+    let idleId;
+    let timeoutId;
+
+    const mount = () => setMountExtraSlides(true);
+
+    if (typeof window.requestIdleCallback === "function") {
+      idleId = window.requestIdleCallback(mount, { timeout: 2500 });
+    } else {
+      timeoutId = window.setTimeout(mount, 1500);
+    }
+
+    return () => {
+      if (idleId != null && typeof window.cancelIdleCallback === "function") {
+        window.cancelIdleCallback(idleId);
+      }
+      if (timeoutId != null) window.clearTimeout(timeoutId);
+    };
   }, []);
 
   useEffect(() => {
@@ -55,30 +101,51 @@ const Hero = () => {
     >
       {/* Slideshow Background with Ken Burns Effect */}
       <div className="absolute inset-0">
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity ${
-              isMobile ? "duration-700" : "duration-1000"
-            } ${currentSlide === index ? "opacity-100 z-10" : "opacity-0 z-0"}`}
-          >
-            {/* Darker overlay for better text contrast without the card */}
-            <div className="absolute inset-0 bg-black/40 z-10" />
-            <div className="absolute inset-0 bg-linear-to-b from-black/20 via-transparent to-black/60 z-10" />
-            <img
-              src={image.src}
-              alt={image.alt}
-              width="1920"
-              height="1080"
-              decoding={index === 0 ? "sync" : "async"}
-              loading={index === 0 ? "eager" : "lazy"}
-              fetchPriority={index === 0 ? "high" : "low"}
-              className={`w-full h-full object-cover ${
-                !isMobile && currentSlide === index ? "animate-ken-burns" : ""
-              }`}
-            />
-          </div>
-        ))}
+        {images.map((image, index) => {
+          if (index > 0 && !mountExtraSlides) return null;
+
+          return (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity ${
+                isMobile ? "duration-700" : "duration-1000"
+              } ${currentSlide === index ? "opacity-100 z-10" : "opacity-0 z-0"}`}
+            >
+              <div className="absolute inset-0 bg-black/40 z-10" />
+              <div className="absolute inset-0 bg-linear-to-b from-black/20 via-transparent to-black/60 z-10" />
+              <picture>
+                {image.isLcp ? (
+                  <source
+                    type="image/webp"
+                    srcSet={HERO0_WEBP_SRCSET}
+                    sizes="100vw"
+                  />
+                ) : (
+                  <source
+                    type="image/webp"
+                    srcSet={image.webpSrcSet}
+                    sizes="100vw"
+                  />
+                )}
+                <img
+                  src={image.isLcp ? "/hero-main.jpg" : image.jpg}
+                  alt={image.alt}
+                  width="1920"
+                  height="1080"
+                  sizes="100vw"
+                  decoding={index === 0 ? "sync" : "async"}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchPriority={index === 0 ? "high" : "low"}
+                  className={`w-full h-full object-cover ${
+                    !isMobile && currentSlide === index
+                      ? "animate-ken-burns"
+                      : ""
+                  }`}
+                />
+              </picture>
+            </div>
+          );
+        })}
       </div>
 
       {/* Hero Content */}
