@@ -18,8 +18,6 @@ const Hero = () => {
     <section className="relative bg-white border-b border-gray-100">
       <div className="container-custom py-16 md:py-24">
         <motion.div
-          initial={{ opacity: 1, y: 0 }}
-          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2 }}
           className="max-w-3xl"
         >
@@ -80,9 +78,6 @@ const Credentials = () => {
               return (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 1, y: 0 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
                   transition={{ duration: 0.2, delay: i * 0.1 }}
                   className="bg-white rounded-lg border border-gray-200 p-8 text-center"
                 >
@@ -153,9 +148,6 @@ const Media = () => {
               return (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 1, y: 0 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
                   transition={{ duration: 0.2, delay: i * 0.05 }}
                   className="bg-gray-50 rounded-lg border border-gray-200 p-6 text-center flex flex-col items-center justify-center min-h-40"
                 >
@@ -180,9 +172,6 @@ const Organizations = () => {
       <div className="container-custom">
         <div className="max-w-4xl mx-auto">
           <motion.div
-            initial={{ opacity: 1, y: 0 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             className="bg-white rounded-lg border border-gray-200 p-8 md:p-12 text-center"
           >
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-mpl-navy mb-4">

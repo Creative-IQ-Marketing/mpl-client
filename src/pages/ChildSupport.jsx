@@ -90,10 +90,7 @@ const WhyChooseSection = () => {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 1, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0 }}
-              viewport={{ once: true }}
               className="bg-white p-8 rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-1"
             >
               <div className="w-14 h-14 bg-mpl-blue/10 rounded-xl flex items-center justify-center text-mpl-blue mb-6 group-hover:bg-mpl-blue group-hover:text-white transition-colors duration-300">
@@ -164,10 +161,7 @@ const ProcessSection = () => {
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 1, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0 }}
-              viewport={{ once: true }}
               className="bg-white p-8 rounded-2xl shadow-md relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 bg-mpl-navy text-white w-12 h-12 flex items-center justify-center rounded-bl-2xl font-serif font-bold text-xl">
@@ -238,10 +232,7 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 1, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0 }}
-              viewport={{ once: true }}
               className="flex gap-4 p-6 bg-gray-50 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gray-100"
             >
               <div className="flex-shrink-0">

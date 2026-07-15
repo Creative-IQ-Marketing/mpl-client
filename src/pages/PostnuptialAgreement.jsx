@@ -53,8 +53,6 @@ const HeroSection = () => {
     <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-white pt-20">
       <div className="container-custom relative z-10 flex flex-col items-center text-center">
         <motion.div
-          initial={{ opacity: 1, y: 0 }}
-          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2 }}
           className="max-w-4xl"
         >
@@ -157,10 +155,7 @@ const WhyChooseSection = () => {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 1, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0 }}
-              viewport={{ once: true }}
               className="bg-white p-8 rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-1"
             >
               <div className="w-14 h-14 bg-mpl-blue/10 rounded-xl flex items-center justify-center text-mpl-blue mb-6 group-hover:bg-mpl-blue group-hover:text-white transition-colors duration-300">
@@ -237,10 +232,7 @@ const ProcessSection = () => {
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 1, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0 }}
-              viewport={{ once: true }}
               className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 relative overflow-hidden group hover:shadow-lg transition-all"
             >
               <div className="absolute top-0 right-0 bg-mpl-blue/5 text-mpl-blue/20 text-8xl font-serif font-bold leading-none -mr-4 -mt-4 group-hover:text-mpl-blue/10 transition-colors">
@@ -314,10 +306,7 @@ const AddressableItemsSection = () => {
           {items.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 1, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0 }}
-              viewport={{ once: true }}
               className="flex gap-4 p-6 rounded-xl hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-100"
             >
               <div className="flex-shrink-0 w-12 h-12 bg-mpl-gold/10 rounded-full flex items-center justify-center text-mpl-gold">

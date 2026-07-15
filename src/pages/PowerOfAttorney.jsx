@@ -131,9 +131,6 @@ const TypesSection = () => {
           {cards.map((card, index) => (
             <Motion.div
               key={card.title}
-              initial={{ opacity: 1, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ delay: 0 }}
               className="rounded-2xl border border-mpl-blue/20 p-6 shadow-sm"
             >

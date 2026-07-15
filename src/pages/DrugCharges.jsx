@@ -75,9 +75,6 @@ const OverviewSection = () => {
       <div className="container-custom">
         <motion.div
           aria-hidden="true"
-          initial={{ opacity: 1 }}
-          whileInView={{ opacity: 0.25 }}
-          viewport={{ once: true }}
           className="pointer-events-none absolute -top-20 -left-24 w-96 h-96 rounded-full bg-mpl-lightBlue/20 blur-3xl"
         />
         <div className="relative bg-white rounded-2xl border border-gray-200 shadow-md p-8 max-w-5xl mx-auto">
@@ -183,10 +180,7 @@ const TypesSection = () => {
           {items.map((card, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 1, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.04 }}
-              viewport={{ once: true }}
               className="relative bg-white rounded-2xl border border-gray-200 shadow-md p-8 overflow-hidden"
             >
               <div className="w-12 h-12 rounded-full bg-mpl-navy text-white flex items-center justify-center mb-6">
@@ -349,10 +343,7 @@ const DefenseStrategiesSection = () => {
           {strategies.map((s, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 1, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.04 }}
-              viewport={{ once: true }}
               className="bg-white rounded-2xl border border-gray-200 shadow-md p-8"
             >
               <div className="w-12 h-12 rounded-full bg-mpl-navy text-white flex items-center justify-center mb-6">
@@ -471,10 +462,7 @@ const AlternativeTreatmentSection = () => {
           {items.map((c, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 1, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.04 }}
-              viewport={{ once: true }}
               className="bg-white rounded-2xl border border-gray-200 shadow-md p-8"
             >
               <div className="w-12 h-12 rounded-full bg-mpl-navy text-white flex items-center justify-center mb-6">
@@ -568,10 +556,7 @@ const ProcessSection = () => {
             {steps.map((step, index) => (
               <motion.div
                 key={step.id}
-                initial={{ opacity: 1, x: 0 }}
-                whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0 }}
-                viewport={{ once: true }}
                 className="relative flex flex-col md:flex-row gap-8 group"
               >
                 {/* Step Number Bubble */}

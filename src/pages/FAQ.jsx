@@ -13,8 +13,6 @@ const Hero = () => {
       <div className="container-custom relative">
         <div className="py-16 md:py-20">
           <motion.div
-            initial={{ opacity: 1, y: 0 }}
-            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.2 }}
             className="max-w-3xl mx-auto text-center"
           >
@@ -211,9 +209,6 @@ const FAQCategories = () => {
             return (
               <motion.div
                 key={category.title}
-                initial={{ opacity: 1, y: 0 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
                 transition={{ delay: catIdx * 0.1 }}
               >
                 {/* Main Category Accordion */}
@@ -252,9 +247,6 @@ const FAQCategories = () => {
                       return (
                         <motion.div
                           key={item.q}
-                          initial={{ opacity: 1, y: 0 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true }}
                           transition={{ delay: qIdx * 0.02 }}
                           className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden"
                         >

@@ -21,9 +21,6 @@ const ProbatingAWill = () => {
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <motion.div
-              initial={{ opacity: 1, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               className="bg-white rounded-lg p-8 md:p-12 shadow-lg mb-12"
             >
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-mpl-navy mb-6">
@@ -97,9 +94,6 @@ const ProbatingAWill = () => {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 1, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               className="bg-white rounded-lg p-8 md:p-12 shadow-lg mb-12"
             >
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-mpl-navy mb-6">
@@ -164,9 +158,6 @@ const ProbatingAWill = () => {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 1, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               className="bg-white rounded-lg p-8 md:p-12 shadow-lg"
             >
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-mpl-navy mb-6">
@@ -221,9 +212,6 @@ const ProbatingAWill = () => {
       <section className="py-16 bg-white">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 1, y: 0 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             className="bg-linear-to-r from-mpl-navy to-mpl-blue rounded-lg p-12 text-white text-center"
           >
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
@@ -246,9 +234,6 @@ const ProbatingAWill = () => {
       <section className="py-20 bg-gray-50">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 1, y: 0 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             className="max-w-2xl mx-auto text-center"
           >
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-mpl-navy mb-6">

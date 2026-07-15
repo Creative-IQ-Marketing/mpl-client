@@ -156,8 +156,6 @@ const Hero = () => (
     <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(68,117,181,0.10),transparent_55%),radial-gradient(circle_at_80%_0%,rgba(35,67,116,0.08),transparent_50%)]" />
     <div className="container-custom relative py-16 md:py-24">
       <motion.div
-        initial={{ opacity: 1, y: 0 }}
-        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.2 }}
         className="max-w-3xl"
       >
@@ -192,9 +190,6 @@ const Hero = () => (
 
       {/* County badges */}
       <motion.div
-        initial={{ opacity: 1, y: 0 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0, duration: 0.2 }}
         className="mt-10 flex flex-wrap gap-2"
       >
         {[
@@ -231,9 +226,6 @@ const PracticeHighlights = () => (
           return (
             <motion.div
               key={item.title}
-              initial={{ opacity: 1, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
               className="bg-gray-50 rounded-2xl p-6 border border-gray-200 hover:shadow-md transition-shadow"
             >
@@ -266,9 +258,6 @@ const CountiesSection = () => (
   <section className="py-20 md:py-28">
     <div className="container-custom">
       <motion.div
-        initial={{ opacity: 1, y: 0 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
         className="max-w-2xl mb-14"
       >
         <h2 className="text-3xl md:text-4xl font-serif font-bold text-mpl-navy leading-tight">
@@ -285,9 +274,6 @@ const CountiesSection = () => (
         {counties.map((county, idx) => (
           <motion.div
             key={county.name}
-            initial={{ opacity: 1, y: 0 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             transition={{ delay: idx * 0.06 }}
             className="bg-white rounded-3xl border border-gray-200 shadow-sm overflow-hidden"
           >

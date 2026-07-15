@@ -45,22 +45,6 @@ const TeamMember = () => {
     );
   }
 
-  // Animation variants
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
-
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
   return (
     <div className="bg-mpl-neutral-light min-h-screen pt-20">
       {/* Hero Section */}
@@ -73,8 +57,6 @@ const TeamMember = () => {
             {/* Image Column */}
             <motion.div
               className="lg:col-span-5 order-2 lg:order-1"
-              initial={{ opacity: 1, x: 0 }}
-              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.2 }}
             >
               <div className="relative">
@@ -117,9 +99,6 @@ const TeamMember = () => {
             {/* Text Column */}
             <motion.div
               className="lg:col-span-7 order-1 lg:order-2 text-center lg:text-left"
-              initial={{ opacity: 1, y: 0 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.2, delay: 0 }}
             >
               <div className="inline-block px-4 py-1 bg-mpl-gold/20 text-mpl-gold border border-mpl-gold/30 rounded-full text-sm font-semibold tracking-wider mb-4">
                 {member.role.toUpperCase()}
@@ -148,9 +127,6 @@ const TeamMember = () => {
           {/* Scroll Down Indicator */}
           <motion.div
             className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center cursor-pointer z-20"
-            initial={{ opacity: 1, y: 0 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0, duration: 0.2 }}
             onClick={() => {
               const bioSection = document.getElementById("bio");
               if (bioSection) {
@@ -182,15 +158,10 @@ const TeamMember = () => {
             {/* Sidebar (Left) */}
             <motion.div
               className="lg:col-span-4 space-y-8"
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
             >
               {/* Quote Box */}
               {member.quote && (
                 <motion.div
-                  variants={fadeIn}
                   className="bg-white p-8 rounded-lg shadow-md border-t-4 border-mpl-blue"
                 >
                   <Quote className="text-mpl-gold w-10 h-10 mb-4 opacity-50" />
@@ -208,7 +179,6 @@ const TeamMember = () => {
               {/* Achievements/Titles */}
               {member.footerTitles && member.footerTitles.length > 0 && (
                 <motion.div
-                  variants={fadeIn}
                   className="bg-mpl-navy text-white p-8 rounded-lg shadow-md"
                 >
                   <h3 className="text-xl font-serif mb-6 flex items-center gap-2">
@@ -256,10 +226,7 @@ const TeamMember = () => {
             {/* Main Bio (Right) */}
             <motion.div
               className="lg:col-span-8"
-              initial={{ opacity: 1, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.2 }}
-              viewport={{ once: true }}
             >
               <div className="bg-white p-8 md:p-12 rounded-lg shadow-sm">
                 <h2 className="text-3xl font-serif text-mpl-navy mb-8 flex items-center gap-3">

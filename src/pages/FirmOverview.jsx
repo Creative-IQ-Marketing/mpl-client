@@ -63,8 +63,6 @@ const HeroSection = () => {
 
       <div className="container-custom relative z-10 pb-16 md:pb-24">
         <Motion.div
-          initial={{ opacity: 1, y: 0 }}
-          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2, ease: "easeOut" }}
           className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center"
         >
@@ -310,10 +308,7 @@ const CoreValues = () => {
           {values.map((value, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 1, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0 }}
-              viewport={{ once: true }}
               className="relative"
             >
               <div className="text-8xl font-serif text-white/5 absolute -top-10 -left-4 font-bold select-none">
@@ -380,10 +375,6 @@ const MeetOurTeam = () => {
           {team.map((member, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 1, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.2, delay: 0 }}
-              viewport={{ once: true, amount: 0.15 }}
               className="group rounded-[24px] border border-gray-100 bg-[#fafbfd] p-3 shadow-sm"
             >
               <div className="overflow-hidden rounded-[18px] aspect-4/5 bg-[#edf2f8]">

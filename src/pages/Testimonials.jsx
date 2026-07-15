@@ -14,8 +14,6 @@ const Testimonials = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left: Image */}
             <motion.div
-              initial={{ opacity: 1, x: 0 }}
-              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.2 }}
               className="relative"
             >
@@ -29,9 +27,6 @@ const Testimonials = () => {
 
             {/* Right: Text */}
             <motion.div
-              initial={{ opacity: 1, x: 0 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.2, delay: 0 }}
             >
               <h1 className="text-3xl lg:text-3xl font-serif font-bold text-mpl-navy mb-8 leading-tight">
                 Real people. Real situations. Real outcomes.
@@ -56,9 +51,6 @@ const Testimonials = () => {
       <section className="bg-mpl-navy py-16 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
         <motion.div
-          initial={{ opacity: 1, y: 0 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           transition={{ duration: 0.2 }}
           className="container-custom relative z-10"
         >
@@ -131,18 +123,12 @@ const Testimonials = () => {
         <div className="container-custom relative z-10">
           <div className="text-center mb-16">
             <motion.div
-              initial={{ opacity: 1, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               className="inline-block px-6 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium tracking-widest uppercase mb-6"
             >
               Get in Touch
             </motion.div>
 
             <motion.h2
-              initial={{ opacity: 1, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ delay: 0 }}
               className="text-4xl md:text-6xl font-serif font-bold mb-6 text-white"
             >
@@ -150,9 +136,6 @@ const Testimonials = () => {
             </motion.h2>
 
             <motion.p
-              initial={{ opacity: 1, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ delay: 0 }}
               className="text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed"
             >
@@ -162,9 +145,6 @@ const Testimonials = () => {
           </div>
 
           <motion.div
-            initial={{ opacity: 1, y: 0 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             transition={{ delay: 0 }}
             className="max-w-3xl mx-auto transform hover:-translate-y-2 transition-transform duration-500"
           >

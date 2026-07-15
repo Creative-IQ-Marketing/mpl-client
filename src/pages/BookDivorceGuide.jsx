@@ -36,8 +36,6 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row gap-12 items-center">
           {/* Left Content */}
           <motion.div
-            initial={{ opacity: 1, y: 0 }}
-            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.2 }}
             className="flex-1"
           >
@@ -92,9 +90,6 @@ const Hero = () => {
 
           {/* Right Book Cover */}
           <motion.div
-            initial={{ opacity: 1, x: 0 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.2, delay: 0 }}
             className="flex-1 flex justify-end"
           >
             <div className="w-full max-w-xs">
@@ -135,9 +130,6 @@ const Highlights = () => {
           {items.map((b, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 1, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.35 }}
               className="flex items-start gap-3 bg-white rounded-2xl border border-gray-200 p-6 shadow-sm"
             >
@@ -171,9 +163,6 @@ const Contents = () => {
           {chapters.map((c, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 1, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.35 }}
               className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6"
             >
@@ -230,9 +219,6 @@ const Benefits = () => {
           {items.map((it, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 1, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ delay: i * 0.04 }}
               className="bg-white rounded-2xl border border-gray-200 shadow-md p-8"
             >

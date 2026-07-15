@@ -31,8 +31,6 @@ const Hero = () => {
     <section className="relative bg-white border-b border-gray-100">
       <div className="container-custom py-16 md:py-24">
         <motion.div
-          initial={{ opacity: 1, y: 0 }}
-          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2 }}
           className="max-w-3xl"
         >
@@ -112,9 +110,6 @@ const Highlights = () => {
           {items.map((b, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 1, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.35 }}
               className="flex items-start gap-3 bg-white rounded-2xl border border-gray-200 p-6 shadow-sm"
             >
@@ -168,9 +163,6 @@ const Contents = () => {
           {chapters.map((c, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 1, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.35 }}
               className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6"
             >
@@ -227,9 +219,6 @@ const Benefits = () => {
           {items.map((it, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 1, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ delay: i * 0.04 }}
               className="bg-white rounded-2xl border border-gray-200 shadow-md p-8"
             >
@@ -253,9 +242,6 @@ const CTA = () => {
     <section className="py-24 bg-mpl-navy text-white">
       <div className="container-custom text-center">
         <motion.div
-          initial={{ opacity: 1, y: 0 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           className="max-w-2xl mx-auto"
         >
           <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-white">

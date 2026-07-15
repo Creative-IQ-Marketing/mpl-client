@@ -12,10 +12,7 @@ const PracticeAreaCard = ({ title, description, icon, link = "/services" }) => {
   });
   return (
     <MotionDiv
-      initial={{ opacity: 1, y: 0, scale: 0.98 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ type: "spring", stiffness: 140, damping: 18 }}
-      viewport={{ once: true, amount: 0.2 }}
       whileHover={{ y: -6 }}
       whileFocus={{ y: -3 }}
       className="relative bg-white p-8 rounded-2xl shadow-lg transition-all duration-300 group overflow-hidden border border-gray-100"

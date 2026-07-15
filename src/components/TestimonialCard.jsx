@@ -6,9 +6,6 @@ const MotionDiv = motion.div;
 const TestimonialCard = ({ name, quote, rating = 5 }) => {
   return (
     <MotionDiv
-      initial={{ opacity: 1, y: 0 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
       transition={{ type: "spring", stiffness: 120, damping: 16 }}
       whileHover={{ y: -4 }}
       className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full flex flex-col relative overflow-hidden"

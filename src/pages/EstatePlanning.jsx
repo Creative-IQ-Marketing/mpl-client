@@ -87,9 +87,6 @@ const Services = () => {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 1, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{
                 delay: 0,
                 duration: 0.2,
@@ -146,9 +143,6 @@ const Process = () => {
             {steps.map((step, i) => (
               <motion.div
                 key={step.title}
-                initial={{ opacity: 1, y: 0 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
                 transition={{ delay: i * 0.06, duration: 0.2 }}
                 className="flex items-start gap-4"
               >
@@ -204,9 +198,6 @@ const WhyChoose = () => {
           {items.map((item) => (
             <motion.div
               key={item}
-              initial={{ opacity: 1, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               className="border border-gray-100 rounded-sm p-5 hover:border-gray-200 transition-colors"
             >
               <div className="flex items-start gap-3">

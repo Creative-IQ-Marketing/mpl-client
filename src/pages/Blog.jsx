@@ -38,8 +38,6 @@ const Hero = () => {
         <div className="py-20 md:py-28">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <motion.div
-              initial={{ opacity: 1, y: 0 }}
-              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="lg:col-span-8"
             >
@@ -89,9 +87,6 @@ const FeaturedVideo = () => {
       <div className="container-custom">
         <div className="max-w-5xl mx-auto">
           <motion.div
-            initial={{ opacity: 1, y: 0 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="overflow-hidden rounded-sm border border-gray-100 shadow-sm"
           >
@@ -429,8 +424,6 @@ const LatestPosts = () => {
         <div className="max-w-5xl mx-auto">
           <motion.div
             key={currentBlog?.id}
-            initial={{ opacity: 1 }}
-            animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
             className="rounded-sm border border-gray-200 bg-white overflow-hidden shadow-sm"
           >
@@ -494,9 +487,6 @@ const ContactSection = () => {
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start max-w-5xl mx-auto">
           <motion.div
-            initial={{ opacity: 1, y: 0 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-4"
           >
@@ -537,9 +527,6 @@ const ContactSection = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 1, y: 0 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             transition={{
               duration: 0.2,
               delay: 0,

@@ -146,10 +146,7 @@ const OptionsSection = () => {
           {options.map((opt, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 1, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.04 }}
-              viewport={{ once: true }}
               className="bg-white rounded-2xl border border-gray-200 shadow-md p-8"
             >
               <div className="w-12 h-12 rounded-full bg-mpl-navy text-white flex items-center justify-center mb-6">
@@ -310,10 +307,7 @@ const BenefitsSection = () => {
           {benefits.map((b, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 1, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.04 }}
-              viewport={{ once: true }}
               className="bg-white rounded-2xl border border-gray-200 shadow-md p-8"
             >
               <div className="w-12 h-12 rounded-full bg-mpl-navy text-white flex items-center justify-center mb-6">
@@ -427,10 +421,7 @@ const ProcessSection = () => {
             {steps.map((step, index) => (
               <motion.div
                 key={step.id}
-                initial={{ opacity: 1, x: 0 }}
-                whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0 }}
-                viewport={{ once: true }}
                 className="relative flex flex-col md:flex-row gap-8 group"
               >
                 <div className="flex-shrink-0 z-10">

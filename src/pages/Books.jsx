@@ -20,8 +20,6 @@ const Hero = () => {
         <div className="py-20 md:py-28">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
             <motion.div
-              initial={{ opacity: 1, y: 0 }}
-              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="lg:col-span-7"
             >
@@ -80,9 +78,6 @@ const Catalog = () => {
             {items.map((item, i) => (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 1, y: 0 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
                 transition={{
                   delay: i * 0.08,
                   duration: 0.2,
