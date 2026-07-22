@@ -13,6 +13,7 @@ import Footer from "./components/Footer";
 import LoadingSpinner from "./components/LoadingSpinner";
 import StickyMobileCTA from "./components/StickyMobileCTA";
 import Breadcrumb from "./components/Breadcrumb";
+import { normalizePath, toCanonicalUrl } from "./data/siteConfig";
 
 // Lazy load all pages for code splitting
 const Home = lazy(() => import("./pages/Home"));
@@ -109,6 +110,7 @@ const JuvenileDefense = lazy(() => import("./pages/JuvenileDefense"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./pages/TermsOfService"));
 const ServiceArea = lazy(() => import("./pages/ServiceArea"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const BLOG_ORIGIN = "https://blog.moralespadialaw.com";
 const BLOG_FRESH_WINDOW_MS = 2 * 60 * 1000;
@@ -120,6 +122,7 @@ function getBlogFreshUrl() {
 
 function RouteSEO() {
   const { pathname } = useLocation();
+  const path = normalizePath(pathname);
 
   const baseKeywords =
     "Morales Padia Law, San Antonio attorney, family law, divorce, child custody, estate planning, probate, criminal defense, DWI, adoption, award-winning";
@@ -603,15 +606,44 @@ function RouteSEO() {
     },
   };
 
-  const current = seoByPath[pathname] || {
-    title:
-      "Morales Padia Law | San Antonio Family Law, Estate Planning & Criminal Defense",
-    description:
-      "San Antonio attorneys for family law, estate planning, probate, and criminal defense.",
-    keywords: baseKeywords,
-  };
+  const current = seoByPath[path];
+  const noindexPaths = new Set([
+    "/privacy-policy",
+    "/terms-of-service",
+    "/style-guide",
+    "/newsletter/unsubscribe",
+  ]);
 
-  return <SEO {...current} />;
+  if (!current) {
+    if (path.startsWith("/team/")) {
+      return (
+        <SEO
+          title="Our Team | Morales Padia Law"
+          description="Meet the Morales Padia Law team — San Antonio attorneys and staff serving families across Bexar County and South Texas."
+          keywords={baseKeywords + ", Morales Padia Law team, San Antonio attorneys"}
+          canonical={toCanonicalUrl(path)}
+        />
+      );
+    }
+
+    return (
+      <SEO
+        title="Page not found | Morales Padia Law"
+        description="The page you’re looking for doesn’t exist. Return to Morales Padia Law for family law, estate planning, probate, and criminal defense in San Antonio."
+        keywords={baseKeywords}
+        canonical={toCanonicalUrl(path)}
+        noindex
+      />
+    );
+  }
+
+  return (
+    <SEO
+      {...current}
+      canonical={toCanonicalUrl(path)}
+      noindex={noindexPaths.has(path)}
+    />
+  );
 }
 
 function BlogWarmup() {
@@ -874,6 +906,7 @@ function AppShell() {
               />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-of-service" element={<TermsOfService />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
         </main>

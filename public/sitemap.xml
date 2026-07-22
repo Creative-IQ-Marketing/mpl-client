@@ -3,425 +3,442 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-  <!-- Home -->
   <url>
-    <loc>https://www.moralespadialaw.com/</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- About -->
   <url>
-    <loc>https://www.moralespadialaw.com/firm-overview</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/firm-overview</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/testimonials</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/testimonials</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- Family Law -->
   <url>
-    <loc>https://www.moralespadialaw.com/family-law</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/services</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moralespadialaw.com/service-area</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moralespadialaw.com/contact</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moralespadialaw.com/partners</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://moralespadialaw.com/family-law</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/adoption</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/adoption</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/spousal-maintenance</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/spousal-maintenance</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/child-custody</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/child-custody</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/child-support</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/child-support</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/child-visitation-possession</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/child-visitation-possession</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/contested-divorce</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/contested-divorce</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/modification-of-previous-order</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/modification-of-previous-order</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/emergency-custody-orders</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/emergency-custody-orders</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/enforcement</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/enforcement</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/flat-fee-divorce</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/flat-fee-divorce</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/grandparents-rights</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/grandparents-rights</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/mediation-collaborative-divorce</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/mediation-collaborative-divorce</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/name-change</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/name-change</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/paternity-fathers-rights</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/paternity-fathers-rights</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/postnuptial-agreement</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/postnuptial-agreement</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/prenuptial-agreement</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/prenuptial-agreement</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/property-division</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/property-division</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/protective-orders</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/protective-orders</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/uncontested-divorce</loc>
-    <lastmod>2025-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Criminal Law -->
-  <url>
-    <loc>https://www.moralespadialaw.com/criminal-defense</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/uncontested-divorce</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/assault-family-violence</loc>
-    <lastmod>2025-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.moralespadialaw.com/domestic-violence</loc>
-    <lastmod>2025-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.moralespadialaw.com/drug-charges</loc>
-    <lastmod>2025-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.moralespadialaw.com/dwi</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/criminal-defense</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/expungement-record-sealing</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/assault-family-violence</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/felony-charges-defense</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/domestic-violence</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/misdemeanor-defense</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/drug-charges</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/probation-violations</loc>
-    <lastmod>2025-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.moralespadialaw.com/theft-property-crimes</loc>
-    <lastmod>2025-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.moralespadialaw.com/under-investigation</loc>
-    <lastmod>2025-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.moralespadialaw.com/warrants-arrest</loc>
-    <lastmod>2025-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.moralespadialaw.com/weapons-charges</loc>
-    <lastmod>2025-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.moralespadialaw.com/juvenile-defense</loc>
-    <lastmod>2025-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Estate Planning -->
-  <url>
-    <loc>https://www.moralespadialaw.com/estate-planning</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/dwi</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/advance-directives</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/expungement-record-sealing</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/asset-protection</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/felony-charges-defense</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/estate-affidavits</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/misdemeanor-defense</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/power-of-attorney</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/probation-violations</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/trust</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/theft-property-crimes</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/will</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/under-investigation</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
-
-  <!-- Probate Law -->
   <url>
-    <loc>https://www.moralespadialaw.com/probate-law</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/warrants-arrest</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moralespadialaw.com/weapons-charges</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moralespadialaw.com/juvenile-defense</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moralespadialaw.com/estate-planning</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/affidavit-of-heirship</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/advance-directives</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/do-i-need-probate</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/asset-protection</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/how-to-start-probate</loc>
-    <lastmod>2025-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.moralespadialaw.com/probate-without-will</loc>
-    <lastmod>2025-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.moralespadialaw.com/probate-disputes-litigation</loc>
-    <lastmod>2025-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.moralespadialaw.com/probating-a-will</loc>
-    <lastmod>2025-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.moralespadialaw.com/small-estate-affidavit</loc>
-    <lastmod>2025-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.moralespadialaw.com/transferring-property-after-death</loc>
-    <lastmod>2025-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.moralespadialaw.com/heirship-proceedings</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/estate-affidavits</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/muniment-of-title</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/power-of-attorney</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moralespadialaw.com/trust</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moralespadialaw.com/will</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moralespadialaw.com/probate-law</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://moralespadialaw.com/affidavit-of-heirship</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moralespadialaw.com/do-i-need-probate</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moralespadialaw.com/how-to-start-probate</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moralespadialaw.com/probate-without-will</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moralespadialaw.com/probate-disputes-litigation</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moralespadialaw.com/probating-a-will</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moralespadialaw.com/small-estate-affidavit</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moralespadialaw.com/transferring-property-after-death</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moralespadialaw.com/heirship-proceedings</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/probate-litigation</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/muniment-of-title</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- Resources -->
   <url>
-    <loc>https://www.moralespadialaw.com/resources/blog</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/probate-litigation</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moralespadialaw.com/resources/blog</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/resources/books</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/resources/books</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/resources/books/family-blindsided</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/resources/books/family-blindsided</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/resources/books/divorce-guide</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/resources/books/divorce-guide</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/resources/faq</loc>
-    <lastmod>2025-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Contact & Services -->
-  <url>
-    <loc>https://www.moralespadialaw.com/service-area</loc>
-    <lastmod>2026-05-26</lastmod>
-    <!-- TODO: automate lastmod on deploy -->
+    <loc>https://moralespadialaw.com/resources/faq</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/terms-of-service</loc>
-    <lastmod>2026-05-26</lastmod>
-    <!-- TODO: automate lastmod on deploy -->
+    <loc>https://moralespadialaw.com/team/trisha-morales-padia</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/contact</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/team/dorothy-dominguez</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/services</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://moralespadialaw.com/team/allyson-gilmore</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/service-area</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://moralespadialaw.com/team/veronica-ruvalcaba</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.moralespadialaw.com/terms-of-service</loc>
-    <lastmod>2026-05-26</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://moralespadialaw.com/team/elena-galaviz</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
-
+  <url>
+    <loc>https://moralespadialaw.com/team/alexandra-johnson</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://moralespadialaw.com/team/kayla-kim</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://moralespadialaw.com/team/linda-chapman</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>

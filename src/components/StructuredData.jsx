@@ -5,7 +5,7 @@ export default function StructuredData() {
   const location = useLocation();
 
   useEffect(() => {
-    const origin = window.location.origin;
+    const origin = "https://moralespadialaw.com";
     const pathname = window.location.pathname;
 
     // WebSite Schema with sitelinks search box

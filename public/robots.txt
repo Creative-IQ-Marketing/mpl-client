@@ -7,11 +7,11 @@ Disallow: /newsletter/unsubscribe
 Disallow: /privacy-policy
 Disallow: /terms-of-service
 
-# Sitemap location
-Sitemap: https://www.moralespadialaw.com/sitemap.xml
+# Sitemap (apex — matches Netlify primary domain)
+Sitemap: https://moralespadialaw.com/sitemap.xml
 
 # LLM-readable site summary
-# https://www.moralespadialaw.com/llms.txt
+# https://moralespadialaw.com/llms.txt
 
 # Crawl delay for courtesy
 Crawl-delay: 1

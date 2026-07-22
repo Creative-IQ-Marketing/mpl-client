@@ -68,7 +68,7 @@ const Header = () => {
     },
     {
       name: "Team",
-      path: "/about",
+      path: "/firm-overview",
       children: (teamMembers || []).map((member) => ({
         name: member.name,
         path: `/team/${member.id}`,
