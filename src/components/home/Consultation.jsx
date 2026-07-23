@@ -104,6 +104,7 @@ const Consultation = () => {
                   <option>Family Law</option>
                   <option>Criminal Defense</option>
                   <option>Estate Planning</option>
+                  <option>Probate Law</option>
                   <option>Other</option>
                 </select>
               </div>
