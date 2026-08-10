@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://moralespadialaw.com/</loc>
+    <image:image>
+      <image:loc>https://moralespadialaw.com/og/og-default.svg</image:loc>
+      <image:title>Morales Padia Law</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://moralespadialaw.com/mpl_logo.png</image:loc>
+      <image:title>Morales Padia Law logo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://moralespadialaw.com/hero/hero-1280.webp</image:loc>
+      <image:title>Morales Padia Law San Antonio attorneys</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://moralespadialaw.com/family-law</loc>
+    <image:image>
+      <image:loc>https://moralespadialaw.com/og/og-family-law.svg</image:loc>
+      <image:title>Family law services</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://moralespadialaw.com/criminal-defense</loc>
+    <image:image>
+      <image:loc>https://moralespadialaw.com/og/og-criminal-defense.svg</image:loc>
+      <image:title>Criminal defense services</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://moralespadialaw.com/estate-planning</loc>
+    <image:image>
+      <image:loc>https://moralespadialaw.com/og/og-estate-probate.svg</image:loc>
+      <image:title>Estate planning and probate services</image:title>
+    </image:image>
+  </url>
+</urlset>

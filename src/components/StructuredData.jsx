@@ -103,14 +103,6 @@ export default function StructuredData() {
           },
         },
       ],
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: 5.0,
-        bestRating: 5,
-        worstRating: 1,
-        ratingCount: 150,
-        reviewCount: 150,
-      },
       award: [
         "Top Family Law Lawyer - San Antonio Scene Magazine (2017)",
         "Best S.A Female Lawyers - San Antonio Scene Magazine (2021)",
@@ -493,28 +485,6 @@ export default function StructuredData() {
       ],
     };
 
-    // Review Schema - For homepage and service pages
-    const reviewSchema = {
-      "@context": "https://schema.org",
-      "@type": "Review",
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: "5",
-        bestRating: "5",
-      },
-      reviewBody:
-        "Morales Padia Law provided exceptional legal representation and compassionate guidance throughout my case. Highly recommended.",
-      author: {
-        "@type": "Person",
-        name: "Satisfied Client",
-      },
-      itemReviewed: {
-        "@type": "LegalService",
-        name: "Morales Padia Law",
-        url: origin,
-      },
-    };
-
     // BlogPosting Schema - For blog content
     const blogPostingSchema = {
       "@context": "https://schema.org",
@@ -707,7 +677,6 @@ export default function StructuredData() {
       organizationSchema,
       localBusinessSchema,
       breadcrumbSchema,
-      reviewSchema,
       ...(isOnFaqPage ? [faqSchema] : []),
       ...(isOnBlogPage ? [blogPostingSchema] : []),
       ...(pathname === "/" ? [servicesSchema] : []),

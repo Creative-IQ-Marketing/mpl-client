@@ -5,7 +5,7 @@ import VeronicaImg from "../assets/team/optimized/veronica.webp";
 import ElenaImg from "../assets/team/optimized/Elena1_UF9A2289-Edit-2.webp";
 import AlexandraImg from "../assets/team/optimized/Alexandra1_UF9A2272-Edit-2.webp";
 import KaylaImg from "../assets/team/optimized/Kayla.webp";
-import LindaImg from "../assets/team/optimized/Linda.webp";
+import MirandaImg from "../assets/team/optimized/Miranda.webp";
 
 export const teamMembers = [
   {
@@ -149,12 +149,14 @@ export const teamMembers = [
     footerTitles: [],
   },
   {
-    id: "linda-chapman",
-    name: "Linda Chapman",
-    role: "Attorney",
-    image: LindaImg,
+    id: "miranda-partida",
+    name: "Miranda Partida",
+    role: "Post Bar Law Clerk",
+    image: MirandaImg,
     headline: "",
-    bio: [],
+    bio: [
+      "Miranda Partida recently joined Morales Padia Law as a Post Bar Law Clerk. Her full biography will be available soon.",
+    ],
     quote: "",
     quoteAuthor: "",
     footerTitles: [],

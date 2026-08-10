@@ -26,6 +26,8 @@
 /services/estate-planning/   /estate-planning    301
 /services/probate    /probate-law    301
 /services/probate/   /probate-law    301
+/team/linda-chapman    /firm-overview    301
+/team/linda-chapman/   /firm-overview    301
 
 # Trailing slash normalization
 /services/    /services    301

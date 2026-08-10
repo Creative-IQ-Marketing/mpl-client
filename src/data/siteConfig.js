@@ -177,7 +177,7 @@ export const SITEMAP_ROUTES = [
   { path: "/team/elena-galaviz", priority: "0.5", changefreq: "monthly" },
   { path: "/team/alexandra-johnson", priority: "0.5", changefreq: "monthly" },
   { path: "/team/kayla-kim", priority: "0.5", changefreq: "monthly" },
-  { path: "/team/linda-chapman", priority: "0.5", changefreq: "monthly" },
+  { path: "/team/miranda-partida", priority: "0.5", changefreq: "monthly" },
 ];
 
 /** Old / mistaken paths → current destinations (301). */
@@ -192,4 +192,5 @@ export const LEGACY_REDIRECTS = [
   ["/services/criminal-defense", "/criminal-defense"],
   ["/services/estate-planning", "/estate-planning"],
   ["/services/probate", "/probate-law"],
+  ["/team/linda-chapman", "/firm-overview"],
 ];

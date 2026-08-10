@@ -20,7 +20,7 @@ import VeronicaImg from "../assets/team/optimized/veronica.webp";
 import ElenaImg from "../assets/team/optimized/Elena1_UF9A2289-Edit-2.webp";
 import AlexandraImg from "../assets/team/optimized/Alexandra1_UF9A2272-Edit-2.webp";
 import KaylaImg from "../assets/team/optimized/Kayla.webp";
-import LindaImg from "../assets/team/optimized/Linda.webp";
+import MirandaImg from "../assets/team/optimized/Miranda.webp";
 
 const FirmOverview = () => {
   return (
@@ -350,9 +350,9 @@ const MeetOurTeam = () => {
       img: KaylaImg,
     },
     {
-      name: "Linda Chapman",
-      role: "Attorney",
-      img: LindaImg,
+      name: "Miranda Partida",
+      role: "Post Bar Law Clerk",
+      img: MirandaImg,
     },
   ];
 

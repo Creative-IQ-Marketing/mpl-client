@@ -5,7 +5,7 @@ import VeronicaImg from "../../assets/team/optimized/veronica.webp";
 import ElenaImg from "../../assets/team/optimized/Elena1_UF9A2289-Edit-2.webp";
 import AlexandraImg from "../../assets/team/optimized/Alexandra1_UF9A2272-Edit-2.webp";
 import KaylaImg from "../../assets/team/optimized/Kayla.webp";
-import LindaImg from "../../assets/team/optimized/Linda.webp";
+import MirandaImg from "../../assets/team/optimized/Miranda.webp";
 import { motion } from "framer-motion";
 import { Gavel } from "lucide-react";
 const Motion = motion;
@@ -56,9 +56,9 @@ const MeetOurTeam = () => {
       size: "small",
     },
     {
-      name: "Linda Chapman",
-      role: "Attorney",
-      image: LindaImg,
+      name: "Miranda Partida",
+      role: "Post Bar Law Clerk",
+      image: MirandaImg,
       size: "small",
     },
   ];

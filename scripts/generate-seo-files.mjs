@@ -1,23 +1,21 @@
-/**
- * Generates public/_redirects and public/sitemap.xml from siteConfig.
- * Usage: node scripts/generate-seo-files.mjs
- */
+/** Generates Netlify routing, XML sitemaps, and robots.txt. */
 import { writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
-import { fileURLToPath, pathToFileURL } from "node:url";
+import { fileURLToPath } from "node:url";
+import {
+  IMAGE_SITEMAP,
+  SEO_PAGES,
+  SITE_URL,
+  toCanonical,
+} from "./seo-catalog.mjs";
+import {
+  LEGACY_REDIRECTS,
+  SPA_ROUTES,
+} from "../src/data/siteConfig.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
 const publicDir = join(root, "public");
-
-const {
-  SITE_URL,
-  SPA_ROUTES,
-  SITEMAP_ROUTES,
-  LEGACY_REDIRECTS,
-  toCanonicalUrl,
-} = await import(pathToFileURL(join(root, "src/data/siteConfig.js")).href);
-
 const today = new Date().toISOString().slice(0, 10);
 
 // ─── _redirects ─────────────────────────────────────────────────────────────
@@ -59,8 +57,8 @@ console.log(`Wrote public/_redirects (${SPA_ROUTES.length} SPA routes)`);
 const seen = new Set();
 const urlEntries = [];
 
-for (const { path, priority, changefreq } of SITEMAP_ROUTES) {
-  const loc = toCanonicalUrl(path);
+for (const { path, priority, changefreq } of SEO_PAGES) {
+  const loc = toCanonical(path);
   if (seen.has(loc)) continue;
   seen.add(loc);
   urlEntries.push(`  <url>
@@ -82,3 +80,83 @@ ${urlEntries.join("\n")}
 
 writeFileSync(join(publicDir, "sitemap.xml"), sitemap, "utf8");
 console.log(`Wrote public/sitemap.xml (${seen.size} URLs, host ${SITE_URL})`);
+
+// ─── sitemap-images.xml ────────────────────────────────────────────────────
+const imageEntries = IMAGE_SITEMAP.map((entry) => {
+  const images = entry.images
+    .map(
+      (image) => `    <image:image>
+      <image:loc>${escapeXml(image.loc)}</image:loc>
+      <image:title>${escapeXml(image.title)}</image:title>
+    </image:image>`,
+    )
+    .join("\n");
+  return `  <url>
+    <loc>${toCanonical(entry.path)}</loc>
+${images}
+  </url>`;
+}).join("\n");
+
+writeFileSync(
+  join(publicDir, "sitemap-images.xml"),
+  `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+${imageEntries}
+</urlset>
+`,
+  "utf8",
+);
+
+writeFileSync(
+  join(publicDir, "sitemap-index.xml"),
+  `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>${SITE_URL}/sitemap.xml</loc>
+    <lastmod>${today}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>${SITE_URL}/sitemap-images.xml</loc>
+    <lastmod>${today}</lastmod>
+  </sitemap>
+</sitemapindex>
+`,
+  "utf8",
+);
+
+writeFileSync(
+  join(publicDir, "robots.txt"),
+  `User-agent: *
+Allow: /
+Disallow: /style-guide
+Disallow: /newsletter/unsubscribe
+Disallow: /privacy-policy
+Disallow: /terms-of-service
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: ${SITE_URL}/sitemap-index.xml
+`,
+  "utf8",
+);
+
+console.log("Wrote image sitemap, sitemap index, and robots.txt");
+
+function escapeXml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;");
+}
