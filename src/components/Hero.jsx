@@ -67,12 +67,26 @@ const Hero = () => {
   }, []);
 
   useEffect(() => {
-    if (isPaused) return;
-    const interval = setInterval(
-      () => setCurrentSlide((prev) => (prev + 1) % images.length),
-      isMobile ? 6000 : 5000,
-    );
-    return () => clearInterval(interval);
+    if (isPaused) return undefined;
+    let interval;
+    const start = () => {
+      interval = setInterval(
+        () => setCurrentSlide((prev) => (prev + 1) % images.length),
+        isMobile ? 6000 : 5000,
+      );
+    };
+    const idle =
+      typeof window.requestIdleCallback === "function"
+        ? window.requestIdleCallback(start, { timeout: 4000 })
+        : window.setTimeout(start, 2500);
+    return () => {
+      if (typeof window.cancelIdleCallback === "function") {
+        window.cancelIdleCallback(idle);
+      } else {
+        window.clearTimeout(idle);
+      }
+      if (interval) clearInterval(interval);
+    };
   }, [isPaused, images.length, isMobile]);
 
   return (
@@ -109,12 +123,12 @@ const Hero = () => {
                   />
                 )}
                 <img
-                  src={image.isLcp ? "/hero-main.jpg" : image.jpg}
+                  src={image.isLcp ? "/hero/hero-960.webp" : image.jpg}
                   alt={image.alt}
                   width="1920"
                   height="1080"
                   sizes="100vw"
-                  decoding={index === 0 ? "async" : "async"}
+                  decoding="async"
                   loading={index === 0 ? "eager" : "lazy"}
                   fetchPriority={index === 0 ? "high" : "low"}
                   className={`w-full h-full object-cover ${

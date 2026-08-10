@@ -729,16 +729,58 @@ function BlogRouteGate() {
   return <Blog />;
 }
 
+function DeferredChrome() {
+  const [ready, setReady] = React.useState(false);
+
+  useEffect(() => {
+    const enable = () => setReady(true);
+    const onInteract = () => {
+      enable();
+      window.removeEventListener("pointerdown", onInteract);
+      window.removeEventListener("keydown", onInteract);
+      window.removeEventListener("scroll", onInteract);
+    };
+    window.addEventListener("pointerdown", onInteract, { once: true, passive: true });
+    window.addEventListener("keydown", onInteract, { once: true });
+    window.addEventListener("scroll", onInteract, { once: true, passive: true });
+
+    let idleId;
+    let timeoutId;
+    if (typeof window.requestIdleCallback === "function") {
+      idleId = window.requestIdleCallback(enable, { timeout: 6000 });
+    } else {
+      timeoutId = window.setTimeout(enable, 4000);
+    }
+
+    return () => {
+      window.removeEventListener("pointerdown", onInteract);
+      window.removeEventListener("keydown", onInteract);
+      window.removeEventListener("scroll", onInteract);
+      if (idleId != null && typeof window.cancelIdleCallback === "function") {
+        window.cancelIdleCallback(idleId);
+      }
+      if (timeoutId != null) window.clearTimeout(timeoutId);
+    };
+  }, []);
+
+  if (!ready) return null;
+
+  return (
+    <Suspense fallback={null}>
+      <ChatWidget />
+      <FloatingBubbles />
+      <VisualEnhancer />
+    </Suspense>
+  );
+}
+
 function AppShell() {
   return (
     <>
       <RouteSEO />
       <StructuredData />
       <div className="flex flex-col min-h-screen relative">
-        <BlogWarmup />
-        <ChatWidget />
-        <FloatingBubbles />
-        <VisualEnhancer />
+        <DeferredChrome />
         <StickyMobileCTA />
         <Header />
         <main className="flex-grow pt-20 relative z-10">
