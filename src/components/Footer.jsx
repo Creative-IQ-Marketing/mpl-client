@@ -176,31 +176,42 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-300">
           <p>&copy; {new Date().getFullYear()} Morales Padia Law PLLC.</p>
-          <a
-            href="https://creativeiq.marketing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-1 text-gray-500 tracking-widest uppercase hover:text-white transition-colors duration-300"
-          >
-            Powered by{" "}
-            <span className="inline-flex items-center gap-0.5 font-semibold text-gray-400 group-hover:text-white">
-              Creative IQ
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-3 w-3 -translate-y-px transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                aria-hidden="true"
-              >
-                <path d="M7 17L17 7" />
-                <path d="M7 7h10v10" />
-              </svg>
-            </span>
-          </a>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <a
+              href="https://creativeiqmarketing.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-1 text-gray-500 tracking-widest uppercase hover:text-white transition-colors duration-300"
+            >
+              Powered by{" "}
+              <span className="inline-flex items-center gap-0.5 font-semibold text-gray-400 group-hover:text-white">
+                Creative IQ
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-3 w-3 -translate-y-px transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17L17 7" />
+                  <path d="M7 7h10v10" />
+                </svg>
+              </span>
+            </a>
+            <a
+              href="https://creativeiqmarketing.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Contact Creative IQ Marketing"
+              className="inline-flex items-center rounded bg-mpl-cream px-4 py-2 text-[11px] font-bold uppercase tracking-widest text-mpl-navy transition-colors hover:bg-white"
+            >
+              Contact
+            </a>
+          </div>
           <div className="flex gap-6">
             <Link
               to="/privacy-policy"
