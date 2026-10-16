@@ -331,6 +331,11 @@ const CoreValues = () => {
 const MeetOurTeam = () => {
   const team = [
     { name: "Trisha Morales Padia", role: "Founder/Educator", img: TrishaImg },
+    {
+      name: "Miranda Partida",
+      role: "Associate Attorney",
+      img: MirandaImg,
+    },
     { name: "Dorothy Dominguez", role: "Paralegal", img: DorothyImg },
     { name: "Allyson Gilmore", role: "Operations Director", img: AllysonImg },
     {
@@ -348,11 +353,6 @@ const MeetOurTeam = () => {
       name: "Kayla Kim",
       role: "File Clerk",
       img: KaylaImg,
-    },
-    {
-      name: "Miranda Partida",
-      role: "Post Bar Law Clerk",
-      img: MirandaImg,
     },
   ];
 

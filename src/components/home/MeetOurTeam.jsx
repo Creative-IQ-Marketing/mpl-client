@@ -20,10 +20,16 @@ const MeetOurTeam = () => {
       size: "large",
     },
     {
+      name: "Miranda Partida",
+      role: "Associate Attorney",
+      image: MirandaImg,
+      size: "medium",
+    },
+    {
       name: "Dorothy Dominguez",
       role: "Paralegal",
       image: DorothyImg,
-      size: "medium",
+      size: "small",
     },
     {
       name: "Allyson Gilmore",
@@ -35,30 +41,24 @@ const MeetOurTeam = () => {
       name: "Veronica Ruvalcaba",
       role: "Outreach Coordinator",
       image: VeronicaImg,
-      size: "small",
+      size: "large",
     },
     {
       name: "Elena Galaviz",
       role: "Family Law Paralegal",
       image: ElenaImg,
-      size: "large",
+      size: "medium",
     },
     {
       name: "Alexandra Johnson",
       role: "Client Services Director",
       image: AlexandraImg,
-      size: "medium",
+      size: "small",
     },
     {
       name: "Kayla Kim",
       role: "File Clerk",
       image: KaylaImg,
-      size: "small",
-    },
-    {
-      name: "Miranda Partida",
-      role: "Post Bar Law Clerk",
-      image: MirandaImg,
       size: "small",
     },
   ];

@@ -171,13 +171,13 @@ export const SITEMAP_ROUTES = [
 
   // Team
   { path: "/team/trisha-morales-padia", priority: "0.6", changefreq: "monthly" },
+  { path: "/team/miranda-partida", priority: "0.5", changefreq: "monthly" },
   { path: "/team/dorothy-dominguez", priority: "0.5", changefreq: "monthly" },
   { path: "/team/allyson-gilmore", priority: "0.5", changefreq: "monthly" },
   { path: "/team/veronica-ruvalcaba", priority: "0.5", changefreq: "monthly" },
   { path: "/team/elena-galaviz", priority: "0.5", changefreq: "monthly" },
   { path: "/team/alexandra-johnson", priority: "0.5", changefreq: "monthly" },
   { path: "/team/kayla-kim", priority: "0.5", changefreq: "monthly" },
-  { path: "/team/miranda-partida", priority: "0.5", changefreq: "monthly" },
 ];
 
 /** Old / mistaken paths → current destinations (301). */

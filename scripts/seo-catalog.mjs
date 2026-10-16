@@ -14,13 +14,13 @@ export const DEFAULT_OG_IMAGE = `${SITE_URL}/og/og-default.svg`;
 
 const TEAM = {
   "trisha-morales-padia": ["Trisha Morales Padia", "Founder and Attorney"],
+  "miranda-partida": ["Miranda Partida", "Associate Attorney"],
   "dorothy-dominguez": ["Dorothy Dominguez", "Paralegal"],
   "allyson-gilmore": ["Allyson Gilmore", "Operations Director"],
   "veronica-ruvalcaba": ["Veronica Ruvalcaba", "Outreach Coordinator"],
   "elena-galaviz": ["Elena Galaviz", "Family Law Paralegal"],
   "alexandra-johnson": ["Alexandra Johnson", "Client Services Director"],
   "kayla-kim": ["Kayla Kim", "File Clerk"],
-  "miranda-partida": ["Miranda Partida", "Post Bar Law Clerk"],
 };
 
 const PAGE_OVERRIDES = {
