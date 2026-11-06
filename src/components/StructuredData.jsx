@@ -671,6 +671,84 @@ export default function StructuredData() {
       ],
     };
 
+    const buildFaq = (items) => ({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: items.map(([name, text]) => ({
+        "@type": "Question",
+        name,
+        acceptedAnswer: { "@type": "Answer", text },
+      })),
+    });
+
+    const childSupportFaqSchema = buildFaq([
+      [
+        "How does a San Antonio child support attorney help with child support?",
+        "We establish new child support orders, calculate support using Texas guidelines, modify existing orders when income or circumstances change, and enforce orders through wage garnishment and contempt proceedings.",
+      ],
+      [
+        "What is the child support process in Texas?",
+        "The process includes a financial assessment, support calculation under Texas guidelines, filing the petition and serving the other parent, discovery of financial records, court proceedings, and enforcement or modification of the order afterward.",
+      ],
+      [
+        "Can child support be modified in Texas?",
+        "Yes. Child support orders can be modified when financial circumstances change significantly, such as a change in income or additional children. Morales Padia Law helps both paying and receiving parents with modifications in San Antonio.",
+      ],
+      [
+        "What can I do if the other parent is not paying child support?",
+        "Morales Padia Law takes enforcement action in Bexar County courts, including wage garnishment and contempt proceedings, to collect unpaid child support.",
+      ],
+    ]);
+
+    const protectiveOrdersFaqSchema = buildFaq([
+      [
+        "What types of protective orders does Morales Padia Law handle in San Antonio?",
+        "We handle emergency protective orders (EPO), family violence protective orders, harassment protective orders, restraining order violations, protective order modifications, and defense against false accusations.",
+      ],
+      [
+        "What is the protective order process in Texas?",
+        "The process begins with an initial consultation, followed by filing an application for a protective order or a response to an existing one, hearing preparation including evidence and witnesses, and court representation at the hearing.",
+      ],
+      [
+        "Can I fight a protective order that I believe is false?",
+        "Yes. Morales Padia Law represents people served with protective orders, challenges unfounded claims, and works to protect their rights and reputation at the hearing.",
+      ],
+      [
+        "Can a protective order be modified?",
+        "Yes. Existing protective orders can be modified to reflect new circumstances. Our San Antonio attorneys assist with modification, compliance, and enforcement issues.",
+      ],
+    ]);
+
+    const domesticViolenceFaqSchema = buildFaq([
+      [
+        "What happens if I am accused of domestic violence in Texas?",
+        "Domestic violence allegations in Texas can range from misdemeanors to felonies, and a conviction can affect your record, employment, and custody rights. A defense attorney can review the evidence and work toward dismissal, reduction, or acquittal.",
+      ],
+      [
+        "What is the domestic violence defense process?",
+        "Our process includes a confidential assessment of your side of the story, defense in protective order hearings, evidence gathering and witness interviews, and a resolution strategy aimed at dismissal, reduction, or acquittal at trial.",
+      ],
+      [
+        "What types of domestic violence cases does Morales Padia Law handle?",
+        "We handle family violence allegations, false accusations, misdemeanor and felony assault charges, harassment charges, child-related charges, and protective order hearings in San Antonio and Bexar County.",
+      ],
+    ]);
+
+    const willFaqSchema = buildFaq([
+      [
+        "What is a will?",
+        "A will is a legal document that directs how your property is distributed after death. It names an executor to handle your estate and can nominate guardians for minor children.",
+      ],
+      [
+        "Why do I need a will in San Antonio?",
+        "A will distributes your assets to chosen beneficiaries, appoints an executor, helps streamline probate, names guardians for minor children, and can reduce family disputes.",
+      ],
+      [
+        "Can a will name a guardian for my children?",
+        "Yes. Parents can nominate guardians to care for minor children in a will. Morales Padia Law prepares wills for San Antonio families.",
+      ],
+    ]);
+
     const schemas = [
       websiteSchema,
       attorneySchema,
@@ -685,6 +763,10 @@ export default function StructuredData() {
       ...(pathname === "/dwi" ? [dwiFaqSchema] : []),
       ...(pathname === "/estate-planning" ? [estatePlanningFaqSchema] : []),
       ...(pathname === "/probate-law" ? [probateLawFaqSchema] : []),
+      ...(pathname === "/child-support" ? [childSupportFaqSchema] : []),
+      ...(pathname === "/protective-orders" ? [protectiveOrdersFaqSchema] : []),
+      ...(pathname === "/domestic-violence" ? [domesticViolenceFaqSchema] : []),
+      ...(pathname === "/will" ? [willFaqSchema] : []),
     ];
 
     schemas.forEach((schema, index) => {

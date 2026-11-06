@@ -300,7 +300,7 @@ function RouteSEO() {
       description:
         "San Antonio protective order attorney for victims of family violence and those fighting false protective order allegations.",
       keywords:
-        "protective order attorney San Antonio TX, protective order lawyer Texas, restraining order attorney San Antonio, family violence protective order Bexar County, emergency protective order Texas, how to get a protective order in Texas, fight false protective order Texas, EPO attorney San Antonio, temporary protective order Texas",
+        "protective order attorney San Antonio TX, protective order lawyer Texas, restraining order attorney San Antonio, family violence protective order Bexar County, emergency protective order Texas, how to get a protective order in Texas, fight false protective order Texas, EPO attorney San Antonio, temporary protective order Texas, domestic abuse attorney San Antonio, domestic abuse protective order Texas, help leaving an abusive relationship Texas, harassment protective order San Antonio",
     },
 
     // ─── CRIMINAL LAW ────────────────────────────────────────────────────
