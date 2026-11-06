@@ -4,6 +4,13 @@ import { ExternalLink } from "lucide-react";
 const FeaturedIn = () => {
   const features = [
     {
+      title: "How to spot relationship red flags",
+      publication: "FOX San Antonio",
+      link: "https://foxsanantonio.com/lifestyle-newsletter/we-spoke-with-trisha-morales-padia-to-learn-more-about-red-flags-in-relationships",
+      date: "Oct 2026",
+      category: "Family Law",
+    },
+    {
       title: "Divorce can be tough, but Morales Padia Law is here to help",
       publication: "Watch Daytime",
       link: "https://watchdaytime.com/lifestyle/divorce-can-be-tough-but-morales-padia-law-is-here-to-help",
